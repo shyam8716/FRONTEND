@@ -1,0 +1,378 @@
+<html>
+<head>
+<title>
+hospital management webpage
+</title>
+</head>
+<body>
+<header id="home">
+	<h1>SIMS hospital</h1>
+<!-- <img src="data:image/jpeg;base64,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"alt="sims hospital"height="200"width="200"/><br/>
+<q>Śrīnivāsō vijayatē</q>or<br/> -->
+<q>Victory to Lord Venkateshwara</q>
+</header>
+<nav>
+	<a href="#home">Home</a><br/>
+	<a href="#introduction_about_hospital">About Hospital</a><br/>
+	<a href="#patient_registration_section">Registration form</a><br/>
+	<a href="#doctor_Schedules_Section">Doctors available timings</a><br/>
+	<a href="#hospital_Services_Section">Services</a><br/>
+	<a href="#informational_Videos_Section">Informational video section</a><br/>
+	<a href="#contact_Section">Contact Details</a><br/>
+	<a href="#links">Links</a>
+</nav>
+<section class="introduction_about_hospital"id="introduction_about_hospital">
+	<p>
+		SIMS Hospital (SRM Institute for Medical Sciences) is a leading multi-specialty tertiary care hospital located in Chennai. It is part of the SRM Group and is recognized for providing advanced medical care across a wide range of specialties, including cardiac sciences, neurosciences, oncology, orthopaedics, gastroenterology, organ transplantation, and critical care.
+	</p>
+	<p>
+		The hospital offers comprehensive 360-degree healthcare services, combining experienced medical professionals, modern technology, and a patient-centered approach. SIMS has developed specialized institutes for areas such as cardiac sciences, neuroscience, orthopaedics, renal sciences, liver transplantation, oncology, and women's health, enabling multidisciplinary treatment for complex medical conditions.
+	</p>
+	<p>
+		Located in the Vadapalani area of Chennai, the hospital spans approximately 230,000 square feet and features advanced diagnostic facilities, specialized intensive care units, modern operation theatres, and multi-organ transplant programs. It serves both domestic and international patients through dedicated support services and personalized care
+	</p>
+	<p>
+		SIMS Hospital's mission is to deliver world-class healthcare by integrating clinical excellence, innovative technology, research, and compassionate patient care. The institution is widely regarded as one of South India's prominent centers for advanced tertiary and quaternary healthcare services.
+	</p>
+</section>
+<section class="patient_registration_section"id="patient_registration_section">
+	<form>
+		Enter your Full Name<input type="text"name="name"required/><br/>
+		Enter your age<input type="number"name="age"/><br/>
+		Enter your gender<br/>
+		<input type="radio"name="gender">Male<br/>
+		<input type="radio"name="gender">Female<br/>
+	Enter your phone number<input type="number"/><br/>
+	Enter your email<input type="email"/><br/>
+	Enter your address<textarea rows="10" cols="50"></textarea><br/>
+	<select>
+		<option value="Please select you blood group">Please select your blood group</option>
+		<option value="A+">A+</option>
+		<option value="A−">A−</option>
+		<option value="AB+">AB+</option>
+		<option value="AB−">AB−</option>
+		<option value="B+">B+</option>
+		<option value="B−">B−</option>
+		<option value="O+">O+</option>
+		<option value="O−">O−</option>
+		<option value="Augustine Blood Group System">Augustine Blood Group System</option>
+		<option value="Bombay Blood Group (hh)">Bombay Blood Group (hh)</option>
+		<option value="Cartwright Blood Group System">Cartwright Blood Group System</option>
+		<option value="Chido/Rodgers Blood Group System">Chido/Rodgers Blood Group System</option>
+		<option value="Colton Blood Group System">Colton Blood Group System</option>
+		<option value="Cromer Blood Group System">Cromer Blood Group System</option>
+		<option value="Diego Blood Group System">Diego Blood Group System</option>
+		<option value="Dombrock Blood Group System">Dombrock Blood Group System</option>
+		<option value="Duffy Blood Group System">Duffy Blood Group System</option>
+		<option value="Gerbich Blood Group System">Gerbich Blood Group System</option>
+		<option value="H Blood Group System">H Blood Group System</option>
+		<option value="Indian Blood Group System">Indian Blood Group System</option>
+		<option value="Kell Blood Group System">Kell Blood Group System</option>
+		<option value="Kidd Blood Group System">Kidd Blood Group System</option>
+		<option value="Knops Blood Group System">Knops Blood Group System</option>
+		<option value="Lan Blood Group System">Lan Blood Group System</option>
+		<option value="Lewis Blood Group System">Lewis Blood Group System</option>
+		<option value="Lutheran Blood Group System">Lutheran Blood Group System</option>
+		<option value="MNS Blood Group System">MNS Blood Group System</option>
+		<option value="P Blood Group System">P Blood Group System</option>
+		<option value="Rh Blood Group System">Rh Blood Group System</option>
+		<option value="Scianna Blood Group System">Scianna Blood Group System</option>
+		<option value="Scianna Blood Group System">Scianna Blood Group System</option>
+		<option value="Vel-Negative Blood Type">Vel-Negative Blood Type</option>
+		<option value="Yt (Cartwright) Blood Group System">Yt (Cartwright) Blood Group System</option>
+		<option value="Bombay Blood Group (hh)">Bombay Blood Group (hh)</option>
+		<option value="Rh-null Blood Type">Rh-null Blood Type</option>
+		<option value="Vel-Negative Blood Type">Vel-Negative Blood Type</option>
+		<option value="Lan-Negative Blood Type">Lan-Negative Blood Type</option>
+		<option value="Junior-Negative Blood Type">Junior-Negative Blood Type</option>
+	</select><br/>
+	<select>
+		<option value="Please enter the department">Please enter the department</option>
+		<option value="Anesthesia">Anesthesia</option>
+		<option value="Cardiology">Cardiology</option>
+		<option value="Casualty (Emergency Medicine)">Casualty (Emergency Medicine)</option>
+		<option value="Critical Care Medicine">Critical Care Medicine</option>
+		<option value="Dermatology">Dermatology</option>
+		<option value="ENT (Ear, Nose & Throat)">ENT (Ear, Nose & Throat)</option>
+		<option value="Gastroenterology">Gastroenterology</option>
+		<option value="General Medicine">General Medicine</option>
+		<option value="General Pediatrics">General Pediatrics</option>
+		<option value="General Surgery">General Surgery</option>
+		<option value="Gynecology">Gynecology</option>
+		<option value="Nephrology & Dialysis Unit">Nephrology & Dialysis Unit</option>
+		<option value="Neurology">Neurology</option>
+		<option value="Obstetrics & Gynecology">Obstetrics & Gynecology</option>
+		<option value="Orthopedics">Orthopedics</option>
+		<option value="Pediatrics">Pediatrics</option>
+		<option value="Physiotherapy">Physiotherapy</option>
+		<option value="Pulmonology">Pulmonology</option>
+		<option value="Radiology">Radiology</option>
+		<option value="Rheumatology">Rheumatology</option>
+		<option value="Surgical Gastroenterology">Surgical Gastroenterology</option>
+		<option value="Urology">Urology</option>
+	</select><br/>
+		<button type="submit">Submit</button>
+	</form>
+</section>
+<section class="doctor_Schedules_Section"id="doctor_Schedules_Section">
+	<table border="5">
+		<tr>
+			<th>Doctor Name</th>
+		<th>Specialization</th>
+		<th>Department</th>
+		<th>Available Days</th>
+		<th>Time</th>
+		</tr>
+		<tr>
+			<td>Dr. K. R. Suresh Bapu</td>
+			<td><b>Specialization:</b>Neurosurgery (Brain & Spine)</td>
+			<td><i>Department:</i>Institute of Neurosciences</td>
+			<td><strike>bkkekehfehff</strike>Available days: Monday – Saturday (OPD clinic days vary)</td>
+			<td><strong>Time:</strong>Morning OPD (usually 9:00 AM – 1:00 PM)</td>
+		</tr>
+		<tr>
+			<td>Dr. Prabash Prabhakaran</td>
+			<td><big>Specialization:</big>Neurology</td>
+			<td><small>Department:</small>Neurology</td>
+			<td><u>Available days:</u>Monday – Saturday</td>
+			<td><mark>Time:</mark>Morning OPD sessions</td>
+		</tr>
+		<tr>
+			<td>. Dr. R. Sunil Kapilavayi</td>
+			<td><pre>Specialization:</pre>Neurosurgery</td>
+			<td><tt>Department:</tt>Neuro Sciences</td>
+			<td><fn>Available days:</fn>Monday – Saturday</td>
+			<td><span>Time:</span>OPD morning hours</td>
+		</tr>
+		<tr>
+			<td>Dr. M. Ram Prabahar</td>
+			<td><h1>Specialization:</h1>Nephrology (Kidney diseases, dialysis)</td>
+			<td><h2>Department:</h2>Renal Sciences</td>
+			<td><h3>Available days:</h3>Monday – Saturday</td>
+			<td><h4>Time:</h4>Morning OPD (appointment-based)</td>
+		</tr>
+		<tr>
+			<td>Dr. S. Sathiyan</td>
+			<td>Specialization: Nephrology</td>
+			<td>Department: Kidney care unit</td>
+			<td>Available days: Monday – Saturday</td>
+			<td>Time: OPD hours (morning)</td>
+		</tr>
+		<tr>
+			<td>Dr. Selvin S</td>
+			<td>Specialization: Interventional Neurology</td>
+			<td>Department: Neurology</td>
+			<td>Available days: Weekdays (Mon–Fri typically)</td>
+			<td>Time: OPD + procedure-based visits</td>
+		</tr>
+	</table>
+</section>
+<section class="hospital_Services_Section"id="hospital_Services_Section">
+	<nav>
+		<a href="#emergency">Emergency services</a><br/>
+		<a href="#cardiology">Cardiology services</a><br/>
+		<a href="#orthopedics">Orthopedics services</a><br/>
+		<a href="#pediatrics">Pediatrics services</a><br/>
+		<a href="#laboratory"> Laboratory services</a>
+	</nav>
+	<div class="emergency"id="emergency">
+		<p>
+			SIMS Hospital (Vadapalani, Chennai) has a 24×7 Emergency & Trauma Care system designed to handle serious medical situations like accidents, heart attacks, strokes, and other life-threatening conditions.
+		</p>
+		<ul type="disc">
+			<li>Open all day, every day (including holidays)</li>
+			<li>Handles:Road accidents and trauma</li>
+			<li>Handles:Heart attacks and chest pain</li>
+			<li>Handles:Stroke and seizures</li>
+			<li>Handles:Breathing difficulty (asthma, COPD, etc.)</li>
+			<li>Handles:Poisoning and drug reactions</li>
+			<li>Handles:Severe infections and sudden collapse</li>
+			<li>24/7 availability</li>
+			<li>Advanced Life Support (ALS) ambulances</li>
+			<li>Trained paramedics and nurses</li>
+			<li>Neonatal and pediatric transfer facilities</li>
+			<li>Coordination with the hospital's emergency and trauma department</li>
+		</ul>
+	</div>
+	<div class="cardiology"id="cardiology">
+		<p>
+			The hospital's Institute of Cardiac Sciences provides comprehensive diagnosis, treatment, surgery, emergency care, and rehabilitation for heart and vascular diseases. While SIMS is best known for its Chennai center, the cardiac services described by the hospital include the following:
+		</p>
+		<ul type="circle">
+			<li>Heart health checkups and preventive cardiology</li>
+			<li>Electrocardiogram (ECG)</li>
+			<li>Echocardiography (2D Echo)</li>
+			<li>Treadmill Test (TMT)</li>
+			<li>dvanced cardiac imaging</li>
+			<li>Holter monitoring and rhythm evaluation</li>
+			<li>Hypertension and cholesterol management</li>
+			<li>Cardiac rehabilitation programs after heart attacks or surgery</li>
+			<li>Coronary angiography</li>
+			<li>Coronary angioplasty</li>
+			<li>Stent implantation</li>
+			<li>Primary angioplasty for heart attacks</li>
+			<li>Peripheral vascular interventions</li>
+			<li>Transcatheter valve procedures</li>
+			<li>Electrophysiology (EP) studies</li>
+			<li>Radiofrequency ablation for abnormal heart rhythms</li>
+			<li>Pacemaker implantation</li>
+			<li>Implantable Cardioverter Defibrillator (ICD) implantation</li>
+			<li>Advanced cardiac pacing treatments</li>
+			<li>Coronary Artery Bypass Grafting (CABG) / bypass surgery</li>
+			<li>Heart valve repair</li>
+			<li>Heart valve replacement</li>
+			<li>Aortic surgery</li>
+			<li>Minimally invasive cardiac surgery</li>
+			<li>Complex cardiothoracic procedures</li>
+			<li>Heart transplantation services (where indicated)</li>
+			<li>Coronary artery disease (blocked heart arteries)</li>
+			<li>Heart attack</li>
+			<li>Heart failure</li>
+			<li>Arrhythmias (irregular heartbeat)</li>
+			<li>Heart valve disorders</li>
+			<li>Congenital heart diseases</li>
+			<li>Aortic diseases</li>
+			<li>Peripheral vascular diseases</li>
+			<li>High blood pressure and cardiovascular risk factors</li>
+			<li>Cardiac Cath Lab</li>
+			<li>Electrophysiology (EP) Lab</li>
+			<li>Cardiac ICU</li>
+			<li>Echo Lab</li>
+			<li>Advanced cardiac imaging systems and monitoring technology</li>
+		</ul>
+	</div>
+	<div class="orthopedics"id="orthopedics">
+		<ul type="square">
+			<li>Bone fractures and trauma injuries</li>
+			<li>Joint pain and arthritis management</li>
+			<li>Knee, hip, shoulder, and elbow disorders</li>
+			<li>Sports injuries and ligament tears</li>
+			<li>Spine and back pain conditions</li>
+			<li>Pediatric orthopedic problems</li>
+			<li>Bone deformity correction</li>
+			<li>Osteoporosis and bone health management</li>
+			<li>Musculoskeletal infections and tumors</li>
+			<li>ehabilitation after injury or surgery</li>
+			<li>Total Knee Replacement (TKR)</li>
+			<li>Total Hip Replacement (THR)</li>
+			<li>Revision joint replacement surgeries</li>
+			<li>Arthroscopic (keyhole) surgeries for sports injuries</li>
+			<li>Fracture fixation and trauma surgery</li>
+			<li>Limb reconstruction and deformity correction</li>
+			<li>Joint preservation procedures</li>
+			<li>Minimally invasive orthopedic surgeries</li>
+			<li>Digital X-rays</li>
+			<li>CT and MRI imaging</li>
+			<li>Laboratory investigations</li>
+			<li>Physiotherapy and rehabilitation programs</li>
+			<li>Pain management services</li>
+			<li>Post-operative recovery and mobility training</li>
+			<li>Accurate diagnosis of bone and joint conditions</li>
+			<li>Personalized treatment plans</li>
+			<li>Faster recovery through minimally invasive techniques</li>
+			<li>Comprehensive rehabilitation support</li>
+			<li>Improved mobility and quality of life</li>
+		</ul>
+	</div>
+	<div class="pediatrics"id="pediatrics">
+		<ul>
+			<li>Routine health check-ups</li>
+			<li>Growth and developmental monitoring</li>
+			<li>Management of common childhood illnesses</li>
+			<li>Nutritional guidance and counseling</li>
+			<li>Adolescent healthcare support</li>
+			<li>Childhood vaccination programs</li>
+			<li>Preventive health screenings</li>
+			<li>Health education for parents</li>
+			<li>Early disease detection and intervention</li>
+			<li>Specialized care for newborns</li>
+			<li>Monitoring of high-risk and premature babies</li>
+			<li>Postnatal assessments</li>
+			<li>Newborn health management from birth onward</li>
+			<li>Care for premature and critically ill newborns</li>
+			<li>24/7 monitoring by neonatologists and trained nurses</li>
+			<li>24/7 monitoring by neonatologists and trained nurses
+<li>Respiratory support and emergency neonatal treatment</li>
+			<li>Advanced life-support facilities for newborns requiring intensive care</li>
+			<li>Management of acute illnesses and infections</li>
+			<li>Emergency pediatric treatment</li>
+			<li>Intensive monitoring for critically ill children</li>
+			<li>Access to specialized pediatric support services</li>
+			<li>Collaboration between pediatricians, neonatologists, pediatric surgeons, and subspecialists</li>
+			<li>Integrated care for complex childhood conditions</li>
+			<li>Child-focused treatment plans tailored to age and developmental needs</li>
+			<li>Child-friendly and family-centered care</li>
+			<li>Experienced pediatric and neonatal specialists</li>
+			<li>Advanced diagnostic and treatment facilities</li>
+			<li>Round-the-clock support for neonatal and pediatric emergencies</li>
+			<li>Focus on healthy growth, development, and long-term well-being of children</li>
+		</ul>
+	</div>
+	<div class="laboratory"id="laboratory">
+		<ol type="1">
+		<li>Complete Blood Count (CBC) and hemoglobin testing</li>
+		<li>Blood sugar and diabetes screening</li>
+		<li>Lipid profile (cholesterol testing)</li>
+		<li>Liver and kidney function tests</li>
+		<li>Thyroid function tests</li>
+		<li>Infection screening and microbiology tests</li>
+		<li>Immunology and serology testing</li>
+		<li>Histopathology and cytology services for disease diagnosis</li>
+		<li>Specialized diagnostic testing for cancer, cardiovascular, neurological, and infectious diseases.</li>
+		<li>CBC to check for anemia and infections</li>
+		<li>Blood glucose testing</li>
+		<li>Thyroid screening</li>
+		<li>Vitamin and nutritional deficiency tests</li>
+		<li>Allergy and immunology tests</li>
+		<li>Infection screening (viral, bacterial, and parasitic diseases)</li>
+		<li>Newborn and pediatric health monitoring tests</li>
+		<li>Specialized investigations recommended by pediatricians.</li>
+		<li>Pediatric consultations</li>
+		<li>Neonatal and newborn care</li>
+		<li>Pediatric intensive care support</li>
+		<li>Pediatric diagnostic laboratory services</li>
+		<li>Specialized care for childhood illnesses and developmental concerns.</li>
+		</ol>
+	</div>
+</section>
+<section class="informational_Videos_Section"id="informational_Videos_Section">
+	<nav>
+		<a href="#video_1">Health Tips video</a><br/>
+		<a href="#video_2">First Aid Guide video</a><br/>
+		<a href="#video_3">Healthy Diet video</a><br/>
+		<a href="#video_4">Hospital Introduction video</a>
+	</nav>
+	<div class="video_1"id="video_1">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/By54_urdTuw?si=FCqv0PClo97VrxRv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</div>
+	<div class="video_2"id="video_2">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/yJBYLbLDyYY?si=i6LL1sSuBhM2fAuw&amp;start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</div>
+	<div class="video_3"id="video_3">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/IshqeZD9VI4?si=um4XKIlUDTaZ0Z8K&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</div>
+	<div class="video_4"id="video_4">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/BJSluF0k8i4?si=vOzjv2KiK-AhElTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</div>
+</section>
+<section class="contact_Section"id="contact_Section">
+	<address>
+		Alipiri Road, Tirupati, Andhra Pradesh 517501, India
+	</address>
+	<p>
+		Main Exchange:0877-2287777
+	</p>
+	<p>
+		Emergency: 0877-2287999
+	</p>
+	Email<a href="https://mail.google.com/mail/u/0/#inbox"blank="_blank">Mail me</a>
+</section>
+<footer id="links">
+	<p>© 2026 R. Megha Shyam. All Rights Reserved.</p>
+  <p>This webpage was designed and developed by R. Megha Shyam.</p>
+  My Instagram link: <a href="https://www.instagram.com/"target="_blank">Instagram</a><br/>
+   My Facebook link: <a href="https://www.facebook.com/"target="_blank">Facebook</a><br/>
+   My Youtube link: <a href="https://www.youtube.com/"target="_blank">Youtube</a><br/>
+</footer>
+</body>
+</html>
