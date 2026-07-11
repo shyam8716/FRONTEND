@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase Website</title>
+    <style>
+    .header{
+      margin:5px;
+      border:5px solid yellowgreen;
+      padding:5px;
+      color:yellow;
+      background-color:whitesmoke;
+    }
+    .logo{
+      width:300px;
+      height:300px;
+    }
+    .navbar{
+      margin:5px;
+      border:5px solid crimson;
+      padding:5px;
+      color:deeppink;
+      background-color: brown;
+    }
+    .navbar a{
+      color:black;
+      background-color:white;
+    }
+    .banner-section{
+      margin:5px;
+      border:5px solid red;
+      padding:5px;
+      color:purple;
+      background-color:blue;
+    }
+    .banner-image{
+      width:300px;
+      height:300px;
+    }
+    .products{
+      column-count:2;
+      column-gap:5px;
+      border:5px solid firebrick;
+      background-color:black;
+    } 
+    .product-1{
+      margin:5px;
+      border:5px solid green;
+      padding:5px;
+      color:aqua;
+      background-color:deeppink;
+    }
+    .product-image-1{
+      width:300px;
+      height:300px;
+    }
+    .product-2{
+      margin:5px;
+      border:5px solid darkslateblue;
+      padding:5px;
+      color:lightseagreen;
+      background-color:rgb(156, 49, 10);
+    }
+    .product-image-2{
+      width:300px;
+      height:300px;
+    }
+    .product-3{
+      margin:5px;
+      border:5px solid aqua;
+      padding:5px;
+      color:blueviolet;
+      background-color: chocolate;
+    }
+    .product-image-3{
+      width:300px;
+      height:300px;
+    }
+    .product-4{
+      margin:5px;
+      border:5px solid darkblue;
+      padding:5px;
+      color:darkred;
+      background-color:dodgerblue;
+    }
+    .product-image-4{
+      width:300px;
+      height:300px;
+    }
+    .category{
+      margin:5px;
+      border:5px solid khaki;
+      padding:5px;
+      color:darksalmon;
+      background-color: gray;
+      text-align: center;
+      text-decoration:wavy;
+      text-transform:capitalize;
+    }
+    .customer-review{
+      margin:5px;
+      border:5px solid forestgreen;
+      padding:5px;
+      color:chartreuse;
+      background-color: darkgoldenrod;
+    }
+    .contact-information{
+      margin:5px;
+      border:5px solid indianred;
+      padding:5px;
+      color:maroon;
+      background-color:deepskyblue;
+    }
+    .end-of-the-website{
+      margin:5px;
+      border:5px solid darkslategray;
+      padding:5px;
+      color:magenta;
+      background-color:darkred;
+    }
+    .end-of-the-website a{
+      color:darkorange;
+      background-color:navy;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="header" id="home">
+      <h1>Meshow</h1>
+      <q>Discover Products That Make a Difference</q><br />
+      <img
+        src="data:image/jpeg;base64,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"
+        alt="Meesho Logo" class="logo">
+    </div>
+    <div class="navbar">
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#categories">Categories</a>
+        <a href="#offer">Offer</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="banner-section" id="offer">
+      <img
+        src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRez_gyO70sWX9J_HpdaKtQ45DuZEVL4g9ZhPYsKIQ3SHPu7yuesyZEln2YyQnjHJTF3zCSrZI6sxMmn8kK5Rtp7CXysNIq9P5UI5xae7yYkou990YTSyOy"
+        alt="banner image" class="banner-image">
+      <h2>Flat 50% Off + Free Shipping</h2>
+      <p>
+        Discover amazing deals on fashion, home essentials, beauty, and more.
+        Shop now and save big
+      </p>
+      <p>
+        Upgrade your wardrobe with the latest styles at unbeatable prices.
+        Limited-time offers available now
+      </p>
+      <p>
+        Celebrate with huge discounts across every category. Enjoy great savings
+        and exciting offers today
+      </p>
+      <p>
+        Find quality products at budget-friendly prices. Shop your favorites
+        before the deals end
+      </p>
+    </div>
+    <div class="products" id="products">
+      <div class="product-1">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThUS3xov4GcBUSaraf2Rerf5p8OSjWva76w7fuqWQxUw&s=10"
+          alt="Women's Floral Kurti" class="product-image-1">
+        <h3>Name:Women's Floral Printed Kurti</h3>
+        <h4>Price:₹499</h4>
+        <p>
+          Comfortable rayon fabric with elegant floral print. Perfect for casual
+          outings and office wear.
+        </p>
+        <button Type="button">Buy Now</button>
+      </div>
+      <div class="product-2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWG-K3yZ2CvYQbVrCoDsc0lLog_4PA24u_SNG1XfZRug&s=10"
+          alt="Bluetooth Earbuds" class="product-image-2">
+        <h6>Name:Bluetooth Earbuds</h6>
+        <b>Price:₹899</b>
+        <p>
+          Crystal-clear sound, touch controls, and up to 24 hours of battery
+          life with charging case.
+        </p>
+        <button type="button">Buy Now</button>
+      </div>
+      <div class="product-3">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQANE9jUya276AkQ6k2EY3-7D4x3J_ZyJnsO-fEMKWDXA&s=10"
+          alt="Stainless Steel Water Bottle" class="product-image-3"><br />
+        <i>Name:Stainless Steel Water Bottle</i><br />
+        <strong>Price:₹299</strong><br />
+        <p>
+          Leak-proof, rust-resistant insulated bottle that keeps drinks hot or
+          cold for hours.
+        </p>
+        <button type="button">Buy Now</button>
+      </div>
+      <div class="product-4">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Not_NmAbSp7YStm1FnDKkCz4BJAvuv0WPyX9qeuwOA&s=10"
+          alt="Men's Running Shoes" class="product-image-4"><br />
+        <big>Name:Men's Running Shoes</big><br />
+        <small>Price:₹1,199</small><br />
+        <p>
+          Breathable mesh upper with cushioned sole, ideal for running, walking,
+          and daily use.
+        </p>
+        <p>
+          Stay comfortable and active with these lightweight men's running
+          shoes. Designed with a breathable mesh upper for enhanced airflow and
+          a soft cushioned insole for all-day comfort. The durable anti-slip
+          outsole provides excellent grip and stability, making them ideal for
+          running, walking, gym workouts, sports, and everyday
+        </p>
+        <button type="button">Buy Now</button>
+      </div>
+    </div>
+    <div class="category" id="categories">
+      <table border="5" align="center">
+        <tr>
+          <th>Category Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Electronics</td>
+          <td>Smartphones, laptops, headphones, cameras, accessories</td>
+        </tr>
+        <tr>
+          <td>Fashion</td>
+          <td>Men's, women's, and kids' clothing, footwear, accessories</td>
+        </tr>
+        <tr>
+          <td>Home Appliances</td>
+          <td>Refrigerators, washing machines, microwaves, air conditioners</td>
+        </tr>
+        <tr>
+          <td>Books</td>
+          <td>Fiction, non-fiction, educational, children's books</td>
+        </tr>
+        <tr>
+          <td>Sports</td>
+          <td>Fitness equipment, sportswear, outdoor gear, accessories</td>
+        </tr>
+        <tr>
+          <td>Toys</td>
+          <td>Educational toys, action figures, dolls, puzzles, board games</td>
+        </tr>
+        <tr>
+          <td>Beauty & Personal Care</td>
+          <td>Skincare, makeup, hair care, grooming products</td>
+        </tr>
+        <tr>
+          <td>Grocery</td>
+          <td>Food items, beverages, snacks, household essentials</td>
+        </tr>
+        <tr>
+          <td>Furniture</td>
+          <td>Sofas, beds, tables, chairs, storage solutions</td>
+        </tr>
+        <tr>
+          <td>Home & Kitchen</td>
+          <td>Cookware, utensils, décor, bedding, lighting</td>
+        </tr>
+        <tr>
+          <td>Health & Wellness</td>
+          <td>Vitamins, medical supplies, health devices</td>
+        </tr>
+        <tr>
+          <td>Footwear</td>
+          <td>Sneakers, sandals, formal shoes, boots</td>
+        </tr>
+        <tr>
+          <td>Watches</td>
+          <td>Smartwatches, analog, digital, luxury watches</td>
+        </tr>
+        <tr>
+          <td>Jewelry</td>
+          <td>Rings, necklaces, earrings, bracelets</td>
+        </tr>
+        <tr>
+          <td>Bags & Luggage</td>
+          <td>Backpacks, handbags, wallets, travel bags</td>
+        </tr>
+        <tr>
+          <td>Baby Products</td>
+          <td>Baby clothing, diapers, toys, feeding essentials</td>
+        </tr>
+        <tr>
+          <td>Automotive</td>
+          <td>Car accessories, bike accessories, maintenance products</td>
+        </tr>
+        <tr>
+          <td>Pet Supplies</td>
+          <td>Pet food, toys, grooming products, accessories</td>
+        </tr>
+        <tr>
+          <td>Office Supplies</td>
+          <td>Stationery, printers, office furniture</td>
+        </tr>
+        <tr>
+          <td>Gaming</td>
+          <td>Gaming consoles, accessories, video games</td>
+        </tr>
+      </table>
+    </div>
+    <table class="customer-review" border="10">
+      <tr>
+        <th>Customer Name</th>
+        <th>Rating</th>
+        <th>Review</th>
+      </tr>
+      <tr>
+        <td>Rahul Sharma</td>
+        <td>(5/5)</td>
+        <td>Excellent quality! The product arrived on time and works perfectly.
+          Highly recommended.</td>
+      </tr>
+      <tr>
+        <td>Priya Patel</td>
+        <td>(4/5)</td>
+        <td>Very good value for money. The quality is great, and the delivery
+          was fast.</td>
+      </tr>
+      <tr>
+        <td>Amit Kumar</td>
+        <td>(5/5)</td>
+        <td>Amazing product! Exactly as described. I'm very satisfied with my
+          purchase.</td>
+      </tr>
+      <tr>
+        <td>Sneha Reddy</td>
+        <td>(4/5)</td>
+        <td>Comfortable and stylish. Packaging was good, and the product met my
+          expectations.</td>
+      </tr>
+      <tr>
+        <td>Arjun Verma</td>
+        <td>(5/5)</td>
+        <td>Superb quality and excellent customer service. Will definitely buy
+          again.</td>
+      </tr>
+      <tr>
+        <td>Neha Singh</td>
+        <td>(4/5)</td>
+        <td>Nice product with good build quality. Worth the price.</td>
+      </tr>
+      <tr>
+        <td>Vikram Joshi</td>
+        <td>(5/5)</td>
+        <td>I'm impressed with the performance and durability. Great
+          purchase!</td>
+      </tr>
+      <tr>
+        <td>Ananya Gupta</td>
+        <td>(5/5)</td>
+        <td>Beautiful design and premium quality. Highly recommend this product
+          to others</td>
+      </tr>
+    </table>
+    <div class="contact-information" id="contact">
+      <address>
+        3rd Floor, Tower E, Helios Business Park, Kadubeesanahalli, Bengaluru,
+        Karnataka 560103
+      </address>
+      <u>Phone Number:</u>+91 91080 21923<br />
+      <mark>Email:</mark>cs@meesho.com<br />
+      <span style="color: darkslateblue;">Business Hours:</span>Monday – Friday,
+      9:00 AM – 6:00 PM (corporate office)<br />
+    </div>
+    <footer class="end-of-the-website">
+      <h3>Copyright</h3>
+      <p>
+        © 2026 R. Megha Shyam. All Rights Reserved.
+      </p>
+      <p>
+        This website was designed and developed solely by <strong>R. Megha
+          Shyam</strong>
+        for educational and portfolio purposes. Unauthorized copying,
+        modification, or redistribution of the website design or source code
+        without permission is prohibited.
+      </p>
+      <hr>
+      <h3>Privacy Policy</h3>
+      <p>
+        This website is created for demonstration and educational purposes.
+        We do not collect, store, or share any personal information from
+        visitors.
+        No user accounts, payment information, or tracking data are maintained.
+        Any product images or descriptions used are for display purposes only.
+      </p>
+      <hr>
+      <h3>Terms & Conditions</h3>
+      <p>
+        By accessing this website, you agree to use it for lawful purposes only.
+        The content provided on this website is for demonstration purposes and
+        should not be considered an official e-commerce platform.
+        The developer, <strong>R. Megha Shyam</strong>, is not responsible for
+        any misuse of the website or its content.
+        All rights to the website design and source code belong to the
+        developer.
+      </p>
+      <hr>
+      <p><strong>Developed By:</strong> R. Megha Shyam</p>
+      Instagram Link:<a href="https://www.instagram.com/meeshoapp/?hl=en"
+        target="_blank">Instagram</a><br />
+      Facebook Link:<a href="https://www.facebook.com/meeshosupply"
+        target="_blank">Facebook</a><br />
+      Youtube Link:<a href="https://www.youtube.com/@Meesho"
+        target="_blank">Youtube</a>
+    </footer>
+  </body>
+</html>
