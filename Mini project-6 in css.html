@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Product Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    .header{
+      margin:5px;
+      border:5px solid maroon;
+      padding:5px;
+      color:linen;
+      background-color:limegreen;
+    }
+    .header i{
+      color:orange;
+    }
+    .header button{
+      background-color:gray;
+    }
+    .logo{
+      width:50%;
+      height:25%;
+    }
+    .navbar{
+      margin:5px;
+      border:5px solid lime;
+      padding:5px;
+      color:lightyellow;
+      background-color:lightsteelblue;
+      position:sticky;
+      top:0;
+      display:block;
+    }
+    .navbar a{
+      color:lightslategrey;
+      background-color:rgb(33, 95, 156);
+    }
+    .navbar i{
+      color:lightskyblue;
+      background-color:lightseagreen;
+    }
+    .category{
+      color:gray;
+      background-color:red;
+    }
+    .products{
+      column-count:2;
+      column-gap:5px;
+      margin:5px;
+      border:5px solid lightsalmon;
+      padding:5px;
+      color:lightpink;
+      background-color:lightgrey;
+    }
+    .main-product-image{
+      border:5px solid black;
+    }
+    .product-image-1{
+      width:50vw;
+      height:50vh;
+    }
+    .tumbnail-image-1{
+      border:5px solid blue;
+    }
+    .product-image-2{
+      width:50vh;
+      height:50vh;
+    }
+    .product-details{
+      margin:5px;
+      border:5px solid lightgoldenrodyellow;
+      color:lightcyan;
+      background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBkOWYyuFQLEclfzXak-If3s6DCX-FPcILBKJn2ddorA&s=10);
+    }
+    .purchase-option{
+      margin:5px;
+      border:5px solid lightcoral;
+      color:lightblue;
+      background-color:lemonchiffon;
+      visibility:hidden;
+    }
+    .product-specifications{
+      margin:5px;
+      border:5px solid khaki;
+      padding:5px;
+      color:rgb(136, 136, 21);
+      background-color:initial;
+    }
+    .reviews{
+      margin:5px;
+      border:5px solid inherit;
+      padding:5px;
+      color:indigo;
+      background-color:indianred;
+    }
+    .related-products{
+      margin:5px;
+      padding:5px;
+      border:5px solid hotpink;
+      column-count:2;
+    }
+    .product-1{
+      border:5px solid honeydew;
+      color:grey;
+      background-color:gold;
+    }
+    .first-image{
+      height:300px;
+      width:300px;
+    }
+    .product-2{
+      border:5px solid black;
+      color:red;
+      background-color:purple;
+    }
+    .second-image{
+      height:300px;
+      width:300px;
+    }
+    .product-3{
+      border:5px solid greenyellow;
+      color:green;
+      background-color:gray;
+    }
+    .third-image{
+      width:300px;
+      height:300px;
+    }
+    .product-4{
+      border:5px solid goldenrod;
+      color:teal;
+      background-color:green;
+    }
+    .fourth-image{
+      width:300px;
+      height:300px;
+    }
+    #contact a{
+      position:sticky;
+    }
+    #contact i{
+      position:sticky;
+      top:0;
+    }
+    #contact{
+      margin:5px;
+      border:5px solid grey;
+      color:gold;
+      background-color:ghostwhite;
+    }
+  </style>
+</head>
+<body>
+  <div class="header"id="home">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCPjeZ-FjJ-FHOMlVO9c1ZtEPo8ypuNnRN1uCMugVyyA&s=10" alt="wikipedia" class="logo">
+    <h1>Amazon</h1>
+    <q>Spend less. Smile more.</q>
+    <input type="text"placeholder="Search"size="50">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    <i class="fa-solid fa-list-dropdown"><button>
+      <select name="categories">
+      <option value="All">All</option>
+      <option value="Accessories">Accessories</option>
+      <option value="Appliances">Appliances</option>
+      <option value="Automotive">Automotive</option>
+      <option value="Baby Products">Baby Products</option>
+      <option value="Bags & Luggage">Bags & Luggage</option>
+      <option value="Beauty Products">Beauty Products</option>
+      <option value="Books">Books</option>
+      <option value="Cameras & Photography">Cameras & Photography</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Computers">Computers</option>
+      <option value="Cosmetics">Cosmetics</option>
+      <option value="Craft Supplies">Craft Supplies</option>
+      <option value="Decor">Decor</option>
+      <option value="Digital Products">Digital Products</option>
+      <option value="Drinks">Drinks</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Eyewear">Eyewear</option>
+      <option value="Fashion">Fashion</option>
+      <option value="Fitness Equipment">Fitness Equipment</option>
+      <option value="Food & Grocery">Food & Grocery</option>
+      <option value="Furniture">Furniture</option>
+      <option value="Garden & Outdoor">Garden & Outdoor</option>
+      <option value="Gifts">Gifts</option>
+      <option value="Health & Personal Care">Health & Personal Care</option>
+      <option value="Home Appliances">Home Appliances</option>
+      <option value="Home & Kitchen">Home & Kitchen</option>
+      <option value="Jewelry">Jewelry</option>
+      <option value="Kids & Toys">Kids & Toys</option>
+      <option value="Kitchen Accessories">Kitchen Accessories</option>
+      <option value="Laptop & Computers">Laptop & Computers</option>
+      <option value="Lighting">Lighting</option>
+      <option value="Makeup">Makeup</option>
+      <option value="Mobile Accessories">Mobile Accessories</option>
+      <option value="Mobiles & Tablets">Mobiles & Tablets</option>
+      <option value="Musical Instruments">Musical Instruments</option>
+      <option value="Office Supplies">Office Supplies</option>
+      <option value="Outdoor Equipment">Outdoor Equipment</option>
+      <option value="Pet Supplies">Pet Supplies</option>
+      <option value="Pharmacy">Pharmacy</option>
+      <option value="Product Accessories">Product Accessories</option>
+      <option value="Shoes">Shoes</option>
+      <option value="Smartphones">Smartphones</option>
+      <option value="Software">Software</option>
+      <option value="Sports & Fitness">Sports & Fitness</option>
+      <option value="Stationery">Stationery</option>
+      <option value="Tools & Hardware">Tools & Hardware</option>
+      <option value="Toys">Toys</option>
+      <option value="Travel Accessories">Travel Accessories</option>
+      <option value="Vehicles & Parts">Vehicles & Parts</option>
+      <option value="Watches"></option>
+      <option value="Wearables">Wearables</option>
+    </button></i>
+    </select>
+    <button type="submit">Filter</button>
+  </div>
+  <div class="navbar">
+    <i class="fa-solid fa-house"><a href="#home">Home</a></i>
+    <i class="fa-solid fa-box"><a href="#products">Products</a></i>
+    <i class="fa-solid fa-layer-group"><a href="#category">Category</a></i>
+    <i class="fa-sharp-duotone fa-light fa-star-sharp"><a href="#reviews">Reviews</a></i>
+    <i class="fa-solid fa-cart-arrow-down"><a href="#related-products">Related Products</a></i>
+    <i class="fa-solid fa-phone"><a href="#contact">Contact</a></i>
+  </div>
+  <div class="products"id="category">
+    <div class="main-product-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHlKhHX472XRe48_X-6tbVh6Te7bd16F1YQ29D7-Ro6Q&s=10" alt="Wireless Bluetooth Earbuds" class="product-image-1">
+    </div>
+    <div class="tumbnail-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkzU_a09tK3suRN9aAE1JhGkR5fdya1UoYxS_U3if0fw&s" alt="Premium Leather Walle" class="product-image-2">
+    </div>
+  </div>
+  <div class="product-details"id="products">
+    <table border="5">
+      <tr>
+        <th>Product Name</th>
+        <th>Product Brand</th>
+        <th>Product Price</th>
+        <th>Discount</th>
+        <th>Rating</th>
+        <th>Stock Availability</th>
+        <th>Product Description</th>
+      </tr>
+      <tr>
+        <td>Wireless Bluetooth Earbuds</td>
+        <td>boAt</td>
+        <td>₹1,499</td>
+        <td>30% OFF</td>
+        <td>4.5/5</td>
+        <td>In Stock</td>
+        <td><p>
+          High-quality wireless earbuds with deep bass, noise reduction, and long battery life.
+        </p></td>
+      </tr>
+      <tr>
+        <td>Premium Leather Wallet</td>
+        <td>WildHorn</td>
+        <td>₹899</td>
+        <td>20% OFF</td>
+        <td>4.3/5</td>
+        <td>In Stock</td>
+        <td><p>
+          Stylish leather wallet with multiple card slots and a slim design for everyday use.
+        </p></td>
+      </tr>
+      <tr>
+        <td>Smart Fitness Watch</td>
+        <td>Noise</td>
+        <td>₹2,999</td>
+        <td>25% OFF</td>
+        <td>4.6/5</td>
+        <td>In Stock</td>
+        <td><p>
+          Smartwatch with health tracking, heart rate monitoring, and sports modes.
+        </p></td>
+      </tr>
+      <tr>
+        <td>Fast Charging Adapter</td>
+        <td>Portronics</td>
+        <td>₹799</td>
+        <td>15% OFF</td>
+        <td>4.4/5</td>
+        <td>Limited Stock</td>
+        <td>Compact fast charger with advanced safety protection and USB compatibility.</td>
+      </tr>
+      <tr>
+        <td>Laptop Backpack</td>
+        <td>American Tourister</td>
+        <td>₹1,799</td>
+        <td>35% OFF</td>
+        <td>4.7/5</td>
+        <td>In Stock</td>
+        <td><p>
+          Durable backpack with laptop compartment, water resistance, and comfortable straps.
+        </p></td>
+      </tr>
+      <tr>
+        <td>Wireless Mouse</td>
+        <td>Logitech</td>
+        <td>₹999</td>
+        <td>10% OFF</td>
+        <td>4.5/5</td>
+        <td>In Stock</td>
+        <td><p>
+          Ergonomic wireless mouse with smooth tracking and long battery performance.
+        </p></td>
+      </tr>
+      <tr>
+        <td>Phone Cover Case</td>
+        <td>Spigen</td>
+        <td>₹699</td>
+        <td>40% OFF</td>
+        <td>4.2/5</td>
+        <td>Out of Stock</td>
+        <td><p>
+          Protective phone case with shock absorption and stylish premium design.
+        </p></td>
+      </tr>
+      <tr>
+        <td>unglasses</td>
+        <td>Fastrack</td>
+        <td>₹1,299</td>
+        <td>20% OFF</td>
+        <td>4.4/5</td>
+        <td>In Stock</td>
+        <td><p>
+          Trendy sunglasses with UV protection and lightweight frames.
+        </p></td>
+      </tr>
+    </table>
+  </div>
+  <div class="purchase-option">
+    [-]1[+]<br/>
+    color: black blue brown<br/>
+    size: [S] [M] [L] [XL]<br/>
+    <button type="submit">Buy Now</button><br/>
+    <button type="submit">Add to Wishlist</button>
+  </div>
+  <div class="product-specifications">
+    <h2>Material: Premium Genuine Leather</h2>
+    <h3>Weight: 150 grams</h3>
+    <h4>Weight: 150 grams</h4>
+    <h5>Dimensions: 12 cm × 9 cm × 2 cm</h5>
+    <h6>Warranty: 1 Year Manufacturer Warranty</h6>
+    <b>Manufacturer: WildHorn Industries</b><br/>
+    <i>Country of Origin: India</i>
+  </div>
+  <div class="reviews"id="reviews">
+    <strike>Name:</strike>Customer Name: Rahul Sharma<br/>
+    <strong>Star Rating:(5/5)</strong><br/>
+    <big><p>Review:Excellent product quality and fast delivery. The product looks premium and works perfectly.</p></big><br/>
+    <small>Review Date: 18 July 2026</small>
+    <hr>
+    <span style="color:red">Customer Name:</span>Priya Patel<br/>
+    <tt>Star Rating:(4/5)</tt><br/>
+    <pre><p>Review: Good product with great value for money. Packaging was also very good.</p></pre><br/>
+    <p>Review Date: 15 July 2026</p>
+    <hr>
+    Customer Name: Arjun Kumar<br/>
+    Star Rating:(5/5)<br/>
+    <p>Review: Very satisfied with the purchase. Highly recommended for daily use.</p><br/>
+    Review Date: 10 July 2026
+  </div>
+  <div class="related-products"id="related-products">
+    <div class="product-1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPdPZm_DVQzu3XvvF30Yt7eJOxCMgEYtfGBKIjNChasg&s=10" alt="Wireless Bluetooth Earbuds" class="first-image">
+      <p>
+        Product Name: Wireless Bluetooth Earbuds
+      </p>
+      <p>
+        Price: ₹1,499
+      </p>
+      <button type="submit">View Details</button>
+    </div>
+    <div class="product-2">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBu-OY1z4pPtCpSyN-A7jc-jbcT1QJeDuc1V-QFca8AQ&s=10" alt="Premium Leather Wallet" class="second-image">
+      <p>
+        Product Name: Premium Leather Wallet
+      </p>
+      <p>
+        Price: ₹899
+      </p>
+      <button type="submit">View Details</button>
+    </div>
+    <div class="product-3">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWt4EYy_3UhF-vSTLGnfOUmLT43SkR6dBhQpW-gmukTQ&s=10" alt="Smart Fitness Watch" class="third-image">
+      <p>
+        Product Name: Smart Fitness Watch
+      </p>
+      <p>
+        Price: ₹2,999
+      </p>
+      <button type="submit">View Details</button>
+    </div>
+    <div class="product-4">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3me-uFePbKeeEeBw_8NXpqQDAIqJTyOwXpCyyGWJrsQ&s=10" alt="Laptop Backpack" class="fourth-image">
+      <p>
+        Product Name: Laptop Backpack
+      </p>
+      <p>
+        Price: ₹1,799
+      </p>
+      <button type="submit">View Details</button>
+    </div>
+  </div>
+  <footer id="contact">
+    Facebook Link:<i class="fa-brands fa-facebook"><a href="https://www.facebook.com/Amazon">Facebook</a></i><br/>
+    Instagram Link:<i class="fa-brands fa-square-instagram"><a href="https://www.instagram.com/amazon/">Instagram</a></i><br/>
+    Yotube Link:<i class="fa-brands fa-youtube"><a href="https://www.youtube.com/@sellersofamazon">Youtube</a></i><br/>
+    Linkedin Link:<i class="fa-brands fa-linkedin"><a href="https://www.linkedin.com/company/amazon/posts/?feedView=all">Linkedin</a></i><br/>
+    <hr>
+    <p>
+      Amazon is one of the world's largest e-commerce companies, offering a wide range of products including electronics, fashion, home essentials, books, groceries, and digital services. Founded in 1994 by Jeff Bezos, Amazon started as an online bookstore and expanded into a global marketplace serving millions of customers worldwide.
+    </p>
+    <p>
+      Amazon focuses on providing a convenient shopping experience with features like fast delivery, customer reviews, secure payments, and a wide selection of products. The company also provides services such as cloud computing, digital streaming, and artificial intelligence solutions.
+    </p>
+    <p>
+      With a commitment to innovation, customer satisfaction, and technology-driven solutions, Amazon continues to be a leading platform in the global e-commerce industry.
+    </p>
+    <hr>
+    <p>
+      Amazon provides customer support services to help users with orders, payments, returns, refunds, account issues, and product-related queries. Customers can get assistance through online chat, phone support, and the Amazon Help Center.
+    </p>
+    <h5>Support Features:</h5>
+    <ul>
+      <li>Order Tracking</li>
+      <li>Returns & Refunds Assistance</li>
+      <li>Payment Support</li>
+      <li>Account Help</li>
+      <li>Product Support</li>
+      <li>Delivery Issues Resolution</li>
+    </ul>
+     <h3>Copyright Notice</h3>
+  <p>
+    © 2026 Megha Shyam. All Rights Reserved.
+  </p>
+  <p>
+    This website was designed and developed by Megha S Hyam using HTML and CSS.
+    All original content, design elements, and code created for this website are
+    protected by copyright law. Unauthorized copying, reproduction, distribution,
+    or modification of this website's content and design is prohibited without
+    written permission.
+  </p>
+  <hr>
+  <h3>Privacy Policy</h3>
+  <p>
+    This website is created as an educational e-commerce website project.
+    We respect user privacy and do not collect, store, or share personal
+    information from visitors.
+  </p>
+  <p>
+    Any information entered on this website is used only for demonstration
+    purposes. This website does not process real payments or store customer
+    account information.
+  </p>
+  <hr>
+  <h3>Terms and Conditions</h3>
+  <p>
+    By using this website, you agree to the following terms and conditions:
+  </p>
+  <ul>
+    <li>This website is developed for learning and demonstration purposes.</li>
+    <li>Product names, images, prices, and descriptions are sample content.</li>
+    <li>Users are not allowed to copy or redistribute the website source code or design without permission.</li>
+    <li>External images, icons, and trademarks belong to their respective owners.</li>
+    <li>The developer is not responsible for any issues caused by misuse of this website.</li>
+  </ul>
+  <hr>
+  <h3>Developer Information</h3>
+  <p>
+    Website Designed and Developed By:<br>
+    <strong> R.Megha Shyam</strong>
+  </p>
+  <p>
+    Technologies Used:
+    <strong>HTML5 and CSS3</strong>
+  </p>
+  </footer>
+</body>
+</html>  
