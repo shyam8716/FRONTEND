@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online News Portal</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+  <style>
+    .header{
+      margin:5px;
+      border:5px solid rgb(114, 45, 45);
+      color:fuchsia;
+      background-color:forestgreen;
+    }
+    .logo{
+      width:300px;
+      height:300px;
+    }
+    .navbar{
+      margin:5px;
+      border:5px solid rgb(192, 154, 78);
+      padding:5px;
+      color:firebrick;
+      background-color:dodgerblue;
+      position:sticky;
+      top:0;
+    }
+    .navbar a{
+      color:black;
+      background-color:white;
+    }
+    .navbar i{
+      color:orange;
+      background-color:purple;
+    }
+    .breaking-news-banner{
+      margin:5px;
+      border:5px solid dimgrey;
+      padding:5px;
+      color:dimgray;
+      background-color:deepskyblue;
+    }
+    .breaking-news-banner button{
+      color:pink;
+      background-color:yellow;
+    }
+    .main-heading-news{
+      margin:5px;
+      border:5px solid deeppink;
+      padding:5px;
+      color:darkviolet;
+      background-color:darkturquoise;
+    }
+    .top-news{
+      width:50%;
+      height:25%;
+    }
+    .latest-news{
+      margin:5px;
+      border:5px solid darkslategrey;
+      padding:5px;
+      color:darkslategray;
+      background-color:rgb(150, 136, 241);
+    }
+    .latest-news button{
+      color:tomato;
+      background-color:teal;
+    }
+    .sports{
+      margin:5px;
+      border:5px solid darkslateblue;
+      padding:5px;
+      color:rgb(76, 148, 76);
+      background-color:darksalmon;
+    }
+    .image-1{
+      width:25vw;
+      height:10vh;
+      display:inline-block
+    }
+    .image-2{
+      width:25vw;
+      height:10vh;
+      display:inline-block
+    }
+    .technology{
+      margin:5px;
+      border:5px solid darkred;
+      padding:5px;
+      color:darkorchid;
+      background-color:darkorange;
+    }
+    .smartphone-image-1{
+      width:300px;
+      height:300px;
+      display:inline-block;
+    }
+    .laptop-2{
+      width:300px;
+      height:300px;
+      display:inline-block;
+    }
+    .ai-3{
+      width:30rem;
+      height:15em;
+      display:inline-block
+    }
+    .gen-ai-4{
+      width:50rem;
+      height:25em;
+      display:inline-block;
+    }
+    .photo-gallery{
+      visibility:hidden;
+    }
+    .ai-robot-asistance{
+      width:300px;
+      height:300px;
+      display:inline-block;
+    }
+    .latest-flagship-smartphone-launch{
+      width:50%;
+      height:25%;
+      display:inline-block;
+    }
+    .next-generation-laptop{
+      width:50em;
+      height:25rem;
+      display:inline-block;
+    }
+    .cybersecurity-operations-center{
+      width:300px;
+      height:300px;
+      display:inline-block;
+    }
+    .cloud-data-center{
+      width:50vw;
+      height:25vh;
+    }
+    .ai-robot{
+      width:80px;
+      height:80px;
+    }
+    .smartphone{
+      width:80px;
+      height:80px;
+    }
+    .laptop{
+      width:80px;
+      height:80px;
+    }
+    .cybersecurity{
+      width:80px;
+      height:80px;
+    }
+    .electric-car{
+       width:80px;
+      height:80px;
+    }
+    .space-tech{
+      width:80px;
+      height:80px;
+    }
+    .cloud-server{
+       width:80px;
+      height:80px;
+    }
+    .smart-home{
+       width:80px;
+      height:80px;
+    }
+    .end-of-the-page{
+      margin:5px;
+      border:5px solid darkolivegreen;
+      color:darkmagenta;
+      background-color:darkkhaki;
+    }
+    .end-of-the-page i{
+      position:sticky;
+      top:0;
+      color:red;
+      background-color:white;;
+    }
+    .end-of-the-page a{
+      color:black;
+      background-color:beige;
+    }
+  </style>
+</head>
+<body>
+  <div class="header"id="home">
+    <img src="data:image/jpeg;base64,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" alt="newsSphere" class="logo">
+    <h1>NewsSphere</h1>
+    <p>19-07-2026 sunday</p>
+    <label>Breaking News</label>
+  </div>
+  <div class="navbar">
+    <i class="fa-regular fa-house"><a href="#home">Home</a></i>
+    <i class="fa-light fa-newspaper"><a href="#latest-news">Latest News</a></i>
+    <a href="#india">Local</a>
+    <i class="fa-duotone fa-solid fa-earth-africa"><a href="#world">International</a></i>
+    <i class="fa-thin fa-business-time"><a href="#business">Business</a></i>
+    <i class="fa-sharp-duotone fa-solid fa-sportsball"><a href="#sports">Sports</a></i>
+    <i class="fa-solid fa-brain-circuit"><a href="#technology">Technology</a></i>
+    <i class="fa-sharp fa-regular fa-clapperboard-play"><a href="#entertainment">Entertainment</a></i>
+    <i class="fa-sharp fa-thin fa-book-medical"><a href="#health">Health</a></i>
+    <i class="fa-sharp-duotone fa-solid fa-phone"><a href="#contact">Contact</a></i>
+  </div>
+  <div class="breaking-news-banner">
+    <ol type="1">
+      <li>Global Markets Rally as Inflation Shows Signs of Cooling</li>
+      <p>Investors responded positively after new economic data suggested inflation is easing across major economies.</p>
+      <li>AI Innovation Accelerates with New Enterprise Technology Launches</li>
+      <p>Leading technology companies unveiled new AI-powered tools aimed at improving productivity and automation.</p>
+      <li>Severe Weather Disrupts Travel Across Multiple Regions</li>
+      <p>Heavy storms caused flight delays, road closures, and power outages as emergency crews responded to affected areas.</p>
+    </ol>
+    <button type="submit"><a href="NewsSphere – News Intelligence"target="_blank">Read More</a></button>
+  </div>
+  <div class="main-heading-news">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZsVpu9VMqw-A7MGpumHrUW4gSHTO-8eVq7FCVCGcBqw&s=10" alt="ai" class="top-news">
+    <h2>Global AI Innovation Surges as Businesses Accelerate Digital Transformation</h2>
+    <h3>Reporter: Sarah Johnson</h3>
+    <h4>Date: July 19, 2026</h4>
+    <p>
+      Artificial intelligence continues to reshape industries worldwide as organizations invest heavily in automation, generative AI, and intelligent business solutions. Experts believe the next wave of innovation will focus on improving productivity, customer experiences, and responsible AI adoption across healthcare, finance, education, and manufacturing.
+    </p>
+    <button type="submit">Read full article</button>
+  </div>
+  <div class="latest-news"id="latest-news">
+    <ol type="i">
+      <li>Global Leaders Meet to Strengthen Climate Commitments</li>
+      <p>
+        World leaders discussed new strategies to reduce emissions and accelerate clean energy adoption.
+      </p>
+      <li>Technology Companies Expand AI Investments Worldwide</li>
+      <p>
+       Major firms continue investing in artificial intelligence to improve business operations and innovation. 
+      </p>
+      <li>International Markets Show Positive Growth Trends</li>
+      <p>
+        Global stock markets gained momentum following encouraging economic data from key regions.
+      </p>
+      <li>Scientists Announce Promising Renewable Energy Breakthrough</li>
+      <p>
+        Researchers developed an innovative solution that could improve clean energy efficiency.
+      </p>
+      <li>Space Agency Successfully Launches Next-Generation Research Satellite</li>
+      <p>
+        The mission aims to collect valuable climate and environmental data from orbit.
+      </p>
+      <li>Healthcare Experts Promote New Public Health Initiatives</li>
+      <p>
+        International organizations introduced programs focused on disease prevention and accessible healthcare.
+      </p>
+      <li>Sports Fans Prepare for Major International Championship</li>
+      <p>
+        Teams and athletes are completing final preparations for upcoming global competitions.
+      </p>
+      <li>Tourism Industry Sees Strong Recovery During Peak Travel Season</li>
+      <p>
+        Popular destinations are reporting increased visitor numbers as international travel continues to rebound.
+      </p>
+    </ol>
+    <button type="submit">Read More</button>
+  </div>
+  <div class="sports"id="sports">
+    <h5>Foot Ball</h5>
+    <div class="match-images">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLntBF14eN65m4Ff8PnbD5O0mhY2Y2YDF9EADZFUbUlQ&s=10" alt="match-1" class="image-1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDgOHvjsd7O96QSGGWcsR8xSRjaIC-5L-PPlXLza3Zfg&s=10" alt="match-2" class="image-2">
+    </div>
+    <ul>
+      <li><b>Champions Secure Dramatic Victory in League Clash</b></li>
+      <li><h6>Manchester City 3–1 Arsenal</h6></li>
+      <li><i>Manchester City delivered a strong second-half performance to claim all three points in a high-intensity league encounter. A quick attacking display and solid defense helped them secure the win.</i></li>
+    </ul>
+    <ul type="circle">
+      <li><b>Late Goal Gives United a Thrilling Comeback Win</b></li>
+      <li><strong>Manchester United 2–1 Chelsea</strong></li>
+      <li><big>A late strike sealed a dramatic comeback victory as Manchester United overturned an early deficit with relentless attacking pressure.</big></li>
+    </ul>
+    <ul type="square">
+      <li><b>Rival Teams Battle to a Draw in Season Thriller</b></li>
+      <li><small>Real Madrid 2–2 Barcelona</small></li>
+      <li><mark>A fast-paced El Clásico ended in a thrilling draw, with both teams showcasing attacking quality and creating multiple scoring opportunities.</mark></li>
+    </ul>
+  </div>
+  <div class="technology"id="technology">
+    <h6>Technology</h6>
+    <div class="technology-images">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLdQ31JY1p2cyEu2ipVv3hY-nzWPZkVRYYuHtXLOUn3Q&s=10" alt="smartphone" class="smartphone-image-1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNgXLMik3TFMY5rygRxM7q5yLzeSzcGkHzsCTkCytKZg&s=10" alt="laptop" class="laptop-2">
+      <br>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXLuUU-ZlivFz3Hi3-6jKvCMr5yYvvgSpNBRVRLe-bRw&s=10" alt="ai" class="ai-3">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW92CGEMO5aNzyhIafz8Fv7C0xr-2vZyHDnXl5oBUuZA&s=10" alt="gen ai" class="gen-ai-4">
+    </div>
+    <ol type="I">
+      <li>AI Transforms Everyday Work with Smarter Digital Assistants</li>
+      <li>Smartphone Makers Unveil Next-Generation Flagship Devices</li>
+      <li>Laptop Innovations Focus on Performance and Battery Life</li>
+      <li>AI-Powered Search Redefines Online Information Discovery</li>
+      <li>Foldable Phones Continue to Gain Global Popularity</li>
+      <li>New Chip Technologies Promise Faster and More Efficient Computing</li>
+      <li>Cybersecurity Experts Warn of Rising AI-Driven Threats</li>
+      <li>Cloud Computing Accelerates Business Digital Transformation</li>
+    </ol>
+    <p>
+      Stay updated with the latest developments in technology, including smartphones, laptops, artificial intelligence, cybersecurity, software, gadgets, and digital innovation. NewsSphere brings concise, reliable, and up-to-date tech news to keep you informed about the rapidly evolving world of technology.
+    </p>
+  </div>
+  <div class="photo-gallery">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw367oIp-Hw6JlCDrNbBJbNg1WjdxxdtEs26g7ChPQg&s=10" alt="ai robot asistance" class="ai-robot-asistance">
+    <p>Artificial intelligence is enhancing healthcare with faster diagnostics and improved patient care.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlTOX3WoBy7yj_sRNUMhKNWg_hS8PedAnuq3ErZNwYDw&s=10" alt="ALatest Flagship Smartphone Launch" class="latest-flagship-smartphone-launch">
+    <p>New smartphones introduce advanced cameras, faster processors, and AI-powered features.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA7dLwFpgEUMMdnpCpRs5Wr8aTyKGvonbG26DL2duk1w&s=10" alt="next generation laptop" class="next-generation-laptop">
+    <p>Modern laptops deliver better performance, extended battery life, and lightweight designs.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYO5n4a5h9CyQIIduCWORdesSjELA__JB0_j5lVrfyzA&s=10+" alt="Cybersecurity Operations Center" class="cybersecurity-operations-center">
+    <p>Experts strengthen digital defenses against evolving cyber threats and online attacks.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaEowJ5WFbgT8jHXsuN0YGeMZd7SNKwD2s4Tm-wKARew&s=10" alt="Cloud Data Center" class="cloud-data-center">
+    <p>Cloud computing continues to power businesses with scalable and secure digital infrastructure.</p>
+  </div>
+  <div class="popular-articles">
+    <table border="5">
+      <tr>
+        <th>S.no</th>
+        <th>Thumbnail</th>
+        <th>Headline</th>
+        <th>Read More</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwxC5xUHbW7BNyuqFsaAoEP6mWP1enfFYCtEU3kaPB1A&s=10" alt="ai robot"class="ai-robot"></td>
+        <td><p>AI Revolution Continues to Transform Industries Worldwide</p></td>
+        <td><button>Read More</button></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx2Fx54EpMDtmapY7aMkNSgYAaW0EPuxNjI00rfDNifw&s=10" alt="smart phone" class="smartphone"></td>
+        <td><p>Next-Generation Smartphones Set New Performance Standards</p></td>
+        <td><button>Read More</button></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL5vZMlvUurrQ3xDzukqKPB_2daeoKjGJh400tEy7qAw&s=10" alt="laptop" class="laptop"></td>
+        <td><p>Ultra-Light Laptops Gain Popularity Among Professionals</p></td>
+        <td><button>Read More</button></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiOGvarrrIC3SINsp7WVkl5P8l7Lw9o3CD0eziSdAZNg&s=10" alt="cybersecurity" class="cybersecurity"></td>
+        <td><p>Cybersecurity Experts Warn of Rising Digital Threats</p></td>
+        <td><button>Read More</button></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHnfT9EC3iBBBIB-W8kNRQvsOt6LTUx7kVNfKgSyB--w&s=10" alt="electric car" class="electric-car"></td>
+        <td><p>AI-Powered Electric Vehicles Drive the Future of Mobility</p></td>
+        <td><button>Read More</button></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSue9dEK99Skq5W59HbudtBqaMf2djyNOIQEPvw4Wlhyg&s=10" alt="space tech" class="space-tech"></td>
+        <td><p>Space Missions Accelerate Innovation in Satellite Technology</p></td>
+        <td><button>Read More</button></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLKT-rpM9td6uH5zXSyz_nxOVetmtbxwNwFez6FMZ9HA&s=10" alt="cloud server" class="cloud-server"></td>
+        <td><p>Cloud Computing Powers the Next Wave of Digital Transformation</p></td>
+        <td><button>Read More</button></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiLmLj9x6NfBVKqvSb9T7qqemYNGncK-HwITR-qxtGpQ&s=10" alt="smart home" class="smart-home"></td>
+        <td><p>Smart Home Devices Become More Intelligent with AI Integration</p></td>
+        <td><button>Read More</button></td>
+      </tr>
+    </table>
+  </div>
+  <footer class="end-of-the-page"id="contact">
+    <h1>About Us</h1>
+    <p>
+      NewsSphere is a modern digital news platform dedicated to delivering accurate, timely, and engaging news from around the world. Covering a wide range of topics—including technology, business, politics, sports, entertainment, health, science, and global affairs—NewsSphere keeps readers informed with reliable reporting and concise updates.
+    </p>
+    <p>
+      Our mission is to make news accessible, trustworthy, and easy to understand. We focus on presenting verified information, insightful analysis, and breaking stories that matter most to our audience. Whether you're looking for the latest headlines, in-depth features, or trending topics, NewsSphere provides a seamless and informative reading experience across all devices.
+    </p>
+    <p>
+      At NewsSphere, we believe that informed readers make better decisions. That's why we are committed to delivering quality journalism, real-time updates, and meaningful stories that connect people with the world around them. Stay informed, stay connected, and explore the world with NewsSphere.
+    </p>
+    <span style="color:purple">Email:</span>contact@newssphere.com<br/>
+    <h2>Phone Number:+1 (800) 123-4567</h2>
+    Facebook Link<i class="fa-brands fa-facebook"><a href="https://www.facebook.com/thehindu">Facebook</a></i><br/>
+    Instagram Link:<i class="fa-brands fa-instagram"><a href="https://www.instagram.com/the_hindu/?hl=en">Instagram</a></i><br/>
+    Linkedin Link:<i class="fa-brands fa-linkedin"><a href="https://www.linkedin.com/company/the-hindu-neswspaper/">Linkedin</a></i><br/>
+    Youtube Link:<i class="fa-brands fa-youtube"><a href="https://www.youtube.com/@TheHinduOfficial">Youtube</a></i><br/>
+    <h2>Copyright Notice</h2>
+  <p>
+    © 2026 NewsSphere. All Rights Reserved.
+  </p>
+  <p>
+    This website is designed and developed by <b>R. Megha Shyam</b>.
+    All original content, website design, layout, graphics, text, and code
+    created specifically for NewsSphere are protected by copyright laws.
+  </p>
+  <p>
+    Unauthorized copying, reproduction, modification, distribution, or use
+    of any part of this website without written permission from the developer
+    is strictly prohibited.
+  </p>
+  <p>
+    News articles, images, logos, and third-party materials displayed on this
+    website may belong to their respective owners. Proper credits and permissions
+    should be obtained where applicable.
+  </p>
+  <h2>Terms and Conditions</h2>
+  <p>
+    Welcome to NewsSphere. By accessing and using this website, you agree to
+    comply with the following terms and conditions.
+  </p>
+  <ol>
+    <li>
+      NewsSphere provides news and information for general informational purposes
+      only. We aim to provide accurate and updated content but do not guarantee
+      that all information is always complete or error-free.
+    </li>
+    <li>
+      Users may read, share, and access content for personal and non-commercial
+      purposes only.
+    </li>
+
+    <li>
+      Users must not copy, reproduce, modify, sell, or redistribute website
+      content without permission.
+    </li>
+    <li>
+      NewsSphere is not responsible for any loss, damage, or decisions made
+      based on the information provided on this website.
+    </li>
+    <li>
+      External links provided on this website may lead to third-party websites.
+      NewsSphere does not control or take responsibility for the content or
+      privacy practices of external websites.
+    </li>
+    <li>
+      The developer, <b>R. Megha Shyam</b>, reserves the right to update,
+      modify, or improve the website content and features at any time.
+    </li>
+  </ol>
+  <h2>Privacy Policy</h2>
+  <p>
+    NewsSphere respects your privacy and is committed to protecting your
+    personal information.
+  </p>
+  <ol>
+    <li>
+      We do not collect personal information from visitors unless users
+      voluntarily provide it through contact forms or communication channels.
+    </li>
+    <li>
+      Any information provided by users will only be used for communication,
+      support, or improving website services.
+    </li>
+    <li>
+      NewsSphere does not sell, rent, or share user information with third
+      parties without permission, except where required by law.
+    </li>
+    <li>
+      The website may use basic technologies such as cookies or analytics tools
+      in the future to improve user experience and understand website usage.
+    </li>
+    <li>
+      Users are responsible for protecting their own personal information while
+      browsing external links connected from this website.
+    </li>
+    <li>
+      For privacy-related questions, users can contact:
+      <br>
+      Email: contact@newssphere.com
+    </li>
+  </ol>
+  <p>
+    Website Developed and Maintained by:
+    <b>R. Megha Shyam</b>
+  </p>
+  </footer>
+</body>
+</html>
