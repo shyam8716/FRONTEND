@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+    .logo{
+      width:300px;
+      height:300px;
+      border:5px solid orange;
+    }
+    .dashboard-header{
+      margin:5%;
+      border:5em solid darkgrey;
+      padding:5rem;
+      color:darkgreen;
+      background-color:darkgray;
+    }
+    .navbar{
+      margin:5px;
+      border:5px solid darkgoldenrod;
+      padding:5px;
+      color:darkcyan;
+      background-color:cyan;
+      display:block;
+      position:sticky;
+      top:0;
+    }
+    .navbar i{
+      color:slateblue;
+      background-color:yellow;
+    }
+    .navbar a{
+      color:magenta;
+      background-color:snow;
+    }
+    .summarys{
+      column-count:2;
+      column-gap:6px;
+    }
+    .total-employee-summary-card{
+      margin:5px;
+      border:5px solid yellow;
+      padding:5px;
+      color:currentColor;
+      background-color:crimson;
+      float:left
+    }
+    .active-employees{
+      margin:5px;
+      border:5px solid cornsilk;
+      padding:5px;
+      color:cornflowerblue;
+      background-color: coral;
+      float:right;
+    }
+    .departments{
+      margin:5px;
+      border:5px solid chocolate;
+      padding:5px;
+      color:chartreuse;
+      background-color:cadetblue;
+      float:left;
+    }
+    .new-joiners{
+      margin:5px;
+      border:5px solid burlywood;
+      padding:5px;
+      color:brown;
+      background-color:blueviolet;
+      float:right;
+    }
+    .employee-information{
+      column-count:2;
+      column-gap:2px;
+    }
+    .java-teacher-details{
+      margin:5px;
+      border:5px solid blue;
+      padding:5px;
+      color:blanchedalmond;
+      background-color:black;
+    }
+    .java{
+      width:300px;
+      height:300px;
+    }
+    .python-teacher-details{
+      margin:5px;
+      border:5px solid bisque;
+      padding:5px;
+      color:rgb(130, 130, 7);
+      background-color: rgb(11, 105, 105);
+    }
+    .python{
+      width:300px;
+      height:300px;
+    }
+    .project-status{
+      margin:5px;
+      border:5px solid aquamarine;
+      padding:5px;
+      color:aqua;
+      background-color:antiquewhite;
+      display:block;
+    }
+    .attendence{
+      visibility:collapse;
+    }
+    .announcement{
+      margin:5px;
+      border:5px solid rgb(10, 49, 83);
+      padding:5px;
+      color:gold;
+      background-color:red;
+      overflow:hidden;
+    }
+    .actions{
+      /* column-count:3;
+      column-gap:4px; */
+      border:5px solid purple;
+    }
+    .actions button{
+       color:brown;
+      background-color:yellow;
+    }
+    .end-of-the-page{
+      margin:5px;
+      border:5px solid purple;
+      padding:5px;
+      color:orange;
+      background-color:black;
+    }
+    .end-of-the-page a{
+      position:sticky;
+      top:0;
+      color:aqua;
+      background-color:azure;
+    }
+    .end-of-the-page i{
+      color:blue;
+      background-color:maroon;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="dashboard-header" id="home">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwc1oMQslNnU2s6UtDyRObQ39rMKOLnKfSGKch5D7s5A&s=10"
+        alt="company logo" class="logo">
+      <h1>Dhee Coding Labs</h1>
+      <h2>Dhee Coding Labs Admin Dashboard</h2>
+      <p>20-07-2026 Monday</p>
+      <i class="fa-solid fa-user">User</i>
+    </div>
+    <div class="navbar">
+      <nav>
+        <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="#employee"><i
+            class="fa-regular fa-address-book"></i>Employee</a>
+        <a href="#projects"><i class="fa-brands fa-notion"></i> Projects</a>
+        <a href="#reports"><i class="fa-solid fa-book"></i> Reports</a>
+        <a href="#finance"><i class="fa-solid fa-rupee-sign"></i> Finance</a>
+        <a href="#settings"><i class="fa-solid fa-gear"></i> Settings</a>
+        <a href="#logout"><i
+            class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+      </nav>
+    </div>
+    <div class="summarys">
+      <div class="total-employee-summary-card">
+        <b>DCL Logistics</b>-approximately 201–500 employees according to
+        LinkedIn, while workforce analytics from Revelio Labs estimates about
+        668 employees as of late 2025.<br />
+        <i>DCL Corporation (pigments manufacturer)</i>-eports over 300 employees
+        globally.<br />
+        <strike>ijdiejdiejd</strike>Design Communications Ltd. (DCL) — 201–500
+        employees on LinkedIn
+      </div>
+      <div class="active-employees">
+        <strong>LinkedIn company size:</strong>51–200 employees (current company
+        size range).<br />
+        <big>Internshala company profile (ProDhee Technologies Pvt. Ltd., which
+          operates Dhee Coding Lab):</big>51–200 employees.<br />
+        <small>Glassdoor:</small>Lists 1–50 employees, but this is often based
+        on self-reported employer profile data and may not reflect the current
+        workforce.<br />
+        <u>Estimated active employees:</u>~100 (within the publicly reported
+        51–200 range).
+      </div>
+      <div class="departments">
+        <table border="5">
+          <tr>
+            <th>Department</th>
+            <th>Primary Responsibilities</th>
+          </tr>
+          <tr>
+            <td>Executive Leadership</td>
+            <td>Company strategy, business growth, partnerships, operations</td>
+          </tr>
+          <tr>
+            <td>Academic & Training</td>
+            <td>Curriculum design, classroom training, mentoring, bootcamps</td>
+          </tr>
+          <tr>
+            <td>Software Development</td>
+            <td>Internal product development, LMS, student projects, technology
+              solutions</td>
+          </tr>
+          <tr>
+            <td>Data Science & AI</td>
+            <td>AI/ML training, GenAI programs, research-oriented
+              curriculum</td>
+          </tr>
+          <tr>
+            <td>Placement & Career Services</td>
+            <td>Campus hiring, interview preparation, employer partnerships,
+              placements</td>
+          </tr>
+          <tr>
+            <td>Human Resources (HR)</td>
+            <td>Recruitment, employee onboarding, performance management</td>
+          </tr>
+          <tr>
+            <td>Sales & Admissions</td>
+            <td>Student counseling, admissions, lead conversion</td>
+          </tr>
+          <tr>
+            <td>Marketing & Branding</td>
+            <td>Digital marketing, social media, events, brand awareness</td>
+          </tr>
+          <tr>
+            <td>Student Success & Support</td>
+            <td>Student engagement, mentoring, issue resolution</td>
+          </tr>
+        </table>
+      </div>
+      <div class="new-joiners">
+        <table border="5">
+          <tr>
+            <th>Recent Hiring Area</th>
+            <th>Roles Seen</th>
+          </tr>
+          <tr>
+            <td>Business Development / Sales</td>
+            <td>Business Development Executive, Business Development Associate,
+              Campus Associate</td>
+          </tr>
+          <tr>
+            <td>Software / Engineering</td>
+            <td>ython Backend Intern, Technical Intern, Graduate Engineer
+              Trainee, Software Intern</td>
+          </tr>
+          <tr>
+            <td>Training & Technical Mentoring</td>
+            <td>Full Stack Development, Data Science & AI training-related
+              roles</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="employee-information" id="employee">
+      <div class="java-teacher-details">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt="shishira bhatt" class="java"><br />
+        <mark>Id:DCL001</mark>
+        <p>Name:Shishira Bhatt</p>
+        <p>Department:Full Stack Java</p>
+        <p>DesignationFounder & CEO of Dhee Coding Lab (DCL).</p>
+        <p>Email:info@dheecodinglab.com</p>
+        <p>Phone Number:+91 8904080070</p>
+        <p>Manager Name:Sai charan Mishra</p>
+        <p>Employment Status:Active</p>
+      </div>
+      <div class="python-teacher-details">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV_Pyj_6sJdXmW4NQ-WFTdozMYCXH28sA2UpJCw439ww&s=10"
+          alt="pavan prakash" class="python">
+        <span style="color:bisque">Id:DCL002</span>
+        <p>Name:Pavan Prakash</p>
+        <p>Department:Full Stack Python</p>
+        <p>Designation:Teacher in Dhee Coding Labs</p>
+        <p>Email:info@dheecodinglab.com</p>
+        <p>Phone Number:+91 77608 76386</p>
+        <p>Manager Name:Ravi Shastry </p>
+        <p>Employment Status:Active</p>
+      </div>
+    </div>
+    <div class="project-status" id="projects">
+      <ol>
+        <li>Project Name: Learning Management System</li>
+        <p>Project Manager: Shishira Bhat</p>
+        <p>Team Members: Java Developers, Python Developers, UI Developers</p>
+        <p>Start Date: 01-Jan-2026</p>
+        <p>End Date: 30-Jun-2026</p>
+        <p>Progress: 75%</p>
+        <p>Priority: High</p>
+        <p>Current Status: In Progress</p>
+        <hr>
+        <li>Project Name: Student Portal Development</li>
+        <p>Project Manager:Sai Charan Mishra</p>
+        <p>Team Members: Python Developers, Backend Team</p>
+        <p>Start Date: 15-Feb-2026</p>
+        <p>End Date: 15-Aug-2026</p>
+        <p>Progress: 50%</p>
+        <p>Priority: Medium</p>
+        <p>Current Status: In Progress</p>
+        <hr>
+        <li>Project Name: AI Coding Assistant</li>
+        <p>Project Manager: Project Manager B</p>
+        <p>Team Members: Python Developers, AI Engineers</p>
+        <p>Start Date: 01-Mar-2026</p>
+        <p>End Date: 31-Dec-2026</p>
+        <p>Progress: 30%</p>
+        <p>Priority: High</p>
+        <p>Current Status: Planning</p>
+        <hr>
+        <li>Project Name: Website Enhancement</li>
+        <p>Project Manager:Ravi Shastry</p>
+        <p>Team Members: Java Developers, Frontend Team</p>
+        <p>Start Date: 10-Apr-2026</p>
+        <p>End Date: 30-Jul-2026</p>
+        <p>Progress: 90%</p>
+        <p>Priority: Medium</p>
+        <p>Current Status: Testing</p>
+      </ol>
+    </div>
+    <div class="attendence">
+      <mark>present Employees</mark>
+      <ol type="1">
+        <li>Rahul Sharma – Java Developer</li>
+        <li>Priya Nair – Python Developer</li>
+        <li>Arjun Kumar – Software Engineer</li>
+        <li>Meera Patel – Project Manager</li>
+      </ol>
+      <mark>Leave Employees</mark>
+      <ul>
+        <li>Kiran Reddy – Sales Executive</li>
+        <li>Ananya Rao – Python Developer</li>
+      </ul>
+      <mark>Leave Requests</mark>
+      <ul type="circle">
+        <li>ahul Sharma – Sick Leave – 20-Jul-2026 to 21-Jul-2026</li>
+        <li>Priya Nair – Personal Leave – 22-Jul-2026</li>
+      </ul>
+      <mark>Approved Leaves</mark>
+      <ul type="square">
+        <li>Rahul Sharma – Sick Leave – Approved</li>
+        <li>Meera Patel – Vacation Leave – Approved</li>
+      </ul>
+      <mark>Pending Leaves</mark>
+      <ul>
+        <li>Ananya Rao – Personal Leave – Awaiting Approval</li>
+        <li>Arjun Kumar – Emergency Leave – Awaiting Approval</li>
+      </ul>
+    </div>
+    <div class="announcement">
+      <p>
+        DCL Announcement: DCL has announced new learning initiatives and
+        upcoming activities to support employee growth and technical
+        development. The organization is planning various events, including
+        coding workshops, training sessions, and project review meetings to
+        enhance skills and collaboration among team members. Upcoming events
+        will include technical sessions on Java and Python development, along
+        with project demonstrations. Employees are also informed about scheduled
+        holidays and office closures as per the holiday calendar.
+      </p>
+      <p>
+        DCL is introducing new initiatives to encourage continuous learning,
+        innovation, and teamwork among employees. The organization will conduct
+        skill enhancement programs, technical discussions, and knowledge-sharing
+        sessions focused on improving development practices and project
+        efficiency. Upcoming events will include developer meetups, coding
+        challenges, and interactive workshops where team members can share ideas
+        and improve their technical expertise. Employees are advised to check
+        the official schedule for event dates and holiday updates.
+      </p>
+      <p>
+        DCL has planned several upcoming activities to strengthen collaboration
+        and professional growth within the organization. These initiatives
+        include technology awareness sessions, project showcases, and team
+        engagement programs designed to support creativity and productivity. The
+        company will also communicate important holiday schedules and office
+        updates in advance to ensure smooth planning for all employees. Team
+        members are encouraged to participate actively in upcoming events and
+        contribute to a positive work environment.
+      </p>
+      <p>
+        DCL is organizing a series of development-focused activities to promote
+        innovation and collaboration across teams. Employees will have
+        opportunities to participate in technical workshops, peer learning
+        sessions, and project discussions that help improve programming skills
+        and industry knowledge. Upcoming events will focus on practical
+        learning, team interaction, and sharing new ideas to create a more
+        engaging workplace environment.
+      </p>
+      <p>
+        DCL has planned new initiatives to enhance employee engagement and
+        support professional development. The upcoming schedule includes coding
+        practice sessions, technology updates, and team-building activities
+        designed to encourage creativity and improve teamwork. Employees are
+        encouraged to actively participate and make the most of these
+        opportunities for personal and professional growth.
+      </p>
+      <p>
+        DCL continues to focus on building a culture of learning and excellence
+        through regular updates, events, and employee-focused programs. The
+        organization will conduct knowledge-sharing meetings, innovation
+        sessions, and project milestone celebrations to recognize achievements
+        and encourage collaboration. Holiday schedules and important office
+        notices will be shared in advance to help employees plan their work
+        effectively.
+      </p>
+    </div>
+    <div class="actions">
+      <button>Add Employee</button>
+      <button>Add Project</button>
+      <br>
+      <button>Generate Report</button>
+      <button>Approve Leave</button>
+      <br>
+      <button>Payroll</button>
+      <button>Send Notification</button>
+    </div>
+    <footer class="end-of-the-page" id="contact">
+      <address>
+        No. 456, 1st Floor, 7th Main, 7th Cross Road,
+        Above HDFC Bank, BTM 2nd Stage,
+        Bengaluru, Karnataka – 560076, India
+      </address>
+      Phone Number:+91 8904080070<br/>
+      Email:mailto:info@dheecodinglab.com<br/>
+      Website:<a href="https://dheecodinglab.com/"><i class="fa-solid fa-globe"></i>Dhee Coding Labs</a><br/>
+      <h3>Copyright Notice</h3>
+  <p>
+    © 2026 Dhee Coding Labs Dashboard. All rights reserved.
+    This website and dashboard interface were designed and developed by
+    R. Megha Shyam. Unauthorized copying, modification, distribution,
+    or reproduction of any part of this website without prior permission
+    is prohibited.
+  </p>
+</div>
+
+<div class="legal-section" id="privacy-policy">
+  <h3>Privacy Policy</h3>
+  <p>
+    Dhee Coding Labs Dashboard respects user privacy and is committed to
+    protecting the information displayed and managed through this platform.
+    This website may contain employee details, project information, and
+    organizational data intended only for authorized users.
+  </p>
+  <p>
+    We do not sell, share, or misuse personal information. Any information
+    collected through this website is used only for administrative,
+    operational, and dashboard management purposes.
+  </p>
+  <p>
+    This website was developed by R. Megha Shyam as a dashboard project.
+    Users are responsible for maintaining the confidentiality of their
+    login information and company-related data.
+  </p>
+</div>
+
+<div class="legal-section" id="terms-conditions">
+  <h3>Terms and Conditions</h3>
+  <p>
+    By accessing and using this website, you agree to comply with these
+    terms and conditions. This dashboard is designed for company
+    administration, employee management, project tracking, and internal
+    information purposes.
+  </p>
+  <ul>
+    <li>
+      Users must use this website only for authorized business purposes.
+    </li>
+    <li>
+      Users must not attempt to modify, damage, or misuse the website
+      functionality.
+    </li>
+    <li>
+      The developer, R. Megha Shyam, is responsible for the development
+      and design of this website but is not responsible for unauthorized
+      use of the information displayed.
+    </li>
+    <li>
+      Company information, employee records, and project details should
+      be handled securely by authorized personnel.
+    </li>
+    <li>
+      These terms may be updated whenever required to improve website
+      security and functionality.
+    </li>
+  </ul>
+    </footer>
+  </body>
+</html>
