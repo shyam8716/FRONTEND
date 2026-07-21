@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Website</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+    .header{
+      margin:5px;
+      border:5px solid aliceblue;
+      padding:5px;
+      color:antiquewhite;
+      background-color:aqua;
+      text-align:center;
+    }
+    .logo{
+      width:50%;
+      height:25%;
+    }
+    .navbar{
+      margin:5em;
+      border:5rem solid aquamarine;
+      padding:5px;
+      color:azure;
+      background-color: rgb(42, 42, 9);
+      text-decoration:dashed palegoldenrod;
+      position:sticky;
+      top:0;
+    }
+    .navbar a{
+      color:rgb(214, 131, 29);
+      background-color: rgb(18, 4, 4);
+    }
+    .navbar i{
+      color:black;
+      background-color:rgb(150, 125, 87);
+    }
+    .breaking-news{
+      margin:5px;
+      border:5px solid blanchedalmond;
+      padding:5px;
+      color:blue;
+      background-color:blueviolet;
+      text-decoration:dotted orange;
+    }
+    .feature-cover-story{
+      margin:5px;
+      border:5px solid brown;
+      padding:5px;
+      color:burlywood;
+      background-color:cadetblue;
+      
+    }
+    .featured-image{
+      width:300px;
+      height:300px;
+      float:right;
+    }
+    .feature-cover-story button{
+      color:black;
+      background-color:white;
+    }
+    .latest-news{
+      border:5px solid cornsilk;
+      column-count:3;
+      column-gap:5px;
+    }
+    .article-block-1{
+      margin:5px;
+      border:5px solid crimson;
+      padding:5px;
+      color:currentColor;
+      background-color:cyan;
+    }
+    .article-1-image{
+      width:300px;
+      height:300px;
+    }
+    .article-block-2{
+      margin:5px;
+      border:5px solid darkblue;
+      padding:5px;
+      color:darkcyan;
+      background-color:darkgoldenrod;
+    }
+    .article-2-image{
+      width:300px;
+      height:300px;
+    }
+    .article-block-3{
+      margin:5px;
+      border:5px solid darkgray;
+      padding:5px;
+      color:darkgreen;
+      background-color:darkgrey;
+    }
+    .article-3-image{
+      width:300px;
+      height:300px;
+    }
+    .article-4{
+      margin:5px;
+      border:5px solid  darkkhaki;
+      padding:5px;
+      color:darkmagenta;
+      background-color:darkolivegreen;
+    }
+    .article-4-image{
+      width:300px;
+      height:300px;
+    }
+    .article-5{
+      margin:5px;
+      border:5px solid darkorange;
+      padding:5px;
+      color:darkorchid;
+      background-color:darkred;
+    }
+    .article-5-image{
+      width:300px;
+      height:300px;
+    }
+    .article-6{
+      margin:5px;
+      border:5px solid darksalmon;
+      padding:5px;
+      color:darkseagreen;
+      background-color:darkslateblue;
+    }
+    .article-6-image{
+      width:300px;
+      height:300px;
+    }
+    .editors-image{
+      width:300px;
+      height:300px;
+      float:left;
+    }
+    .editors-pick{
+      margin:5px;
+      border:5px solid darkslategray;
+      padding:5px;
+      color:darkslategrey;
+      background-color:darkturquoise;
+    }
+    .photo-gallery{
+      border:5px solid darkviolet;
+    }
+    .image-1{
+      border:5px solid deeppink;
+      width:300px;
+      height:300px;
+    }
+    .photo-1{
+      margin:5px;
+      color:deepskyblue;
+      background-color:dimgray;
+      padding:5px;
+      display:inline-block;
+    }
+    .image-2{
+      border:5px solid dodgerblue;
+    width:300px;
+    height:300px;
+    }
+    .photo-2{
+      margin:5px;
+      color:firebrick;
+      background-color:floralwhite;
+      display:inline-block;
+      padding:5px;
+    }
+    .popular-categories{
+      border:5px solid forestgreen;
+      margin:5px;
+      padding:5px;
+    }
+    .politics{
+      color:fuchsia;
+      background-color:gainsboro;
+    }
+   .sports{
+    color:ghostwhite;
+    background-color:gold;
+   } 
+   .business{
+    color:goldenrod;
+    background-color:gray;
+   }
+   .technology{
+    color:green;
+    background-color:greenyellow;
+   }
+   .fashion{
+    color:honeydew;
+    background-color:hotpink;
+   }
+   .lifestyle{
+    color:indianred;
+    background-color:indigo;
+   }
+   .travel{
+    color:inherit;
+    background-color:initial;
+   }
+   .newsletter{
+    width:300px;
+    height:300px;
+   }
+   .advertisement{
+    margin:5px;
+    border:5px solid rgb(79, 79, 42);
+    color:rgb(79, 74, 27);
+    padding:5px;
+    background-color:lavender;
+   }
+   .end-of_the-page{
+    margin:5px;
+    border:5px solid lavenderblush;
+    padding:5px;
+    color:lawngreen;
+    background-color:lemonchiffon;
+   }
+   .end-of_the-page i{
+    color:lightblue;
+    background-color: lightcoral;
+   }
+   .end-of_the-page a{
+    color:rgb(17, 99, 99);
+    background-color:lightgoldenrodyellow;
+    position:sticky;
+   }
+  </style>
+  </head>
+  <body>
+    <div class="header" id="home">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNIRzx_2hqb7-mwJY8iKBqimD1weH1QPBoPW6q-SrqWw&s=10"
+        alt="natonal geofraphic" class="logo">
+      <h1>National Geographic</h1>
+      <q>Exploring the world. Revealing its wonders.</q>
+    </div>
+    <div class="navbar">
+      <a href="#home"><i class="fa-solid fa-house-chimney"></i>Home</a>
+      <a href="#latest-news"><i class="fa-regular fa-newspaper"></i>Latest
+        News</a>
+      <a href="#politics"><i class="fa-solid fa-landmark"></i>Politics</a>
+      <a href="#sports"><i class="fa-solid fa-bicycle"></i>Sports</a>
+      <a href="#technology"><i class="fa-solid fa-computer"></i>Technology</a>
+      <a href="#health"><i class="fa-solid fa-hospital"></i>Hospital</a>
+      <a href="#contact"><i class="fa-solid fa-phone"></i>Contact</a>
+    </div>
+    <div class="breaking-news" id="latest-news">
+      <h2>Breaking News</h2>
+      <p>Latest Headline: Ancient Rainforest Discovery Reveals Hidden
+        Biodiversity</p>
+      <b>Today's Date: July 21, 2026</b>
+      <p>
+        A team of researchers has announced the discovery of a previously
+        undocumented section of tropical rainforest containing dozens of rare
+        plant and animal species. Scientists say the finding could provide
+        valuable insights into biodiversity, conservation, and the effects of
+        climate change. Further studies are planned to better understand and
+        protect the newly documented ecosystem.
+      </p>
+    </div>
+    <div class="feature-cover-story">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1zgAhDsxdMvw36w2UNW1KAHoNMlfx9snjNU3sfbpqXg&s=10"
+        alt="antarctica-ice-cave-expedition" class="featured-image">
+      <h3>Article Title:The Hidden World Beneath Antarctica's Ice</h3>
+      <b>Author Name:Emma Richardson</b>
+      <i>Date:July 21, 2026</i>
+      <article>
+        <p>
+          Far beneath Antarctica's vast ice sheet lies a mysterious ecosystem
+          unlike anywhere else on Earth. Scientists are using advanced
+          technology to explore these isolated environments, uncovering new
+          species and revealing clues about Earth's changing climate.
+        </p>
+      </article>
+      <button>Read More</button>
+    </div>
+    <div class="latest-news">
+      <div class="article-block-1">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDBdXJSyukywP8tb393sdGdt2CONjeQbmNwDCQDb-z5w&s=10"
+          alt="snow leopard cub" class="article-1-image">
+        <h4>The Elusive Snow Leopard Returns</h4>
+        <p>
+          Conservation efforts are helping snow leopard populations recover
+          across parts of Central Asia, offering new hope for one of the world's
+          rarest big cats.
+        </p>
+        <button>Read More</button>
+      </div>
+      <div class="article-block-2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfFi0MVVLSC_MNxfjhOQ3V4suEueVHdEpXT-U2oDn2gg&s=10"
+          alt="coral reef divers" class="article-2-image">
+        <h5>A Journey Through Vibrant Coral Reefs</h5>
+        <p>
+          Marine researchers document thriving coral ecosystems and the species
+          that depend on them for survival in tropical oceans.
+        </p>
+        <button>Read More</button>
+      </div>
+      <div class="article-block-3">
+        <img
+          src="https://img.magnific.com/premium-photo/herd-elephants-are-standing-line-with-word-elephant-it_854727-156390.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="frican-elephant-migration" class="article-3-image"><br />
+        <strong>Tracking Africa's Giant Travelers</strong><br />
+        <p>
+          GPS technology is revealing the remarkable migration routes of African
+          elephants and helping protect their habitats.
+        </p>
+        <button>Read More</button>
+      </div>
+      <div class="article-4">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQccIORUPfyfIJ_tPouneGnzaah1LihXzdSw9Oh5aPYkg&s=10"
+          alt="penguin colony antarctica" class="article-4-image"><br />
+        <big>Life at the Edge of Antarctica</big><br />
+        <p>
+          From emperor penguins to towering glaciers, Antarctica remains one of
+          Earth's most extraordinary and fragile environments.
+        </p>
+        <button>Read More</button>
+      </div>
+      <div class="article-5">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfdrmcqzGKAU8mxeZHzzVM6P_ZRQknV7D22sWrxCvipQ&s=10"
+          alt="volcano iceland lava" class="article-5-image"><br />
+        <small>Inside Iceland's Living Volcanoes</small>
+        <p>
+          Discover how volcanic eruptions continue to reshape Iceland's dramatic
+          landscapes while offering scientists valuable geological insights.
+        </p>
+        <button>Read More</button>
+      </div>
+      <div class="article-6">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqW6B0YMiPyXpmY8_M2dNIF0DismSNrgMtw0oZ8Pt8SQ&s=10"
+          alt="amazon rainforest canopy" class="article-6-image"><br />
+        <u>Secrets Hidden in the Amazon Canopy</u><br />
+        <p>
+          Scientists exploring the rainforest's upper layers continue to
+          discover new plants, insects, and unique wildlife.
+        </p>
+        <button>Read More</button>
+      </div>
+    </div>
+    <div class="editors-pick">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjHFiBjtm8aO1xppNNGUQTTrEsI3VcRjiybe91ixKHPg&s=10"
+        alt="editor sarah mitchell" class="editors-image"><br />
+      <strike>huhfehehf</strike>Sarah Mitchell<br />
+      Editor-in-Chief<br />
+      <p>
+        Welcome to this month's edition of National Geographic. Every story we
+        publish is driven by curiosity, discovery, and a commitment to
+        understanding our planet. From remote wilderness expeditions to
+        groundbreaking scientific research, we hope these stories inspire you to
+        explore, protect, and appreciate the extraordinary world we all share.
+      </p>
+      <mark>Featured Article:Guardians of the Last Wild Places</mark><br />
+      <p>
+        Explore the remarkable people, wildlife, and landscapes at the front
+        lines of conservation, where scientists and local communities work
+        together to preserve Earth's most precious ecosystems for future
+        generations.
+      </p>
+    </div>
+    <div class="photo-gallery">
+      <div class="photo-1">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjq2Bg2pe_bSc3klNSamGD8B378K5Q__YdZqafIfivXA&s=10"
+          alt="polar bear" class="image-1">
+        <p>
+          A polar bear navigates the changing Arctic landscape as scientists
+          study the impact of climate change on wildlife
+        </p>
+      </div>
+      <div class="photo-2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyG5aQyCiVMaZUltxk_4JUiCZyBmS10zGPmOPSjrs5QA&s=10"
+          alt="amazon rainfores" class="image-2">
+        <p>
+          The vast Amazon rainforest stretches across the horizon, revealing one
+          of Earth's richest ecosystems.
+        </p>
+      </div>
+      <div class="popular-categories">
+        <div class="politics" id="politics">
+        <article>
+          Global Leaders Shape the Future of International Relations
+          Governments around the world are working together on major
+          challenges, including climate action, economic stability, and global
+          security. New policies and international partnerships are shaping
+          the future of diplomacy and cooperation between nations.
+        </article>
+        <hr>
+        </div>
+        <div class="sports" id="sports">
+          <article>
+            New Champions Rise in Global Sports
+            Athletes from around the world continue to push their limits,
+            break records, and inspire millions of fans. From major
+            tournaments to emerging talents, the world of sports celebrates
+            dedication, teamwork, and extraordinary achievements.
+          </article>
+          <hr>
+        </div>
+        <div class="business">
+          <article>
+            Companies Embrace Innovation for a Changing Economy
+            Businesses are adapting to a rapidly changing economy by
+            investing in new technologies, sustainable practices, and
+            creative solutions. Companies are finding new ways to grow while
+            meeting the needs of a modern global market.
+          </article>
+          <hr>
+        </div>
+        <div class="technology" id="technology">
+          <article>
+            How Technology Is Transforming the Modern World
+            Advances in artificial intelligence, robotics, and digital
+            innovation are reshaping everyday life. From improving
+            communication to solving complex problems, technology
+            continues to influence how people work, learn, and connect.
+          </article>
+          <hr>
+        </div>
+        <div class="fashion">
+          <article>
+            The New Era of Sustainable Fashion
+            Fashion designers are embracing sustainability by creating
+            collections with eco-friendly materials and responsible production
+            methods. The industry is combining creativity, culture, and
+            innovation to build a more conscious future.
+          </article>
+          <hr>
+        </div>
+        <div class="lifestyle">
+          <article>
+            Simple Changes for a Healthier Life
+            People are discovering new ways to improve their well-being
+            through balanced routines, mindful choices, and healthier habits.
+            Small lifestyle changes can create a positive impact on physical
+            and mental wellness.
+          </article>
+          <hr>
+        </div>
+        <div class="travel">
+          <article>
+            Exploring the World's Hidden Destinations
+            Travelers are discovering lesser-known places filled with natural
+            beauty, rich cultures, and unique experiences. Exploring beyond
+            traditional destinations offers opportunities to connect with
+            different communities and environments.
+          </article>
+          <hr>
+        </div>
+        <div class="science">
+          <article>
+            Scientists Uncover New Secrets of Earth and Space
+            Researchers continue to make groundbreaking discoveries that expand
+            our knowledge of the planet, oceans, and the universe. Scientific
+            exploration helps us understand challenges and create solutions for
+            the future.
+          </article>
+          <hr>
+        </div>
+        <div class="education">
+          <article>
+            Redefining Learning for Future Generations
+            Education is evolving through digital tools, innovative teaching
+            methods, and new approaches to learning. Schools and educators are
+            creating opportunities that help students develop skills for an
+            increasingly connected world.
+          </article>
+          <hr>
+        </div>
+        <div class="hospital" id="hospital">
+          <article>
+            Advancing Healthcare Through Innovation and Compassion
+            Hospitals around the world are adopting advanced medical
+            technologies, modern treatments, and patient-centered care to
+            improve health outcomes. Doctors, nurses, and researchers continue
+            working together to provide better healthcare services and develop
+            new solutions for diseases and medical challenges.
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="advertisement">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD1RIGPpogN_SILEEGv1PGTsVp8RpkKHH2CFzzFukuAg&s=10"
+        alt="banner" class="newsletter"><br />
+      <span style="color:red">Stay Informed With Our Newsletter</span><br />
+      Name:R.Megha Shyam<br />
+      Email:meghashyam997@gmail.com<br />
+      <button style="background-color: black;color:white;">Subscribe</button>
+    </div>
+    <footer class="end-of_the-page" id="contact">
+      Email:contact@nationalgeographic.com<br />
+      Phone Number:+91 11 4567 8900<br />
+      <address>
+        National Geographic India Office
+        5th Floor, Infinity Tower,
+        DLF Cyber City, Phase II,
+        Gurugram, Haryana 122002,
+        India
+      </address><br/>
+      Facebook Link: <a href="https://www.facebook.com/NatGeoMagazinePoland"><i class="fa-brands fa-facebook"></i>Facebook</a><br/>
+      Instagram Link: <a href="https://www.instagram.com/natgeo/"><i class="fa-brands fa-instagram"></i>Instagram</a><br/>
+      Youtube Link: <a href="https://www.youtube.com/nationalgeographic"><i class="fa-brands fa-youtube"></i>Youtube</a><br/>
+<h3>About Magazine</h3>
+<p>
+  National Geographic Magazine is a platform dedicated to exploring the world
+  through inspiring stories about science, nature, culture, technology, travel,
+  and human discoveries. This website shares informative articles and visual
+  stories that encourage curiosity and awareness about our planet.
+</p>
+<h3>Privacy Policy</h3>
+<p>
+  This website respects the privacy of its visitors. Any information provided by
+  users through subscription forms or contact sections is used only for
+  communication and improving the website experience. We do not sell, share, or
+  misuse personal information. By using this website, visitors agree to our
+  privacy practices.
+</p>
+<h3>Terms &amp; Conditions</h3>
+<p>
+  By accessing this magazine website, users agree to use the content for
+  educational and informational purposes only. All articles, designs, and
+  materials are created for this website project. Users should not copy,
+  reproduce, or distribute content without permission. The website owner
+  reserves the right to update content and policies when required.
+</p>
+<h3>Copyright</h3>
+<p>
+  © 2026 National Geographic Magazine Website. All Rights Reserved.
+  This website was designed and developed by <strong>R. Megha Shyam</strong>.
+  All original layouts, content organization, and design elements created for
+  this project belong to the developer.
+</p>
+<h3>Website Developer</h3>
+<p>
+  Developed by: <strong>R. Megha Shyam</strong><br>
+  Role: Web Developer &amp; Designer<br>
+  Project: National Geographic Magazine Website
+</p>
+    </footer>
+  </body>
+</html>
