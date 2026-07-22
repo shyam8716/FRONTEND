@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Promotion Website</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+    .header{
+      margin:5px;
+      border:5px solid lightgray;
+      color:rgb(19, 164, 19);
+      padding:5px;
+      background-color:lightgrey;
+    }
+    .logo{
+      width:300px;
+      height:300px;
+    }
+    .navbar{
+      margin:5px;
+      border:5px solid lightpink;
+      padding:5px;
+      color:lightsalmon;
+      background-color:lightseagreen;
+      position:sticky;
+      top:0;
+    }
+    .navbar a{
+      color:lightskyblue;
+      background-color:lightslategray;
+    }
+    .navbar i{
+      color:lightsteelblue;
+      background-color:lightyellow;
+    }
+    .hero{
+      margin:1em;
+      border:2rem solid lime;
+      padding:1%;
+      color:limegreen;
+      background-color:lemonchiffon;
+    }
+    .banner{
+      width:50%;
+      height:25%;
+      float:right;
+    }
+    .about-event{
+      margin:5px;
+      border:5px solid solid rgb(137, 78, 20);
+      padding:5px;
+      background-color:red;
+      color:gold;
+    }
+    .about-event h4{
+      visibility:hidden;
+    }
+    .about-event ul{
+      color:magenta;
+      background-color: maroon;
+    }
+    .about-event li{
+      color:mediumaquamarine;
+      background-color:mediumblue;
+    }
+    .about-event h3,h4,h5{
+      color:mediumorchid;
+      background-color:mintcream;
+    }
+    .event-schedule{
+      margin:5px;
+      border:5px solid rgb(172, 37, 22);
+      padding:5px;
+      text-align:center;
+    }
+    .event-schedule table{
+      color:rgb(60, 40, 3);
+      background-color:rgb(188, 120, 19);
+      text-align: center;
+      text-transform:capitalize;
+    }
+    .speaker{
+      margin:5px;
+      border:5px solid ;
+      padding:5px;
+      color:navy;
+      background-color:oldlace;
+    }
+    .speaker-image{
+      width:50vw;
+      height:25vh;
+      float:left;
+    }
+    .event-gallery{
+      border:5px solid olive;
+    }
+    .event-1{
+      width:300px;
+      height:300px;
+      display:inline-block;
+    }
+    .event-2{
+      width:300px;
+      height:300px;
+      display:inline-block;
+    }
+    .event-3{
+      width:300px;
+      height:300px;
+      display:inline-block;
+    }
+    .event-4{
+      width:300px;
+      height:300px;
+      display:inline-block;
+    }
+    .registration-form{
+      margin:5px;
+      border:5px solid olivedrab;
+      padding:5px;
+    }
+    .registration-form form{
+      color:orange;
+      background-color:orangered;
+    }
+    .registration-form button{
+      color:orchid;
+      background-color:rgb(95, 87, 7);
+    }
+    .sponsors{
+      margin:5px;
+      border:5px solid palegreen;
+      color:paleturquoise;
+      background-color:palevioletred;
+      /* text-align:right; */
+    }
+    .sponsors-logo{
+      width:300px;
+      height:300px;
+      float:left;
+    }
+    .end-of-the-page{
+      margin:5px;
+      border:5px solid papayawhip;
+      padding:5px;
+      color:peachpuff;
+      background-color:peru;
+    }
+    .end-of-the-page a{
+      position:sticky;
+      top:0;
+      color:rgb(75, 13, 24);
+      background-color:plum;
+    }
+    .end-of-the-page i{
+      color:powderblue;
+      background-color:purple;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="header" id="home">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG7RuLDNBaW1W5BaV1UOj-noOnPU8smqzY4LKtvNYPAQ&s"
+        alt="Emerald Gem + Graduation Cap" class="logo">
+      <h1>Website Name: Emerald Events 2026</h1>
+      <q>Celebrating Talent, Inspiring Tomorrow.</q>
+    </div>
+    <div class="navbar">
+      <nav>
+        <a href="#home"><i class="fa-solid fa-house">Home</i></a>
+        <a href="#about"><i class="fa-solid fa-circle-info">About Event</i></a>
+        <a href="#schedule"><i class="fa-solid fa-alarm-clock">Schedule</i></a>
+        <a href="#speaker"><i
+            class="fa-solid fa-person-chalkboard">Speaker</i></a>
+        <a href="#gallery"><i class="fa-solid fa-images">Gallery</i></a>
+        <a href="#register"><i class="fa-regular fa-id-card">Register</i></a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#contact"><i class="fa-solid fa-phone">Contact</i></a>
+      </nav>
+    </div>
+    <div class="hero">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNHMpdt7V9U9iXikD7PfZCqbEylMa_Bt-DkNSKrY_82Q&s=10"
+        alt="event banner" class="banner">
+      <h2>Emerald's Degree College Annual Fest 2026</h2>
+      <b>Date:15–17 March 2026</b><br />
+      <i>Venue:Emerald's Degree College Campus</i><br />
+      <button>Register Now</button>
+    </div>
+    <div class="about-event" id="about">
+      <p>
+        Emerald's Degree College Annual Fest 2026 is a vibrant celebration that
+        brings together students, faculty, alumni, and guests for an exciting
+        blend of academics, culture, sports, innovation, and entertainment. The
+        event provides a platform for students to showcase their talents,
+        develop new skills, build meaningful connections, and create lasting
+        memories while celebrating the spirit of learning and teamwork.
+      </p>
+      <h3>Event objectives</h3>
+      <ul>
+        <li>Encourage students to showcase their talents and creativity.</li>
+        <li>Promote teamwork, leadership, and communication skills.</li>
+        <li>Foster innovation through academic and technical competitions.</li>
+        <li>Strengthen the sense of community within the college.</li>
+        <li>Provide opportunities for learning, networking, and personal
+          growth.</li>
+      </ul>
+      <h4>Why Attend?</h4>
+      <ul type="disc">
+        <li>Participate in exciting cultural, technical, and sports events.</li>
+        <li>Learn from expert speakers and interactive workshops.</li>
+        <li>Showcase your skills and compete for exciting prizes.</li>
+        <li>Meet students, faculty, alumni, and industry professionals.</li>
+        <li>Create unforgettable memories with friends and the college
+          community.</li>
+      </ul>
+      <h5>Key highlights</h5>
+      <ul>
+        <li>Cultural Performances</li>
+        <li>Technical Competitions & Hackathons</li>
+        <li>Sports Tournaments</li>
+        <li>Guest Speaker Sessions</li>
+        <li>Live Music & Entertainment</li>
+        <li>Art & Creative Exhibitions</li>
+        <li>Food Stalls & Fun Activities</li>
+        <li>Awards, Certificates, and Exciting Prizes</li>
+      </ul>
+    </div>
+    <div class="event-schedule" id="schedule">
+      <table border="5">
+        <tr>
+          <th>Timings</th>
+          <th>Session Name</th>
+          <th>Speaker / Coordinator</th>
+        </tr>
+        <tr>
+          <td>09:00 AM – 09:30 AM</td>
+          <td>Registration & Welcome</td>
+          <td>Event Organizing Committee</td>
+        </tr>
+        <tr>
+          <td>09:30 AM – 10:00 AM</td>
+          <td>Inauguration Ceremony</td>
+          <td>Principal, Emerald's Degree College</td>
+        </tr>
+        <tr>
+          <td>10:00 AM – 11:00 AM</td>
+          <td>Keynote Address</td>
+          <td>Dr. Ananya Rao (Guest Speaker)</td>
+        </tr>
+        <tr>
+          <td>1:00 AM – 11:15 AM</td>
+          <td>Tea Break</td>
+          <td>Refreshments</td>
+        </tr>
+        <tr>
+          <td>11:15 AM – 12:30 PM</td>
+          <td>Technical & Innovation Session</td>
+          <td>Prof. Rakesh Kumar</td>
+        </tr>
+        <tr>
+          <td>12:30 PM – 01:30 PM</td>
+          <td>Lunch Break</td>
+          <td>College Cafeteria</td>
+        </tr>
+        <tr>
+          <td>01:30 PM – 03:00 PM</td>
+          <td>Cultural Performances</td>
+          <td>Student Cultural Committee</td>
+        </tr>
+        <tr>
+          <td>03:00 PM – 04:00 PM</td>
+          <td>Competitions & Prize Events</td>
+          <td>Faculty Coordinators</td>
+        </tr>
+        <tr>
+          <td>04:00 PM – 04:15 PM</td>
+          <td>Refreshment Break</td>
+          <td>Snacks & Beverages</td>
+        </tr>
+        <tr>
+          <td>04:15 PM – 05:00 PM</td>
+          <td>Awards & Recognition</td>
+          <td>Chief Guest</td>
+        </tr>
+        <tr>
+          <td>05:00 PM – 05:30 PM</td>
+          <td>Closing Ceremony</td>
+          <td>Principal & Organizing Committee</td>
+        </tr>
+      </table>
+    </div>
+    <div class="speaker" id="speaker">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxPHmB48a3f6Ug5xxDiRTWkQeM6-f5W_sZ9ryUyg_tug&s"
+        alt="Dr. R. Srinivas" class="speaker-image">
+      <strike>principal</strike>Name:Dr. R. Srinivas<br />
+      <strong>Designation:Director, Emerald's Degree College</strong><br />
+      <big>Organization:Emerald's Degree College</big>
+      <p>
+        Dr. R. Srinivas is the Director of Emerald's Degree College and a
+        dedicated academic leader committed to promoting excellence in
+        education, innovation, and student development. With extensive
+        experience in higher education and institutional leadership, he inspires
+        students to achieve academic success, develop leadership qualities, and
+        prepare for rewarding professional careers. His vision is to create an
+        inclusive learning environment that nurtures creativity, critical
+        thinking, and lifelong learning.
+      </p>
+    </div>
+    <div class="event-gallery" id="gallery">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ26G_hOPE7RSEbcqWBYfjIuu4bK69ZZjjFjfnF6tCpWw&s=10"
+        alt="spark" class="event-1">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSaiArpe2a_RJGgK7vJjX0TWcdSKcDubiXPOGNYEl1vg&s=10"
+        alt="e-quest" class="event-2"><br />
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY6HNOw3RfoRz5K_avQbM-r2XmKu5GYfKHPHnofo-r-Q&s"
+        alt="techknow" class="event-3">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Dd9t489HCq_alqeGz-DGhWGYeH5kOCOojQIEvYzZtw&s=10"
+        alt="elevate" class="event-4">
+    </div>
+    <div class="registration-form" id="register">
+      <form>
+        Enter full name:<input type="text" name="full name" rquired /><br />
+        Enter email:<input type="email" name="email" /><br />
+        Enter Phone number:<input type="number" name="phone number"
+          required /><br />
+        Enter gender<input type="radio" name="gender" />Male<br />
+        Female<input type="radio" name="gender" /><br />
+        Third Gender<input type="radio" name="gender" /><br />
+        Enter your college/company name<input type="text"
+          name="college/company name" /><br />
+        Enter your event category<select required>
+          <option value="choose your event">choose your event</option>
+          <option value="SPARK">SPARK</option>
+          <option value="QUEST (E-Quest)">QUEST (E-Quest)</option>
+          <option value="TechKnow">TechKnow</option>
+          <option value="Elevate">Elevate</option>
+          <option value="Soiree">Soiree</option>
+          <option value="Sports Meet">Sports Meet</option>
+          <option value="Outbound Training">Outbound Training</option>
+        </select><br />
+        Enter number of paricipants<input type="number"
+          name="number of paticipants" required /><br />
+        <button type="submit">Submit</button><br />
+        <button>Reset</button>
+      </form>
+    </div>
+    <div class="sponsors" id="sponsors">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC7i4XH7zl3IUDMoqqcTU04-a6XUY6005iUEP2iWLKFw&s=10"
+        alt="directior and deputy director" class="sponsors-logo">
+      <address>
+        Emerald's Degree College
+        Revenue Bhavan, Balaji Nagar,
+        Tirupati, Chittoor District,
+        Andhra Pradesh, India
+      </address>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.409082266558!2d79.4085145!3d13.6328618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d4b1964af9ffd%3A0xaedb9f84dcbfdb0f!2sEmerald&#39;s%20Degree%20College!5e0!3m2!1sen!2sin!4v1784719936154!5m2!1sen!2sin"
+        width="300" height="300" style="border:0;" allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe><br/>
+      <small>Contact Numbers:0877-2260067<br />
+        +91 80999 45679</small><br />
+      Email:<u>info@emeraldsedu.in<br />
+        edc.principal@gmail.com</u>
+    </div>
+    <footer class="end-of-the-page"id="contact">
+      <h3>Copyright Notice</h3>
+  <p>
+    © 2026 Emerald Events Website. All Rights Reserved.
+    This website was designed and developed by R. Megha Shyam.
+    Unauthorized copying, modification, distribution, or reproduction of any
+    part of this website without permission is prohibited.
+  </p>
+  <h3>Privacy Policy</h3>
+  <p>
+    We respect your privacy and are committed to protecting your personal
+    information. Any details submitted through the registration form, such as
+    name, email address, phone number, and event preferences, are collected
+    only for event registration and communication purposes.
+    Your information will not be shared with unauthorized third parties.
+  </p>
+  <h3>Terms and Conditions</h3>
+  <p>
+    By using this website and registering for Emerald's Degree College Annual
+    Fest 2026, you agree to follow the event guidelines and rules.
+    Participants must provide accurate information during registration.
+    The organizers reserve the right to modify event schedules, activities,
+    or participation rules when necessary.
+    Misuse of this website or providing false information may result in
+    cancellation of registration.
+  </p>
+  <h3>Website Developer</h3>
+  <p>
+    This website was developed and designed by <strong>R. Megha Shyam</strong>
+    as an event promotion website project.
+  </p>
+  <p>
+    Contact: R. Megha Shyam<br>
+    Emerald Events 2026 Website Developer
+  </p>
+  Website link: <a href="http://emeraldsedu.in/"target="_blank">Website</a><br/>
+  Facebook Link:<a href="https://www.facebook.com/EmeraldsCollege"target="_blank"><i class="fa-brands fa-facebook">Facebook</i></a><br/>
+  Instagram Link:<a href="https://www.instagram.com/emeraldsdegreecollege/"target="_blank"><i class="fa-brands fa-square-instagram">Instagram</i></a><br/>
+  Linkedin Link:<a href="https://www.linkedin.com/school/emeralds-degree-college-tirupati-urban/about/"target="_blank"><i class="fa-brands fa-linkedin">Linkedin</i></a><br/>
+  Youtube Link:<a href="https://www.youtube.com/@EmeraldsDegreeCollege"><i class="fa-brands fa-youtube">Youtube</i></a>
+
+    </footer>
+  </body>
+</html>
