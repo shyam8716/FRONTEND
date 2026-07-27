@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Hospital Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    .header{
+      margin:5px;
+      border:5px solid rgb(16, 85, 146);
+      color:aqua;
+      display:flex;
+      justify-content:space-between;
+      gap:5px;
+      text-align:center;
+      align-items:center;
+    }
+    .logo{
+      width:300px;
+      height:300px;
+    }
+    .header button:hover{
+      color:antiquewhite;
+      background-color:aquamarine;
+      border-radius:5px;
+    }
+    .navbar{
+       position:sticky;
+      top:0;
+    }
+    .navbar nav{
+      margin:5px;
+      border:5px solid antiquewhite;
+      background-color: black;
+      display:flex;
+      justify-content:space-between;
+      gap:5px;
+    }
+    .navbar button:active{
+      color:aquamarine;
+      background-color:azure;
+      border-radius:10px;
+    }
+    .hero{
+      margin:5px;
+      border:5px solid rgb(8, 31, 31);
+      background-color:bisque;
+      padding:5px;
+    }
+    .banner{
+      width:300px;
+      height:300px;
+    }
+    .hero button:focus{
+      color:beige;
+      background-color:blue;
+      border-radius:15px;
+    }
+    .services{
+      margin:5px;
+      border:5px solid gray;
+      display:grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto);   /* 2 rows */
+    gap:15px;
+    }
+    .service-1{
+      color:black;
+      background-color:blanchedalmond;
+      border:5px solid purple;
+      text-align:center;
+      padding:5px;
+    }
+    .service-2{
+      color:blue;
+      background-color:blueviolet;
+      border:5px solid brown;
+      text-align:left;
+    }
+    .service-3{
+      color:burlywood;
+      background-color:cadetblue;
+      border:5px solid chartreuse;
+      text-align:right;
+    }
+    .servicee-4{
+      color:chocolate;
+      background-color:coral;
+      border:5px solid cornflowerblue;
+      text-align:justify;
+    }
+    .service-5{
+      color:cornsilk;
+      background-color:crimson;
+      border:5px solid currentColor;
+      text-align:justify;
+    }
+    .service-6{
+      color:cyan;
+      background-color:darkblue;
+      border:5px solid darkcyan;
+      text-align:right;
+    }
+    .doctors{
+      margin:5px;
+      border:5px solid darkgoldenrod;
+      padding:5px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .doctor-1{
+      color:darkgray;
+      background-color:darkgreen;
+      border:5px solid darkkhaki;
+      text-align:center;
+       width:30%;              
+    box-sizing:border-box;
+    }
+    .doctor-1 button:focus{
+      color:aliceblue;
+      background-color:black;
+      border-radius:20px;
+    }
+    .doctor-1-image{
+      width:300px;
+      height:300px;
+    }
+    .doctor-2{
+      color:darkmagenta;
+      background-color:darkolivegreen;
+      border:5px solid darkorange;
+      text-align:left;
+       width:30%;    
+    }
+    .doctor-2-image{
+      width:300px;
+      height:300px;
+    }
+    .doctor-2 button:focus{
+      color:antiquewhite;
+      background-color:blue;
+      border-radius:25px;
+    }
+    .doctor-3{
+      color:darkorchid;
+      background-color:darkred;
+      border:5px solid darksalmon;
+      text-align:right;
+       width:30%;              
+    box-sizing:border-box;
+    }
+    .doctor-3-image{
+      width:300px;
+      height:300px;
+    }
+    .doctor-3 button:focus{
+      color:aqua;
+      background-color:blueviolet;
+      border-radius:30px;
+    }
+    .doctor-4{
+      color:darkseagreen;
+      background-color:darkslateblue;
+      border:5px solid darkslategray;
+      text-align:justify;
+       width:30%;        
+    box-sizing:border-box;
+    }
+    .doctor-4-image{
+      width:300px;
+      height:300px;
+    }
+    .doctor-4 button:focus{
+      color:aquamarine;
+      background-color: brown;
+       border-radius:35px;
+    }
+    .doctor-5{
+      color:darkslategrey;
+      background-color:darkturquoise;
+      border:5px solid darkviolet;
+      text-align:justify;
+      width:30%;
+      box-sizing:border-box;
+    }
+    .doctor-5-image{
+      width:300px;
+      height:300px;
+    }
+    .doctor-5 button:focus{
+      color:azure;
+      background-color:burlywood;;
+       border-radius:40px;
+    }
+    .doctor-6{
+      color:deeppink;
+      background-color:deepskyblue;
+      border:5px dashed dimgray;
+      width:30%;
+      box-sizing: border-box;
+      text-align: right;
+    }
+    .doctor-6-image{
+      width:300px;
+      height:300px;
+    }
+    .doctor-6 button:focus{
+      color:beige;
+      background-color:cadetblue;
+      border-radius:45px;
+    }
+    .department{
+      margin:5px;
+      border:5px solid dimgrey;
+      padding:5px;
+      display:grid;
+  grid-template-columns:repeat(3, 1fr); 
+  grid-template-rows:repeat(2, auto);
+  gap:15px;
+    }
+    .cardiology{
+       color:dodgerblue;
+      background-color:chartreuse;
+      border:5px solid chocolate;
+    }
+    .neurology{
+      color:coral;
+      background-color:cornflowerblue;
+      border:5px solid cornsilk;
+    }
+    .pediatrics{
+      color:currentColor;
+      background-color:crimson;
+      border:5px solid cyan;
+    }
+    .orthopedics{
+      color:darkblue;
+      background-color:darkcyan;
+      border:5px solid darkgoldenrod
+    }
+    .dermatology{
+      color:darkgray;
+      background-color:darkgreen;
+      border:5px solid darkgrey;
+    }
+    .ent{
+      color:darkkhaki;
+      background-color:darkmagenta;
+      border:5px solid darkolivegreen;
+    }
+    .appointment-form{
+      margin:5px;
+      border:5px solid darkorange;
+      color:darkorchid;
+      background-color:darkred;
+      display:block
+    }
+    .appointment-form input{
+      color:red;
+      font-size:larger;
+      font-weight:bold;
+    }
+    .reviews{
+      margin:5px;
+      border:5px solid darksalmon;
+      padding:5px;
+      display:grid;
+    grid-template-columns: repeat(3, 1fr); /* 1 Row × 3 Columns */
+    gap:15px;
+    }
+    .review-1{
+      color:darkseagreen;
+      background-color:darkslateblue;
+      border:5px solid darkslategray;
+      text-align:center;
+    }
+    .review-1-image{
+      width:300px;
+      height:300px;
+    }
+    .review-2{
+      color:darkslategrey;
+      background-color:darkturquoise;
+      border:5px solid darkviolet;
+      text-align:center;
+    }
+    .review-2-image{
+      width:300px;
+      height:300px;
+    }
+    .review-3{
+      color:deeppink;
+      background-color:deepskyblue;
+      border:5px solid dimgray;
+      text-align:center;
+    }
+    .review-3-image{
+      width:300px;
+      height:300px;
+    }
+    .hospital-gallery{
+      margin:5px;
+      border:5px solid dimgrey;
+      padding:5px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .reception{
+      width:30%;
+      height:300px;
+      box-sizing:border-box;
+    }
+    .icu{
+      width:30%;
+      height:300px;
+      box-sizing:border-box;
+    }
+    .laboratory{
+      width:30%;
+      height:300px;
+      box-sizing:border-box;
+    }
+    .operation-theatre{
+      width:30%;
+      height:300px;
+      box-sizing:border-box;
+    }
+    .pharmacy{
+      width:30%;
+      height:300px;
+      box-sizing:border-box;
+    }
+    .ambulance{
+      width:30%;
+      height:300px;
+      box-sizing:border-box;
+    }
+    .end-of-the-page{
+      margin:5px;
+      border:5px solid dodgerblue;
+      color:firebrick;
+      background-color:floralwhite;
+      text-align:center;
+    }
+    .end-of-the-page a{
+      position:sticky;
+      top:0;
+    }
+    .end-of-the-page button:hover{
+      color:forestgreen;
+      background-color:fuchsia;
+      border-radius:45px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header"id="home">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaW4bQyUlIuOzJ83TQQz_XP_p3u4cDWgr0K-FqIyxINQ&s=10" alt="sims hospital" class="logo">
+    <h1>SIMS Hospital</h1>
+    <b>Phone: 8606078301 / 04828 221713 / 04828 221714</b>
+    <button>Book Appoint ment</button>
+  </div>
+  <div class="navbar">
+    <nav>
+      <a href="#home"><button><i class="fa-solid fa-house"></i>Home</button></a>
+      <a href="#departments"><button><i class="fa-solid fa-building-circle-check"></i>Department</button></a>
+      <a href="#doctors"><button><i class="fa-solid fa-user-doctor"></i>Doctors</button></a>
+      <a href="#services"><button><i class="fa-solid fa-stethoscope"></i>Services</button></a>
+      <a href="#appointment"><button><i class="fa-solid fa-book-medical"></i>Appointment</button></a>
+      <a href="#gallery"><button><i class="fa-solid fa-image"></i>Gallery</button></a>
+      <a href="#contact"><button><i class="fa-solid fa-phone"></i>Contact</button></a>
+    </nav>
+  </div>
+  <div class="hero">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA2wMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYBBAcDAgj/xABCEAABAwMCBAMFBgMHAQkAAAABAgMEAAURBiESEzFBUWFxBxQiMoEVQlJikaEjM7EkQ3KSorLBghZTY3OT0eHw8f/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EACMRAAICAQQCAwEBAAAAAAAAAAABAgMREiExQQQTMlFhInH/2gAMAwEAAhEDEQA/AO40pSgFKUoBSlKAUNYPStK7XFi1QXJUkngTslKd1LPZIHcmoBm53CLa4ipM59LLae53Kj4AdSfIVRpd0vmp5Pu8IOw4PdtBKHCPF1wH4B+RA4vMZrMOFO1VcDOuS1sMtZSOA7NeKWz+LGyl/QVsO3oLccsmk2EcUZSEqODyyk/OOIdFAEKyeu9XSCWo94FkslmksouEll2ZIJDaV/A3kdQlGd/VWT51ly9XcyfdbVaEIbbWpDqjj+EegIGwI6GkHTVutERMq8SRI5Ky5xyFZQ0ojqM9a0peuXJMpUbTVtcnKSccxQKU5/r9al7F9kbsa16hlR+OfdFsv8l1vCHMJCj8iyEjqPU1HTv7JcHkN3t0O+9IKlrU4plrLRTyyc7EqPEMeAFfF2ka1Ytr02TKiQEIT8LTaAVqPYAnO9Ud8ThEWxcpiMvykrWC6AFObFKlADfc+lY23OLRKeTpkq16hituKtl0ddLimgA44FBKAPjICu5P7VsXLUEm1TEsvwlOxkNBTkgZyo43IGOHY+feqJpi8askSDBj3MylstBbYfQ2eanp8OMZx3+lWBGtblAfDN8tQKB8ymgUqB/wq6/QmtVLKyV1LO5OO220XyChxcVUN2QONPCA075kjor0ORUK7Cv2lnjJgyUuwxspC1HkKH5k7lk/mTlPimt2bBturUIuNtuDhfZGAlDhRj8qh1Tk9azab7KiTEWy9p+PBC3ynhSk9k+Y7ZqySfAcM7ontPX+NemiE8TMtv8AnRlqBUnz26pPYjY1Mp9c1RNQWNy3uIutoUpkx3OMoQndoH5inxQe6D6jGKsGmb4m7xlh0JRKZOHUJVkEdlJ8UnsazZT8JylYGcb1moJFKUqQKUpQClKUApSlAKUpQClKHpQGFdK5/LkP6ovyWGVqahslYbUnqEj4VOeRJ2T5ZNWPWU1cOxvBk8Lz5DKDnGM9T+mahrQtFh007dX2nHFugFLbY+PljZKR9N/WpRGMvB4XqQZfBp+yNcxhshp/kuhC2lDBT1+7+IipB96Bo6xrkyFcx1RwVbcclzOyR4nt6b1jR8Rfuyrg++8/z1FUdUlCQ4lonONuhz1Hp06VWYif+3mszJGXLPAJDSjukozgkeKnFZweyE/mqzfRo3hYRs2+y3DWj6bje1qZgJP8COjPCR4gd/8AF+lX+3W2JbGAxBYQ02Pwj5vU962m0pSlKUYCQMADoBX0apkpyc39pF7Q3OZtshp0IR/EGMjmHHjVbYdtvuiiIFoUDwhXNytRyDvmrd7QzbjdLcq6LZS22lSk81WwJOM4r7avdmjxFMkgKKcpCIy1DHlhNeJ53kOFulRbOqEf5yUG0SIUPVdoehxSy6p0ltEZfGhaTsR5f/FdvnwYs9gsTWUPNq2KVDP/AOVzBH2HI1PbJkINCU3IGeEctW+26TXWE13eFcra84aM7oaWc4vmmJNhf+1rM+6kNfMtKeJaE/nH94j9xW/AnxNY2tyI8tEe6sJClpRuWyejiT3Sex86vC+m4rlmqoj+k7/Eu1uZK2UKW42hPVaMZej/AOXK0+aTXenkwTcWWLTl0cYnvWOWxyiycNlThWXFHfCR14cdz6VG3aOdMXlm4RcpinJSEj7pOVtY8Oqk+G9S10mIbtp1JZYzUp52MkBxR4Qtg5UCfHGf3VXo68b5pVT6UNOSkI4y2gkpS6nfG/8A93qWXks7llivNSGG3mFhbbiQpKh3B6V7VUfZ7KBtz0Pi4m46+Jg/+Ev4gPpuPpVtFUfJRcGaUpQkUpSgFKUoBSlKAUpSgFYPSs0oCh+0OQ4u5W6EhWAWnHMeJyEj/dTXCT7hAtgErCsYLAyQRsAe4GfA1jWauDVduJQFDkbf+onNb+ozBF3t3vzbziuMFoJdCQFZ646mrxJhyeet31WzRMtqJlt11tEJkjOUl1Qb289zXt7NIbUbTTbrKEpRIcUtHB05Y+FH+lIrV9pHD9hxAv5DcY4x58W374qY0LwjRtk4Pl9ya/2iq9ES+RPVhXSs1hXSoBx72ptmbqGO4lwiO0pEVTiV44FqI67Vr3O7oamORG2UGPzOUtot/MNhkEb57nGK1tTf2a93K3POJW09K5rjjpwB94Y8SK2XbjDYQ0H3nvf0pLhcS0n+UCMq9cV5VylKe530TrrzqWSPdZddvrD5WSLW+hTjq/w8Wwxjc4wOvjXdmlJWhK0HKVDI9K/ObsoQHH2mpL0iPI/iFSxwrSoHoc+ua/QVkChaYQWcq5CM/pXZ4+pLDOa3HKN6q3r+Kp/TEp9oDnwsS2vVG5H1TxJ+tWStO88JtMwOfKWHM+nCa6TBrKKboUsT9IyLYUoW3FedjBsjISg/EgfRK0/pW1oeTJeTMamNnPGFhSlJJVtwnISNjt51CexwK+zrsV53mtjPow3mpXR6EIvt1WgIPNWpSuF0K4SFYAI860XDNI/ExpBZi6omwcfDwrA9EqyP2VV6T0qiWT4vaDLUk7FLmf8ATV7FUfJkjNKUqCwpSlAKUpQClKUApSlAKUrB6UBRfaFGcE2BNTuEocaOOoOyh/txW3qC0yLym2zLemL7w0AsOvZJT3GMedSesIDk+yO+7jL7BDzY/EU9vqMitLR00P2lMdS8LjfDt95B3Sf02+lWTxuIvDMa7hOztJXBuOjjlMJTJZSO62lBYA8zwkVULBrlm3xYUCO80Y7Kjw5Iw40pWU4PkFY9U1vap1W5IbctUThb964wiQ24QsNpBKklOxSTjGR543qit2eS5bXZiG2UtoVgITkkeYxt4+OepNc1lvSLSwtz9BoUFJCk7gjIPjXhOmx4MdT8l1LbacZUd8VzLR2q3rUlNtkp5za08xoqc/lgdQM7qHgOtSWvLzazcYcC9F5cB6Op7gbSdz24gP2pK5RhlCMcspt+ebl6pkvsITJlzpJahNBWCvtnJ2xjfNTDumrkS1GVDcVM4C4hIWjBA2J3PiQMVzJydGia1t1wtyX0RWpTLjaXic8PEMgZ7YJr9HuORlX+NJEuMG0RnEEF0cRUopI2+lVVaklIsmt0cR1BD+z3XbfOYcYkJSF8njDigCThQ4T0O/pXcNMXaBcLdGbhymnltMNhaUKzwnA71wb2nyPtH2myktEkNJbaygjOAMnv51a9L6is0GTa2rEp9mU+QJLb7ZCFJHzAnffuMUb9ckks5CWpM7QTtXMPaHqqf7xNtFpjuPtcjlOlvGDx7K3PcDYetSlp1PcNRXWbbmGosaOgjhdQsrdSnvxDolXlUqg2uK0plUBCmeIJW46ErUrJwFFJ3IzXRjKyjM0/Z3HLOkY7ikJQ/JU5IcR+FSjsk+YASPpXtpu2SLQqXKuKISFEZC2Bg8OSTxVF6kfkaRkqkWkNqZdQFFh0kIHxpRgnOQPiyPqOlfUjUi5OlpC7k0hhx55bKUNDI5YG5B6K77jarJ9Fs7HvoRrn3KZOKSOJOdx3Woq/piruKr+ireuHZw+8kpkTFc9xB+5n5U/ROKsNGUQpSlQSKUpQClKUApSlAKUpQClKUB8q6bjaqA8y7pa/haUKXDdUpTZHXhJypHqk7jyroB6bVpXa2M3WGqNI4k/eQ4g4U2odFA+IomQyvXzT0K8W0PWpEdqVkPsSEoACj4EjsrJrmKrbNjOm3hmYkrXy+W2s8HFnGxzg/Wr7bLhK0/cVW65pPLUpSgEJ7fjb8U9ynqN63bkzboi2r0l4PMLcC4zCCOFx5XQg9+5+hrK2rhoupRkv6KpZIb2k5olXi2tqacQEIBOeAflJyOLxG3lWvr+7M3O8tchSQw0wngUG/iSo9QoVtXbWssvS2334Cre20eMcsLHH+HfqPOvfT+ll3vS8aY64WXpGXOS6j4UJzsEnqkU0prERXZFy2OVagtkh5LciLFccUE/xg2knh8CRUbH0/Ll2eXeUcrkRieYVuYcz3wOtdPutnnWGcUyYwQ05/LkMP4Lm3RWeprzVb7WtjlOWqGvm8RU4pDXGo+OeL/is4WtScZIvPDeUc/0/Z5Lr6JsqI8Yqd0uOJxxK7ddzVuaS2lSTBC3JCd8BHTHfbpg1JWyyzbxL5FrbVwxkJ4nJcglDYPRISO+xNTt30q9Y7IqWX1yeB0LkstpwlSD1Kj8xAolKzd8FoyUY4MafmTpF8Xc7PDXJDoHvBUEoBIG4B8fD/ipyDd471zDTkRpSeAORy8ghbePmQrruk/sarlv1vMY56Y6ICLbHSOSEt8PM8hjp61I3OTEvFvb1NbC22UIVzCsgFl4YAz67pPiMVvF9I51OLbwSza4F7enSJxQ5ChOBDynU4SpaU8QAH4U8X1V6VFWa2put2THhRRHtcU4LfUNIzxBA/Mo/EfAYFRunY1xnx02tjKVqkGRLynKUOHGVL8NgClHXO5rptmtke1QkxYoPDkqUtRypxR6qJ8TVxybqfSvqlKgkUpSgFKUoBSlKAUpSgFKUoBSlfDq0ttqWo4SkZNAfWR40Udu9VS5ajmLA+yWA2yfmkPtLUf8ApQBn6nFRJk+9qHvV1lLcUeEAuckZ8ABj96vGGrsznZp6LldrXFusbkykKPCeJtxB4VtqHRST2Ncp1rAuenHoypCy7bCpwNOoVgc5ScJK04wlWOL4hsSegJraRdJ3OUuRHaRADq22HC+4c8JweJX3SSO+3nWLu8hywz4a0T2g+1gtP8UhsnsUq3A3wQcjFJVPTyYysU1pRWNAWq23nUhZvLyA02jmNNLWE89eem/X0ruMrmtwnRFSlLjaDy0hORsNhiuJX3Rd30+pqQqObhCwFpfZT8TZ8xg4Pn0rateqZbawqPKUlYHxNoe5S/8AKsKQT5jFYxenYmmfrWmSLrcb9MSGI9308qSnLalqbbVwtlWN/AYJxWqL1alFluNp6S/zVFKwg/y+EZVnwx3rUY15dizIdLTyG4+C4JMIHYnrlDm/XsK2F69n8laxGRjGE/2KR189vLNXc61zg7Iy1LZG9bLpPVGH2FYfdmlhxSkutLC+JBHDnOPmBBBz2NXLh5jJS+kEKT8aSNum4qgStVX/AN0blJjPOMPYLaGYqErXnwC3M/6dqrs29y1vEXOUtLh2EdL5lSVeQQnDaPrmpbh0UdixwaGs7Jb7ddJa7Q+hcRGC4hCwoMrPVOfTfHbNSPs00/dLrGddz7tbVPh1D6tyVAYJQjpn8x+g71tQNFXS+NtqnxxaLMyC4IyVfxnT1JUQNie5NbEeW45AY5UaUGW2xgPOmPFYH03Vjx3zVaoNs41FQk7McnTLXb4triJixG+BsEq65KlE5JJ7nzrdFchZdmOyYzyUpciqkJbW9y+WhwHIw2CSpX+I46edTcVbUwqNrdmulpRQpyE4spSoduvD9N62dX6aK/6R0TNZqpwbhe4qgh+LJmNY24mAhxP1Gx/arPGdDzKXAlaeIfKtOCPpWWMG6eT1pSlCRSlKAUpSgFKUoBSlKAV8q6V9VhQyDQEHftQN208iOlL0oj5SrCWx4qPYVV33mrg425cpiJjiFcQQlP8ADQfEJH9TVvb0/bElxS4qHVuK43FufEVHzzW+3GYZSA0y2gDbCUgVeMlEynBy72OdQJEeNaHpEpaW2A66Vqc2GOM9a1YceJdLY69YZTkeO8VpKOHLZIOD8J6fSvjXMByXbJ0GQ2Ir6pKlMPOZDZBUcYUNs4PQ1XhCvsG0OQ7VElR0omB5Cm1gqKOX06/F8Wf2ro1p9HL68dnUY2o1sBLVxgOIAASHWPjSfUdRWvcrXo7UJK5bcUvHbjB5a6pSdTvW1oNTOY4S4EtSJDRa5iQnKs9NwTXs9qy3plvRblDCVsqSFlJDgwQMKHfG9ZuuD7NFZPtZNXWunLNp+NxWu7qU6pSUtwnVB0KJIA36jr1qKZvtwt7PuE3ibTuUofOQrxKV/wDvUjeJumfeAt+0sSYwdS086lrJaJOxyOo6V7QWdM3lc5H2YlxMHJSFEqUpP4kp7A4xXLZ4mt8mkLpVrVFYY0XZm9QWpJmX1ERhsqDkWMoJc6/eWd8Hyq82xrSOmWyi3iOHCd1IHMcUfM7nNUO13DSyMOs2dEZh1akNvhsELUBxFO2+cdq3EavtjTAfRFeaj8CjxqRwjKew9a6IURSw2UlZLnTuXKRqSVMbWm3wC2hQI50nbr34Ruf2quotsKE2yu4zDI5ICWzIICAfJPQn9aiJ2oJr0p+CH40IqiB1txrLqyo9EDG3F0/WtR5OobrbHA7wQonA0F++gIU2d+MJUe3Tc1qtMeDOXsm9yaReWbyhfuSFlEW4tM5SMlXfNSyVpZfD7YkxHQc5S2Ug+o6GovQtkVEuCXoSH5SH30PPyVfCyhKQQODPzHfqPD0rqXCD1Gazlb+GkKe0QVmvZkL92ncCXj/LWnIS4Pr0PlU8npWtJgRZQCZEdtYBChkdCOlbSRgVi3udMVhbmaUpQkUpSgFKUoBSlKAUpSgFKUoDGKY2rNKgHk6yh1tSFpSpKhghQyP0qBf0lFCyu3PPQc/3TZ4mv8h2H0xVjod6lNrghpPlFGmWW9oPLdhwLnH65Srlq8vhVlP7iov7JiRUcqRpiU0Arj+GEHU8XjlsmumY9P0rCh32GK19sjL0Q62OKBrR6EtFdxcjspWCUP8AMaSshXEASpIzgk7Zrbbk6MZjTWmbjDQiY0UPKS8QeHclKT2G52HjW77StIyW2HJ9pLzkMqK5EMHKWzuStA7eJFVaPqduVp5drlFRlufw46kjd/iykDbv4+VY2eTOL2iRXSpS0Slg3o8bSTj7bKJkie49hbTKGHF8R4OHiSlKBvw96nrfYEMrDsHT10krUOstSUDpjJDis5xt0qd0JpaTbAbpfHi/d3WwjGcojo7IT/yauaR4960Vr+gqftlJtmmrqGg2EW61M5yWmEc1X9AkH6GpmHpO2tOpflByc8k5SqSriCT+VPyj9KngKzUObZoq4ro+AgDoBt0r63rNKoWwYrNKVJIpSlAKUpQClKUApSlAKUpQClKUApSlQBSlKAVhXSs1hXSgKnr+/wD2NaZDTCkJkusqPEoZCE4xnHck7Vx27WkQrRbbvFPC08EEp/7pwYKVD1P6HHjVv1E1/wBpfaILQ+VGKp8odTnGUIRnA9SaxHgR7lZLFapSVmLIlIZWkLKVcKckb/8ASK5LpyU44+y9VSuhNPrg6Jo6+I1FYo9wSAlwjgeQPuuDqP8An61OCuVeyhTlu1Ne7QVlTW60jO2Ur4c/UH9q6qK6k8mNctUcszSlKkuKUpQClKUApSlSBSlKAUpSgFKUoBSlKAUpSgFKUqAKUpQCvlXSlKA5Moe7+2SOG/7x9YVnzaJP9BXpZkhMnS/f+3L6/wDluUpXJf8AOP8App4j2sPX2bNpXrW8uqHxpY2Pq4c/0rp6OtKV1R4MIn3SlKkuKUpQClKUApSlSBSlKAUpSgP/2Q==" alt="logo" class="banner">
+    <h2>Welcome to SIMS Hospital Tirupati</h2>
+    <b>Compassionate Care. Advanced Treatment. Trusted Healthcare</b><br/>
+    <p>
+      We are committed to providing world-class healthcare with experienced doctors, advanced medical technology, and compassionate patient care. From routine check-ups to specialized treatments, our dedicated team is here to support your health and well-being every step of the way.
+    </p>
+    <button>Book Appointment</button><br/>
+    <i>Contact Us</i>
+  </div>
+  <div class="services"id="services">
+    <div class="service-1">
+      <p>
+        24/7 emergency medical services with experienced doctors, nurses, and advanced life-saving equipment to provide immediate care when every second counts
+      </p>
+    </div>
+    <div class="service-2">
+      <p>
+        Our fully equipped Intensive Care Unit offers round-the-clock monitoring and critical care for patients requiring specialized medical attention.
+      </p>
+    </div>
+    <div class="service-3">
+      <p>
+        An in-house pharmacy providing genuine medicines and healthcare essentials, ensuring convenient access to prescribed medications at any time.
+      </p>
+    </div>
+    <div class="servicee-4">
+      <p>
+        State-of-the-art diagnostic laboratory offering accurate and timely testing services to support effective diagnosis and treatment.
+      </p>
+    </div>
+    <div class="service-5">
+      <p>
+        24/7 ambulance services equipped with advanced life support systems and trained medical staff for safe and rapid patient transportation.
+      </p>
+    </div>
+    <div class="service-6">
+      <p>
+        Modern modular operation theatres with advanced surgical technology, ensuring safe, sterile, and high-quality surgical procedures across specialties.
+      </p>
+    </div>
+  </div>
+  <div class="doctors"id="doctors">
+    <div class="doctor-1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjfbQEvG5sSuliLS742Zndgc-xB3O6EnWZbmkQOFMo-w&s" alt="doctor-1" class="doctor-1-image"><br/>
+      <b>Dr. R. Srinivas</b><br/>
+      <i>Specialization: Cardiology</i><br/>
+      <strong>Experience: 18+ Years</strong><br/>
+      <button>View Profile</button>
+    </div>
+    <div class="doctor-2">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNeB2F6wx_WG7KsMdj9jMsF7ZOkCilRZJpJmzgvSETBA&s=10" alt="doctor-2" class="doctor-2-image"><br/>
+      <b>Dr. P. Lakshmi</b><br/>
+      <i>Specialization: Obstetrics & Gynecology</i><br/>
+      <strong>Experience: 15+ Years</strong><br/>
+      <button>View Profile</button>
+    </div>
+    <div class="doctor-3">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEKkaAZ-5e-zfGSPJ7d5h4Tap0NyxnaC-Lk6fR4xFbCA&s=10" alt="doctor-3" class="doctor-3-image"><br/>
+      <b>Dr. K. Venkatesh</b><br/>
+      <i>Specialization: Orthopedics</i><br/>
+      <strong>Experience: 20+ Years</strong><br/>
+      <button>View Profile</button>
+    </div>
+    <div class="doctor-4">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj6mIr7dr7uSLcN3XPR9I66po-IMeFa6Mf0Crn10kNRg&s=10" alt="doctor-4" class="doctor-4-image"><br/>
+      <b>Dr. S. Anitha</b><br/>
+      <i>Specialization: Pediatrics</i><br/>
+      <strong>Experience: 12+ Years</strong><br/>
+      <button>View Profile</button>
+    </div>
+    <div class="doctor-5">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGQ-ecWU2Q-xTn6AARrC_PXO46Xr6nWbCTr6Xu8xQWgg&s=10" alt="doctor-5" class="doctor-5-image"><br/>
+      <b>Dr. M. Praveen Kumar</b><br/>
+      <i>Specialization: General Surgery</i><br/>
+      <strong>Experience: 16+ Years</strong><br/>
+      <button>View Profile</button>
+    </div>
+    <div class="doctor-6">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc9Cd2u7z43J_5yN2oP3_MwaeQIyCrHjtrd2MhrBDotA&s=10" alt="doctor-6" class="img doctor-6-image"><br/>
+      <b>Dr. N. Deepika</b><br/>
+      <i>Specialization: Neurology</i><br/>
+      <strong>Experience: 14+ Years</strong><br/>
+      <button>View Profile</button>
+    </div>
+  </div>
+  <div class="department"id="departments">
+    <div class="cardiology">
+      <p>
+        Expert heart care with advanced diagnosis, treatment, and management of heart-related conditions. Our specialists provide comprehensive cardiac care with modern medical technology.
+      </p>
+    </div>
+    <div class="neurology">
+      <p>
+        Specialized care for disorders of the brain, spine, and nervous system with accurate diagnosis and advanced treatment options for better patient outcomes.
+      </p>
+    </div>
+    <div class="pediatrics">
+      <p>
+        Dedicated healthcare services for infants, children, and adolescents, focusing on growth, development, preventive care, and pediatric treatments.
+      </p>
+    </div>
+    <div class="orthopedics">
+      <p>
+        Comprehensive bone and joint care including fracture treatment, joint problems, sports injuries, and advanced orthopedic procedures.
+      </p>
+    </div>
+    <div class="dermatology">
+      <p>
+        Complete skin, hair, and nail care with expert consultation, diagnosis, and treatment for various dermatological condition
+      </p>
+    </div>
+    <div class="ent">
+      <p>
+        Specialized treatment for ear, nose, throat, and related head and neck conditions with advanced diagnostic and surgical facilitie
+      </p>
+    </div>
+  </div>
+  <div class="appointment-form"id="appointment">
+    <form>
+      Enter Patient Name:<input type="text"name="patient name"required/><br/>
+      Enter Mobile Number:<input type="number"size="10"name="mobile number"/><br/>
+      Enter Email<input type="email"size="20"name="Email"/><br/>
+      Enter Age<input type="number"size="10"name="Age"/><br/>
+      Enter Gender<input type="radio"name="gender"/>Male<br/>
+      Female<input type="radio"name="gender"/><br/>
+      Third Gender<input type="radio"name="gender"/><br/>
+      Select which department you want to Concern:<select required>
+        <option value="pick which department you want to Concern">pick which department you want to Concern</option>
+        <option value="Anesthesia">Anesthesia</option>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Casualty">Casualty</option>
+        <option value="Critical Care Medicine">Critical Care Medicine</option>
+        <option value="Dermatology">Dermatology</option>
+        <option value="ENT (Ear, Nose & Throat)">ENT (Ear, Nose & Throat)</option>
+        <option value="Gastroenterology">Gastroenterology</option>
+        <option value="General Medicine">General Medicine</option>
+        <option value="General Pediatrics">General Pediatrics</option>
+        <option value="General Surgery">General Surgery</option>
+        <option value="Gynecology">Gynecology</option>
+        <option value="Nephrology & Dialysis Unit">Nephrology & Dialysis Unit</option>
+        <option value="Neurology">Neurology</option>
+        <option value="Nutrition & Dietetics">Nutrition & Dietetics</option>
+        <option value="Obstetrics & Gynecology">Obstetrics & Gynecology</option>
+        <option value="Orthopedics">Orthopedics</option>
+        <option value="Pediatrics">Pediatrics</option>
+        <option value="Physiotherapy">Physiotherapy</option>
+        <option value="Pulmonology">Pulmonology</option>
+        <option value="Radiology">Radiology</option>
+        <option value="Rheumatology">Rheumatology</option>
+        <option value="Surgical Gastroenterology">Surgical Gastroenterology</option>
+        <option value="Urology">Urology</option>
+      </select><br/>
+      Select which doctor you want to Concern:<select required>
+        <option value="pick which doctor you want to Concern">pick which doctor you want to Concern</option>
+        <option value="Aleena T Y">Aleena T Y</option>
+        <option value="Dr. Amrutha P">Dr. Amrutha P</option>
+        <option value="Dr. Anil Philip">Dr. Anil Philip</option>
+        <option value="Dr. Athulya Mohan">Dr. Athulya Mohan</option>
+        <option value="Dr. Baiju Senadhipan">Dr. Baiju Senadhipan</option>
+        <option value="Dr. BhagyaVathy Nambiar">Dr. BhagyaVathy Nambiar</option>
+        <option value="Dr. Cinchu Santhappan">Dr. Cinchu Santhappan</option>
+        <option value="Dr. Dany Sunny">Dr. Dany Sunny</option>
+        <option value="Dr. Deepak C Mohan">Dr. Deepak C Mohan</option>
+        <option value="Dr. Geethi Krishna S">Dr. Geethi Krishna S</option>
+        <option value="Dr. Geethika S (PT)">Dr. Geethika S (PT)</option>
+        <option value="Dr. G Harikumar">Dr. G Harikumar</option>
+        <option value="Dr. Jai Kishan K. P (Lt. Col.)">Dr. Jai Kishan K. P (Lt. Col.)</option>
+        <option value="Dr. Jibu K Jo">Dr. Jibu K Jo</option>
+        <option value="Dr. John Mathew">Dr. John Mathew</option>
+        <option value="Dr. Jovin Jose M">Dr. Jovin Jose M</option>
+        <option value="Dr. KT George">Dr. KT George</option>
+        <option value="Dr. Manju Sabu">Dr. Manju Sabu</option>
+        <option value="Dr. Manu Joseph">Dr. Manu Joseph</option>
+        <option value="Dr. Murali Appukuttan">Dr. Murali Appukuttan</option>
+        <option value="Dr. Naveen George">Dr. Naveen George</option>
+        <option value="Dr. Nishad Raveendran">Dr. Nishad Raveendran</option>
+        <option value="Dr. N. Anil Kumar">Dr. N. Anil Kumar</option>
+        <option value="Dr. Peter Mathew">Dr. Peter Mathew</option>
+        <option value="Dr. Premachandran">Dr. Premachandran</option>
+        <option value="Dr. Rafeeque PA">Dr. Rafeeque PA</option>
+        <option value="Dr. Resmy Susan Babu">Dr. Resmy Susan Babu</option>
+        <option value="Dr. Rintu George">Dr. Rintu George</option>
+        <option value="Dr. Siju C S">Dr. Siju C S</option>
+        <option value="Jestin Joseph">Jestin Joseph</option>
+        <option value="Dr. Shahana MP">Dr. Shahana MP</option>    
+      </select><br/>
+      Enter Date and Time<input type="datetime-local"name="date and time"/><br/>
+      Enter your Message<textarea cols="30" rows="10"></textarea><br/>
+      <button type="submit">Submit</button>
+    </form>
+    </div>
+    <div class="reviews">
+      <div class="review-1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-nzvCLUG5RH6fkWVaxWcmylQGZ9H4JNpXMW5XEekGvw&s=10" alt="review-1" class="review-1-image">
+        <h1>Ramesh Kumar</h1>
+        <p>
+          I received excellent treatment at SIMS Hospital Tirupati. The doctors were highly experienced, and the nursing staff was compassionate and attentive throughout my recovery.
+        </p>
+        <i>(5/5)</i>
+      </div>
+      <div class="review-2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSus1YvHaTTAncvsPyfwRdKf8anldPs2ysTkfyPUfYmoQ&s=10" alt="review-2" class="review-2-image">
+        <h1>Lakshmi Devi</h1>
+        <p>
+          My surgery was successful, and the entire medical team ensured I was comfortable at every stage. I truly appreciate their professionalism and care.
+        </p>
+        <i>(5/5)</i>
+      </div>
+      <div class="review-3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGz4_uBT5yhV7Cd_OJ9zNTZGq29KJFr6-MdLSjOGp4Aw&s=10" alt="review-3" class="review-3-image">
+        <h1>Suresh Reddy</h1>
+        <p>
+          The emergency department responded quickly, and the doctors explained every step of my treatment clearly. I am very satisfied with the care I received
+        </p>
+        <i>(5/5)</i>
+      </div>
+    </div>
+    <div class="hospital-gallery"id="gallery">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGK5Knel7wEZp5ztVuOyib_YQl0PXuNW_I_54WJbl2lQ&s=10" alt="reception" class="reception">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIy31Eb__7w_Uu3Kx1d6M7gsvy3Cyv00nJkjgyT4n_6w&s=10" alt="icu" class="icu">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs91SzWKCFIkPvTZ6sVFNV8cJmETPwk3kiXARdqQuxjg&s=10" alt="labratory" class="laboratory">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Qv5nT3gixiGj4kAIL7E7PpxvcARlavelK61Tva4W4Q&s=10" alt="operation therater" class="operation-theatre">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStOutUzpJio6CPhorFXlIqpDCK_4oFV2woydQSxT-wWg&s=10" alt="pharmacy" class="pharmacy">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkbGbHGivzfkRt_gEVnkE3nhPkktgAiP6NDS3UK5417Q&s=10" alt="ambulance" class="ambulance">
+      </div>
+      <footer class="end-of-the-page"id="contact">
+        <address>
+          Sri Venkateswara Institute of Medical Sciences (SVIMS)
+Alipiri Road, Tirupati – 517501
+Andhra Pradesh, India
+        </address><br/>
+        Phone Number:0877 – 2287777<br/>
+        Email:svimshosp@yahoo.com
+        <p>
+          Working hours:Emergency Services: 24/7
+        </p>
+        Facebook Link:<a href="https://www.facebook.com/simshospitalnarasaraopet"target="_blank"><button>Facebook</button><i class="fa-brands fa-facebook"></i></a><br/>
+        Instagram Link:<a href="https://www.instagram.com/simshospitalsurat/?hl=en"target="_blank"><button>Instagram</button><i class="fa-brands fa-square-instagram"></i></a><br/>
+        Linkedin Link:<a href="https://www.linkedin.com/school/sims-hospital-srm-institutes-for-medical-science/posts/?feedView=all"target="_blank"><button>Linkedin</button><i class="fa-brands fa-linkedin"></i></a><br/>
+        Youtube Link: <a href="https://www.youtube.com/@SIMSHospitalVadapalaniChennai"target="_blank"><button>Youtube</button><i class="fa-brands fa-youtube"></i></a><br/>
+        <hr>
+  <p>
+    © 2026 R. Megha Shyam. All Rights Reserved.
+  </p>
+  <p>
+    This website design, HTML structure, CSS styling, and original content
+    were developed exclusively by R. Megha Shyam.
+    Unauthorized copying, reproduction, modification, or distribution
+    of this website or its source code is prohibited without written permission.
+  </p>
+
+      </footer>
+</body>
+</html>
