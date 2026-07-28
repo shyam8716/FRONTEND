@@ -17,7 +17,6 @@
    RESET
 ================================= */
 
-
 *{
 
 margin:0;
@@ -29,12 +28,10 @@ box-sizing:border-box;
 
 
 /* =================================
-   ROOT NEON COLORS
+   NEON VARIABLES
 ================================= */
 
-
 :root{
-
 
 --primary:#00ffff;
 
@@ -42,9 +39,7 @@ box-sizing:border-box;
 
 --text:white;
 
-
 }
-
 
 
 
@@ -55,9 +50,7 @@ box-sizing:border-box;
 
 body{
 
-
 font-family:
-
 "Segoe UI",
 Arial,
 sans-serif;
@@ -65,9 +58,7 @@ sans-serif;
 
 min-height:100vh;
 
-
 overflow-x:hidden;
-
 
 color:var(--text);
 
@@ -85,8 +76,7 @@ circle,
 );
 
 
-
-transition:.5s;
+transition:.6s;
 
 
 animation:
@@ -99,34 +89,28 @@ pageLoad 1.5s;
 
 
 
-
 @keyframes pageLoad{
 
 
 from{
 
-
 opacity:0;
 
 transform:scale(.95);
-
 
 }
 
 
 to{
 
-
 opacity:1;
 
 transform:scale(1);
 
-
 }
 
 
 }
-
 
 
 
@@ -140,7 +124,6 @@ body.dark{
 
 
 background:
-
 
 radial-gradient(
 
@@ -163,7 +146,6 @@ circle,
 
 
 
-
 /* =================================
    LIGHT MODE
 ================================= */
@@ -173,7 +155,6 @@ body.light{
 
 
 background:
-
 
 linear-gradient(
 
@@ -202,7 +183,7 @@ color:#111;
 
 
 /* =================================
-   CENTER CONTROL BUTTONS
+   CENTER CONTROL PANEL
 ================================= */
 
 
@@ -236,14 +217,14 @@ padding:15px;
 border-radius:50px;
 
 
-
 background:
 
 rgba(0,0,0,.45);
 
 
+backdrop-filter:
 
-backdrop-filter:blur(20px);
+blur(20px);
 
 
 
@@ -259,7 +240,6 @@ box-shadow:
 0 0 25px var(--primary),
 
 0 0 60px var(--secondary);
-
 
 
 }
@@ -288,7 +268,6 @@ font-size:16px;
 
 
 font-weight:bold;
-
 
 
 background:#050505;
@@ -344,6 +323,241 @@ box-shadow:
 
 
 
+/* =================================
+   THEME PANEL
+================================= */
+
+
+#themePanel{
+
+
+position:fixed;
+
+
+top:120px;
+
+
+left:50%;
+
+
+transform:translateX(-50%);
+
+
+z-index:9998;
+
+
+padding:25px;
+
+
+width:360px;
+
+
+border-radius:30px;
+
+
+background:
+
+rgba(0,0,0,.75);
+
+
+backdrop-filter:
+
+blur(20px);
+
+
+
+border:
+
+2px solid cyan;
+
+
+
+box-shadow:
+
+
+0 0 30px cyan,
+
+0 0 80px magenta;
+
+
+
+display:none;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+#themePanel h2{
+
+
+color:white;
+
+
+margin-bottom:20px;
+
+
+text-shadow:
+
+
+0 0 15px cyan,
+
+0 0 30px magenta;
+
+
+}
+
+
+
+
+
+/* =================================
+   THEME SELECTOR
+================================= */
+
+
+#themeSelect{
+
+
+width:320px;
+
+
+padding:15px;
+
+
+border-radius:20px;
+
+
+font-size:15px;
+
+
+font-weight:bold;
+
+
+background:#050505;
+
+
+color:white;
+
+
+cursor:pointer;
+
+
+
+border:
+
+2px solid cyan;
+
+
+
+box-shadow:
+
+
+0 0 20px cyan;
+
+
+}
+
+
+
+
+
+#themeSelect option{
+
+
+background:#111;
+
+
+color:white;
+
+
+padding:10px;
+
+
+}
+
+
+
+
+
+/* =================================
+   THEME EXTRA BUTTONS
+================================= */
+
+
+#themePanel button{
+
+
+margin:10px 5px;
+
+
+padding:12px 20px;
+
+
+border-radius:25px;
+
+
+cursor:pointer;
+
+
+font-weight:bold;
+
+
+background:#050505;
+
+
+color:white;
+
+
+
+border:
+
+2px solid cyan;
+
+
+
+box-shadow:
+
+
+0 0 20px cyan;
+
+
+
+transition:.4s;
+
+
+}
+
+
+
+
+
+#themePanel button:hover{
+
+
+transform:
+
+scale(1.1);
+
+
+
+box-shadow:
+
+
+0 0 40px cyan,
+
+0 0 80px magenta;
+
+
+}
+
+
+
+
 
 /* =================================
    NEON CARDS
@@ -370,7 +584,9 @@ rgba(255,255,255,.08);
 
 
 
-backdrop-filter:blur(20px);
+backdrop-filter:
+
+blur(20px);
 
 
 
@@ -399,8 +615,6 @@ transition:.5s;
 
 
 }
-
-
 
 
 
@@ -438,7 +652,9 @@ transform:translateY(-12px);
 .my-image:hover{
 
 
-transform:scale(1.03);
+transform:
+
+scale(1.03);
 
 
 
@@ -517,6 +733,7 @@ transition:.4s;
 
 
 
+
 nav a:hover{
 
 
@@ -544,8 +761,6 @@ box-shadow:
 
 
 
-
-
 /* =================================
    IMAGE NEON
 ================================= */
@@ -565,7 +780,6 @@ border-radius:30px;
 
 
 border:
-
 
 4px solid var(--primary);
 
@@ -587,6 +801,8 @@ transition:.5s;
 
 
 
+
+
 .my-image img:hover{
 
 
@@ -599,9 +815,6 @@ scale(1.1);
 
 
 }
-
-
-
 
 
 
@@ -703,7 +916,6 @@ animation-delay:1s;
 
 
 
-
 .laser:nth-child(3){
 
 left:80%;
@@ -766,9 +978,8 @@ translateY(100%);
 
 
 
-
 /* =================================
-   CRACKER AREA
+   CRACKER SYSTEM
 ================================= */
 
 
@@ -804,6 +1015,7 @@ display:none;
 
 
 
+
 .spark{
 
 
@@ -817,6 +1029,7 @@ height:12px;
 
 
 border-radius:50%;
+
 
 
 box-shadow:
@@ -835,6 +1048,7 @@ explode 1.2s forwards;
 
 
 }
+
 
 
 
@@ -876,8 +1090,9 @@ opacity:0;
 
 
 </style>
-
 </head>
+
+
 <body class="dark">
 
 
@@ -927,7 +1142,6 @@ opacity:0;
 <h2>
 ✨ Neon Disco Lights
 </h2>
-
 
 
 <select id="themeSelect">
@@ -1017,7 +1231,6 @@ Neon Disco Lights – Fluorescent Bloom
 
 
 
-
 <optgroup label="🌑 Dark Neon Themes">
 
 
@@ -1102,6 +1315,23 @@ Neon Disco Lights – Eclipse Spark
 </select>
 
 
+
+<br><br>
+
+
+
+<button id="randomTheme">
+🎲 Random Neon
+</button>
+
+
+
+<button id="resetTheme">
+♻️ Default Neon
+</button>
+
+
+
 </div>
 
 
@@ -1109,9 +1339,9 @@ Neon Disco Lights – Eclipse Spark
 
 
 
+
 <!-- =================================
-     BACKGROUND MUSIC
-     ONLY GANGLEADER
+     MUSIC SYSTEM
 ================================= -->
 
 
@@ -1172,9 +1402,8 @@ Neon Disco Lights – Eclipse Spark
 
 
 
-
 <!-- =================================
-     CRACKER EFFECT AREA
+     CRACKER EFFECT
 ================================= -->
 
 
@@ -1198,6 +1427,7 @@ Neon Disco Lights – Eclipse Spark
 <h1>
 Part-1 (Only HTML)
 </h1>
+
 
 
 <nav>
@@ -1234,9 +1464,12 @@ Mini Project-5
 
 
 
+
+
 <h2>
 Part-2 (Only HTML)
 </h2>
+
 
 
 <nav>
@@ -1270,6 +1503,7 @@ Mini Project-10
 </nav>
 
 
+
 </div>
 
 
@@ -1290,14 +1524,17 @@ Mini Project-10
 <img src="my_image.jpeg" alt="My Image">
 
 
+
 <p>
 My Image
 </p>
 
 
+
 <p>
 Not a project. Used for image and audio testing.
 </p>
+
 
 
 </div>
@@ -1321,6 +1558,7 @@ Not a project. Used for image and audio testing.
 <h3>
 Part-1 (HTML + CSS)
 </h3>
+
 
 
 
@@ -1352,6 +1590,7 @@ CSS Project-5
 </a>
 
 
+
 </nav>
 
 
@@ -1363,6 +1602,7 @@ CSS Project-5
 <h4>
 Part-2 (HTML + CSS)
 </h4>
+
 
 
 
@@ -1401,9 +1641,13 @@ CSS Project-10
 
 
 
+
+
 <h5>
 Part-3 (HTML + CSS)
 </h5>
+
+
 
 
 
@@ -1418,98 +1662,131 @@ CSS Project-11
 </nav>
 
 
-</div>
-<script>
 
+</div>
+</body>
+</html>
+<script>
 
 /* =================================
    ELEMENTS
 ================================= */
 
+const body=document.body;
 
-const body = document.body;
+const darkBtn=document.getElementById("darkBtn");
+const lightBtn=document.getElementById("lightBtn");
 
+const musicBtn=document.getElementById("musicBtn");
 
-const darkBtn = document.getElementById("darkBtn");
+const themeBtn=document.getElementById("themeBtn");
 
-const lightBtn = document.getElementById("lightBtn");
+const themePanel=document.getElementById("themePanel");
 
-const musicBtn = document.getElementById("musicBtn");
+const themeSelect=document.getElementById("themeSelect");
 
-const themeBtn = document.getElementById("themeBtn");
+const randomTheme=document.getElementById("randomTheme");
 
-const themePanel = document.getElementById("themePanel");
-
-const themeSelect = document.getElementById("themeSelect");
-
-const partyMusic = document.getElementById("partyMusic");
-
-const disco = document.getElementById("disco");
-
-const links = document.querySelectorAll("nav a");
+const resetTheme=document.getElementById("resetTheme");
 
 
+const partyMusic=document.getElementById("partyMusic");
 
-let musicStarted = false;
+const disco=document.getElementById("disco");
+
+
+const links=document.querySelectorAll("nav a");
+
+
+
+let playing=false;
+
+
+
 
 
 
 
 /* =================================
-   GANGLEADER MUSIC SYSTEM
+   GANGLEADER MUSIC
 ================================= */
 
 
-async function startMusic(){
+async function playMusic(){
 
 
 try{
 
 
-partyMusic.volume = 0.35;
+partyMusic.volume=0.35;
 
 
 await partyMusic.play();
 
 
-musicStarted = true;
+playing=true;
 
 
-musicBtn.innerHTML =
+musicBtn.innerHTML=
 "🔊 Gangleader ON";
 
 
 }
 
-
 catch(error){
 
 
 console.log(
-"Browser blocked autoplay. Waiting for click."
+"Browser blocked autoplay"
 );
 
 
 }
 
 
+
 }
 
 
 
 
-window.addEventListener(
-"load",
-()=>{
+
+musicBtn.onclick=async()=>{
 
 
-startMusic();
+if(playing){
 
 
-});
+partyMusic.pause();
+
+
+playing=false;
+
+
+musicBtn.innerHTML=
+"🎵 Start Gangleader";
+
+
+}
+
+else{
+
+
+await playMusic();
+
+
+}
 
 
 
+};
+
+
+
+
+
+
+/* first user interaction */
 
 
 document.addEventListener(
@@ -1517,10 +1794,10 @@ document.addEventListener(
 ()=>{
 
 
-if(!musicStarted){
+if(!playing){
 
 
-startMusic();
+playMusic();
 
 
 }
@@ -1538,36 +1815,6 @@ once:true
 
 
 
-musicBtn.onclick = async function(){
-
-
-if(partyMusic.paused){
-
-
-await startMusic();
-
-
-}
-
-else{
-
-
-partyMusic.pause();
-
-
-musicStarted=false;
-
-
-musicBtn.innerHTML =
-"🎵 Start Gangleader";
-
-
-}
-
-
-};
-
-
 
 
 
@@ -1578,7 +1825,7 @@ musicBtn.innerHTML =
 ================================= */
 
 
-darkBtn.onclick=function(){
+darkBtn.onclick=()=>{
 
 
 body.classList.remove("light");
@@ -1587,22 +1834,32 @@ body.classList.remove("light");
 body.classList.add("dark");
 
 
-
-body.style.filter="brightness(.25)";
-
-
-
-setTimeout(()=>{
-
-
-body.style.filter="brightness(1)";
+document.documentElement.style
+.setProperty(
+"--primary",
+"#00ffff"
+);
 
 
-},300);
 
+document.documentElement.style
+.setProperty(
+"--secondary",
+"#ff00ff"
+);
+
+
+
+cracker(
+innerWidth/2,
+innerHeight/2
+);
 
 
 };
+
+
+
 
 
 
@@ -1616,7 +1873,7 @@ body.style.filter="brightness(1)";
 ================================= */
 
 
-lightBtn.onclick=function(){
+lightBtn.onclick=()=>{
 
 
 body.classList.remove("dark");
@@ -1625,19 +1882,26 @@ body.classList.remove("dark");
 body.classList.add("light");
 
 
-
-body.style.filter="brightness(1.3)";
-
-
-
-setTimeout(()=>{
-
-
-body.style.filter="brightness(1)";
+document.documentElement.style
+.setProperty(
+"--primary",
+"#008cff"
+);
 
 
-},300);
 
+document.documentElement.style
+.setProperty(
+"--secondary",
+"#ff0099"
+);
+
+
+
+cracker(
+innerWidth/2,
+innerHeight/2
+);
 
 
 };
@@ -1649,12 +1913,15 @@ body.style.filter="brightness(1)";
 
 
 
+
+
+
 /* =================================
-   THEME PANEL
+   OPEN THEME PANEL
 ================================= */
 
 
-themeBtn.onclick=function(){
+themeBtn.onclick=()=>{
 
 
 if(themePanel.style.display==="block"){
@@ -1674,6 +1941,7 @@ themePanel.style.display="block";
 }
 
 
+
 };
 
 
@@ -1684,12 +1952,16 @@ themePanel.style.display="block";
 
 
 
+
+
+
+
 /* =================================
-   NEON THEME COLORS
+   NEON THEMES
 ================================= */
 
 
-const neonThemes={
+const themes={
 
 
 "Aurora Glow":
@@ -1740,8 +2012,20 @@ const neonThemes={
 ["#00ffcc","#00ff99"],
 
 
-"Galaxy Glow":
-["#8000ff","#00ffff"],
+"Neon Aurora":
+["#00ff99","#6600ff"],
+
+
+"Electric Sunrise":
+["#ff9900","#ff0099"],
+
+
+"Fluorescent Bloom":
+["#39ff14","#ff00ff"],
+
+
+"Midnight Pulse":
+["#001133","#00ffff"],
 
 
 "Cyber Neon":
@@ -1756,8 +2040,8 @@ const neonThemes={
 ["#8a2be2","#ff00ff"],
 
 
-"Midnight Pulse":
-["#001133","#00ffff"],
+"Galaxy Glow":
+["#8000ff","#00ffff"],
 
 
 "Neon Inferno":
@@ -1809,31 +2093,68 @@ const neonThemes={
 
 
 
+
+/* =================================
+   SELECT THEME
+================================= */
+
+
 themeSelect.onchange=function(){
 
 
-let selected=this.value;
+let value=this.value;
 
 
 
-for(let theme in neonThemes){
+for(let key in themes){
 
 
-if(selected.includes(theme)){
+if(value.includes(key)){
+
+
+changeTheme(
+themes[key][0],
+themes[key][1]
+);
+
+
+}
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeTheme(primary,secondary){
 
 
 document.documentElement.style
 .setProperty(
 "--primary",
-neonThemes[theme][0]
+primary
 );
-
 
 
 document.documentElement.style
 .setProperty(
 "--secondary",
-neonThemes[theme][1]
+secondary
+);
+
+
+
+cracker(
+innerWidth/2,
+innerHeight/2
 );
 
 
@@ -1841,7 +2162,41 @@ neonThemes[theme][1]
 }
 
 
-}
+
+
+
+
+
+
+
+
+
+/* =================================
+   RANDOM THEME
+================================= */
+
+
+randomTheme.onclick=()=>{
+
+
+let keys=
+Object.keys(themes);
+
+
+let random=
+keys[
+Math.floor(
+Math.random()*keys.length
+)
+];
+
+
+
+changeTheme(
+themes[random][0],
+themes[random][1]
+);
+
 
 
 };
@@ -1855,40 +2210,62 @@ neonThemes[theme][1]
 
 
 /* =================================
-   CRACKER FIREWORK
+   RESET
+================================= */
+
+
+resetTheme.onclick=()=>{
+
+
+changeTheme(
+"#00ffff",
+"#ff00ff"
+);
+
+
+};
+
+
+
+
+
+
+
+
+
+/* =================================
+   CRACKER EFFECT
 ================================= */
 
 
 function cracker(x,y){
 
 
-
 disco.style.display="block";
 
 
-
-for(let i=0;i<150;i++){
-
+for(let i=0;i<120;i++){
 
 
-let spark=document.createElement("div");
+let spark=
+document.createElement("div");
 
 
 spark.className="spark";
 
 
-
 spark.style.left=x+"px";
-
 
 spark.style.top=y+"px";
 
 
 
-let angle=Math.random()*Math.PI*2;
+let angle=
+Math.random()*Math.PI*2;
 
 
-let distance=Math.random()*450;
+let distance=
+Math.random()*350;
 
 
 
@@ -1909,32 +2286,22 @@ Math.sin(angle)*distance+"px"
 let colors=[
 
 "#00ffff",
-
 "#ff00ff",
-
 "#ffff00",
-
 "#00ff00",
-
 "#ff6600",
-
 "#ffffff"
 
 ];
 
 
 
-let color =
+spark.style.background=
 colors[
-Math.floor(Math.random()*colors.length)
+Math.floor(
+Math.random()*colors.length
+)
 ];
-
-
-
-spark.style.background=color;
-
-
-spark.style.color=color;
 
 
 
@@ -1956,14 +2323,13 @@ spark.remove();
 
 
 
-
 setTimeout(()=>{
 
 
 disco.style.display="none";
 
 
-},1500);
+},1300);
 
 
 
@@ -1985,9 +2351,7 @@ disco.style.display="none";
 links.forEach(link=>{
 
 
-link.addEventListener(
-"click",
-function(e){
+link.onclick=function(e){
 
 
 e.preventDefault();
@@ -2014,16 +2378,15 @@ url,
 );
 
 
-
 },1000);
 
 
 
+};
+
+
+
 });
-
-
-});
-
 
 
 
@@ -2033,20 +2396,17 @@ url,
 
 
 /* =================================
-   SAVE CLEAN EXIT
+   STOP MUSIC CLOSE
 ================================= */
 
 
-window.addEventListener(
-"beforeunload",
-()=>{
+window.onbeforeunload=()=>{
 
 
 partyMusic.pause();
 
 
-}
-);
+};
 
 
 
