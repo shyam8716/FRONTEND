@@ -7,68 +7,106 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Website</title>
+<title>Neon Disco Portfolio</title>
 
 
 <style>
 
 
-/* =========================
+/* ==================================
    RESET
-========================= */
+================================== */
 
 
 *{
 
 margin:0;
-
 padding:0;
-
 box-sizing:border-box;
 
 }
 
 
 
+:root{
+
+
+/* Default Dark Neon */
+
+--bg:#05000f;
+
+--text:white;
+
+--primary:#00ffff;
+
+--secondary:#ff00ff;
+
+--glow:
+
+0 0 10px var(--primary),
+0 0 30px var(--primary),
+0 0 60px var(--secondary);
+
+
+}
+
+
+
+
+/* ==================================
+   BODY
+================================== */
+
+
 body{
 
 
-font-family:Arial,Helvetica,sans-serif;
+font-family:
+
+"Segoe UI",
+Arial,
+sans-serif;
+
+
+background:
+
+radial-gradient(
+
+circle,
+
+#15002b,
+
+#000
+
+);
+
+
+color:var(--text);
+
+min-height:100vh;
 
 overflow-x:hidden;
-
-background:#050505;
-
-color:white;
 
 transition:1s;
 
 
-}
+animation:
 
-
-
-/* =========================
-   PAGE OPEN EFFECT
-========================= */
-
-
-body{
-
-animation:pageOpen 1.5s ease;
+pageLoad 1.5s;
 
 
 }
 
 
-@keyframes pageOpen{
+
+@keyframes pageLoad{
 
 
 from{
 
 opacity:0;
 
-transform:scale(.9);
+transform:scale(.95);
 
 }
 
@@ -86,9 +124,69 @@ transform:scale(1);
 
 
 
-/* =========================
-   MODE BUTTONS CENTER
-========================= */
+
+/* ==================================
+   LIGHT MODE
+================================== */
+
+
+body.light{
+
+
+--bg:#f8ffff;
+
+--text:#111;
+
+--primary:#00aaff;
+
+--secondary:#ff0099;
+
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#ffffff,
+
+#dfffff
+
+);
+
+
+}
+
+
+
+
+/* ==================================
+   DARK MODE
+================================== */
+
+
+body.dark{
+
+
+--bg:#05000f;
+
+--text:white;
+
+--primary:#00ffff;
+
+--secondary:#ff00ff;
+
+
+}
+
+
+
+
+
+/* ==================================
+   CENTER CONTROL BUTTONS
+================================== */
 
 
 .mode-buttons{
@@ -102,32 +200,85 @@ left:50%;
 
 transform:translateX(-50%);
 
-z-index:9999;
-
 display:flex;
 
-gap:20px;
+gap:15px;
+
+z-index:9999;
+
+padding:15px;
+
+
+background:
+
+rgba(255,255,255,.08);
+
+
+backdrop-filter:
+
+blur(15px);
+
+
+border-radius:50px;
+
+
+border:
+
+1px solid var(--primary);
+
+
+box-shadow:
+
+var(--glow);
+
 
 }
+
 
 
 
 .mode-buttons button{
 
 
-padding:14px 30px;
+padding:
+
+14px 25px;
+
+
+border:none;
+
 
 border-radius:30px;
 
-font-size:18px;
+
+font-size:16px;
+
 
 font-weight:bold;
 
+
 cursor:pointer;
 
-transition:.5s;
 
-border:none;
+color:white;
+
+
+background:
+
+rgba(0,0,0,.5);
+
+
+border:
+
+2px solid var(--primary);
+
+
+box-shadow:
+
+0 0 15px var(--primary);
+
+
+transition:.5s;
 
 
 }
@@ -137,45 +288,37 @@ border:none;
 .mode-buttons button:hover{
 
 
-transform:scale(1.15);
+transform:
 
+scale(1.15);
 
-}
-
-
-
-#darkBtn{
-
-
-background:black;
-
-color:white;
-
-border:2px solid cyan;
 
 box-shadow:
 
-0 0 20px cyan,
-
-0 0 50px blue;
+0 0 30px var(--primary),
+0 0 70px var(--secondary);
 
 
 }
 
 
 
-#lightBtn{
 
 
-background:white;
+/* ==================================
+   MUSIC BUTTON
+================================== */
 
-color:black;
 
-border:2px solid gold;
+#musicBtn{
+
+
+border-color:#00ff66;
+
 
 box-shadow:
 
-0 0 20px yellow;
+0 0 20px #00ff66;
 
 
 }
@@ -184,38 +327,26 @@ box-shadow:
 
 
 
-/* =========================
-   DARK MODE
-========================= */
 
 
-body.dark{
-
-
-background:
-
-radial-gradient(circle,#111,#000);
-
-
-}
-
-
-
-
-/* DARK FULL SCREEN BLINK */
+/* ==================================
+   DARK FLASH EFFECT
+================================== */
 
 
 body.darkFlash{
 
 
-animation:darkBlink .25s infinite;
+animation:
+
+darkPulse .8s 3;
 
 
 }
 
 
 
-@keyframes darkBlink{
+@keyframes darkPulse{
 
 
 0%{
@@ -225,23 +356,16 @@ filter:brightness(1);
 }
 
 
-25%{
+40%{
 
 filter:brightness(.2);
 
 }
 
 
-50%{
+70%{
 
-filter:brightness(1.5);
-
-}
-
-
-75%{
-
-filter:brightness(.1);
+filter:brightness(2);
 
 }
 
@@ -258,38 +382,12 @@ filter:brightness(1);
 
 
 
-/* =========================
-   LIGHT MODE
-========================= */
-
-
-body.light{
-
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#ffffff,
-
-#dddddd
-
-);
-
-
-color:black;
-
-
-}
 
 
 
-
-/* =========================
-   BOX EFFECTS
-========================= */
+/* ==================================
+   NEON CARDS
+================================== */
 
 
 .html,
@@ -297,22 +395,48 @@ color:black;
 .my-image{
 
 
-margin:25px;
+margin:30px;
 
-padding:25px;
 
-border-radius:25px;
+padding:30px;
+
+
+border-radius:30px;
+
+
+background:
+
+rgba(255,255,255,.08);
+
+
+backdrop-filter:
+
+blur(15px);
+
+
+border:
+
+2px solid var(--primary);
+
+
+box-shadow:
+
+var(--glow);
+
 
 transition:.5s;
 
-animation:floating 5s infinite alternate;
+
+animation:
+
+floatCard 5s infinite alternate;
 
 
 }
 
 
 
-@keyframes floating{
+@keyframes floatCard{
 
 
 from{
@@ -324,7 +448,7 @@ transform:translateY(0);
 
 to{
 
-transform:translateY(-10px);
+transform:translateY(-12px);
 
 }
 
@@ -335,33 +459,60 @@ transform:translateY(-10px);
 
 
 
-/* =========================
- HTML SECTION
-========================= */
+.html:hover,
+.css:hover,
+.my-image:hover{
 
 
-.html{
+transform:
 
+scale(1.03);
 
-border:5px solid khaki;
-
-background:lch(60% 80 30);
 
 box-shadow:
 
-0 0 25px gold,
-
-0 0 60px orange;
+0 0 40px var(--primary),
+0 0 100px var(--secondary);
 
 
 }
 
 
 
-.html a{
+
+
+
+
+/* ==================================
+   NEON LINKS
+================================== */
+
+
+nav a{
+
+
+display:inline-block;
+
+
+margin:10px;
+
+
+padding:
+
+12px 20px;
+
+
+border-radius:20px;
+
+
+text-decoration:none;
+
+
+font-weight:bold;
 
 
 color:white;
+
 
 background:
 
@@ -369,24 +520,17 @@ linear-gradient(
 
 45deg,
 
-magenta,
+var(--primary),
 
-purple
+var(--secondary)
 
 );
 
 
-padding:12px 20px;
+box-shadow:
 
-margin:10px;
+0 0 15px var(--primary);
 
-display:inline-block;
-
-border-radius:20px;
-
-text-decoration:none;
-
-font-weight:bold;
 
 transition:.4s;
 
@@ -395,19 +539,19 @@ transition:.4s;
 
 
 
-.html a:hover{
+nav a:hover{
 
 
 transform:
 
 translateY(-8px)
-
 scale(1.1);
 
 
 box-shadow:
 
-0 0 30px cyan;
+0 0 40px var(--primary),
+0 0 70px var(--secondary);
 
 
 }
@@ -416,27 +560,11 @@ box-shadow:
 
 
 
-/* =========================
- IMAGE SECTION
-========================= */
 
 
-.my-image{
-
-
-background:lightcoral;
-
-border:5px solid lemonchiffon;
-
-text-align:center;
-
-box-shadow:
-
-0 0 30px pink;
-
-
-}
-
+/* ==================================
+   IMAGE
+================================== */
 
 
 .my-image img{
@@ -446,7 +574,19 @@ width:300px;
 
 height:300px;
 
+
 border-radius:30px;
+
+
+border:
+
+4px solid var(--primary);
+
+
+box-shadow:
+
+var(--glow);
+
 
 transition:.5s;
 
@@ -461,7 +601,6 @@ transition:.5s;
 transform:
 
 rotate(8deg)
-
 scale(1.1);
 
 
@@ -470,77 +609,13 @@ scale(1.1);
 
 
 
-/* =========================
- CSS SECTION
-========================= */
-
-
-.css{
-
-
-background:lawngreen;
-
-border:5px solid rgb(20,20,48);
-
-box-shadow:
-
-0 0 30px lime;
-
-
-}
-
-
-
-.css a{
-
-
-background:mediumaquamarine;
-
-color:maroon;
-
-padding:12px 20px;
-
-margin:10px;
-
-display:inline-block;
-
-border-radius:20px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-transition:.4s;
-
-
-}
-
-
-
-.css a:hover{
-
-
-transform:
-
-translateY(-8px)
-
-scale(1.1);
-
-
-box-shadow:
-
-0 0 30px yellow;
-
-
-}
 
 
 
 
-
-/* =========================
- LASER EFFECT
-========================= */
+/* ==================================
+   LASER SYSTEM
+================================== */
 
 
 #laser-container{
@@ -548,23 +623,29 @@ box-shadow:
 
 position:fixed;
 
-top:0;
-
-left:0;
 
 height:100%;
 
+
 width:100%;
+
+
+top:0;
+
+
+left:0;
+
 
 pointer-events:none;
 
-z-index:1000;
 
 overflow:hidden;
 
 
-}
+z-index:500;
 
+
+}
 
 
 
@@ -573,24 +654,30 @@ overflow:hidden;
 
 position:absolute;
 
+
 height:120%;
+
 
 width:5px;
 
+
 top:-10%;
 
-background:red;
+
+background:var(--primary);
+
 
 box-shadow:
 
-0 0 20px red,
 
-0 0 60px red,
+0 0 20px var(--primary),
+0 0 60px var(--primary),
+0 0 100px var(--secondary);
 
-0 0 100px red;
 
+animation:
 
-animation:laserMove 3s infinite linear;
+laserMove 3s linear infinite;
 
 
 }
@@ -599,11 +686,7 @@ animation:laserMove 3s infinite linear;
 
 .laser:nth-child(1){
 
-
 left:20%;
-
-background:red;
-
 
 }
 
@@ -611,13 +694,9 @@ background:red;
 
 .laser:nth-child(2){
 
-
 left:50%;
 
-background:cyan;
-
 animation-delay:1s;
-
 
 }
 
@@ -625,13 +704,9 @@ animation-delay:1s;
 
 .laser:nth-child(3){
 
-
 left:80%;
 
-background:lime;
-
 animation-delay:2s;
-
 
 }
 
@@ -646,7 +721,6 @@ animation-delay:2s;
 transform:
 
 rotate(25deg)
-
 translateY(-100%);
 
 
@@ -659,7 +733,6 @@ translateY(-100%);
 transform:
 
 rotate(-25deg)
-
 translateY(0);
 
 
@@ -672,102 +745,18 @@ translateY(0);
 transform:
 
 rotate(25deg)
-
 translateY(100%);
 
 
 }
 
 
-}
-
-
-
-
-
-/* =========================
- CRACKER EFFECT
-========================= */
-
-
-#disco{
-
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-height:100%;
-
-width:100%;
-
-display:none;
-
-pointer-events:none;
-
-z-index:99999;
-
 
 }
 
 
 
 
-.spark{
-
-
-position:absolute;
-
-height:10px;
-
-width:10px;
-
-border-radius:50%;
-
-box-shadow:
-
-0 0 20px white,
-
-0 0 40px yellow;
-
-
-animation:explode 1s forwards;
-
-
-}
-
-
-
-@keyframes explode{
-
-
-from{
-
-
-transform:translate(0,0);
-
-opacity:1;
-
-
-}
-
-
-to{
-
-
-transform:
-
-translate(var(--x),var(--y));
-
-opacity:0;
-
-
-}
-
-
-}
 
 
 </style>
@@ -776,11 +765,13 @@ opacity:0;
 
 
 <body class="dark">
+  <!-- ==================================
+     NEON CONTROL PANEL
+================================== -->
 
-
-<!-- CENTER BUTTONS -->
 
 <div class="mode-buttons">
+
 
 <button id="darkBtn">
 🌑 Dark Mode
@@ -791,57 +782,283 @@ opacity:0;
 ☀️ Light Mode
 </button>
 
+
+<button id="musicBtn">
+🎵 Start Music
+</button>
+
+
+<button id="themeBtn">
+🎨 Themes
+</button>
+
+
 </div>
 
-<!-- =========================
-     BACKGROUND MUSIC
-========================= -->
+
+
+
+
+<!-- ==================================
+     THEME LIST PANEL
+================================== -->
+
+
+<div id="themePanel">
+
+
+<h2>
+✨ Neon Disco Lights
+</h2>
+
+
+
+<select id="themeSelect">
+
+
+<optgroup label="☀️ Light Neon Themes">
+
+
+<option>
+Neon Disco Lights – Aurora Glow
+</option>
+
+
+<option>
+Neon Disco Lights – Electric Cyan
+</option>
+
+
+<option>
+Neon Disco Lights – Laser Lime
+</option>
+
+
+<option>
+Neon Disco Lights – Sunset Pink
+</option>
+
+
+<option>
+Neon Disco Lights – Crystal Aqua
+</option>
+
+
+<option>
+Neon Disco Lights – Rainbow Pulse
+</option>
+
+
+<option>
+Neon Disco Lights – Ice Neon
+</option>
+
+
+<option>
+Neon Disco Lights – Solar Spark
+</option>
+
+
+<option>
+Neon Disco Lights – Bubble Glow
+</option>
+
+
+<option>
+Neon Disco Lights – Candy Neon
+</option>
+
+
+<option>
+Neon Disco Lights – Aqua Prism
+</option>
+
+
+<option>
+Neon Disco Lights – Hyper Mint
+</option>
+
+
+<option>
+Neon Disco Lights – Neon Aurora
+</option>
+
+
+<option>
+Neon Disco Lights – Electric Sunrise
+</option>
+
+
+<option>
+Neon Disco Lights – Fluorescent Bloom
+</option>
+
+
+</optgroup>
+
+
+
+
+
+
+<optgroup label="🌑 Dark Neon Themes">
+
+
+<option>
+Neon Disco Lights – Midnight Pulse
+</option>
+
+
+<option>
+Neon Disco Lights – Cyber Neon
+</option>
+
+
+<option>
+Neon Disco Lights – Plasma Storm
+</option>
+
+
+<option>
+Neon Disco Lights – Electric Violet
+</option>
+
+
+<option>
+Neon Disco Lights – Galaxy Glow
+</option>
+
+
+<option>
+Neon Disco Lights – Neon Inferno
+</option>
+
+
+<option>
+Neon Disco Lights – Cosmic Pulse
+</option>
+
+
+<option>
+Neon Disco Lights – Dark Aurora
+</option>
+
+
+<option>
+Neon Disco Lights – Laser Night
+</option>
+
+
+<option>
+Neon Disco Lights – Phantom Neon
+</option>
+
+
+<option>
+Neon Disco Lights – Ultra Disco
+</option>
+
+
+<option>
+Neon Disco Lights – Quantum Glow
+</option>
+
+
+<option>
+Neon Disco Lights – Infinity Neon
+</option>
+
+
+<option>
+Neon Disco Lights – Hyper Plasma
+</option>
+
+
+<option>
+Neon Disco Lights – Eclipse Spark
+</option>
+
+
+</optgroup>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ==================================
+     MUSIC
+================================== -->
 
 
 <audio id="partyMusic" loop>
 
+
 <source src="party.mp3" type="audio/mpeg">
+
 
 </audio>
 
 
 
-<!-- =========================
-     YOUR PROJECT AUDIO
-     (MANUAL PLAY ONLY)
-========================= -->
+
+
+<!-- YOUR PROJECT AUDIO
+     KEEP PAUSED
+-->
 
 
 <audio controls id="sparkAudio">
 
+
 <source src="Spark_2022.mp3" type="audio/mpeg">
+
 
 </audio>
 
 
 
 
-<!-- =========================
-     LASER CONTAINER
-========================= -->
+
+
+
+
+<!-- ==================================
+     LASER AREA
+================================== -->
 
 
 <div id="laser-container">
 
-<div class="laser"></div>
 
 <div class="laser"></div>
 
+
 <div class="laser"></div>
+
+
+<div class="laser"></div>
+
 
 </div>
 
 
 
 
-<!-- =========================
-     CRACKER CONTAINER
-========================= -->
+
+
+
+
+<!-- ==================================
+     CRACKER AREA
+================================== -->
 
 
 <div id="disco"></div>
@@ -850,15 +1067,23 @@ opacity:0;
 
 
 
-<!-- =========================
+
+
+
+
+
+<!-- ==================================
      HTML PROJECT SECTION
-========================= -->
+     LINKS UNCHANGED
+================================== -->
 
 
 <div class="html">
 
 
-<h1>Part-1(Only Html)</h1>
+<h1>
+Part-1(Only Html)
+</h1>
 
 
 <nav>
@@ -894,8 +1119,10 @@ Mini project-5
 
 
 
-<h2>Part-2(Only Html)</h2>
 
+<h2>
+Part-2(Only Html)
+</h2>
 
 
 <nav>
@@ -929,16 +1156,20 @@ Mini Project-10
 </nav>
 
 
-
 </div>
 
 
 
 
 
-<!-- =========================
+
+
+
+
+<!-- ==================================
      IMAGE SECTION
-========================= -->
+     UNCHANGED
+================================== -->
 
 
 <div class="my-image">
@@ -961,16 +1192,9 @@ not a project just to use image and audio in mini projects
 
 
 </div>
-
-
-
-
-
-
-
-<!-- =========================
+<!-- ==================================
      CSS PROJECT SECTION
-========================= -->
+================================== -->
 
 
 <div class="css">
@@ -981,8 +1205,6 @@ Part-1(Html+Css)
 </h3>
 
 
-
-
 <nav>
 
 
@@ -991,11 +1213,9 @@ Mini Project-1(CSS)
 </a>
 
 
-
 <a href="Mini project-2 in css.html" target="_blank">
 Mini Project-2(CSS)
 </a>
-
 
 
 <a href="Mini project-3 in css.html" target="_blank">
@@ -1003,11 +1223,9 @@ Mini Project-3(CSS)
 </a>
 
 
-
 <a href="Mini project-4 in css .html" target="_blank">
 Mini Project-4(CSS)
 </a>
-
 
 
 <a href="Mini project-5 in css.html" target="_blank">
@@ -1015,12 +1233,7 @@ Mini Project-5(CSS)
 </a>
 
 
-
-<br>
-
-
 </nav>
-
 
 
 
@@ -1032,8 +1245,6 @@ Part-2(Html+Css)
 
 
 
-
-
 <nav>
 
 
@@ -1042,11 +1253,9 @@ Mini Project-6(CSS)
 </a>
 
 
-
 <a href="Mini project-7 in css.html" target="_blank">
 Mini Project-7(CSS)
 </a>
-
 
 
 <a href="Mini project-8 in css .html" target="_blank">
@@ -1054,11 +1263,9 @@ Mini Project-8(CSS)
 </a>
 
 
-
 <a href="Mini project-9 in css.html" target="_blank">
 Mini Project-9(CSS)
 </a>
-
 
 
 <a href="Mini project-10 in css .html" target="_blank">
@@ -1066,10 +1273,7 @@ Mini Project-10(CSS)
 </a>
 
 
-
 </nav>
-
-
 
 
 
@@ -1081,7 +1285,6 @@ Part-3(Html+Css)
 
 
 
-
 <nav>
 
 
@@ -1090,68 +1293,250 @@ Mini Project-11(CSS)
 </a>
 
 
-
 </nav>
 
 
-
 </div>
-<script>
-
-/* =========================
-   ELEMENTS
-========================= */
-
-
-const darkBtn = document.getElementById("darkBtn");
-
-const lightBtn = document.getElementById("lightBtn");
-
-const body = document.body;
-
-const partyMusic = document.getElementById("partyMusic");
-
-const links = document.querySelectorAll("nav a");
-
-const disco = document.getElementById("disco");
 
 
 
-/* =========================
-   START BACKGROUND MUSIC
-========================= */
 
 
-function startMusic(){
+<style>
 
-    if(partyMusic.paused){
 
-        partyMusic.volume = 0.4;
+/* ==================================
+ THEME PANEL STYLE
+================================== */
 
-        partyMusic.play();
 
-    }
+#themePanel{
+
+
+position:fixed;
+
+top:100px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:9000;
+
+
+padding:20px;
+
+
+border-radius:25px;
+
+
+background:
+
+rgba(0,0,0,.7);
+
+
+backdrop-filter:
+
+blur(15px);
+
+
+border:
+
+2px solid cyan;
+
+
+box-shadow:
+
+0 0 30px cyan;
+
+
+display:none;
+
+
+text-align:center;
+
 
 }
 
 
-/*
- Browser allows audio after click
-*/
 
-document.addEventListener(
-"click",
-startMusic,
-{once:true}
-);
+#themePanel h2{
 
 
+color:white;
+
+margin-bottom:15px;
+
+
+text-shadow:
+
+0 0 15px cyan;
+
+
+}
 
 
 
-/* =========================
-   DARK MODE
-========================= */
+#themeSelect{
+
+
+padding:15px;
+
+
+border-radius:20px;
+
+
+font-size:16px;
+
+
+background:#111;
+
+
+color:white;
+
+
+border:
+
+2px solid cyan;
+
+
+box-shadow:
+
+0 0 20px cyan;
+
+
+}
+
+
+
+
+
+/* Light laser dim */
+
+
+body.light .laser{
+
+
+opacity:.35;
+
+
+}
+
+
+
+
+
+/* Dark laser power */
+
+
+body.dark .laser{
+
+
+opacity:1;
+
+
+filter:
+
+brightness(2);
+
+
+}
+
+
+
+</style>
+
+
+
+
+
+
+<script>
+
+
+/* ==================================
+ ELEMENTS
+================================== */
+
+
+const body=document.body;
+
+
+const darkBtn=document.getElementById("darkBtn");
+
+
+const lightBtn=document.getElementById("lightBtn");
+
+
+const musicBtn=document.getElementById("musicBtn");
+
+
+const themeBtn=document.getElementById("themeBtn");
+
+
+const themePanel=document.getElementById("themePanel");
+
+
+const themeSelect=document.getElementById("themeSelect");
+
+
+const partyMusic=document.getElementById("partyMusic");
+
+
+const disco=document.getElementById("disco");
+
+
+const links=document.querySelectorAll("nav a");
+
+
+
+
+
+/* ==================================
+ MUSIC CONTROL
+================================== */
+
+
+musicBtn.onclick=function(){
+
+
+if(partyMusic.paused){
+
+
+partyMusic.volume=.4;
+
+
+partyMusic.play();
+
+
+musicBtn.innerHTML="🔊 Party Mode ON";
+
+
+}
+
+else{
+
+
+partyMusic.pause();
+
+
+musicBtn.innerHTML="🎵 Start Music";
+
+
+}
+
+
+};
+
+
+
+
+
+
+
+/* ==================================
+ DARK MODE
+================================== */
 
 
 darkBtn.onclick=function(){
@@ -1159,10 +1544,10 @@ darkBtn.onclick=function(){
 
 body.classList.remove("light");
 
+
 body.classList.add("dark");
 
 
-// Full dark blinking effect
 
 body.classList.add("darkFlash");
 
@@ -1174,7 +1559,7 @@ setTimeout(()=>{
 body.classList.remove("darkFlash");
 
 
-},3000);
+},2500);
 
 
 
@@ -1185,9 +1570,10 @@ body.classList.remove("darkFlash");
 
 
 
-/* =========================
-   LIGHT MODE
-========================= */
+
+/* ==================================
+ LIGHT MODE
+================================== */
 
 
 lightBtn.onclick=function(){
@@ -1195,10 +1581,8 @@ lightBtn.onclick=function(){
 
 body.classList.remove("dark");
 
+
 body.classList.add("light");
-
-
-body.classList.remove("darkFlash");
 
 
 };
@@ -1209,9 +1593,251 @@ body.classList.remove("darkFlash");
 
 
 
-/* =========================
-   CRACKER / FIREWORK EFFECT
-========================= */
+
+/* ==================================
+ THEME PANEL
+================================== */
+
+
+themeBtn.onclick=function(){
+
+
+if(themePanel.style.display==="block"){
+
+
+themePanel.style.display="none";
+
+
+}
+
+else{
+
+
+themePanel.style.display="block";
+
+
+}
+
+
+};
+
+
+
+
+
+
+
+
+/* ==================================
+ NEON THEMES
+================================== */
+
+
+const themes={
+
+
+
+"Aurora Glow":
+
+["#00ffff","#00ff99"],
+
+
+
+"Electric Cyan":
+
+["#00ffff","#008cff"],
+
+
+
+"Laser Lime":
+
+["#39ff14","#00ff00"],
+
+
+
+"Sunset Pink":
+
+["#ff0080","#ff6600"],
+
+
+
+"Crystal Aqua":
+
+["#00ffff","#66ffff"],
+
+
+
+"Rainbow Pulse":
+
+["#ff00ff","#00ffff"],
+
+
+
+"Ice Neon":
+
+["#99ffff","#ffffff"],
+
+
+
+"Solar Spark":
+
+["#ffff00","#ff6600"],
+
+
+
+"Bubble Glow":
+
+["#ff66ff","#00ffff"],
+
+
+
+"Candy Neon":
+
+["#ff1493","#ff69b4"],
+
+
+
+"Galaxy Glow":
+
+["#8000ff","#00ffff"],
+
+
+
+"Cyber Neon":
+
+["#00ffcc","#ff00ff"],
+
+
+
+"Plasma Storm":
+
+["#9900ff","#ff0066"],
+
+
+
+"Electric Violet":
+
+["#8a2be2","#ff00ff"],
+
+
+
+"Midnight Pulse":
+
+["#001133","#00ffff"],
+
+
+
+"Neon Inferno":
+
+["#ff0000","#ff6600"],
+
+
+
+"Cosmic Pulse":
+
+["#6600ff","#00ffff"],
+
+
+
+"Dark Aurora":
+
+["#003333","#00ff99"],
+
+
+
+"Laser Night":
+
+["#000033","#00ffff"],
+
+
+
+"Phantom Neon":
+
+["#330033","#ff00ff"],
+
+
+
+"Quantum Glow":
+
+["#0066ff","#00ffff"],
+
+
+
+"Infinity Neon":
+
+["#ff00ff","#6600ff"],
+
+
+
+"Hyper Plasma":
+
+["#ff0099","#6600ff"],
+
+
+
+"Eclipse Spark":
+
+["#111111","#ffff00"]
+
+
+};
+
+
+
+
+
+
+
+themeSelect.onchange=function(){
+
+
+let name=this.value;
+
+
+
+Object.keys(themes).forEach(key=>{
+
+
+if(name.includes(key)){
+
+
+let colors=themes[key];
+
+
+document.documentElement.style
+.setProperty(
+"--primary",
+colors[0]
+);
+
+
+document.documentElement.style
+.setProperty(
+"--secondary",
+colors[1]
+);
+
+
+
+}
+
+
+
+});
+
+
+};
+
+
+
+
+
+
+
+
+/* ==================================
+ CRACKER EFFECT
+================================== */
 
 
 function cracker(x,y){
@@ -1235,6 +1861,7 @@ spark.className="spark";
 
 spark.style.left=x+"px";
 
+
 spark.style.top=y+"px";
 
 
@@ -1246,53 +1873,32 @@ let distance=Math.random()*350;
 
 
 
-let moveX=Math.cos(angle)*distance;
-
-
-let moveY=Math.sin(angle)*distance;
-
-
-
 spark.style.setProperty(
 "--x",
-moveX+"px"
+Math.cos(angle)*distance+"px"
 );
 
 
 
 spark.style.setProperty(
 "--y",
-moveY+"px"
+Math.sin(angle)*distance+"px"
 );
 
 
 
-
-let colors=[
-
+spark.style.background=
+[
 "red",
-
 "yellow",
-
 "cyan",
-
 "lime",
-
-"orange",
-
 "pink",
-
-"white",
-
-"purple"
-
-];
-
-
-
-spark.style.background =
-colors[
-Math.floor(Math.random()*colors.length)
+"orange",
+"white"
+]
+[
+Math.floor(Math.random()*7)
 ];
 
 
@@ -1301,12 +1907,9 @@ disco.appendChild(spark);
 
 
 
-
 setTimeout(()=>{
 
-
 spark.remove();
-
 
 },1000);
 
@@ -1334,21 +1937,20 @@ disco.style.display="none";
 
 
 
-/* =========================
-   PROJECT CLICK EFFECT
-========================= */
+
+
+/* ==================================
+ PROJECT CLICK
+================================== */
 
 
 links.forEach(link=>{
 
 
-link.addEventListener(
-"click",
-function(e){
+link.onclick=function(e){
 
 
 e.preventDefault();
-
 
 
 let url=this.href;
@@ -1362,15 +1964,9 @@ e.clientY
 
 
 
-// Stop party music
-
 partyMusic.pause();
 
 
-
-/*
- small delay for cracker effect
-*/
 
 setTimeout(()=>{
 
@@ -1381,14 +1977,11 @@ url,
 );
 
 
-
 },1200);
 
 
 
-}
-
-);
+};
 
 
 });
@@ -1399,21 +1992,18 @@ url,
 
 
 
-/* =========================
-   STOP MUSIC WHEN PAGE CLOSES
-========================= */
+/* ==================================
+ STOP MUSIC ON CLOSE
+================================== */
 
 
-window.addEventListener(
-"beforeunload",
-()=>{
+window.onbeforeunload=function(){
 
 
 partyMusic.pause();
 
 
-}
-);
+};
 
 
 
