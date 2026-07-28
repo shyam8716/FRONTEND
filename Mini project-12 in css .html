@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+    .header{
+      margin:5px;
+      border:5px solid  gainsboro;
+      color:ghostwhite;
+      background-color:gold;
+      padding:5px;
+    }
+    .navbar{
+      position:sticky;
+      top:0;
+    }
+    .navbar nav{
+      margin:5px;
+      border:5px solid green;
+      display:flex;
+      background-color:greenyellow;
+      justify-content:space-between;
+    }
+    .navbar button:active{
+      color:goldenrod;
+      background-color:gray;
+      border-radius:50px;;
+    }
+    .banner{
+      margin:5px;
+      border:5px solid grey;
+      color:honeydew;
+      background-color:hotpink;
+    }
+    .banner-image{
+      width:300px;
+      height:300px;
+    }
+    .banner button:hover{
+      color:indianred;
+      background-color:indigo;
+      border-radius:55px;
+    }
+    .categories{
+      margin:5px;
+      border:5px inherit khaki;
+      color:lavender;
+      background-color:lawngreen;
+      display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap:20px;
+  padding:20px;
+    }
+    .fiction{
+      border:5px solid red;
+      color:blue;
+      background-color:black;
+      text-align:center;
+  }
+  .science{
+    border:5px inset burlywood;
+    color:brown;
+    background-color:black;
+    text-align:center;
+  }
+    .fiction-book-image{
+      width:200px;
+      height:200px;
+    }
+    .science-book-image{
+      width:200px;
+      height:200px;
+    }
+    .technology{
+      border:5px solid black;
+      color:magenta;
+      background-color:white;
+      text-align:center;
+    }
+    .technology-book-image{
+      width:200px;
+      height:200px;
+    }
+    .history{
+      border:5px solid yellow;
+      color:maroon;
+      background-color:black;
+      text-align:center;
+    }
+    .history-book-image{
+      width:200px;
+      height:200px;
+    }
+    .kids{
+      border:5px solid bisque;
+      color:mediumaquamarine;
+      background-color:black;
+      text-align:center;
+    }
+    .kids-book-image{
+      width:200px;
+      height:200px;
+    }
+    .biography{
+      border:5px solid blanchedalmond;
+      color:mediumblue;
+      background-color:black;
+      text-align:center;
+    }
+    .biography-book-image{
+      width:200px;
+      height:200px;
+    }
+    .best-seller{
+      margin:5px;
+      border:5px solid blue;
+      padding:5px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+    .book-1{
+      border:5px solid blueviolet;
+      color:mediumorchid;
+      background-color:rgb(47, 11, 118);
+      text-align:center;
+      box-sizing: border-box;
+       width:48%;
+    }
+    .book-1-image{
+      width:300px;
+      height:300px;
+    }
+    .book-2{
+      border:5px solid brown;
+      color:mediumpurple;
+      background-color:mediumseagreen;
+      text-align:center;
+      box-sizing: border-box;
+       width:48%;
+    }
+    .book-2-image{
+      width:300px;
+      height:300px;
+    }
+    .book-3{
+      border:5px solid burlywood;
+      color:mediumslateblue;
+      background-color:mediumspringgreen;
+      text-align:center;
+      box-sizing: border-box;
+       width:48%;
+    }
+    .book-3-image{
+      width:300px;
+      height:300px;
+    }
+    .book-4{
+      border:5px solid cadetblue;
+      color:mediumturquoise;
+      background-color:mediumvioletred;
+      text-align:center;
+      box-sizing:border-box;
+      width:48%;
+    }
+    .book-4-image{
+      width:300px;
+      height:300px;
+    }
+    .offers{
+      margin:5px;
+      border:5px solid midnightblue;
+      text-align:center;
+      display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding:5px;
+}
+.offer-1{
+  border:5px solid mintcream;
+  color:mistyrose;
+  background-color:rgb(153, 100, 7);
+}
+.offer-1-image{
+  width:300px;
+  height:300px;
+}
+.offers button:focus{
+  color:navajowhite;
+  background-color:navy;
+  border-radius:60px;
+}
+.offer-2{
+  border:5px solid oldlace;
+  color:olive;
+  background-color:rgb(181, 213, 116);
+}
+.offer-2-image{
+  width:300px;
+  height:300px;
+}
+.offer-3{
+  border:5px solid orange;
+  color:orangered;
+  background-color:orchid;
+}
+.offer-3-image{
+  width:300px;
+  height:300px;
+}
+.offer-4{
+  border:5px solid palegoldenrod;
+  color:palegreen;
+  background-color:rgb(58, 86, 86);
+}
+.offer-4-image{
+  width:300px;
+  height:300px;
+}
+.reviews{
+  margin:5px;
+  border:5px solid palevioletred;
+  padding:5px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:20px;
+}
+.review-1{
+  border:5px solid papayawhip;
+  color:peachpuff;
+  background-color:peru;
+  width:45%;
+  text-align:center;
+}
+.review-1-image{
+  width:300px;
+  height:300px;
+}
+.review-2{
+  border:5px solid pink;
+  color:plum;
+  background-color:powderblue;
+  width:45%;
+  text-align:center;
+}
+.review-2-image{
+  width:300px;
+  height:300px;
+}
+.news-letter{
+  margin:5px;
+  border:5px solid purple;
+  color:rebeccapurple;
+  background-color:red;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:20px;
+  padding:20px;
+  text-align:center;
+}
+.news-letter button:hover{
+  color:rgb(153, 100, 7);
+  background-color:aqua;;
+  border-radius:65px;
+}
+.end-of-the-page a{
+  position:sticky;
+top:0;
+}
+.end-of-the-page{
+margin:5px;
+border:5px solid rgb(181, 213, 116);
+color:rgb(47, 11, 118);
+padding:5px;
+text-align:center;
+}
+.end-of-the-page button:active{
+  color:rgb(58, 86, 86);
+  background-color:rosybrown;
+  border-radius:70px;
+}
+  </style>
+  </head>
+  <body>
+    <div class="header" id="home">
+      <h1>Amazon Books</h1>
+      <q>Discover stories. Explore knowledge.</q>
+    </div>
+    <div class="navbar">
+      <nav>
+        <a href="#home"><button><i
+              class="fa-solid fa-house-chimney"></i>Home</button></a>
+        <a href="#reviews"><button><i
+              class="fa-solid fa-reviews"></i>reviews</button></a>
+        <a href="#categories"><button><i
+              class="fa-solid fa-table-list"></i>Categories</button></a>
+        <a href="#best-sellers"><button><i class="fa-solid fa-fire"></i>Best
+            Seller</button></a>
+        <a href="#offers"><button><i
+              class="fa-solid fa-tag"></i>Offer</button></a>
+        <a href="#contact"><button><i
+              class="fa-solid fa-phone"></i>Contact</button></a>
+      </nav>
+    </div>
+    <div class="banner">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2L-WDctc8EDScw03x7haQ5CyvnSx36c-lQ5O0JFBcXQ&s=10"
+        alt="banner section" class="banner-image">
+      <h2>Welcome to Amazon Books</h2>
+      <p>
+        Discover endless stories, explore new ideas, and find your next favorite
+        book from millions of titles.
+      </p>
+      <button>Shop Now</button>
+    </div>
+    <div class="categories" id="categories">
+      <div class="fiction">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlhYSD7WzCoW8rsIzaxuiCprecim9EwDxDg--dJBxK5g&s=10"
+          alt="fiction" class="fiction-book-image">
+        <h3>Fiction</h3>
+      </div>
+      <div class="science">
+        <img
+          src="https://png.pngtree.com/png-vector/20260330/ourmid/pngtree-microscope-open-educational-book-and-beaker-with-blue-liquid-on-laboratory-png-image_18926436.webp"
+          alt="science" class="science-book-image">
+        <h4>Science</h4>
+      </div>
+      <div class="technology">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCUe2In0P4xVX8JhhNqzk_87FyO9WZfvEln6WtOmrLiw&s=10"
+          alt="technology" class="technology-book-image">
+        <h5>Technology</h5>
+      </div>
+      <div class="history">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc4QMz5LXRGqXjEK9KZXz9g_kl3bc2zMZ9N_dEQfjNKA&s=10"
+          alt="history" class="history-book-image">
+        <h6>History</h6>
+      </div>
+      <div class="kids">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGP__j-PTWLpHIyMroFCfMJCfnuJBHOZlKBsA-AIIw5g&s=10"
+          alt="kids" class="kids-book-image"><br />
+        <b>Kids</b>
+      </div>
+      <div class="biography">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRktNk91DCVf1Jx4IRpFl6Aqocf9K11oWHLMCxJe17p7g&s=10"
+          alt="biography" class="biography-book-image"><br />
+        <i>Biography</i>
+      </div>
+    </div>
+    <div class="best-seller" id="best-sellers">
+      <div class="book-1">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBhWdDm01_YMOl4p0rVj_OWyD60lL_WjWXAjtJ1B7MxQ&s=10"
+          alt="Atomic Habits" class="book-1-image"><br />
+        <strong>Atomic Habits</strong><br />
+        <big>(4.8/5)</big><br />
+        <small>$14.99</small>
+      </div>
+      <div class="book-2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmNN_7yErTmfI7ybQxITY_pvW5nHSFe3hut1yd015pkQ&s=10"
+          alt="The Psychology of Money" class="book-2-image"><br />
+        <strong>The Psychology of Money</strong><br />
+        <big>(4.7/5)</big><br />
+        <small>$12.99</small>
+      </div>
+      <div class="book-3">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKObImlUAPvpOpErbVvkMH2XDR1Bopzwj8WB0LlZMPvg&s=10"
+          alt="The Alchemist" class="book-3-image"><br />
+        <strong>The Alchemist</strong><br />
+        <big>(4.6/5)</big><br />
+        <small>$12.99</small>
+      </div>
+      <div class="book-4">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZNkNQQwTxihwBEFY4V1Zfqqqiktw6N0qB_vW2CrOeA&s=10"
+          alt="Rich dad poor dad" class="book-4-image"><br />
+        <strong>Rich Dad Poor Dad</strong><br />
+        <big>(: 4.7/5)</big><br />
+        <small>$10.99</small>
+      </div>
+    </div>
+    <div class="offers" id="offers">
+      <div class="offer-1">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdbfOprmFS_7FxEH6eQ19GmgMiYlSo-bEjpE7cL2eiYg&s=10"
+          alt="summer sale" class="offer-1-image"><br />
+        <mark>Summer Book Sale</mark><br />
+        <tt>Save up to 50% on your favorite books this week only.</tt><br />
+        <button>Grab Offer</button>
+      </div>
+      <div class="offer-2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtsFNk0CT_YuIO4WOFXEdmxouQqmwE0-jdpvJ2-5b6Dg&s=10"
+          alt="mega discount" class="offer-2-image"><br />
+        <mark>Mega Book Discount</mark><br />
+        <tt>Enjoy exclusive deals with discounts up to 70% OFF.</tt><br />
+        <button>Grab Offer</button>
+      </div>
+      <div class="offer-3">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeq-wNjUQlCNnK6PYZVH18STBOYP2l6iRNPqupDdhkzg&s=10"
+          alt="buy 2 get 1 free" class="offer-3-image"><br />
+        <mark>Buy 2, Get 1 Free</mark><br />
+        <tt>Purchase any two books and get the third one absolutely
+          free.</tt><br />
+        <button>Grab Offer</button>
+      </div>
+      <div class="offer-4">
+        <img
+          src="https://img.magnific.com/free-vector/flash-sale-banner-template-design-vector-illustration_157027-510.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="flash sale" class="offer-4-image"><br />
+        <mark>Weekend Flash Sale</mark><br />
+        <tt>Limited-time offers on bestselling books. Hurry!</tt><br />
+        <button>Grab Offer</button>
+      </div>
+    </div>
+    <div class="reviews" id="reviews">
+      <div class="review-1">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwxQzo9RO7fV5q9rq3DGonn77CNROEqtKGvDS0tNL45A&s=10"
+          alt="emma" class="review-1-image">
+        <h1> Emma Johnson </h1>
+        <p>
+          Amazing collection of books and
+          fast delivery. Highly recommend!
+        </p>
+        <b> 4.9/5</b>
+      </div>
+      <div class="review-2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQolaz5uLVruiae3ni4klDIhDFId8xxqF7zlKqjXXurHg&s=10"
+          alt="david" class="review-2-image">
+        <h1>David Wilson</h1>
+        <p>
+          Great prices and excellent
+          customer service. Will buy again.
+        </p>
+        <b> 4.8/5</b>
+      </div>
+      <div class="news-letter">
+        <h1>Stay Updated With Us </h1>
+        <p>
+          Get the latest book deals, new
+          arrivals, and exclusive offers.
+        </p>
+        <input type="email" placeholder="enter your email" /><br />
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <footer class="end-of-the-page" id="contact">
+      <h1>About Us</h1>
+      <p>
+        Amazon Books is an online book marketplace where readers can discover,
+        purchase, and explore millions of books across various categories. It
+        offers a wide collection of fiction, non-fiction, educational books,
+        eBooks, and audiobooks from authors and publishers around the world.
+      </p>
+      <p>
+        With features like customer reviews, ratings, personalized
+        recommendations, and fast delivery options, Amazon Books helps readers
+        easily find their favorite books and discover new ones. It also provides
+        digital reading services through platforms like Kindle, allowing users
+        to read books anytime and anywhere.
+      </p>
+      <h2>Key Features:</h2>
+      <ul>
+        <li>Millions of books across different categories</li>
+        <li>Customer ratings and reviews</li>
+        <li>Personalized book recommendations</li>
+        <li>eBooks and audiobooks support</li>
+        <li>Convenient online ordering and delivery options</li>
+      </ul>
+      <address>
+        Amazon Seller Services Private Limited,
+        8th Floor, Brigade Gateway, 26/1 Dr. Rajkumar Road,
+        Bengaluru, Karnataka 560055, India
+      </address>
+      Email:support@amazon.in<br/>
+      Phone Number:1800-3000-9009<br/>
+      Website: <a href="https://www.amazon.in/"target="_blank"><button><i class="fa-brands fa-amazon"></i>Amazon</button></a><br/>
+      Youtube Link :<a href="https://www.youtube.com/@amazonbooksin"target="_blank"><button><i class="fa-brands fa-youtube"></i>Youtube</button></a><br/>
+      Facebook Link:<a href="www.facebook.com/AmazonBooksIndia/?brand_redir=150864087963"target="_blank"><button><i class="fa-brands fa-facebook"></i>Facebook</button></a><br/>
+      Instagram Link:<a href="https://www.instagram.com/AmazonBooks"target="_blank"><button><i class="fa-brands fa-square-instagram"></i>Instagram</button></a><br/>
+      Linkedin Link: <a href="https://www.linkedin.com/company/amazon-bookss/"target="_blank"><button><i class="fa-brands fa-linkedin"></i>Linkedin</button></a><br/>
+      <p>
+    Copyright © 2026 R. Megha Shyam<br>
+    Designed and Developed by R. Megha Shyam<br>
+    All original website code and design elements are protected.
+  </p>
+    </footer>
+  </body>
+</html>
