@@ -1,360 +1,721 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>My Website</title>
 
+
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
+
 :root{
+
 --primary:#00ffff;
 --secondary:#ff00ff;
 --text:white;
+
 }
 
+
 body{
+
 font-family:"Segoe UI",Arial,sans-serif;
 min-height:100vh;
 overflow-x:hidden;
 color:var(--text);
+
 background:radial-gradient(circle,#160033,#000);
+
 transition:.6s;
+
 animation:pageLoad 1.2s;
+
 }
+
+
 
 @keyframes pageLoad{
+
 from{
+
 opacity:0;
 transform:scale(.95);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
+
 }
 
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+
+
+
 body.light{
+
 --primary:#008cff;
 --secondary:#ff0099;
 --text:#111;
+
 background:linear-gradient(135deg,#fff,#aaffff);
+
 }
+
+
 
 body.light .mode-buttons button,
 body.light #themePanel button{
+
 background:white;
 color:#111;
+
 }
+
+
+
+
+/* TOP BUTTON PANEL */
+
 
 .mode-buttons{
+
 position:fixed;
+
 top:15px;
+
 left:50%;
+
 transform:translateX(-50%);
+
 display:flex;
+
 flex-wrap:wrap;
+
 justify-content:center;
+
 gap:10px;
+
 width:90%;
+
 max-width:900px;
+
 padding:12px;
+
 z-index:9999;
+
 border-radius:40px;
+
 background:rgba(0,0,0,.45);
+
 backdrop-filter:blur(20px);
+
 border:2px solid var(--primary);
-box-shadow:0 0 25px var(--primary),0 0 60px var(--secondary);
+
+box-shadow:
+0 0 25px var(--primary),
+0 0 60px var(--secondary);
+
 }
 
+
+
 .mode-buttons button{
+
 padding:10px 18px;
+
 border-radius:25px;
+
 cursor:pointer;
+
 font-size:14px;
+
 font-weight:bold;
+
 background:#050505;
+
 color:white;
+
 border:2px solid var(--primary);
+
 box-shadow:0 0 20px var(--primary);
+
 transition:.3s;
+
 }
+
+
 
 .mode-buttons button:hover{
+
 transform:scale(1.1);
+
 }
+
+
+
+
+/* THEME PANEL */
+
 
 #themePanel{
+
 position:fixed;
+
 top:120px;
+
 left:50%;
+
 transform:translateX(-50%);
+
 width:280px;
+
 padding:20px;
+
 border-radius:25px;
+
 display:none;
+
 z-index:9998;
+
 text-align:center;
+
 background:rgba(0,0,0,.8);
+
 border:2px solid cyan;
-box-shadow:0 0 30px cyan,0 0 80px magenta;
+
+box-shadow:
+0 0 30px cyan,
+0 0 80px magenta;
+
 }
+
+
 
 #themePanel button{
+
 margin:8px;
+
 padding:10px 18px;
+
 border-radius:20px;
+
 cursor:pointer;
+
 background:#050505;
+
 color:white;
+
 border:2px solid cyan;
+
 }
+
+
+
+
+/* PAGE CONTENT */
+
 
 #pageContent{
+
 padding-top:130px;
+
 transition:1s;
+
 }
 
-.html,.css,.my-image{
+
+
+
+.html,
+.css,
+.my-image{
+
 margin:25px;
+
 padding:25px;
+
 border-radius:25px;
+
 background:rgba(255,255,255,.08);
+
 backdrop-filter:blur(20px);
+
 border:2px solid var(--primary);
-box-shadow:0 0 25px var(--primary),0 0 70px var(--secondary);
+
+box-shadow:
+
+0 0 25px var(--primary),
+0 0 70px var(--secondary);
+
 animation:floating 5s infinite alternate;
+
 }
+
+
 
 @keyframes floating{
-from{transform:translateY(0)}
-to{transform:translateY(-10px)}
+
+from{
+
+transform:translateY(0);
+
 }
 
-.html:hover,.css:hover,.my-image:hover{
+to{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+
+
+
+.html:hover,
+.css:hover,
+.my-image:hover{
+
 transform:scale(1.03);
+
 }
+
+
+
+
+/* NAV LINKS */
+
+
 nav a{
+
 display:inline-block;
+
 margin:8px;
+
 padding:10px 18px;
+
 border-radius:25px;
+
 text-decoration:none;
+
 font-weight:bold;
+
 color:white;
-background:linear-gradient(45deg,var(--primary),var(--secondary));
+
+background:linear-gradient(
+45deg,
+var(--primary),
+var(--secondary)
+);
+
 box-shadow:0 0 20px var(--primary);
+
 transition:.3s;
+
 }
+
+
 
 nav a:hover{
+
 transform:translateY(-6px) scale(1.08);
-box-shadow:0 0 50px var(--primary),0 0 100px var(--secondary);
+
+box-shadow:
+
+0 0 50px var(--primary),
+0 0 100px var(--secondary);
+
 }
 
+
+
+
+/* IMAGE */
+
+
 .my-image img{
+
 width:300px;
+
 height:300px;
+
 object-fit:cover;
+
 border-radius:25px;
+
 border:4px solid var(--primary);
-box-shadow:0 0 30px var(--primary),0 0 70px var(--secondary);
+
+box-shadow:
+
+0 0 30px var(--primary),
+0 0 70px var(--secondary);
+
 transition:.5s;
+
 }
+
+
 
 .my-image img:hover{
+
 transform:rotate(8deg) scale(1.1);
+
 }
+
+
+
+/* LASER EFFECT */
+
 
 #laser-container{
+
 position:fixed;
+
 inset:0;
+
 pointer-events:none;
+
 z-index:500;
+
 overflow:hidden;
+
 }
+
+
 
 .laser{
+
 position:absolute;
+
 height:120%;
+
 width:5px;
+
 top:-10%;
+
 background:var(--primary);
-box-shadow:0 0 20px var(--primary),0 0 60px var(--primary),0 0 100px var(--secondary);
+
+box-shadow:
+
+0 0 20px var(--primary),
+0 0 60px var(--primary),
+0 0 100px var(--secondary);
+
 animation:laserMove 3s infinite linear;
+
 }
 
-.laser:nth-child(1){left:20%}
-.laser:nth-child(2){left:50%;animation-delay:1s}
-.laser:nth-child(3){left:80%;animation-delay:2s}
+
+
+.laser:nth-child(1){
+
+left:20%;
+
+}
+
+
+.laser:nth-child(2){
+
+left:50%;
+
+animation-delay:1s;
+
+}
+
+
+.laser:nth-child(3){
+
+left:80%;
+
+}
+
+
 
 @keyframes laserMove{
-0%{transform:rotate(25deg) translateY(-100%)}
-50%{transform:rotate(-25deg) translateY(0)}
-100%{transform:rotate(25deg) translateY(100%)}
-}
 
-#disco{
-position:fixed;
-inset:0;
-pointer-events:none;
-z-index:99999;
-display:none;
-}
+0%{
 
-.spark{
-position:absolute;
-width:12px;
-height:12px;
-border-radius:50%;
-box-shadow:0 0 20px white,0 0 50px yellow;
-animation:explode 1.2s forwards;
-}
-
-@keyframes explode{
-from{
-transform:translate(0,0);
-opacity:1;
-}
-to{
-transform:translate(var(--x),var(--y));
-opacity:0;
-}
-}
-
-@media(max-width:700px){
-
-.mode-buttons{
-width:95%;
-border-radius:25px;
-}
-
-.mode-buttons button{
-padding:8px 12px;
-font-size:12px;
-}
-
-.html,.css,.my-image{
-margin:15px;
-padding:18px;
-}
-
-.my-image img{
-width:220px;
-height:220px;
-}
-
-nav a{
-padding:8px 14px;
-font-size:13px;
-}
+transform:rotate(25deg) translateY(-100%);
 
 }
 
+50%{
+
+transform:rotate(-25deg) translateY(0);
+
+}
+
+100%{
+
+transform:rotate(25deg) translateY(100%);
+
+}
+
+}
 </style>
 </head>
-
 <body>
 
+
 <div class="mode-buttons">
+
 <button id="darkBtn">🌑 Dark</button>
+
 <button id="lightBtn">☀️ Light</button>
+
 <button id="musicBtn">🎵 Music</button>
+
 <button id="themeBtn">🎨 Theme</button>
+
 <button id="hideBtn">🙈 Hide</button>
+
 <button id="showBtn" style="display:none">👁 Show</button>
+
 </div>
+
+
 
 <div id="themePanel">
+
 <h2>✨ Neon Theme</h2>
+
 <button id="randomTheme">🎲 Random</button>
+
 <button id="resetTheme">♻️ Default</button>
+
 </div>
 
-<audio id="partyMusic" loop>
+
+
+<!-- ONLY GANGLEADER MUSIC -->
+
+<audio id="partyMusic" loop autoplay>
+
 <source src="gangleader.mp3" type="audio/mpeg">
+
 </audio>
 
+
+
+
 <div id="laser-container">
+
 <div class="laser"></div>
+
 <div class="laser"></div>
+
 <div class="laser"></div>
+
 </div>
+
+
 
 <div id="disco"></div>
 
+
+
+
 <div id="pageContent">
-  <div class="html">
+
+
+<div class="html">
+
 
 <h1>Part-1 (Only HTML)</h1>
 
+
 <nav>
-<a href="Mini Project-1.html" target="_blank">Mini Project-1</a>
-<a href="Mini Project-2.html" target="_blank">Mini Project-2</a>
-<a href="Mini Project-3.html" target="_blank">Mini Project-3</a>
-<a href="Mini Project-4.html" target="_blank">Mini Project-4</a>
-<a href="Mini Project-5.html" target="_blank">Mini Project-5</a>
+
+<a href="Mini Project-1.html" target="_blank">
+Mini Project-1
+</a>
+
+<a href="Mini Project-2.html" target="_blank">
+Mini Project-2
+</a>
+
+<a href="Mini Project-3.html" target="_blank">
+Mini Project-3
+</a>
+
+<a href="Mini Project-4.html" target="_blank">
+Mini Project-4
+</a>
+
+<a href="Mini Project-5.html" target="_blank">
+Mini Project-5
+</a>
+
 </nav>
+
+
 
 <h2>Part-2 (Only HTML)</h2>
 
+
+
 <nav>
-<a href="Mini Project-6.html" target="_blank">Mini Project-6</a>
-<a href="Mini Project-7.html" target="_blank">Mini Project-7</a>
-<a href="Mini Project-8.html" target="_blank">Mini Project-8</a>
-<a href="Mini Project-9.html" target="_blank">Mini Project-9</a>
-<a href="Mini Project-10.html" target="_blank">Mini Project-10</a>
+
+<a href="Mini Project-6.html" target="_blank">
+Mini Project-6
+</a>
+
+<a href="Mini Project-7.html" target="_blank">
+Mini Project-7
+</a>
+
+<a href="Mini Project-8.html" target="_blank">
+Mini Project-8
+</a>
+
+<a href="Mini Project-9.html" target="_blank">
+Mini Project-9
+</a>
+
+<a href="Mini Project-10.html" target="_blank">
+Mini Project-10
+</a>
+
 </nav>
 
+
+
 </div>
+
+
+
 
 
 <div class="my-image">
 
+
 <img src="my_image.jpeg">
+
 
 <p>My Image</p>
 
-<p>Not a project. Used for image and audio testing.</p>
+
+<p>
+Not a project. Used for image and audio testing.
+</p>
+
 
 </div>
+
+
+
 
 
 <div class="css">
 
-<h3>HTML + CSS Projects(part-1)</h3>
+
+<h3>
+HTML + CSS Projects(part-1)
+</h3>
+
+
 
 <nav>
-<a href="Mini project-1 in css.html" target="_blank">CSS mini Project-1</a>
-<a href="Mini project-2 in css.html" target="_blank">CSS mini Project-2</a>
-<a href="Mini project-3 in css.html" target="_blank">CSS mini Project-3</a>
-<a href="Mini project-4 in css .html" target="_blank">CSS mini Project-4</a>
-<a href="Mini project-5 in css.html" target="_blank">CSS mini Project-5</a>
+
+<a href="Mini project-1 in css.html" target="_blank">
+CSS mini Project-1
+</a>
+
+<a href="Mini project-2 in css.html" target="_blank">
+CSS mini Project-2
+</a>
+
+<a href="Mini project-3 in css.html" target="_blank">
+CSS mini Project-3
+</a>
+
+<a href="Mini project-4 in css .html" target="_blank">
+CSS mini Project-4
+</a>
+
+<a href="Mini project-5 in css.html" target="_blank">
+CSS mini Project-5
+</a>
+
 </nav>
-<h4>HTML + CSS Projects(part-2)</h4>
+
+
+
+
+<h4>
+HTML + CSS Projects(part-2)
+</h4>
+
+
+
+
 <nav>
-  <a href="Mini project-6 in css.html" target="_blank">CSS mini Project-6</a>
-<a href="Mini project-7 in css.html" target="_blank">CSS  mini Project-7</a>
-<a href="Mini project-8 in css .html" target="_blank">CSS miini Project-8</a>
-<a href="Mini project-9 in css.html" target="_blank">CSS mini Project-9</a>
-<a href="Mini project-10 in css .html" target="_blank">CSS mini Project-10</a>
+
+<a href="Mini project-6 in css.html" target="_blank">
+CSS mini Project-6
+</a>
+
+<a href="Mini project-7 in css.html" target="_blank">
+CSS mini Project-7
+</a>
+
+<a href="Mini project-8 in css .html" target="_blank">
+CSS miini Project-8
+</a>
+
+<a href="Mini project-9 in css.html" target="_blank">
+CSS mini Project-9
+</a>
+
+<a href="Mini project-10 in css .html" target="_blank">
+CSS mini Project-10
+</a>
+
 </nav>
-<h4>HTML + CSS Projects(part-3)</h4>
+
+
+
+
+
+<h4>
+HTML + CSS Projects(part-3)
+</h4>
+
+
+
+
 <nav>
-<a href="Mini project-11 in css.html" target="_blank">CSS mini Project-11</a>
-<a href="Mini project-12 in css .html" target="_blank">CSS mini Project-12</a>
+
+<a href="Mini project-11 in css.html" target="_blank">
+CSS mini Project-11
+</a>
+
+<a href="Mini project-12 in css .html" target="_blank">
+CSS mini Project-12
+</a>
+
 </nav>
+
+
 
 </div>
 
+
+
 </div>
-
-
 <script>
 
 const body=document.body;
@@ -389,20 +750,26 @@ let playing=false;
 /* THEMES */
 
 const darkThemes=[
+
 ["#00ffff","#ff00ff"],
 ["#00ff00","#39ff14"],
 ["#ff0000","#ff6600"],
 ["#8000ff","#00ffff"],
 ["#ffff00","#ff0088"]
+
 ];
 
+
 const lightThemes=[
+
 ["#0066ff","#00ffff"],
 ["#ff0099","#ff66cc"],
 ["#00aa88","#00ffcc"],
 ["#6600ff","#cc99ff"],
 ["#ff8800","#ffcc00"]
+
 ];
+
 
 
 function changeTheme(primary,secondary){
@@ -412,6 +779,7 @@ document.documentElement.style.setProperty(
 primary
 );
 
+
 document.documentElement.style.setProperty(
 "--secondary",
 secondary
@@ -420,74 +788,61 @@ secondary
 }
 
 
+
+
 /* DARK MODE */
+
 
 darkBtn.onclick=()=>{
 
 body.classList.remove("light");
 
-document.documentElement.style.setProperty(
-"--text",
-"white"
-);
-
-changeTheme(
-"#00ffff",
-"#ff00ff"
-);
+changeTheme("#00ffff","#ff00ff");
 
 cracker(innerWidth/2,innerHeight/2);
 
 };
+
+
 
 
 
 /* LIGHT MODE */
 
+
 lightBtn.onclick=()=>{
 
 body.classList.add("light");
 
-document.documentElement.style.setProperty(
-"--text",
-"#111"
-);
-
-changeTheme(
-"#008cff",
-"#ff0099"
-);
+changeTheme("#008cff","#ff0099");
 
 cracker(innerWidth/2,innerHeight/2);
 
 };
+
+
 
 
 
 
 /* RANDOM THEME */
 
+
 randomTheme.onclick=()=>{
 
-let selectedThemes;
 
+let themes=
+body.classList.contains("light")
+?
+lightThemes
+:
+darkThemes;
 
-if(body.classList.contains("light")){
-
-selectedThemes=lightThemes;
-
-}
-else{
-
-selectedThemes=darkThemes;
-
-}
 
 
 let theme=
-selectedThemes[
-Math.floor(Math.random()*selectedThemes.length)
-];
+themes[Math.floor(Math.random()*themes.length)];
+
 
 
 changeTheme(
@@ -496,100 +851,15 @@ theme[1]
 );
 
 
+
 cracker(
 innerWidth/2,
 innerHeight/2
 );
 
-};
-
-
-
-
-/* RESET */
-
-resetTheme.onclick=()=>{
-
-if(body.classList.contains("light")){
-
-changeTheme(
-"#008cff",
-"#ff0099"
-);
-
-}
-
-else{
-
-changeTheme(
-"#00ffff",
-"#ff00ff"
-);
-
-}
 
 };
 
-
-
-function changeTheme(a,b){
-
-document.documentElement.style.setProperty("--primary",a);
-
-document.documentElement.style.setProperty("--secondary",b);
-
-}
-
-
-
-/* DARK BUTTON */
-
-darkBtn.onclick=()=>{
-
-body.classList.remove("light");
-
-changeTheme("#00ffff","#ff00ff");
-
-cracker(innerWidth/2,innerHeight/2);
-
-};
-
-
-
-/* LIGHT BUTTON */
-
-lightBtn.onclick=()=>{
-
-body.classList.add("light");
-
-changeTheme("#008cff","#ff0099");
-
-cracker(innerWidth/2,innerHeight/2);
-
-};
-
-
-
-
-/* RANDOM THEME */
-
-
-randomTheme.onclick=()=>{
-
-let themes=body.classList.contains("light")
-?lightThemes
-:darkThemes;
-
-
-let t=themes[Math.floor(Math.random()*themes.length)];
-
-
-changeTheme(t[0],t[1]);
-
-
-cracker(innerWidth/2,innerHeight/2);
-
-};
 
 
 
@@ -598,6 +868,7 @@ cracker(innerWidth/2,innerHeight/2);
 
 
 resetTheme.onclick=()=>{
+
 
 if(body.classList.contains("light")){
 
@@ -611,7 +882,9 @@ changeTheme("#00ffff","#ff00ff");
 
 }
 
+
 };
+
 
 
 
@@ -622,13 +895,18 @@ changeTheme("#00ffff","#ff00ff");
 
 themeBtn.onclick=()=>{
 
+
 themePanel.style.display=
 
 themePanel.style.display=="block"
-?"none"
-:"block";
+?
+"none"
+:
+"block";
+
 
 };
+
 
 
 
@@ -648,6 +926,7 @@ showBtn.style.display="block";
 };
 
 
+
 showBtn.onclick=()=>{
 
 pageContent.style.display="block";
@@ -663,46 +942,97 @@ hideBtn.style.display="block";
 
 
 
-/* MUSIC */
 
 
-async function playMusic(){
+/* MUSIC SYSTEM */
+
+
+/* automatically play gangleader.mp3 */
+
+async function startMusic(){
+
 
 try{
 
-partyMusic.volume=.35;
+
+partyMusic.volume=0.35;
+
 
 await partyMusic.play();
 
+
 playing=true;
 
-musicBtn.innerHTML="🔊 Music ON";
+
+musicBtn.innerHTML="⏸️ Pause Music";
+
 
 }
 
-catch(e){}
+catch(error){
+
+
+console.log(
+"Browser blocked autoplay"
+);
+
+
+musicBtn.innerHTML="▶️ Play Music";
+
 
 }
 
+
+}
+
+
+
+
+window.addEventListener("load",()=>{
+
+startMusic();
+
+});
+
+
+
+
+
+
+/* MUSIC BUTTON */
 
 
 musicBtn.onclick=()=>{
 
+
 if(playing){
+
 
 partyMusic.pause();
 
+
 playing=false;
 
-musicBtn.innerHTML="🎵 Music";
+
+musicBtn.innerHTML="▶️ Resume Music";
+
 
 }
 
 else{
 
-playMusic();
+
+partyMusic.play();
+
+
+playing=true;
+
+
+musicBtn.innerHTML="⏸️ Pause Music";
+
 
 }
+
 
 };
 
@@ -710,79 +1040,136 @@ playMusic();
 
 
 
-/* CRACKER */
+
+
+/* CRACKER EFFECT */
 
 
 function cracker(x,y){
 
+
 disco.style.display="block";
+
 
 
 for(let i=0;i<100;i++){
 
+
 let s=document.createElement("div");
 
+
 s.className="spark";
+
 
 s.style.left=x+"px";
 
 s.style.top=y+"px";
 
 
+
 let a=Math.random()*Math.PI*2;
+
 
 let d=Math.random()*350;
 
 
-s.style.setProperty("--x",Math.cos(a)*d+"px");
 
-s.style.setProperty("--y",Math.sin(a)*d+"px");
+s.style.setProperty(
+"--x",
+Math.cos(a)*d+"px"
+);
+
+
+
+s.style.setProperty(
+"--y",
+Math.sin(a)*d+"px"
+);
+
 
 
 s.style.background=
-["cyan","magenta","yellow","lime","white"]
-[Math.floor(Math.random()*5)];
+
+[
+"cyan",
+"magenta",
+"yellow",
+"lime",
+"white"
+
+][Math.floor(Math.random()*5)];
+
 
 
 disco.appendChild(s);
 
 
-setTimeout(()=>s.remove(),1200);
+
+setTimeout(()=>{
+
+s.remove();
+
+},1200);
+
+
 
 }
 
 
-setTimeout(()=>disco.style.display="none",1300);
+
+setTimeout(()=>{
+
+disco.style.display="none";
+
+},1300);
+
+
 
 }
 
 
 
 
-/* PROJECT EFFECT */
+
+
+
+/* PROJECT OPEN EFFECT */
 
 
 links.forEach(link=>{
 
+
 link.onclick=e=>{
+
 
 e.preventDefault();
 
-cracker(e.clientX,e.clientY);
+
+
+cracker(
+e.clientX,
+e.clientY
+);
+
+
 
 setTimeout(()=>{
 
-window.open(link.href,"_blank");
+
+window.open(
+link.href,
+"_blank"
+);
+
+
 
 },700);
 
+
+
 };
 
+
+
 });
-
-
-
 </script>
-
-</body>
-</html>
