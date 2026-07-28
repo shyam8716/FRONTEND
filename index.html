@@ -1,1066 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Neon Disco Portfolio</title>
 
 <style>
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 :root{
-    --primary:#00ffff;
-    --secondary:#ff00ff;
-    --text:white;
+--primary:#00ffff;
+--secondary:#ff00ff;
+--text:white;
 }
-
 
 body{
-
-    font-family:"Segoe UI",Arial,sans-serif;
-
-    min-height:100vh;
-
-    overflow-x:hidden;
-
-    color:var(--text);
-
-    background:
-    radial-gradient(circle,#160033,#000);
-
-    transition:.6s;
-
-    animation:pageLoad 1.5s;
-
+font-family:"Segoe UI",Arial,sans-serif;
+min-height:100vh;
+overflow-x:hidden;
+color:var(--text);
+background:radial-gradient(circle,#160033,#000);
+transition:.6s;
+animation:pageLoad 1.2s;
 }
-
 
 @keyframes pageLoad{
-
-    from{
-        opacity:0;
-        transform:scale(.95);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-
+from{
+opacity:0;
+transform:scale(.95);
 }
-
+to{
+opacity:1;
+transform:scale(1);
+}
+}
 
 body.light{
-
-    background:
-    linear-gradient(135deg,#ffffff,#aaffff);
-
-    color:#111;
-
-    --primary:#008cff;
-
-    --secondary:#ff0099;
-
+--primary:#008cff;
+--secondary:#ff0099;
+--text:#111;
+background:linear-gradient(135deg,#fff,#aaffff);
 }
-
-
 
 body.light .mode-buttons button,
 body.light #themePanel button{
-
-    background:white;
-
-    color:#111;
-
+background:white;
+color:#111;
 }
-
-
-
-/* TOP CONTROL BUTTONS */
-
 
 .mode-buttons{
-
-    position:fixed;
-
-    top:20px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:12px;
-
-
-    width:max-content;
-
-    max-width:95%;
-
-
-    padding:15px;
-
-
-    z-index:999999;
-
-
-    border-radius:50px;
-
-
-    background:
-    rgba(0,0,0,.45);
-
-
-    backdrop-filter:blur(20px);
-
-
-    border:2px solid var(--primary);
-
-
-    box-shadow:
-
-    0 0 25px var(--primary),
-    0 0 60px var(--secondary);
-
+position:fixed;
+top:15px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+width:90%;
+max-width:900px;
+padding:12px;
+z-index:9999;
+border-radius:40px;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(20px);
+border:2px solid var(--primary);
+box-shadow:0 0 25px var(--primary),0 0 60px var(--secondary);
 }
-
-
 
 .mode-buttons button{
-
-
-    padding:12px 20px;
-
-
-    border-radius:30px;
-
-
-    cursor:pointer;
-
-
-    font-size:15px;
-
-
-    font-weight:bold;
-
-
-    background:#050505;
-
-
-    color:white;
-
-
-    border:2px solid var(--primary);
-
-
-    box-shadow:
-
-    0 0 20px var(--primary);
-
-
-    transition:.4s;
-
+padding:10px 18px;
+border-radius:25px;
+cursor:pointer;
+font-size:14px;
+font-weight:bold;
+background:#050505;
+color:white;
+border:2px solid var(--primary);
+box-shadow:0 0 20px var(--primary);
+transition:.3s;
 }
-
-
 
 .mode-buttons button:hover{
-
-
-    transform:scale(1.15);
-
-
-    box-shadow:
-
-    0 0 40px var(--primary),
-    0 0 90px var(--secondary);
-
+transform:scale(1.1);
 }
-
-
-
-
-
-/* THEME PANEL */
-
 
 #themePanel{
-
-
-    position:fixed;
-
-
-    top:120px;
-
-
-    left:50%;
-
-
-    transform:translateX(-50%);
-
-
-    width:300px;
-
-
-    padding:25px;
-
-
-    border-radius:30px;
-
-
-    display:none;
-
-
-    z-index:999998;
-
-
-    text-align:center;
-
-
-    background:
-
-    rgba(0,0,0,.75);
-
-
-    border:2px solid cyan;
-
-
-    box-shadow:
-
-    0 0 30px cyan,
-    0 0 80px magenta;
-
+position:fixed;
+top:120px;
+left:50%;
+transform:translateX(-50%);
+width:280px;
+padding:20px;
+border-radius:25px;
+display:none;
+z-index:9998;
+text-align:center;
+background:rgba(0,0,0,.8);
+border:2px solid cyan;
+box-shadow:0 0 30px cyan,0 0 80px magenta;
 }
-
-
 
 #themePanel button{
-
-
-    margin:10px;
-
-
-    padding:12px 20px;
-
-
-    border-radius:25px;
-
-
-    cursor:pointer;
-
-
-    font-weight:bold;
-
-
-    background:#050505;
-
-
-    color:white;
-
-
-    border:2px solid cyan;
-
-
-    box-shadow:
-
-    0 0 20px cyan;
-
+margin:8px;
+padding:10px 18px;
+border-radius:20px;
+cursor:pointer;
+background:#050505;
+color:white;
+border:2px solid cyan;
 }
-
-
-
-
-
-/* MAIN CONTENT */
-
 
 #pageContent{
-
-
-    padding-top:160px;
-
-
-    transition:1s;
-
+padding-top:130px;
+transition:1s;
 }
 
-
-
-
-/* CARD DESIGN */
-
-
-.html,
-.css,
-.my-image{
-
-
-    margin:30px;
-
-
-    padding:30px;
-
-
-    border-radius:30px;
-
-
-    background:
-
-    rgba(255,255,255,.08);
-
-
-    backdrop-filter:blur(20px);
-
-
-    border:2px solid var(--primary);
-
-
-    box-shadow:
-
-    0 0 25px var(--primary),
-    0 0 70px var(--secondary);
-
-
-    animation:floating 5s infinite alternate;
-
+.html,.css,.my-image{
+margin:25px;
+padding:25px;
+border-radius:25px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border:2px solid var(--primary);
+box-shadow:0 0 25px var(--primary),0 0 70px var(--secondary);
+animation:floating 5s infinite alternate;
 }
-
-
 
 @keyframes floating{
-
-
-    from{
-
-        transform:translateY(0);
-
-    }
-
-
-    to{
-
-        transform:translateY(-12px);
-
-    }
-
+from{transform:translateY(0)}
+to{transform:translateY(-10px)}
 }
 
-
-
-.html:hover,
-.css:hover,
-.my-image:hover{
-
-
-    transform:scale(1.03);
-
-
-    box-shadow:
-
-    0 0 50px var(--primary),
-    0 0 100px var(--secondary);
-
+.html:hover,.css:hover,.my-image:hover{
+transform:scale(1.03);
 }
-/* PROJECT LINKS */
-
 nav a{
-
-    display:inline-block;
-
-    margin:10px;
-
-    padding:12px 22px;
-
-    border-radius:25px;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    color:white;
-
-
-    background:
-    linear-gradient(
-        45deg,
-        var(--primary),
-        var(--secondary)
-    );
-
-
-    box-shadow:
-    0 0 20px var(--primary);
-
-
-    transition:.4s;
-
+display:inline-block;
+margin:8px;
+padding:10px 18px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+color:white;
+background:linear-gradient(45deg,var(--primary),var(--secondary));
+box-shadow:0 0 20px var(--primary);
+transition:.3s;
 }
-
-
 
 nav a:hover{
-
-    transform:
-    translateY(-8px)
-    scale(1.1);
-
-
-    box-shadow:
-
-    0 0 50px var(--primary),
-    0 0 100px var(--secondary);
-
+transform:translateY(-6px) scale(1.08);
+box-shadow:0 0 50px var(--primary),0 0 100px var(--secondary);
 }
-
-
-
-
-
-/* IMAGE */
-
 
 .my-image img{
-
-
-    width:300px;
-
-    height:300px;
-
-    object-fit:cover;
-
-
-    border-radius:30px;
-
-
-    border:4px solid var(--primary);
-
-
-    box-shadow:
-
-    0 0 30px var(--primary),
-    0 0 70px var(--secondary);
-
-
-    transition:.5s;
-
+width:300px;
+height:300px;
+object-fit:cover;
+border-radius:25px;
+border:4px solid var(--primary);
+box-shadow:0 0 30px var(--primary),0 0 70px var(--secondary);
+transition:.5s;
 }
-
-
-
 
 .my-image img:hover{
-
-
-    transform:
-
-    rotate(8deg)
-    scale(1.1);
-
+transform:rotate(8deg) scale(1.1);
 }
-
-
-
-
-
-/* LASER EFFECT */
-
 
 #laser-container{
-
-
-    position:fixed;
-
-
-    top:0;
-
-    left:0;
-
-
-    width:100%;
-
-
-    height:100%;
-
-
-    pointer-events:none;
-
-
-    z-index:500;
-
-
-    overflow:hidden;
-
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:500;
+overflow:hidden;
 }
-
-
-
 
 .laser{
-
-
-    position:absolute;
-
-
-    height:120%;
-
-
-    width:5px;
-
-
-    top:-10%;
-
-
-    background:var(--primary);
-
-
-    box-shadow:
-
-
-    0 0 20px var(--primary),
-
-    0 0 60px var(--primary),
-
-    0 0 100px var(--secondary);
-
-
-    animation:
-
-    laserMove 3s infinite linear;
-
+position:absolute;
+height:120%;
+width:5px;
+top:-10%;
+background:var(--primary);
+box-shadow:0 0 20px var(--primary),0 0 60px var(--primary),0 0 100px var(--secondary);
+animation:laserMove 3s infinite linear;
 }
 
-
-
-
-.laser:nth-child(1){
-
-    left:20%;
-
-}
-
-
-.laser:nth-child(2){
-
-    left:50%;
-
-    animation-delay:1s;
-
-}
-
-
-.laser:nth-child(3){
-
-    left:80%;
-
-    animation-delay:2s;
-
-}
-
-
-
-
+.laser:nth-child(1){left:20%}
+.laser:nth-child(2){left:50%;animation-delay:1s}
+.laser:nth-child(3){left:80%;animation-delay:2s}
 
 @keyframes laserMove{
-
-
-    0%{
-
-
-        transform:
-
-        rotate(25deg)
-
-        translateY(-100%);
-
-    }
-
-
-
-    50%{
-
-
-        transform:
-
-        rotate(-25deg)
-
-        translateY(0);
-
-    }
-
-
-
-    100%{
-
-
-        transform:
-
-        rotate(25deg)
-
-        translateY(100%);
-
-    }
-
+0%{transform:rotate(25deg) translateY(-100%)}
+50%{transform:rotate(-25deg) translateY(0)}
+100%{transform:rotate(25deg) translateY(100%)}
 }
-
-
-
-
-
-/* CRACKER EFFECT */
-
 
 #disco{
-
-
-    position:fixed;
-
-
-    top:0;
-
-
-    left:0;
-
-
-    width:100%;
-
-
-    height:100%;
-
-
-    pointer-events:none;
-
-
-    z-index:999999;
-
-
-    display:none;
-
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:99999;
+display:none;
 }
-
-
-
-
 
 .spark{
-
-
-    position:absolute;
-
-
-    width:12px;
-
-
-    height:12px;
-
-
-    border-radius:50%;
-
-
-    box-shadow:
-
-    0 0 20px white,
-
-    0 0 50px yellow;
-
-
-    animation:
-
-    explode 1.2s forwards;
-
+position:absolute;
+width:12px;
+height:12px;
+border-radius:50%;
+box-shadow:0 0 20px white,0 0 50px yellow;
+animation:explode 1.2s forwards;
 }
-
-
-
 
 @keyframes explode{
-
-
-    from{
-
-
-        transform:
-
-        translate(0,0);
-
-
-        opacity:1;
-
-    }
-
-
-
-    to{
-
-
-        transform:
-
-        translate(var(--x),var(--y));
-
-
-        opacity:0;
-
-    }
-
+from{
+transform:translate(0,0);
+opacity:1;
 }
-
-
-
-
-
-/* MOBILE RESPONSIVE */
-
+to{
+transform:translate(var(--x),var(--y));
+opacity:0;
+}
+}
 
 @media(max-width:700px){
 
+.mode-buttons{
+width:95%;
+border-radius:25px;
+}
 
-    .mode-buttons{
+.mode-buttons button{
+padding:8px 12px;
+font-size:12px;
+}
 
+.html,.css,.my-image{
+margin:15px;
+padding:18px;
+}
 
-        width:95%;
+.my-image img{
+width:220px;
+height:220px;
+}
 
-
-        border-radius:25px;
-
-    }
-
-
-
-    .mode-buttons button{
-
-
-        padding:8px 12px;
-
-
-        font-size:12px;
-
-    }
-
-
-
-    .html,
-    .css,
-    .my-image{
-
-
-        margin:15px;
-
-
-        padding:20px;
-
-    }
-
-
-
-    .my-image img{
-
-
-        width:220px;
-
-
-        height:220px;
-
-    }
-
-
-
-    nav a{
-
-
-        padding:10px 15px;
-
-
-        font-size:13px;
-
-    }
+nav a{
+padding:8px 14px;
+font-size:13px;
+}
 
 }
+
 </style>
 </head>
 
 <body>
 
-
-<!-- CONTROL BUTTONS -->
-
 <div class="mode-buttons">
-
-<button id="darkBtn">
-🌑 Dark
-</button>
-
-<button id="lightBtn">
-☀️ Light
-</button>
-
-<button id="musicBtn">
-🎵 Music
-</button>
-
-<button id="themeBtn">
-🎨 Theme
-</button>
-
-<button id="hideBtn">
-🙈 Hide
-</button>
-
-<button id="showBtn" style="display:none;">
-👁 Show
-</button>
-
+<button id="darkBtn">🌑 Dark</button>
+<button id="lightBtn">☀️ Light</button>
+<button id="musicBtn">🎵 Music</button>
+<button id="themeBtn">🎨 Theme</button>
+<button id="hideBtn">🙈 Hide</button>
+<button id="showBtn" style="display:none">👁 Show</button>
 </div>
-
-
-
-<!-- THEME PANEL -->
 
 <div id="themePanel">
-
-<h2>
-✨ Neon Theme
-</h2>
-
-<button id="randomTheme">
-🎲 Random
-</button>
-
-<button id="resetTheme">
-♻️ Default
-</button>
-
+<h2>✨ Neon Theme</h2>
+<button id="randomTheme">🎲 Random</button>
+<button id="resetTheme">♻️ Default</button>
 </div>
-
-
-
-
-<!-- AUDIO -->
 
 <audio id="partyMusic" loop>
-
 <source src="gangleader.mp3" type="audio/mpeg">
-
 </audio>
 
-
-
-
-<!-- LASERS -->
-
 <div id="laser-container">
-
 <div class="laser"></div>
-
 <div class="laser"></div>
-
 <div class="laser"></div>
-
 </div>
-
-
-
-<!-- CRACKER -->
 
 <div id="disco"></div>
 
-
-
-
-<!-- CONTENT -->
-
 <div id="pageContent">
+  <div class="html">
 
-
-<div class="html">
-
-<h1>
-Part-1 (Only HTML)
-</h1>
-
+<h1>Part-1 (Only HTML)</h1>
 
 <nav>
-
-<a href="Mini Project-1.html" target="_blank">
-Mini Project-1
-</a>
-
-<a href="Mini Project-2.html" target="_blank">
-Mini Project-2
-</a>
-
-<a href="Mini Project-3.html" target="_blank">
-Mini Project-3
-</a>
-
-<a href="Mini Project-4.html" target="_blank">
-Mini Project-4
-</a>
-
-<a href="Mini Project-5.html" target="_blank">
-Mini Project-5
-</a>
-
+<a href="Mini Project-1.html" target="_blank">Mini Project-1</a>
+<a href="Mini Project-2.html" target="_blank">Mini Project-2</a>
+<a href="Mini Project-3.html" target="_blank">Mini Project-3</a>
+<a href="Mini Project-4.html" target="_blank">Mini Project-4</a>
+<a href="Mini Project-5.html" target="_blank">Mini Project-5</a>
 </nav>
 
-
-<h2>
-Part-2 (Only HTML)
-</h2>
-
+<h2>Part-2 (Only HTML)</h2>
 
 <nav>
-
-<a href="Mini Project-6.html" target="_blank">
-Mini Project-6
-</a>
-
-<a href="Mini Project-7.html" target="_blank">
-Mini Project-7
-</a>
-
-<a href="Mini Project-8.html" target="_blank">
-Mini Project-8
-</a>
-
-<a href="Mini Project-9.html" target="_blank">
-Mini Project-9
-</a>
-
-<a href="Mini Project-10.html" target="_blank">
-Mini Project-10
-</a>
-
+<a href="Mini Project-6.html" target="_blank">Mini Project-6</a>
+<a href="Mini Project-7.html" target="_blank">Mini Project-7</a>
+<a href="Mini Project-8.html" target="_blank">Mini Project-8</a>
+<a href="Mini Project-9.html" target="_blank">Mini Project-9</a>
+<a href="Mini Project-10.html" target="_blank">Mini Project-10</a>
 </nav>
 
 </div>
-
-
 
 
 <div class="my-image">
 
-<img src="my_image.jpeg" alt="My Image">
+<img src="my_image.jpeg">
 
-<p>
-My Image
-</p>
+<p>My Image</p>
 
-<p>
-Not a project. Used for image and audio testing.
-</p>
+<p>Not a project. Used for image and audio testing.</p>
 
 </div>
-
-
-
 
 
 <div class="css">
 
-<h3>
-Part-1 (HTML + CSS)
-</h3>
-
+<h3>HTML + CSS Projects</h3>
 
 <nav>
-
-<a href="Mini project-1 in css.html" target="_blank">
-CSS Project-1
-</a>
-
-<a href="Mini project-2 in css.html" target="_blank">
-CSS Project-2
-</a>
-
-<a href="Mini project-3 in css.html" target="_blank">
-CSS Project-3
-</a>
-
-<a href="Mini project-4 in css .html" target="_blank">
-CSS Project-4
-</a>
-
-<a href="Mini project-5 in css.html" target="_blank">
-CSS Project-5
-</a>
-
+<a href="Mini project-1 in css.html" target="_blank">CSS Project-1</a>
+<a href="Mini project-2 in css.html" target="_blank">CSS Project-2</a>
+<a href="Mini project-3 in css.html" target="_blank">CSS Project-3</a>
+<a href="Mini project-4 in css .html" target="_blank">CSS Project-4</a>
+<a href="Mini project-5 in css.html" target="_blank">CSS Project-5</a>
+<a href="Mini project-6 in css.html" target="_blank">CSS Project-6</a>
+<a href="Mini project-7 in css.html" target="_blank">CSS Project-7</a>
+<a href="Mini project-8 in css .html" target="_blank">CSS Project-8</a>
+<a href="Mini project-9 in css.html" target="_blank">CSS Project-9</a>
+<a href="Mini project-10 in css .html" target="_blank">CSS Project-10</a>
+<a href="Mini project-11 in css.html" target="_blank">CSS Project-11</a>
+<a href="Mini project-12 in css .html" target="_blank">CSS Project-12</a>
 </nav>
-
-
-
-<h4>
-Part-2 (HTML + CSS)
-</h4>
-
-
-<nav>
-
-<a href="Mini project-6 in css.html" target="_blank">
-CSS Project-6
-</a>
-
-<a href="Mini project-7 in css.html" target="_blank">
-CSS Project-7
-</a>
-
-<a href="Mini project-8 in css .html" target="_blank">
-CSS Project-8
-</a>
-
-<a href="Mini project-9 in css.html" target="_blank">
-CSS Project-9
-</a>
-
-<a href="Mini project-10 in css .html" target="_blank">
-CSS Project-10
-</a>
-
-</nav>
-
-
-
-<h5>
-Part-3 (HTML + CSS)
-</h5>
-
-
-<nav>
-
-<a href="Mini project-11 in css.html" target="_blank">
-CSS Mini Project-11
-</a>
-
-<a href="Mini project-12 in css .html" target="_blank">
-CSS Mini Project-12
-</a>
-
-</nav>
-
 
 </div>
 
-
 </div>
-
-
-
 
 
 <script>
-
 
 const body=document.body;
 
@@ -1091,50 +380,129 @@ let playing=false;
 
 
 
-/* MUSIC */
+/* DARK THEMES */
+
+const darkThemes=[
+
+["#00ffff","#ff00ff"],
+["#00ff00","#39ff14"],
+["#ff0000","#ff6600"],
+["#8000ff","#00ffff"],
+["#ffff00","#ff0088"]
+
+];
 
 
-async function playMusic(){
 
-try{
+/* LIGHT THEMES */
 
-partyMusic.volume=.35;
+const lightThemes=[
 
-await partyMusic.play();
+["#008cff","#00ffff"],
+["#ff0099","#ff66cc"],
+["#00aa88","#00ffcc"],
+["#0066ff","#66ffff"],
+["#ff8800","#ffcc00"]
 
-playing=true;
+];
 
-musicBtn.innerHTML="🔊 Music ON";
+
+
+function changeTheme(a,b){
+
+document.documentElement.style.setProperty("--primary",a);
+
+document.documentElement.style.setProperty("--secondary",b);
 
 }
 
-catch(e){
-
-console.log("Music blocked");
-
-}
-
-}
 
 
+/* DARK BUTTON */
 
-musicBtn.onclick=()=>{
+darkBtn.onclick=()=>{
 
-if(playing){
+body.classList.remove("light");
 
-partyMusic.pause();
+changeTheme("#00ffff","#ff00ff");
 
-playing=false;
+cracker(innerWidth/2,innerHeight/2);
 
-musicBtn.innerHTML="🎵 Music";
+};
+
+
+
+/* LIGHT BUTTON */
+
+lightBtn.onclick=()=>{
+
+body.classList.add("light");
+
+changeTheme("#008cff","#ff0099");
+
+cracker(innerWidth/2,innerHeight/2);
+
+};
+
+
+
+
+/* RANDOM THEME */
+
+
+randomTheme.onclick=()=>{
+
+let themes=body.classList.contains("light")
+?lightThemes
+:darkThemes;
+
+
+let t=themes[Math.floor(Math.random()*themes.length)];
+
+
+changeTheme(t[0],t[1]);
+
+
+cracker(innerWidth/2,innerHeight/2);
+
+};
+
+
+
+
+/* RESET */
+
+
+resetTheme.onclick=()=>{
+
+if(body.classList.contains("light")){
+
+changeTheme("#008cff","#ff0099");
 
 }
 
 else{
 
-playMusic();
+changeTheme("#00ffff","#ff00ff");
 
 }
+
+};
+
+
+
+
+
+/* THEME PANEL */
+
+
+themeBtn.onclick=()=>{
+
+themePanel.style.display=
+
+themePanel.style.display=="block"
+?"none"
+:"block";
 
 };
 
@@ -1170,136 +538,49 @@ hideBtn.style.display="block";
 
 
 
-/* THEMES */
+
+/* MUSIC */
 
 
-const darkThemes=[
+async function playMusic(){
 
-["#00ffff","#ff00ff"],
+try{
 
-["#00ff00","#39ff14"],
+partyMusic.volume=.35;
 
-["#ff0000","#ff6600"],
+await partyMusic.play();
 
-["#8000ff","#00ffff"]
+playing=true;
 
-];
+musicBtn.innerHTML="🔊 Music ON";
 
+}
 
-const lightThemes=[
-
-["#008cff","#00ffff"],
-
-["#ff8800","#ff0099"],
-
-["#00aa88","#00ffcc"],
-
-["#0066ff","#00ccff"]
-
-];
-
-
-
-function changeTheme(a,b){
-
-document.documentElement.style.setProperty("--primary",a);
-
-document.documentElement.style.setProperty("--secondary",b);
+catch(e){}
 
 }
 
 
 
+musicBtn.onclick=()=>{
 
-themeBtn.onclick=()=>{
+if(playing){
 
-themePanel.style.display=
+partyMusic.pause();
 
-themePanel.style.display==="block"
+playing=false;
 
-?"none"
-
-:"block";
-
-};
-
-
-
-
-
-randomTheme.onclick=()=>{
-
-
-let list=body.classList.contains("light")
-
-?lightThemes
-
-:darkThemes;
-
-
-let theme=list[Math.floor(Math.random()*list.length)];
-
-
-changeTheme(theme[0],theme[1]);
-
-
-cracker(innerWidth/2,innerHeight/2);
-
-};
-
-
-
-
-
-resetTheme.onclick=()=>{
-
-
-if(body.classList.contains("light")){
-
-changeTheme("#008cff","#ff0099");
+musicBtn.innerHTML="🎵 Music";
 
 }
 
 else{
 
-changeTheme("#00ffff","#ff00ff");
+playMusic();
 
 }
 
 };
-
-
-
-
-
-darkBtn.onclick=()=>{
-
-
-body.className="";
-
-changeTheme("#00ffff","#ff00ff");
-
-
-cracker(innerWidth/2,innerHeight/2);
-
-};
-
-
-
-
-
-lightBtn.onclick=()=>{
-
-
-body.className="light";
-
-changeTheme("#008cff","#ff0099");
-
-
-cracker(innerWidth/2,innerHeight/2);
-
-};
-
 
 
 
@@ -1310,167 +591,74 @@ cracker(innerWidth/2,innerHeight/2);
 
 function cracker(x,y){
 
-
 disco.style.display="block";
 
 
-for(let i=0;i<120;i++){
+for(let i=0;i<100;i++){
+
+let s=document.createElement("div");
+
+s.className="spark";
+
+s.style.left=x+"px";
+
+s.style.top=y+"px";
 
 
-let spark=document.createElement("div");
+let a=Math.random()*Math.PI*2;
+
+let d=Math.random()*350;
 
 
-spark.className="spark";
+s.style.setProperty("--x",Math.cos(a)*d+"px");
+
+s.style.setProperty("--y",Math.sin(a)*d+"px");
 
 
-spark.style.left=x+"px";
-
-spark.style.top=y+"px";
-
-
-let angle=Math.random()*Math.PI*2;
-
-let distance=Math.random()*400;
+s.style.background=
+["cyan","magenta","yellow","lime","white"]
+[Math.floor(Math.random()*5)];
 
 
-
-spark.style.setProperty(
-"--x",
-Math.cos(angle)*distance+"px"
-);
+disco.appendChild(s);
 
 
-
-spark.style.setProperty(
-"--y",
-Math.sin(angle)*distance+"px"
-);
-
-
-
-let colors=[
-
-"#00ffff",
-
-"#ff00ff",
-
-"#ffff00",
-
-"#00ff00",
-
-"#ff6600",
-
-"#ffffff"
-
-];
-
-
-spark.style.background=
-
-colors[Math.floor(Math.random()*colors.length)];
-
-
-
-disco.appendChild(spark);
-
-
-
-setTimeout(()=>{
-
-spark.remove();
-
-},1200);
-
+setTimeout(()=>s.remove(),1200);
 
 }
 
 
-setTimeout(()=>{
-
-disco.style.display="none";
-
-},1300);
-
+setTimeout(()=>disco.style.display="none",1300);
 
 }
 
 
 
 
-
-/* PROJECT OPEN EFFECT */
+/* PROJECT EFFECT */
 
 
 links.forEach(link=>{
 
-
-link.onclick=function(e){
-
+link.onclick=e=>{
 
 e.preventDefault();
 
-
 cracker(e.clientX,e.clientY);
-
-
-let url=this.href;
-
 
 setTimeout(()=>{
 
+window.open(link.href,"_blank");
 
-window.open(url,"_blank");
-
-
-},1000);
-
+},700);
 
 };
-
 
 });
 
 
 
-
-
-/* FIRST CLICK MUSIC */
-
-
-document.addEventListener(
-
-"click",
-
-()=>{
-
-if(!playing){
-
-playMusic();
-
-}
-
-},
-
-{
-
-once:true
-
-}
-
-);
-
-
-
-window.onbeforeunload=()=>{
-
-partyMusic.pause();
-
-};
-
-
 </script>
 
-
 </body>
-
 </html>
