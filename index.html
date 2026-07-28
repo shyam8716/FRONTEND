@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Neon Disco Portfolio</title>
+<title>My Website</title>
 
 <style>
 *{
@@ -327,7 +327,7 @@ font-size:13px;
 
 <div class="css">
 
-<h3>HTML + CSS Projects</h3>
+<h3>HTML + CSS Projects(part-1)</h3>
 
 <nav>
 <a href="Mini project-1 in css.html" target="_blank">CSS Project-1</a>
@@ -335,11 +335,17 @@ font-size:13px;
 <a href="Mini project-3 in css.html" target="_blank">CSS Project-3</a>
 <a href="Mini project-4 in css .html" target="_blank">CSS Project-4</a>
 <a href="Mini project-5 in css.html" target="_blank">CSS Project-5</a>
-<a href="Mini project-6 in css.html" target="_blank">CSS Project-6</a>
+</nav>
+<h4>HTML + CSS Projects(part-2)</h4>
+<nav>
+  <a href="Mini project-6 in css.html" target="_blank">CSS Project-6</a>
 <a href="Mini project-7 in css.html" target="_blank">CSS Project-7</a>
 <a href="Mini project-8 in css .html" target="_blank">CSS Project-8</a>
 <a href="Mini project-9 in css.html" target="_blank">CSS Project-9</a>
 <a href="Mini project-10 in css .html" target="_blank">CSS Project-10</a>
+</nav>
+<h4>HTML + CSS Projects(part-3)</h4>
+<nav>
 <a href="Mini project-11 in css.html" target="_blank">CSS Project-11</a>
 <a href="Mini project-12 in css .html" target="_blank">CSS Project-12</a>
 </nav>
@@ -380,31 +386,149 @@ let playing=false;
 
 
 
-/* DARK THEMES */
+/* THEMES */
 
 const darkThemes=[
-
 ["#00ffff","#ff00ff"],
 ["#00ff00","#39ff14"],
 ["#ff0000","#ff6600"],
 ["#8000ff","#00ffff"],
 ["#ffff00","#ff0088"]
-
 ];
-
-
-
-/* LIGHT THEMES */
 
 const lightThemes=[
-
-["#008cff","#00ffff"],
+["#0066ff","#00ffff"],
 ["#ff0099","#ff66cc"],
 ["#00aa88","#00ffcc"],
-["#0066ff","#66ffff"],
+["#6600ff","#cc99ff"],
 ["#ff8800","#ffcc00"]
-
 ];
+
+
+function changeTheme(primary,secondary){
+
+document.documentElement.style.setProperty(
+"--primary",
+primary
+);
+
+document.documentElement.style.setProperty(
+"--secondary",
+secondary
+);
+
+}
+
+
+/* DARK MODE */
+
+darkBtn.onclick=()=>{
+
+body.classList.remove("light");
+
+document.documentElement.style.setProperty(
+"--text",
+"white"
+);
+
+changeTheme(
+"#00ffff",
+"#ff00ff"
+);
+
+cracker(innerWidth/2,innerHeight/2);
+
+};
+
+
+
+/* LIGHT MODE */
+
+lightBtn.onclick=()=>{
+
+body.classList.add("light");
+
+document.documentElement.style.setProperty(
+"--text",
+"#111"
+);
+
+changeTheme(
+"#008cff",
+"#ff0099"
+);
+
+cracker(innerWidth/2,innerHeight/2);
+
+};
+
+
+
+
+/* RANDOM THEME */
+
+randomTheme.onclick=()=>{
+
+let selectedThemes;
+
+
+if(body.classList.contains("light")){
+
+selectedThemes=lightThemes;
+
+}
+else{
+
+selectedThemes=darkThemes;
+
+}
+
+
+let theme=
+selectedThemes[
+Math.floor(Math.random()*selectedThemes.length)
+];
+
+
+changeTheme(
+theme[0],
+theme[1]
+);
+
+
+cracker(
+innerWidth/2,
+innerHeight/2
+);
+
+};
+
+
+
+
+/* RESET */
+
+resetTheme.onclick=()=>{
+
+if(body.classList.contains("light")){
+
+changeTheme(
+"#008cff",
+"#ff0099"
+);
+
+}
+
+else{
+
+changeTheme(
+"#00ffff",
+"#ff00ff"
+);
+
+}
+
+};
 
 
 
