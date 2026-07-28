@@ -1,107 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-      .html{
-        margin:5px;
-        border:5px solid khaki;
-        padding:5px;
-        color:lab(60% 40 20);
-        background-color: lch(60% 80 30);
-      }
-      .html a{
-        color:linen;
-        background-color: magenta;
-      } 
-      .my-image{
-        margin:5px;
-        border:5px solid lemonchiffon;
-        padding:5px;
-        color:lightblue;
-        background-color:lightcoral;
-      }
-      .my-image img{
-         width: 300px;
-        height: 300px;
-      }
-      .css{
-        margin:5px;
-        border:5px solid rgb(20, 20, 48);
-        padding:5px;
-        color:rgb(43, 21, 29);
-        background-color:lawngreen;
-      }
-      .css a{
-        color:maroon;
-        background-color: mediumaquamarine;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="html">
-      <h1>Part-1(Only Html)</h1>
-      <nav>
-        <a href="Mini Project-1.html" target="_blank">Mini project-1</a>
-        <a href="Mini Project-2.html" target="_blank">Mini project-2</a>
-        <a href="Mini Project-3.html" target="_blank">Mini project-3</a>
-        <a href="Mini Project-4.html" target="_blank">Mini project-4</a>
-        <a href="Mini Project-5.html" target="_blank">Mini project-5</a>
-      </nav>
-      <h2>Part-2(Only Html)</h2>
-      <nav>
-        <a href="Mini Project-6.html" target="_blank">Mini project-6</a>
-        <a href="Mini Project-7.html" target="_blank">Mini project-7</a>
-        <a href="Mini Project-8.html" target="_blank">Mini project-8</a>
-        <a href="Mini Project-9.html" target="_blank">Mini project-9</a>
-        <a href="Mini Project-10.html" target="_blank">Mini Project-10</a>
-      </nav>
-    </div>
-    <div class="my-image">
-      <img src="my_image.jpeg" alt="my image">
-      <p>
-        my image
-      </p>
-      <p>
-        not a project just to use image and audio in mini projects
-      </p>
-      spark event audio<audio controls>
-        <source src="Spark_2022.mp3" type="audio/mpeg">
-      </div>
-      <div class="css">
-        <h3>Part-1(Html+Css)</h3>
-        <nav>
-          <a href="Mini project-1 in css.html" target="_blank">Mini
-            Project-1(CSS)</a>
-          <a href="Mini project-2 in css.html" target="_blank">Mini
-            Project-2(CSS)</a>
-          <a href="Mini project-3 in css.html" target="_blank">Mini
-            Project-3(CSS)</a>
-          <a href="Mini project-4 in css .html" target="_blank">Mini
-            Project-4(CSS)</a>
-          <a href="Mini project-5 in css.html" target="_blank">Mini
-            Project-5(CSS)</a><br />
-        </nav>
-        <h4>Part-2(Html+Css)</h4>
-        <nav>
-          <a href="Mini project-6 in css.html" target="_blank">Mini
-            Project-6(CSS)</a>
-          <a href="Mini project-7 in css.html" target="_blank">Mini
-            Project-7(CSS)</a>
-          <a href="Mini project-8 in css .html" target="_blank">Mini
-            Project-8(CSS)</a>
-          <a href="Mini project-9 in css.html" target="_blank">Mini
-            Project-9(CSS)</a>
-          <a href="Mini project-10 in css .html" target="_blank">Mini
-            Project-10(CSS)</a>
-        </nav>
-        <h5>Part-3(Html+Css)</h5>
-        <nav>
-          <a href="Mini project-11 in css.html" target="_blank">Mini
-            Project-11(CSS)</a>
-        </nav>
-      </div>
-    </body>
-  </html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,#111,#222,#111);
+    animation:bgMove 10s linear infinite;
+    overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0 0;}
+100%{background-position:100% 100%;}
+}
+
+/* -------------------- */
+/* HTML Section */
+/* -------------------- */
+
+.html{
+    margin:20px;
+    border:5px solid khaki;
+    padding:20px;
+    color:lab(60% 40 20);
+    background-color:lch(60% 80 30);
+    border-radius:20px;
+    box-shadow:0 0 25px gold;
+    transition:.5s;
+}
+
+.html:hover{
+    transform:scale(1.02);
+}
+
+.html a{
+    color:linen;
+    background:magenta;
+    text-decoration:none;
+    padding:12px 18px;
+    margin:10px;
+    display:inline-block;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.4s;
+}
+
+.html a:hover{
+    transform:translateY(-5px) scale(1.1);
+    box-shadow:0 0 20px cyan;
+}
+
+/* -------------------- */
+/* Image Section */
+/* -------------------- */
+
+.my-image{
+    margin:20px;
+    border:5px solid lemonchiffon;
+    padding:20px;
+    color:lightblue;
+    background:lightcoral;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 0 25px pink;
+}
+
+.my-image img{
+    width:300px;
+    height:300px;
+    border-radius:20px;
+    transition:.5s;
+}
+
+.my-image img:hover{
+    transform:rotate(5deg) scale(1.05);
+}
+
+/* -------------------- */
+/* CSS Section */
+/* -------------------- */
+
+.css{
+    margin:20px;
+    border:5px solid rgb(20,20,48);
+    padding:20px;
+    color:rgb(43,21,29);
+    background:lawngreen;
+    border-radius:20px;
+    box-shadow:0 0 25px lime;
+}
+
+.css:hover{
+    transform:scale(1.02);
+}
+
+.css a{
+    color:maroon;
+    background:mediumaquamarine;
+    text-decoration:none;
+    padding:12px 18px;
+    margin:10px;
+    display:inline-block;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.4s;
+}
+
+.css a:hover{
+    transform:translateY(-5px) scale(1.1);
+    box-shadow:0 0 20px yellow;
+}
+#disco{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display:none;
+    z-index:9999;
+    overflow:hidden;
+    pointer-events:none;
+}
+.light{
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.8;
+}
+body.party{
+    animation:party .2s infinite;
+}
+
+@keyframes party{
+
+0%{background:#111;}
+20%{background:#330000;}
+40%{background:#001133;}
+60%{background:#003300;}
+80%{background:#330033;}
+100%{background:#111;}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="html">
+
+<h1>Part-1(Only Html)</h1>
+
+<nav>
+
+<a href="Mini Project-1.html" target="_blank">Mini project-1</a>
+
+<a href="Mini Project-2.html" target="_blank">Mini project-2</a>
+
+<a href="Mini Project-3.html" target="_blank">Mini project-3</a>
+
+<a href="Mini Project-4.html" target="_blank">Mini project-4</a>
+
+<a href="Mini Project-5.html" target="_blank">Mini project-5</a>
+
+</nav>
+
+<h2>Part-2(Only Html)</h2>
+
+<nav>
+
+<a href="Mini Project-6.html" target="_blank">Mini project-6</a>
+
+<a href="Mini Project-7.html" target="_blank">Mini project-7</a>
+
+<a href="Mini Project-8.html" target="_blank">Mini project-8</a>
+
+<a href="Mini Project-9.html" target="_blank">Mini project-9</a>
+
+<a href="Mini Project-10.html" target="_blank">Mini Project-10</a>
+
+</nav>
+
+</div>
+
+<div class="my-image">
+
+<img src="my_image.jpeg" alt="my image">
+
+<p>my image</p>
+
+<p>not a project just to use image and audio in mini projects</p>
+
+spark event audio
+
+<audio controls id="sparkAudio">
+
+<source src="Spark_2022.mp3" type="audio/mpeg">
+
+Your browser does not support audio.
+
+</audio>
+
+</div>
+<div class="css">
+
+<h3>Part-1(Html+Css)</h3>
+
+<nav>
+
+<a href="Mini project-1 in css.html" target="_blank">Mini Project-1(CSS)</a>
+
+<a href="Mini project-2 in css.html" target="_blank">Mini Project-2(CSS)</a>
+
+<a href="Mini project-3 in css.html" target="_blank">Mini Project-3(CSS)</a>
+
+<a href="Mini project-4 in css .html" target="_blank">Mini Project-4(CSS)</a>
+
+<a href="Mini project-5 in css.html" target="_blank">Mini Project-5(CSS)</a>
+
+<br>
+
+</nav>
+
+<h4>Part-2(Html+Css)</h4>
+
+<nav>
+
+<a href="Mini project-6 in css.html" target="_blank">Mini Project-6(CSS)</a>
+
+<a href="Mini project-7 in css.html" target="_blank">Mini Project-7(CSS)</a>
+
+<a href="Mini project-8 in css .html" target="_blank">Mini Project-8(CSS)</a>
+
+<a href="Mini project-9 in css.html" target="_blank">Mini Project-9(CSS)</a>
+
+<a href="Mini project-10 in css .html" target="_blank">Mini Project-10(CSS)</a>
+
+</nav>
+
+<h5>Part-3(Html+Css)</h5>
+
+<nav>
+
+<a href="Mini project-11 in css.html" target="_blank">Mini Project-11(CSS)</a>
+
+</nav>
+
+</div>
+
+<div id="disco">
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
+
+</div>
+
+<script>
+
+const projectLinks=document.querySelectorAll("nav a");
+
+const disco=document.getElementById("disco");
+
+const audio=document.getElementById("sparkAudio");
+
+const lights=document.querySelectorAll(".light");
+
+const colors=[
+"red",
+"blue",
+"cyan",
+"yellow",
+"lime",
+"magenta",
+"orange",
+"deeppink",
+"purple",
+"white"
+];
+
+projectLinks.forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const url=this.href;
+
+disco.style.display="block";
+
+document.body.classList.add("party");
+
+try{
+
+audio.currentTime=0;
+
+audio.play();
+
+}catch(err){}
+
+const interval=setInterval(()=>{
+
+lights.forEach(light=>{
+
+light.style.background=
+colors[Math.floor(Math.random()*colors.length)];
+
+light.style.left=Math.random()*90+"%";
+
+light.style.top=Math.random()*90+"%";
+
+light.style.transform=
+"scale("+(Math.random()*1.5+0.5)+")";
+
+});
+
+},100);
+
+setTimeout(()=>{
+
+clearInterval(interval);
+
+window.open(url,"_blank");
+
+disco.style.display="none";
+
+document.body.classList.remove("party");
+
+},1000);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
