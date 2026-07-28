@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>My Website</title>
 
 <style>
+
+/* ==========================
+   BASIC RESET
+========================== */
 
 *{
     margin:0;
@@ -13,341 +20,1234 @@
     box-sizing:border-box;
 }
 
+
 body{
+
     font-family:Arial,Helvetica,sans-serif;
-    background:linear-gradient(135deg,#111,#222,#111);
-    animation:bgMove 10s linear infinite;
+
+    background:#050505;
+
+    color:white;
+
     overflow-x:hidden;
+
+    transition:1s;
+
 }
 
-@keyframes bgMove{
-0%{background-position:0 0;}
-100%{background-position:100% 100%;}
+
+/* ==========================
+   PAGE LOAD ANIMATION
+========================== */
+
+body{
+
+    animation:pageOpen 1.5s;
+
 }
 
-/* -------------------- */
-/* HTML Section */
-/* -------------------- */
+
+@keyframes pageOpen{
+
+from{
+
+opacity:0;
+
+transform:scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+
+
+/* ==========================
+   MODE BUTTONS
+========================== */
+
+
+.mode-buttons{
+
+position:fixed;
+
+top:20px;
+
+right:20px;
+
+z-index:5000;
+
+}
+
+
+
+.mode-buttons button{
+
+padding:12px 20px;
+
+margin:5px;
+
+border:none;
+
+border-radius:20px;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+
+
+#darkBtn{
+
+background:black;
+
+color:white;
+
+box-shadow:0 0 20px cyan;
+
+}
+
+
+
+#lightBtn{
+
+background:white;
+
+color:black;
+
+box-shadow:0 0 20px yellow;
+
+}
+
+
+
+.mode-buttons button:hover{
+
+transform:scale(1.15);
+
+}
+
+
+
+/* ==========================
+   DARK MODE
+========================== */
+
+
+body.dark{
+
+background:
+
+radial-gradient(circle,#111,#000);
+
+}
+
+
+
+/* ==========================
+   LIGHT MODE
+========================== */
+
+
+body.light{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#ffffff,
+
+#dddddd
+
+);
+
+color:black;
+
+}
+
+
+
+
+/* ==========================
+   CONTAINER EFFECTS
+========================== */
+
+
+.html,
+.css,
+.my-image{
+
+
+margin:20px;
+
+padding:20px;
+
+border-radius:25px;
+
+transition:.5s;
+
+animation:floating 5s infinite alternate;
+
+}
+
+
+
+@keyframes floating{
+
+from{
+
+transform:translateY(0);
+
+}
+
+
+to{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+
+
+/* ==========================
+   HTML BOX
+========================== */
+
 
 .html{
-    margin:20px;
-    border:5px solid khaki;
-    padding:20px;
-    color:lab(60% 40 20);
-    background-color:lch(60% 80 30);
-    border-radius:20px;
-    box-shadow:0 0 25px gold;
-    transition:.5s;
+
+
+border:5px solid khaki;
+
+background:lch(60% 80 30);
+
+box-shadow:
+
+0 0 20px gold,
+
+0 0 50px orange;
+
+
 }
 
-.html:hover{
-    transform:scale(1.02);
-}
+
 
 .html a{
-    color:linen;
-    background:magenta;
-    text-decoration:none;
-    padding:12px 18px;
-    margin:10px;
-    display:inline-block;
-    border-radius:10px;
-    font-weight:bold;
-    transition:.4s;
+
+
+color:white;
+
+background:
+
+linear-gradient(
+
+45deg,
+
+magenta,
+
+purple
+
+);
+
+
+padding:12px 18px;
+
+margin:8px;
+
+display:inline-block;
+
+border-radius:15px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.4s;
+
+
 }
+
+
 
 .html a:hover{
-    transform:translateY(-5px) scale(1.1);
-    box-shadow:0 0 20px cyan;
+
+
+transform:
+
+translateY(-8px)
+
+scale(1.1);
+
+
+box-shadow:
+
+0 0 25px cyan;
+
+
 }
 
-/* -------------------- */
-/* Image Section */
-/* -------------------- */
+
+
+/* ==========================
+ IMAGE
+========================== */
+
 
 .my-image{
-    margin:20px;
-    border:5px solid lemonchiffon;
-    padding:20px;
-    color:lightblue;
-    background:lightcoral;
-    text-align:center;
-    border-radius:20px;
-    box-shadow:0 0 25px pink;
+
+
+background:lightcoral;
+
+border:5px solid lemonchiffon;
+
+text-align:center;
+
+box-shadow:
+
+0 0 30px pink;
+
+
 }
+
+
 
 .my-image img{
-    width:300px;
-    height:300px;
-    border-radius:20px;
-    transition:.5s;
+
+
+width:300px;
+
+height:300px;
+
+border-radius:30px;
+
+transition:.5s;
+
+
 }
+
+
 
 .my-image img:hover{
-    transform:rotate(5deg) scale(1.05);
+
+
+transform:
+
+rotate(8deg)
+
+scale(1.1);
+
+
 }
 
-/* -------------------- */
-/* CSS Section */
-/* -------------------- */
+
+
+/* ==========================
+ CSS SECTION
+========================== */
+
 
 .css{
-    margin:20px;
-    border:5px solid rgb(20,20,48);
-    padding:20px;
-    color:rgb(43,21,29);
-    background:lawngreen;
-    border-radius:20px;
-    box-shadow:0 0 25px lime;
+
+
+background:lawngreen;
+
+border:5px solid rgb(20,20,48);
+
+box-shadow:
+
+0 0 30px lime;
+
+
 }
 
-.css:hover{
-    transform:scale(1.02);
-}
+
 
 .css a{
-    color:maroon;
-    background:mediumaquamarine;
-    text-decoration:none;
-    padding:12px 18px;
-    margin:10px;
-    display:inline-block;
-    border-radius:10px;
-    font-weight:bold;
-    transition:.4s;
+
+
+background:mediumaquamarine;
+
+color:maroon;
+
+padding:12px 18px;
+
+margin:8px;
+
+display:inline-block;
+
+border-radius:15px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.4s;
+
+
 }
+
+
 
 .css a:hover{
-    transform:translateY(-5px) scale(1.1);
-    box-shadow:0 0 20px yellow;
+
+
+transform:
+
+translateY(-8px)
+
+scale(1.1);
+
+
+box-shadow:
+
+0 0 25px yellow;
+
+
 }
+
+
+
+/* ==========================
+ LASER SYSTEM
+========================== */
+
+
+#laser-container{
+
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:1000;
+
+overflow:hidden;
+
+
+}
+
+
+
+.laser{
+
+
+position:absolute;
+
+width:5px;
+
+height:100%;
+
+background:red;
+
+box-shadow:
+
+0 0 20px red,
+
+0 0 50px red;
+
+
+animation:laserMove 3s infinite linear;
+
+
+}
+
+
+
+.laser:nth-child(1){
+
+left:20%;
+
+background:red;
+
+}
+
+
+.laser:nth-child(2){
+
+left:50%;
+
+background:cyan;
+
+animation-delay:1s;
+
+}
+
+
+.laser:nth-child(3){
+
+left:80%;
+
+background:lime;
+
+animation-delay:2s;
+
+}
+
+
+
+@keyframes laserMove{
+
+
+0%{
+
+transform:
+
+rotate(20deg)
+
+translateY(-100%);
+
+}
+
+
+50%{
+
+transform:
+
+rotate(-20deg)
+
+translateY(0);
+
+}
+
+
+100%{
+
+transform:
+
+rotate(20deg)
+
+translateY(100%);
+
+}
+
+
+}
+
+
+/* ==========================
+ DISCO + CRACKER AREA
+========================== */
+
+
 #disco{
-    position:fixed;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    display:none;
-    z-index:9999;
-    overflow:hidden;
-    pointer-events:none;
-}
-.light{
-    position:absolute;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    filter:blur(80px);
-    opacity:.8;
-}
-body.party{
-    animation:party .2s infinite;
-}
 
-@keyframes party{
 
-0%{background:#111;}
-20%{background:#330000;}
-40%{background:#001133;}
-60%{background:#003300;}
-80%{background:#330033;}
-100%{background:#111;}
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+display:none;
+
+z-index:9999;
+
+pointer-events:none;
+
 
 }
+
+
+
+.spark{
+
+
+position:absolute;
+
+width:8px;
+
+height:8px;
+
+background:yellow;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 20px yellow;
+
+
+animation:explode 1s;
+
+
+}
+
+
+
+@keyframes explode{
+
+
+from{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+
+to{
+
+transform:
+
+translate(
+
+var(--x),
+
+var(--y)
+
+)
+
+scale(0);
+
+opacity:0;
+
+}
+
+
+}
+
 
 </style>
 
 </head>
 
-<body>
 
-<div class="html">
+<body class="dark">
 
-<h1>Part-1(Only Html)</h1>
 
-<nav>
+<!-- MODE BUTTONS -->
 
-<a href="Mini Project-1.html" target="_blank">Mini project-1</a>
+<div class="mode-buttons">
 
-<a href="Mini Project-2.html" target="_blank">Mini project-2</a>
+<button id="darkBtn">
+🌑 Dark Mode
+</button>
 
-<a href="Mini Project-3.html" target="_blank">Mini project-3</a>
 
-<a href="Mini Project-4.html" target="_blank">Mini project-4</a>
-
-<a href="Mini Project-5.html" target="_blank">Mini project-5</a>
-
-</nav>
-
-<h2>Part-2(Only Html)</h2>
-
-<nav>
-
-<a href="Mini Project-6.html" target="_blank">Mini project-6</a>
-
-<a href="Mini Project-7.html" target="_blank">Mini project-7</a>
-
-<a href="Mini Project-8.html" target="_blank">Mini project-8</a>
-
-<a href="Mini Project-9.html" target="_blank">Mini project-9</a>
-
-<a href="Mini Project-10.html" target="_blank">Mini Project-10</a>
-
-</nav>
+<button id="lightBtn">
+☀️ Light Mode
+</button>
 
 </div>
 
-<div class="my-image">
 
-<img src="my_image.jpeg" alt="my image">
 
-<p>my image</p>
+<!-- BACKGROUND MUSIC -->
 
-<p>not a project just to use image and audio in mini projects</p>
+<audio id="partyMusic" loop autoplay>
 
-spark event audio
+<source src="party.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<!-- YOUR PROJECT AUDIO (PAUSED BY DEFAULT) -->
 
 <audio controls id="sparkAudio">
 
 <source src="Spark_2022.mp3" type="audio/mpeg">
 
-Your browser does not support audio.
-
 </audio>
 
-</div>
-<div class="css">
 
-<h3>Part-1(Html+Css)</h3>
+
+<!-- LASERS -->
+
+<div id="laser-container">
+
+<div class="laser"></div>
+
+<div class="laser"></div>
+
+<div class="laser"></div>
+
+</div>
+
+
+
+<!-- DISCO CRACKER EFFECT -->
+
+<div id="disco"></div>
+
+<!-- ==========================
+     HTML PROJECT SECTION
+========================== -->
+
+
+<div class="html">
+
+
+<h1>Part-1(Only Html)</h1>
+
 
 <nav>
 
-<a href="Mini project-1 in css.html" target="_blank">Mini Project-1(CSS)</a>
 
-<a href="Mini project-2 in css.html" target="_blank">Mini Project-2(CSS)</a>
+<a href="Mini Project-1.html" target="_blank">
+Mini project-1
+</a>
 
-<a href="Mini project-3 in css.html" target="_blank">Mini Project-3(CSS)</a>
 
-<a href="Mini project-4 in css .html" target="_blank">Mini Project-4(CSS)</a>
+<a href="Mini Project-2.html" target="_blank">
+Mini project-2
+</a>
 
-<a href="Mini project-5 in css.html" target="_blank">Mini Project-5(CSS)</a>
+
+<a href="Mini Project-3.html" target="_blank">
+Mini project-3
+</a>
+
+
+<a href="Mini Project-4.html" target="_blank">
+Mini project-4
+</a>
+
+
+<a href="Mini Project-5.html" target="_blank">
+Mini project-5
+</a>
+
+
+</nav>
+
+
+
+<h2>Part-2(Only Html)</h2>
+
+
+
+<nav>
+
+
+<a href="Mini Project-6.html" target="_blank">
+Mini project-6
+</a>
+
+
+<a href="Mini Project-7.html" target="_blank">
+Mini project-7
+</a>
+
+
+<a href="Mini Project-8.html" target="_blank">
+Mini project-8
+</a>
+
+
+<a href="Mini Project-9.html" target="_blank">
+Mini project-9
+</a>
+
+
+<a href="Mini Project-10.html" target="_blank">
+Mini Project-10
+</a>
+
+
+</nav>
+
+
+</div>
+
+
+
+
+<!-- ==========================
+     IMAGE SECTION
+========================== -->
+
+
+<div class="my-image">
+
+
+<img src="my_image.jpeg" alt="my image">
+
+
+
+<p>
+my image
+</p>
+
+
+
+<p>
+not a project just to use image and audio in mini projects
+</p>
+
+
+
+</div>
+
+
+
+
+
+<!-- ==========================
+     CSS PROJECT SECTION
+========================== -->
+
+
+<div class="css">
+
+
+<h3>
+Part-1(Html+Css)
+</h3>
+
+
+
+<nav>
+
+
+<a href="Mini project-1 in css.html" target="_blank">
+Mini Project-1(CSS)
+</a>
+
+
+
+<a href="Mini project-2 in css.html" target="_blank">
+Mini Project-2(CSS)
+</a>
+
+
+
+<a href="Mini project-3 in css.html" target="_blank">
+Mini Project-3(CSS)
+</a>
+
+
+
+<a href="Mini project-4 in css .html" target="_blank">
+Mini Project-4(CSS)
+</a>
+
+
+
+<a href="Mini project-5 in css.html" target="_blank">
+Mini Project-5(CSS)
+</a>
+
 
 <br>
 
+
 </nav>
 
-<h4>Part-2(Html+Css)</h4>
+
+
+
+<h4>
+Part-2(Html+Css)
+</h4>
+
+
+
 
 <nav>
 
-<a href="Mini project-6 in css.html" target="_blank">Mini Project-6(CSS)</a>
 
-<a href="Mini project-7 in css.html" target="_blank">Mini Project-7(CSS)</a>
+<a href="Mini project-6 in css.html" target="_blank">
+Mini Project-6(CSS)
+</a>
 
-<a href="Mini project-8 in css .html" target="_blank">Mini Project-8(CSS)</a>
 
-<a href="Mini project-9 in css.html" target="_blank">Mini Project-9(CSS)</a>
 
-<a href="Mini project-10 in css .html" target="_blank">Mini Project-10(CSS)</a>
+<a href="Mini project-7 in css.html" target="_blank">
+Mini Project-7(CSS)
+</a>
+
+
+
+<a href="Mini project-8 in css .html" target="_blank">
+Mini Project-8(CSS)
+</a>
+
+
+
+<a href="Mini project-9 in css.html" target="_blank">
+Mini Project-9(CSS)
+</a>
+
+
+
+<a href="Mini project-10 in css .html" target="_blank">
+Mini Project-10(CSS)
+</a>
+
+
 
 </nav>
 
-<h5>Part-3(Html+Css)</h5>
+
+
+
+
+<h5>
+Part-3(Html+Css)
+</h5>
+
+
+
 
 <nav>
 
-<a href="Mini project-11 in css.html" target="_blank">Mini Project-11(CSS)</a>
+
+<a href="Mini project-11 in css.html" target="_blank">
+Mini Project-11(CSS)
+</a>
+
 
 </nav>
+
+
 
 </div>
+
+
+
+
+<!-- ==========================
+     DISCO EFFECT AREA
+========================== -->
+
 
 <div id="disco">
-<div class="light"></div>
-<div class="light"></div>
-<div class="light"></div>
-<div class="light"></div>
-<div class="light"></div>
-<div class="light"></div>
 
 </div>
-
 <script>
 
-const projectLinks=document.querySelectorAll("nav a");
 
-const disco=document.getElementById("disco");
+/* ==========================
+   ELEMENTS
+========================== */
 
-const audio=document.getElementById("sparkAudio");
 
-const lights=document.querySelectorAll(".light");
+const darkBtn = document.getElementById("darkBtn");
 
-const colors=[
-"red",
-"blue",
-"cyan",
-"yellow",
-"lime",
-"magenta",
-"orange",
-"deeppink",
-"purple",
-"white"
-];
+const lightBtn = document.getElementById("lightBtn");
 
-projectLinks.forEach(link=>{
+const body = document.body;
 
-link.addEventListener("click",function(e){
+const partyMusic = document.getElementById("partyMusic");
 
-e.preventDefault();
+const links = document.querySelectorAll("nav a");
 
-const url=this.href;
+const disco = document.getElementById("disco");
 
-disco.style.display="block";
 
-document.body.classList.add("party");
 
-try{
+/* ==========================
+   BACKGROUND MUSIC
+========================== */
 
-audio.currentTime=0;
 
-audio.play();
+window.addEventListener("load",()=>{
 
-}catch(err){}
 
-const interval=setInterval(()=>{
+    partyMusic.volume = 0.4;
 
-lights.forEach(light=>{
 
-light.style.background=
-colors[Math.floor(Math.random()*colors.length)];
+    partyMusic.play().catch(()=>{
 
-light.style.left=Math.random()*90+"%";
+        console.log(
+        "Browser blocked autoplay. Click anywhere to start music."
+        );
 
-light.style.top=Math.random()*90+"%";
+    });
 
-light.style.transform=
-"scale("+(Math.random()*1.5+0.5)+")";
 
 });
 
-},100);
+
+
+/* If browser blocks autoplay */
+
+document.addEventListener("click",()=>{
+
+
+if(partyMusic.paused){
+
+partyMusic.play();
+
+}
+
+
+},{once:true});
+
+
+
+
+
+/* ==========================
+   DARK MODE
+========================== */
+
+
+darkBtn.onclick=function(){
+
+
+body.className="dark";
+
+
+document.documentElement.style
+.setProperty("--laserPower","1");
+
+
+};
+
+
+
+
+
+/* ==========================
+   LIGHT MODE
+========================== */
+
+
+lightBtn.onclick=function(){
+
+
+body.className="light";
+
+
+document.documentElement.style
+.setProperty("--laserPower",".3");
+
+
+};
+
+
+
+
+
+/* ==========================
+   CRACKER EFFECT
+========================== */
+
+
+function cracker(x,y){
+
+
+
+for(let i=0;i<70;i++){
+
+
+let spark=document.createElement("div");
+
+
+spark.className="spark";
+
+
+
+spark.style.left=x+"px";
+
+spark.style.top=y+"px";
+
+
+
+let moveX=(Math.random()-0.5)*600;
+
+let moveY=(Math.random()-0.5)*600;
+
+
+
+spark.style.setProperty(
+"--x",
+moveX+"px"
+);
+
+
+
+spark.style.setProperty(
+"--y",
+moveY+"px"
+);
+
+
+
+let colors=[
+
+"red",
+"yellow",
+"cyan",
+"lime",
+"orange",
+"pink",
+"white"
+
+];
+
+
+
+spark.style.background=
+
+colors[
+Math.floor(
+Math.random()*colors.length
+)
+];
+
+
+
+disco.appendChild(spark);
+
+
 
 setTimeout(()=>{
 
-clearInterval(interval);
 
-window.open(url,"_blank");
+spark.remove();
 
-disco.style.display="none";
-
-document.body.classList.remove("party");
 
 },1000);
 
+
+
+}
+
+
+
+}
+
+
+
+
+
+/* ==========================
+   PROJECT CLICK EFFECT
+========================== */
+
+
+links.forEach(link=>{
+
+
+link.addEventListener("click",function(e){
+
+
+
+e.preventDefault();
+
+
+
+let url=this.href;
+
+
+
+let x=e.clientX;
+
+let y=e.clientY;
+
+
+
+cracker(x,y);
+
+
+
+disco.style.display="block";
+
+
+
+/* stop background music */
+
+partyMusic.pause();
+
+
+
+
+
+/* screen flash */
+
+
+body.style.animation=
+"party .15s infinite";
+
+
+
+setTimeout(()=>{
+
+
+
+window.open(
+url,
+"_blank"
+);
+
+
+
+disco.style.display="none";
+
+
+
+body.style.animation="";
+
+
+
+},1200);
+
+
+
 });
+
+
+
 });
+
+
+
+
+
+/* ==========================
+   STOP MUSIC WHEN LEAVING
+========================== */
+
+
+window.addEventListener(
+"beforeunload",
+()=>{
+
+
+partyMusic.pause();
+
+
+}
+);
+
+
+
 </script>
 
+
 </body>
+
 </html>
