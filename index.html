@@ -4,50 +4,65 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>My Website</title>
 
+
 <style>
 
-/* ==========================
-   BASIC RESET
-========================== */
+
+/* =========================
+   RESET
+========================= */
+
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
+margin:0;
 
-body{
+padding:0;
 
-    font-family:Arial,Helvetica,sans-serif;
-
-    background:#050505;
-
-    color:white;
-
-    overflow-x:hidden;
-
-    transition:1s;
+box-sizing:border-box;
 
 }
 
 
-/* ==========================
-   PAGE LOAD ANIMATION
-========================== */
 
 body{
 
-    animation:pageOpen 1.5s;
+
+font-family:Arial,Helvetica,sans-serif;
+
+overflow-x:hidden;
+
+background:#050505;
+
+color:white;
+
+transition:1s;
+
+
+}
+
+
+
+/* =========================
+   PAGE OPEN EFFECT
+========================= */
+
+
+body{
+
+animation:pageOpen 1.5s ease;
+
 
 }
 
 
 @keyframes pageOpen{
+
 
 from{
 
@@ -57,6 +72,7 @@ transform:scale(.9);
 
 }
 
+
 to{
 
 opacity:1;
@@ -65,24 +81,32 @@ transform:scale(1);
 
 }
 
+
 }
 
 
 
-/* ==========================
-   MODE BUTTONS
-========================== */
+/* =========================
+   MODE BUTTONS CENTER
+========================= */
 
 
 .mode-buttons{
 
+
 position:fixed;
 
-top:20px;
+top:25px;
 
-right:20px;
+left:50%;
 
-z-index:5000;
+transform:translateX(-50%);
+
+z-index:9999;
+
+display:flex;
+
+gap:20px;
 
 }
 
@@ -90,45 +114,21 @@ z-index:5000;
 
 .mode-buttons button{
 
-padding:12px 20px;
 
-margin:5px;
+padding:14px 30px;
 
-border:none;
+border-radius:30px;
 
-border-radius:20px;
-
-font-size:16px;
+font-size:18px;
 
 font-weight:bold;
 
 cursor:pointer;
 
-transition:.4s;
+transition:.5s;
 
-}
+border:none;
 
-
-
-#darkBtn{
-
-background:black;
-
-color:white;
-
-box-shadow:0 0 20px cyan;
-
-}
-
-
-
-#lightBtn{
-
-background:white;
-
-color:black;
-
-box-shadow:0 0 20px yellow;
 
 }
 
@@ -136,33 +136,135 @@ box-shadow:0 0 20px yellow;
 
 .mode-buttons button:hover{
 
+
 transform:scale(1.15);
+
 
 }
 
 
 
-/* ==========================
+#darkBtn{
+
+
+background:black;
+
+color:white;
+
+border:2px solid cyan;
+
+box-shadow:
+
+0 0 20px cyan,
+
+0 0 50px blue;
+
+
+}
+
+
+
+#lightBtn{
+
+
+background:white;
+
+color:black;
+
+border:2px solid gold;
+
+box-shadow:
+
+0 0 20px yellow;
+
+
+}
+
+
+
+
+
+/* =========================
    DARK MODE
-========================== */
+========================= */
 
 
 body.dark{
+
 
 background:
 
 radial-gradient(circle,#111,#000);
 
+
 }
 
 
 
-/* ==========================
+
+/* DARK FULL SCREEN BLINK */
+
+
+body.darkFlash{
+
+
+animation:darkBlink .25s infinite;
+
+
+}
+
+
+
+@keyframes darkBlink{
+
+
+0%{
+
+filter:brightness(1);
+
+}
+
+
+25%{
+
+filter:brightness(.2);
+
+}
+
+
+50%{
+
+filter:brightness(1.5);
+
+}
+
+
+75%{
+
+filter:brightness(.1);
+
+}
+
+
+100%{
+
+filter:brightness(1);
+
+}
+
+
+}
+
+
+
+
+/* =========================
    LIGHT MODE
-========================== */
+========================= */
 
 
 body.light{
+
 
 background:
 
@@ -176,16 +278,18 @@ linear-gradient(
 
 );
 
+
 color:black;
+
 
 }
 
 
 
 
-/* ==========================
-   CONTAINER EFFECTS
-========================== */
+/* =========================
+   BOX EFFECTS
+========================= */
 
 
 .html,
@@ -193,9 +297,9 @@ color:black;
 .my-image{
 
 
-margin:20px;
+margin:25px;
 
-padding:20px;
+padding:25px;
 
 border-radius:25px;
 
@@ -203,11 +307,13 @@ transition:.5s;
 
 animation:floating 5s infinite alternate;
 
+
 }
 
 
 
 @keyframes floating{
+
 
 from{
 
@@ -222,13 +328,16 @@ transform:translateY(-10px);
 
 }
 
+
 }
 
 
 
-/* ==========================
-   HTML BOX
-========================== */
+
+
+/* =========================
+ HTML SECTION
+========================= */
 
 
 .html{
@@ -240,9 +349,9 @@ background:lch(60% 80 30);
 
 box-shadow:
 
-0 0 20px gold,
+0 0 25px gold,
 
-0 0 50px orange;
+0 0 60px orange;
 
 
 }
@@ -267,13 +376,13 @@ purple
 );
 
 
-padding:12px 18px;
+padding:12px 20px;
 
-margin:8px;
+margin:10px;
 
 display:inline-block;
 
-border-radius:15px;
+border-radius:20px;
 
 text-decoration:none;
 
@@ -298,16 +407,18 @@ scale(1.1);
 
 box-shadow:
 
-0 0 25px cyan;
+0 0 30px cyan;
 
 
 }
 
 
 
-/* ==========================
- IMAGE
-========================== */
+
+
+/* =========================
+ IMAGE SECTION
+========================= */
 
 
 .my-image{
@@ -358,9 +469,10 @@ scale(1.1);
 
 
 
-/* ==========================
+
+/* =========================
  CSS SECTION
-========================== */
+========================= */
 
 
 .css{
@@ -386,13 +498,13 @@ background:mediumaquamarine;
 
 color:maroon;
 
-padding:12px 18px;
+padding:12px 20px;
 
-margin:8px;
+margin:10px;
 
 display:inline-block;
 
-border-radius:15px;
+border-radius:20px;
 
 text-decoration:none;
 
@@ -417,16 +529,18 @@ scale(1.1);
 
 box-shadow:
 
-0 0 25px yellow;
+0 0 30px yellow;
 
 
 }
 
 
 
-/* ==========================
- LASER SYSTEM
-========================== */
+
+
+/* =========================
+ LASER EFFECT
+========================= */
 
 
 #laser-container{
@@ -438,9 +552,9 @@ top:0;
 
 left:0;
 
-width:100%;
-
 height:100%;
+
+width:100%;
 
 pointer-events:none;
 
@@ -453,14 +567,17 @@ overflow:hidden;
 
 
 
+
 .laser{
 
 
 position:absolute;
 
+height:120%;
+
 width:5px;
 
-height:100%;
+top:-10%;
 
 background:red;
 
@@ -468,7 +585,9 @@ box-shadow:
 
 0 0 20px red,
 
-0 0 50px red;
+0 0 60px red,
+
+0 0 100px red;
 
 
 animation:laserMove 3s infinite linear;
@@ -480,14 +599,18 @@ animation:laserMove 3s infinite linear;
 
 .laser:nth-child(1){
 
+
 left:20%;
 
 background:red;
 
+
 }
 
 
+
 .laser:nth-child(2){
+
 
 left:50%;
 
@@ -495,10 +618,13 @@ background:cyan;
 
 animation-delay:1s;
 
+
 }
 
 
+
 .laser:nth-child(3){
+
 
 left:80%;
 
@@ -506,7 +632,9 @@ background:lime;
 
 animation-delay:2s;
 
+
 }
+
 
 
 
@@ -517,41 +645,49 @@ animation-delay:2s;
 
 transform:
 
-rotate(20deg)
+rotate(25deg)
 
 translateY(-100%);
+
 
 }
 
 
 50%{
 
+
 transform:
 
-rotate(-20deg)
+rotate(-25deg)
 
 translateY(0);
+
 
 }
 
 
 100%{
 
+
 transform:
 
-rotate(20deg)
+rotate(25deg)
 
 translateY(100%);
 
-}
-
 
 }
 
 
-/* ==========================
- DISCO + CRACKER AREA
-========================== */
+}
+
+
+
+
+
+/* =========================
+ CRACKER EFFECT
+========================= */
 
 
 #disco{
@@ -563,18 +699,19 @@ top:0;
 
 left:0;
 
-width:100%;
-
 height:100%;
+
+width:100%;
 
 display:none;
 
-z-index:9999;
-
 pointer-events:none;
+
+z-index:99999;
 
 
 }
+
 
 
 
@@ -583,20 +720,20 @@ pointer-events:none;
 
 position:absolute;
 
-width:8px;
+height:10px;
 
-height:8px;
-
-background:yellow;
+width:10px;
 
 border-radius:50%;
 
 box-shadow:
 
-0 0 20px yellow;
+0 0 20px white,
+
+0 0 40px yellow;
 
 
-animation:explode 1s;
+animation:explode 1s forwards;
 
 
 }
@@ -608,28 +745,24 @@ animation:explode 1s;
 
 from{
 
-transform:scale(1);
+
+transform:translate(0,0);
 
 opacity:1;
+
 
 }
 
 
 to{
 
+
 transform:
 
-translate(
-
-var(--x),
-
-var(--y)
-
-)
-
-scale(0);
+translate(var(--x),var(--y));
 
 opacity:0;
+
 
 }
 
@@ -645,7 +778,7 @@ opacity:0;
 <body class="dark">
 
 
-<!-- MODE BUTTONS -->
+<!-- CENTER BUTTONS -->
 
 <div class="mode-buttons">
 
@@ -660,11 +793,12 @@ opacity:0;
 
 </div>
 
+<!-- =========================
+     BACKGROUND MUSIC
+========================= -->
 
 
-<!-- BACKGROUND MUSIC -->
-
-<audio id="partyMusic" loop autoplay>
+<audio id="partyMusic" loop>
 
 <source src="party.mp3" type="audio/mpeg">
 
@@ -672,7 +806,11 @@ opacity:0;
 
 
 
-<!-- YOUR PROJECT AUDIO (PAUSED BY DEFAULT) -->
+<!-- =========================
+     YOUR PROJECT AUDIO
+     (MANUAL PLAY ONLY)
+========================= -->
+
 
 <audio controls id="sparkAudio">
 
@@ -682,7 +820,11 @@ opacity:0;
 
 
 
-<!-- LASERS -->
+
+<!-- =========================
+     LASER CONTAINER
+========================= -->
+
 
 <div id="laser-container">
 
@@ -696,13 +838,21 @@ opacity:0;
 
 
 
-<!-- DISCO CRACKER EFFECT -->
+
+<!-- =========================
+     CRACKER CONTAINER
+========================= -->
+
 
 <div id="disco"></div>
 
-<!-- ==========================
+
+
+
+
+<!-- =========================
      HTML PROJECT SECTION
-========================== -->
+========================= -->
 
 
 <div class="html">
@@ -743,6 +893,7 @@ Mini project-5
 
 
 
+
 <h2>Part-2(Only Html)</h2>
 
 
@@ -778,14 +929,16 @@ Mini Project-10
 </nav>
 
 
+
 </div>
 
 
 
 
-<!-- ==========================
+
+<!-- =========================
      IMAGE SECTION
-========================== -->
+========================= -->
 
 
 <div class="my-image">
@@ -813,9 +966,11 @@ not a project just to use image and audio in mini projects
 
 
 
-<!-- ==========================
+
+
+<!-- =========================
      CSS PROJECT SECTION
-========================== -->
+========================= -->
 
 
 <div class="css">
@@ -824,6 +979,7 @@ not a project just to use image and audio in mini projects
 <h3>
 Part-1(Html+Css)
 </h3>
+
 
 
 
@@ -859,6 +1015,7 @@ Mini Project-5(CSS)
 </a>
 
 
+
 <br>
 
 
@@ -867,9 +1024,12 @@ Mini Project-5(CSS)
 
 
 
+
+
 <h4>
 Part-2(Html+Css)
 </h4>
+
 
 
 
@@ -913,6 +1073,8 @@ Mini Project-10(CSS)
 
 
 
+
+
 <h5>
 Part-3(Html+Css)
 </h5>
@@ -928,29 +1090,17 @@ Mini Project-11(CSS)
 </a>
 
 
+
 </nav>
 
 
 
 </div>
-
-
-
-
-<!-- ==========================
-     DISCO EFFECT AREA
-========================== -->
-
-
-<div id="disco">
-
-</div>
 <script>
 
-
-/* ==========================
+/* =========================
    ELEMENTS
-========================== */
+========================= */
 
 
 const darkBtn = document.getElementById("darkBtn");
@@ -967,61 +1117,65 @@ const disco = document.getElementById("disco");
 
 
 
-/* ==========================
-   BACKGROUND MUSIC
-========================== */
+/* =========================
+   START BACKGROUND MUSIC
+========================= */
 
 
-window.addEventListener("load",()=>{
+function startMusic(){
 
+    if(partyMusic.paused){
 
-    partyMusic.volume = 0.4;
+        partyMusic.volume = 0.4;
 
+        partyMusic.play();
 
-    partyMusic.play().catch(()=>{
-
-        console.log(
-        "Browser blocked autoplay. Click anywhere to start music."
-        );
-
-    });
-
-
-});
-
-
-
-/* If browser blocks autoplay */
-
-document.addEventListener("click",()=>{
-
-
-if(partyMusic.paused){
-
-partyMusic.play();
+    }
 
 }
 
 
-},{once:true});
+/*
+ Browser allows audio after click
+*/
+
+document.addEventListener(
+"click",
+startMusic,
+{once:true}
+);
 
 
 
 
 
-/* ==========================
+/* =========================
    DARK MODE
-========================== */
+========================= */
 
 
 darkBtn.onclick=function(){
 
 
-body.className="dark";
+body.classList.remove("light");
+
+body.classList.add("dark");
 
 
-document.documentElement.style
-.setProperty("--laserPower","1");
+// Full dark blinking effect
+
+body.classList.add("darkFlash");
+
+
+
+setTimeout(()=>{
+
+
+body.classList.remove("darkFlash");
+
+
+},3000);
+
 
 
 };
@@ -1030,19 +1184,21 @@ document.documentElement.style
 
 
 
-/* ==========================
+
+/* =========================
    LIGHT MODE
-========================== */
+========================= */
 
 
 lightBtn.onclick=function(){
 
 
-body.className="light";
+body.classList.remove("dark");
+
+body.classList.add("light");
 
 
-document.documentElement.style
-.setProperty("--laserPower",".3");
+body.classList.remove("darkFlash");
 
 
 };
@@ -1051,16 +1207,23 @@ document.documentElement.style
 
 
 
-/* ==========================
-   CRACKER EFFECT
-========================== */
+
+
+/* =========================
+   CRACKER / FIREWORK EFFECT
+========================= */
 
 
 function cracker(x,y){
 
 
 
-for(let i=0;i<70;i++){
+disco.style.display="block";
+
+
+
+for(let i=0;i<100;i++){
+
 
 
 let spark=document.createElement("div");
@@ -1076,9 +1239,17 @@ spark.style.top=y+"px";
 
 
 
-let moveX=(Math.random()-0.5)*600;
+let angle=Math.random()*Math.PI*2;
 
-let moveY=(Math.random()-0.5)*600;
+
+let distance=Math.random()*350;
+
+
+
+let moveX=Math.cos(angle)*distance;
+
+
+let moveY=Math.sin(angle)*distance;
 
 
 
@@ -1096,31 +1267,38 @@ moveY+"px"
 
 
 
+
 let colors=[
 
 "red",
+
 "yellow",
+
 "cyan",
+
 "lime",
+
 "orange",
+
 "pink",
-"white"
+
+"white",
+
+"purple"
 
 ];
 
 
 
-spark.style.background=
-
+spark.style.background =
 colors[
-Math.floor(
-Math.random()*colors.length
-)
+Math.floor(Math.random()*colors.length)
 ];
 
 
 
 disco.appendChild(spark);
+
 
 
 
@@ -1138,22 +1316,35 @@ spark.remove();
 
 
 
+setTimeout(()=>{
+
+
+disco.style.display="none";
+
+
+},1200);
+
+
+
 }
 
 
 
 
 
-/* ==========================
+
+
+/* =========================
    PROJECT CLICK EFFECT
-========================== */
+========================= */
 
 
 links.forEach(link=>{
 
 
-link.addEventListener("click",function(e){
-
+link.addEventListener(
+"click",
+function(e){
 
 
 e.preventDefault();
@@ -1164,38 +1355,24 @@ let url=this.href;
 
 
 
-let x=e.clientX;
-
-let y=e.clientY;
-
-
-
-cracker(x,y);
+cracker(
+e.clientX,
+e.clientY
+);
 
 
 
-disco.style.display="block";
-
-
-
-/* stop background music */
+// Stop party music
 
 partyMusic.pause();
 
 
 
-
-
-/* screen flash */
-
-
-body.style.animation=
-"party .15s infinite";
-
-
+/*
+ small delay for cracker effect
+*/
 
 setTimeout(()=>{
-
 
 
 window.open(
@@ -1205,31 +1382,26 @@ url,
 
 
 
-disco.style.display="none";
-
-
-
-body.style.animation="";
-
-
-
 },1200);
 
 
 
+}
+
+);
+
+
 });
 
 
 
-});
 
 
 
 
-
-/* ==========================
-   STOP MUSIC WHEN LEAVING
-========================== */
+/* =========================
+   STOP MUSIC WHEN PAGE CLOSES
+========================= */
 
 
 window.addEventListener(
