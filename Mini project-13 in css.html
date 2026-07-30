@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+    .header{
+      margin:5px;
+      border:5px solid royalblue;
+      color:saddlebrown;
+      background-color:salmon;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .logo{
+      width:300px;
+      height:300px;
+    }
+    .header button:hover{
+      color:sandybrown;
+      background-color:seagreen;
+      border-radius:75px;
+    }
+    .navbar{
+      position:sticky;
+      top:0;
+    }
+    .navbar nav{
+      margin:5px;
+      border:5px solid seashell;
+      color:sienna;
+      background-color:silver;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .navbar i{
+      color:skyblue;
+      background-color:slateblue;
+    }
+    .navbar a{
+      color:slategray;
+      background-color:sienna;
+    }
+    .navbar button:active{
+      color:slategrey;
+      background-color:snow;
+      border-radius:80px;
+    }
+    .hero{
+      margin:5px;
+      border:5px solid springgreen;
+      color:steelblue;
+      background-color:tan;
+    }
+    .banner{
+      width:300px;
+      height:300px;
+    }
+    .hero button:focus{
+      color:teal;
+      background-color:thistle;
+      border-radius:85px;
+    }
+    .property-search-button{
+      color:tomato;
+      background-color:violet;
+      border:5px solid wheat;
+      margin:5px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .property-search-button button:focus{
+      color:white;
+      background-color:black;
+      border-radius:90px;
+    }
+    .feature-properties{
+      margin:5px;
+      border:5px solid rgb(134, 9, 9);
+      padding:5px;
+        display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+    grid-template-rows: repeat(2, auto);   /* 2 Rows */
+    gap: 20px;
+    }
+    .property-1{
+      border:5px solid aliceblue;
+      color:yellow;
+      background-color:yellowgreen;
+      text-align:center;
+    }
+    .property-1-image{
+      width:300px;
+      height:300px;
+    }
+    .proprty-2{
+      border:5px solid antiquewhite;
+      color:aqua;
+      background-color: azure;
+      text-align:center;
+    }
+    .property-2-image{
+      width:300px;
+      height:300px;
+    }
+    .property-3{
+      color:aquamarine;
+      background-color:azure;
+      text-align:center;
+    }
+    .property-3-image{
+      width:300px;
+      height:300px;
+    }
+    .property-4{
+      border:5px solid beige;
+      color:bisque;
+      background-color:black;
+      text-align:center;
+    }
+    .property-4-image{
+      width:300px;
+      height:300px;
+    }
+    .property-5{
+      border:5px solid blanchedalmond;
+      color:blue;
+      background-color:blueviolet;
+      text-align:center;
+    }
+    .property-5-image{
+      width:300px;
+      height:300px;
+    }
+    .property-6{
+      border:5px solid brown;
+      color:burlywood;
+      background-color:cadetblue;
+      text-align:center;
+    }
+    .property-6-image{
+      width:300px;
+      height:300px;
+    }
+    .properties{
+      margin:5px;
+      border:5px solid chartreuse;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .apartment{
+      border:5px solid chocolate;
+      color:coral;
+      background-color:cornflowerblue;
+      text-align:center;
+      width:30%;
+      box-sizing:border-box;
+    }
+    .apartment-image{
+      width:300px;
+      height:300px;
+    }
+    .Villas{
+      border:5px solid cornsilk;
+      color:crimson;
+      background-color:cyan;
+      text-align:center;
+      width:30%;
+      box-sizing:border-box;
+    }
+    .villas-image{
+      width:300px;
+      height:300px;
+    }
+    .independent-house{
+      border:5px solid darkblue;
+      color:darkcyan;
+      background-color:darkgoldenrod;
+      text-align:center;
+      width:30%;
+      box-sizing:border-box;
+    }
+    .independent-house-image{
+      width:300px;
+      height:300px;
+    }
+    .commercial-building{
+      border:5px solid darkgray;
+      color:darkgreen;
+      background-color:darkgrey;
+      text-align:center;
+      width:30%;
+      box-sizing:border-box;
+    }
+    .commercial-building-image{
+      width:300px;
+      height:300px;
+    }
+    .plots{
+      border:5px solid darkkhaki;
+      color:darkmagenta;
+      background-color: darkolivegreen;
+      text-align:center;
+      width:30%;
+      box-sizing:border-box;
+    }
+    .plots-image{
+      width:300px;
+      height:300px;
+    }
+    .farm-house{
+      border:5px solid darkorange;
+      color:darkorchid;
+      background-color:darkred;
+      text-align:center;
+      width:30%;
+      box-sizing:border-box;
+    }
+    .farm-house-image{
+      width:300px;
+      height:300px;
+    }
+    .why-choose-us{
+      margin:5px;
+      border:5px solid darksalmon;
+       display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    }
+    .trusted-agents{
+      border:5px solid darkseagreen;
+      color:rgb(132, 125, 180);
+      background-color:darkslategray;
+      box-sizing:border-box;
+    }
+    .affortable-price{
+      border:5px solid darkturquoise;
+      color:darkviolet;
+      background-color:deeppink;
+      box-sizing:border-box;
+    }
+    .legal-support{
+      border:5px dashed deeppink;
+      color:deepskyblue;
+      background-color:dimgray;
+      box-sizing:border-box;
+    }
+    .customer-service{
+      border:5px solid dimgrey;
+      color:dodgerblue;
+      background-color:firebrick;
+      box-sizing:border-box;
+    }
+    .agents{
+      margin:5px;
+      border:5px solid floralwhite;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .agents button:focus{
+      color:white;
+      background-color:black;
+      border-radius:85px;;
+    } 
+    .agent-1{
+      border:5px solid forestgreen;
+      color:fuchsia;
+      background-color:gainsboro;
+    }
+    .agent-1-image{
+      width:300px;
+      height:300px;
+    }
+    .agent-2{
+      border:5px solid ghostwhite;
+      color:gold;
+      background-color:orangered;
+    }
+    .agent-2-image{
+      width:300px;
+      height:300px;
+    }
+    .agent-3{
+      border:5px solid goldenrod;
+      color:gray;
+      background-color:green;
+    }
+    .part-3-image{
+      width:300px;
+      height:300px;
+    }
+    .reviews{
+      margin:5px;
+      border:5px solid greenyellow;
+      padding:5px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .review-1{
+      border:5px solid grey;
+      color:honeydew;
+      background-color:hotpink;
+      text-align:center;
+    }
+    .review-1-image{
+      width:300px;
+      height:300px;
+    }
+    .review-2{
+      border:5ps solid indianred;
+      color:indigo;
+      background-color:rgb(156, 156, 17);
+      text-align:center;
+    }
+    .review-2-image{
+      width:300px;
+      height:300px;;
+    }
+    .review-3{
+      border:5px solid khaki;
+      color:lavender;
+      background-color:magenta;;
+      text-align:center;
+    }
+    .review-3-image{
+      width:300px;
+      height:300px;
+    }
+    .contact{
+      margin:5px;
+      border:5px solid mediumblue;
+      color:rgb(63, 53, 66);
+      background-color:mediumpurple;
+    }
+    .contact button:focus{
+      color:maroon;
+      background-color:mediumaquamarine;
+      border-radius:90px;
+    }
+    .end-of-the-page{
+      margin:5px;
+      color:mediumseagreen;
+      border:5px medium mediumslateblue;
+      background-color:mediumspringgreen;
+      padding:5px;
+    }
+    .end-of-the-page a{
+      position:sticky;
+      top:0;
+    }
+    .end-of-the-page button:active{
+      color:mediumturquoise;
+      background-color:mediumvioletred;
+      border-radius:95px;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="header" id="home">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq-p0lwU3QjOdblhKzHt0bhilabRLYzWHvRnt13HdWqw&s=10"
+        alt="estate vista" class="logo">
+      <h1>EstateVista</h1>
+      <button>Login</button>
+      <button>Register</button>
+    </div>
+    <div class="navbar">
+      <nav>
+        <a href="#home"><button><i
+              class="fa-solid fa-house"></i>Home</button></a>
+        <a href="#properties"><button><i
+              class="fa-solid fa-house"></i>Properties</button></a>
+        <a href="#agents"><button><i
+              class="fa-solid fa-user-tie"></i>Agent</button></a>
+        <a href="#about"><button><i
+              class="fa-solid fa-circle-info"></i>About</button></a>
+        <a href="#contact"><button><i
+              class="fa-solid fa-phone"></i>Contact</button></a>
+      </nav>
+    </div>
+    <div class="hero">
+      <img
+        src="https://asset.gecdesigns.com/img/design-assets/elegant-modern-residential-house-with-garden-landscaping-real-estate-background-images-for-website-background-sr13032605-cover.webp"
+        alt="banner" class="banner"><br />
+      <b>Discover pre-mium properties in the best locations. Buy, sell, or rent
+        your perfect home with EstateVista.</b><br />
+      <button>Search Property</button>
+    </div>
+    <form class="property-search-button">
+      <input type="text" size=50 search required placeholder="search" /><br />
+      Location:<select required>
+        <option value="pick the Location">pick the Location</option>
+        <option value="New York">New York</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Chicago">Chicago</option>
+        <option value="Houston">Houston</option>
+        <option value="Miami">Miami</option>
+        <option value="San Francisco">San Francisco</option>
+        <option value="Seattle">Seattle</option>
+        <option value="Dallas">Dallas</option>
+        <option value="Boston">Boston</option>
+        <option value="Austin">Austin</option>
+      </select><br />
+      Property Type: <select required>
+        <option value="Pick the property type">Pick the property type</option>
+        <option value="All Properties">All Properties</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Villa">Villa</option>
+        <option value="Independent House">Independent House</option>
+        <option value="Townhouse">Townhouse</option>
+        <option value="Condo">Condo</option>
+        <option value="Penthouse">Penthouse</option>
+        <option value="Studio">Studio</option>
+        <option value="Office Space">Office Space</option>
+        <option value="Commercial Property">Commercial Property</option>
+        <option value="Land / Plot">Land / Plot</option>
+      </select><br />
+      Budget type: <select>
+        <option value="pick the budget type">pick the budget type</option>
+        <option value="Any Budget">Any Budget</option>
+        <option value="Under $100K">Under $100K</option>
+        <option value="$100K – $250K">$100K – $250K</option>
+        <option value="$250K – $500K">$250K – $500K</option>
+        <option value="$500K – $750K">$500K – $750K</option>
+        <option value="$750K – $1M">$750K – $1M</option>
+        <option value="$1M – $2M">$1M – $2M</option>
+        <option value="$2M+">$2M+</option>
+      </select><br />
+      <button>Search</button>
+    </form>
+    <div class="feature-properties">
+      <div class="property-1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5q9uRi2tGH0XWJKDj9SJ1-agpbrgmJ35znvcgoZOAGQ&s=10" alt="property-1" class="property-1-image">
+        <h2>Name:Sunset Luxury Villa</h2>
+        <strong>Location:Beverly Hills, CA</strong><br/>
+        <big>Price:$2,450,000</big><br/>
+        <small>Bedrooms: 5</small><br/>
+        <u>Bathrooms: 4</u><br/>
+        <button>View Details</button>
+      </div>
+      <div class="proprty-2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFtuVYVIOMYMR7a0lAVAmMKo7jhuhu20232LDhJdMtww&s=10" alt="property-2" class="property-2-image">
+        <h2>Name:Maple Grove Residence</h2>
+        <strong>Location:Austin, TX</strong><br/>
+        <big>Price:$785,000</big><br/>
+        <small>Bedrooms: 4</small><br/>
+        <u>Bathrooms: 3</u><br/>
+        <button>View Details</button>
+      </div>
+      <div class="property-3">
+        <img src="https://luxhabitat.ae/resizedimages/1920w/14770/source/ddaa3dfdfdb4d431089af06024d47d5f3b47801576a311bb7ea18abf8a2f6618.jpg" alt="property-3" class="property-3-image">
+        <h2>Name:Ocean Breeze Estate</h2>
+        <strong>Location:Miami, FL</strong><br/>
+        <big>Price:$3,150,000</big><br/>
+        <small>Bedrooms: 6</small><br/>
+        <u>Bathrooms: 5</u><br/>
+        <button>View Details</button>
+      </div>
+      <div class="property-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTdJVPXZKh14YGdIgE1IXAbro9dCCY3HcnEvNGzB1HA&s=10" alt="property-4" class="property-4-image">
+        <h2>Name:Skyline Heights</h2>
+        <strong>Location:New York, NY</strong><br/>
+        <big>Price:$1,250,000</big><br/>
+        <small>Bedrooms: 3</small><br/>
+        <u>Bathrooms: 2</u><br/>
+        <button>View Details</button>
+      </div>
+      <div class="property-5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYPf6zpKmjMbRv-x3IU8nWmXsXT_Yb8mYfO7PHfvfgQQ&s=10" alt="property-5" class="property-5-image">
+        <h2>Name:Green Valley Cottage</h2>
+        <strong>Location:: Nashville, TN</strong><br/>
+        <big>Price:$640,000</big><br/>
+        <small>Bedrooms: 4</small><br/>
+        <u>Bathrooms: 3</u><br/>
+        <button>View Details</button>
+      </div>
+      <div class="property-6">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRilFoDIEAW59ohZSfIxWMowPZRvkyVsVSwlLOJA_eFfw&s=10" alt="property-6" class="property-6-image">
+        <h2>Name:Palm View Residence</h2>
+        <strong>Location:San Diego, CA</strong><br/>
+        <big>Price:$1,890,000</big><br/>
+        <small>Bedrooms: 5</small><br/>
+        <u>Bathrooms: 4</u><br/>
+        <button>View Details</button>
+      </div>
+    </div>
+    <div class="properties"id="properties">
+      <div class="apartment">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7EEzW3pU5wKR5uXT1Dr5dWveYoo7mG87YaG94Hfh1A&s=10" alt="apartment" class="apartment-image">
+        <p>Discover stylish apartments in prime locations, offering modern amenities, comfort, and convenient city living for individuals and families.</p>
+      </div>
+      <div class="Villas">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4Dvs15txEW5ioS0luWEc5Ooy9ewDUKAJRbmuDERHB2g&s=10" alt="villas" class="villas-image">
+        <p>Experience elegant living with spacious luxury villas featuring premium interiors, private outdoor spaces, and exclusive neighborhoods.</p>
+      </div>
+      <div class="independent-house">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmat1_ACTNREHQgUIvvKLZn6DDsIK9QWH3by4rLGIxbg&s=10" alt="independent house" class="independent-house-image">
+        <p>Find beautifully designed independent homes that provide privacy, ample space, and the perfect environment for growing families.</p>
+      </div>
+      <div class="commercial-building">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShMFUM6qP_jbGASC5CIktf_ghMUyDpsdfDRhIpHf-QpA&s=10" alt="commercial-building" class="commercial-building-image">
+        <p>Browse commercial properties ideal for offices, retail stores, showrooms, and business investments in high-demand locations.</p>
+      </div>
+      <div class="plots">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0TUTMiqtXaesRT3UsvmIwMo8Iee2VO5RkEHzU4-aixQ&s=10" alt="plots" class="plots-image">
+        <p>Invest in premium residential and commercial plots to build your dream home or secure a valuable long-term investment.</p>
+      </div>
+      <div class="farm-house">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtf_aTv-R8o9q8GUrsyrb5XwXpypg38S4PDCevXTSp4A&s=10" alt="farm house" class="farm-house-image">
+        <p>Escape the city with peaceful farmhouses offering expansive landscapes, fresh air, and the perfect retreat for relaxation or weekend living.</p>
+      </div>
+    </div>
+    <div class="why-choose-us">
+      <div class="trusted-agents">
+        <i class="fa-solid fa-user-tie">Trusted agent</i><br/>
+        <h3>Trusted Agents</h3>
+        <p>Work with experienced and verified real estate professionals dedicated to helping you find the perfect property with complete transparency and expert guidance.</p>
+      </div>
+      <div class="affortable-price">
+        <i class="fa-solid fa-money-bill">Affortable price</i><br/>
+        <h3>Affortable Price</h3>
+        <p>Explore properties across every budget, from affordable homes to luxury residences, ensuring exceptional value for your investment.</p>
+      </div>
+      <div class="legal-support">
+        <i class="fa-solid fa-file-contract">Legal Support</i><br/>
+        <h3>Legal Support</h3>
+        <p>Receive professional legal assistance for property verification, documentation, registration, and hassle-free transactions from start to finish.</p>
+      </div>
+      <div class="customer-service">
+        <i class="fa-solid fa-phone-volume">Customer Support</i><br/>
+        <h3>Custoner Service</h3>
+        <p>Our dedicated support team is available around the clock to answer your questions, schedule property visits, and assist you at every step of your real estate journey.</p>
+      </div>
+    </div>
+    <div class="agents"id="agents">
+      <div class="agent-1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROXeFdKZgdPhfRSQ6x9uxznlZ09geJFrXY_EbC5kHgog&s=10" alt="agent-1" class="agent-1-image"><br/>
+        <mark>Name: Michael Anderson</mark><br/>
+        <span style="color:red">Experience: 12 Years in Real Estate</span><br/>
+        <p>Phone Number: +1 (555) 234-7890</p><br/>
+        <button>Contact Agent</button>
+      </div>
+      <div class="agent-2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1m6jqgclfDgHwzupWUP7k6C8DsGl1i_43C_4fQCQ7GQ&s=10" alt="agent-2" class="agent-2-image"><br/>
+        <mark>Name:Sophia Williams</mark><br/>
+         <span style="color:purple">Experience:8 Years in Real Estate</span><br/>
+        <p>Phone Number:+1 (555) 678-4321</p><br/>
+        <button>Contact Agent</button>
+      </div>
+      <div class="agent-3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOvr3iH2c3oU62hLM1_bjfxQqzK4AM1PYTW4cjiPEyDg&s" alt="agent-3" class="agent-3-image"><br/>
+         <mark>Name:Daniel Martinez</mark><br/>
+         <span style="color:purple">Experience:10 Years in Real Estate</span><br/>
+        <p>Phone Number:+1 (555) 901-2468</p><br/>
+        <button>Contact Agent</button>
+      </div>
+    </div>
+    <div class="reviews">
+        <div class="review-1">
+          <img src="https://s.hdnux.com/photos/01/33/53/10/24031747/3/rawImage.jpg" alt="review-1" class="review-1-image">
+          <h4>Sarah Johnson</h4>
+          <p>Estavist made managing our property incredibly easy. The interface is intuitive and the support team is responsive.</p><br/>
+          <b>(5/5)</b>
+        </div>
+        <div class="review-2">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj1mp50lY1Od-xeyI8fyAaeVwA4_jCWSvkiQ0iWrivUg&s=10" alt="review-2" class="review-2-image">
+          <h4>Michael Brown</h4>
+          <p>Great experience overall. The platform is reliable and saves us a lot of time.</p><br/>
+          <b>(4/5)</b>
+        </div>
+        <div class="review-3">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR71gSm9j49RsIOZtnowqgkI4ezpf7wORoP6m6BIp0Fxw&s=10" alt="review-3" class="review-3-image">
+          <h4>Emily Davis</h4>
+          <p>Excellent features and smooth onboarding. Highly recommended for property management.</p><br/>
+          <b>(5/5)</b>
+        </div>
+    </div>
+    <div class="contact"id="contact">
+      <form>
+        Enter your Full Name:<input type="text"name="full name" required/><br/>
+        Enter your Email:<input type="email"name="email" required/><br/>
+        Enter Phone Number:<input type="number"name="phone number" required/><br/>
+        Enter Your Message <textarea rows="10"cols="25"></textarea><br/>
+        <button type="submit">Submit</button>
+      </form>
+      <address>
+        EstateVista Pvt. Ltd., 5th Floor, Prestige Tech Park, Marathahalli–Sarjapur Outer Ring Road, Bengaluru, Karnataka 560103, India
+      </address><br/>
+      <i>Phone Number:+91 98765 43210</i><br/>
+      <strong>Email:contact@estatevista.in</strong><br/>
+      <p>Office Timings:onday – Saturday: 9:30 AM – 6:30 PM</p>
+      <p>Sunday: Closed</p>
+    </div>
+    <footer class="end-of-the-page" id="about">
+      <p>
+        EstateVista is a modern real estate platform dedicated to simplifying the property buying, selling, and investment experience in India. We aim to connect customers with trusted property opportunities through transparency, technology, and personalized support.
+      </p>
+      <ul>
+        <li>Residential property buying and selling</li>
+        <li>Commercial property solutions</li>
+        <li>Property investment guidance</li>
+        <li>Real estate consultation</li>
+        <li>Property listing and management support</li>
+      </ul>
+      <hr>
+      <a href="https://www.facebook.com/profile.php?id=61580197838930"target="_blank"><button><i class="fa-brands fa-facebook"></i>Facebook</button></a><br/>
+      <a href="https://www.linkedin.com/company/estatevista/about/"target="_blank"><button><i class="fa-brands fa-linkedin"></i>Linkedin</button></a><br/>
+      <a href="https://www.youtube.com/@EstateVista-b6p"target="_blank"><button><i class="fa-brands fa-youtube"></i>Youtube</button></a>
+      <hr>
+      <h3>Copyright</h3>
+  <p>
+    © 2026 EstateVista. All Rights Reserved.<br>
+    This website was designed and developed by <strong>R. Megha Shyam</strong>.
+    Unauthorized copying, reproduction, modification, or distribution of this
+    website's design, code, and content is strictly prohibited.
+  </p>
+
+  <h3>Privacy Policy</h3>
+  <p>
+    EstateVista respects your privacy and is committed to protecting your
+    personal information. Any information provided through contact forms,
+    property inquiries, or registrations will only be used for communication,
+    property services, and improving user experience.
+  </p>
+  <p>
+    We do not sell, rent, or share your personal information with third parties
+    without your consent, except when required by law.
+  </p>
+
+  <h3>Terms & Conditions</h3>
+  <p>
+    By accessing and using the EstateVista website, you agree to follow these
+    terms and conditions:
+  </p>
+  <ul>
+    <li>All property information displayed on this website is for general
+      informational purposes.</li>
+    <li>Users must provide accurate details while submitting inquiries or
+      contact forms.</li>
+    <li>EstateVista does not guarantee availability, pricing, or ownership
+      details of listed properties unless officially verified.</li>
+    <li>Users are responsible for verifying property documents and legal
+      information before making any decisions.</li>
+    <li>The website design, source code, and content created by
+      <strong>R. Megha Shyam</strong> are protected by copyright laws.</li>
+  </ul>
+
+  <h3>Developer Information</h3>
+  <p>
+    Website Developed By: <strong>R. Megha Shyam</strong><br>
+    Project Name: EstateVista Real Estate Website<br>
+    Year: 2026
+  </p>
+
+    </footer>
+  </body>
+</html>
