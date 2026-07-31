@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    .header{
+      border:5px solid aliceblue;
+      color:black;
+      background-color:aqua;
+    }
+    .banner{
+      width:300px;
+      height:300px;
+    }
+    .navbar button:hover{
+      color:yellowgreen;
+      background-color:red;
+      border-radius:95px;
+    }
+    .navbar{
+      position:sticky;
+      top:0;
+    }
+    .navbar nav{
+      margin:5px;
+      border:5px solid aquamarine;
+      color:azure;
+      background-color:beige;
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .hero{
+      margin:5px;
+      border:5px solid bisque;
+      color:black;
+      background-color:blanchedalmond;
+    }
+    .banner{
+      width:300px;
+      height:300px;
+    }
+    .hero button:active{
+      color:blue;
+      background-color:blueviolet;
+      border-radius:100px;
+    }
+    .about-gym{
+      margin:5px;
+      border:5px solid brown;
+      color:burlywood;
+      background-color:cadetblue;
+     display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+}
+.about-content {
+  grid-column: 1;
+}
+.owner-image {
+  width: 300px;
+  height: 300px;
+  grid-column: 2;
+  grid-row: 1 / span 5;
+}
+.programs{
+  margin:5px;
+  border:5px solid chartreuse;
+  padding:5px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:50px;
+}
+.programs button:focus{
+  color:cornflowerblue;
+  background-color:cornsilk;
+  border-radius:105px;;
+}
+.cardio{
+  color:chocolate;
+  background-color:coral;
+  width:30%;
+  box-sizing:border-box;
+  text-align:center;
+}
+.cardio-image{
+  width:300px;
+  height:300px;
+}
+.strong-training{
+  color:crimson;
+  background-color:cyan;
+  width:30%;
+  box-sizing:border-box;
+  text-align:center;
+}
+.strong-training-image{
+  width:300px;
+  height:300px;
+}
+.yoga{
+  color:darkblue;
+  background-color:darkcyan;
+  width:30%;
+  box-sizing:border-box;
+  text-align:center;
+}
+.yoga-image{
+  width:300px;
+  height:300px;
+}
+.cross-fit{
+  color:darkgoldenrod;
+  background-color:darkgray;
+  width:30%;
+  box-sizing:border-box;
+  text-align:center;
+}
+.cross-fit-image{
+  width:300px;
+  height:300px;
+}
+.zumba{
+  color:darkgreen;
+  background-color:darkgrey;
+  width:30%;
+  box-sizing:border-box;
+  text-align:center;
+}
+.zumba-image{
+  width:300px;
+  height:300px;
+}
+.personal-training{
+  color:darkkhaki;
+  background-color:darkmagenta;
+  width:30%;
+  box-sizing:border-box;
+  text-align:center;
+}
+.personal-training-image{
+  width:300px;
+  height:300px;
+}
+.trainers{
+  margin:5px;
+  border:5px solid darkolivegreen;
+  padding:5px;
+ display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+}
+.trainers button:focus{
+  color:darkorange;
+  background-color:darkorchid;
+  border-radius:110px;
+}
+.trainer-1{
+  border:5px solid darkred;
+  color:darksalmon;
+  background-color:darkseagreen;
+  text-align:center;
+}
+.trainer-1-image{
+  width:300px;
+  height:300px;
+}
+.trainer-2{
+  border:5px solid darkslateblue;
+  color:darkslategray;
+  background-color:black;
+  text-align:center;
+}
+.trainer-2-image{
+  width:300px;
+  height:300px;
+}
+.trainer-3{
+  border:5px solid darkslategrey;
+  color:darkturquoise;
+  background-color:darkviolet;
+  text-align:center;
+}
+.trainer-3-image{
+  width:300px;
+  height:300px;
+}
+.trainer-4{
+  border:5px dashed blue;
+  color:deeppink;
+  background-color:deepskyblue;
+  text-align:center;
+}
+.trainer-4-image{
+  width:300px;
+  height:300px;
+}
+.membership-plans{
+  margin:5px;
+  border:5px solid dimgray;
+  color:dimgrey;
+  background-color:dodgerblue;
+  display:flex;
+  justify-content:space-between;
+  gap:50px;
+}
+.membership-plans button:active{
+  color:fuchsia;
+  background-color:gainsboro;
+  border-radius:115px;
+}
+.basic-plan{
+  border:5px dotted firebrick;
+  color:floralwhite;
+  background-color:forestgreen;
+}
+.standard-plan{
+  border:5px double ghostwhite;
+  color:gold;
+  background-color:gray;
+}
+.premium-plan{
+  border:5px solid goldenrod;
+  color:green;
+  background-color:greenyellow;
+}
+.gallery{
+  margin:5px;
+  border:5px solid grey;
+  padding:5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(2, auto);   
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+.image-1{
+  width:300px;
+  height:300px;
+}
+.image-2{
+  width:300px;
+  height:300px;
+}
+.image-3{
+  width:300px;
+  height:300px;
+}
+.image-4{
+  width:300px;
+  height:300px;
+}
+.image-5{
+  width:300px;
+  height:300px;
+}
+.image-6{
+  width:300px;
+  height:300px;
+}
+.form form button:hover{
+  color:honeydew;
+  background-color:hotpink;
+  border-radius:120;
+}
+.contact{
+  margin:5px;
+  border:5px solid indianred;
+  color:indigo;
+  background-color:khaki;
+  display:flex;
+  justify-content:space-between;
+  gap:60px;
+}
+.form{
+  text-align:left;
+}
+.address{
+  text-align:right;
+}
+.end-of-the-page{
+  margin:5px;
+  border:5px solid lavenderblush;
+  color:rgb(150, 137, 23);
+  background-color:lightblue;
+  text-align:center;
+}
+.end-of-the-page a{
+  position:sticky;
+  top:0;
+}
+.end-of-the-page button:active{
+  color:lavender;
+  background-color:lawngreen;
+  border-radius:125px;
+}
+  </style>
+</head>
+<body>
+  <div class="header"id="home">
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt2Kcp3ksynkKUL4atDLqq1PNuF68qKkQfQKG3z-KYDw&s=10" alt="" class="logo">
+     <h1>Gold's Gym</h1>
+     <q>Serious Fitness.</q>
+    </div>
+    <div class="navbar">
+      <nav>
+        <a href="#home"><button><i class="fa-solid fa-house-chimney"></i>Home</button></a>
+        <a href="#about"><button><i class="fa-solid fa-circle-info"></i>About</button></a>
+        <a href="#programs"><button><i class="fa-solid fa-dumbbell"></i>Programs</button></a>
+        <a href="#trainers"><button><i class="fa-solid fa-trailer"></i>TRainers</button></a>
+        <a href="#membership"><button><i class="fa-solid fa-user-plus"></i>Membership</button></a>
+        <a href="#gallery"><button><i class="fa-regular fa-images"></i>Gallery</button></a>
+        <a href="#contact"><button><i class="fa-solid fa-phone"></i>Contact</button></a>
+        <button>Login</button>
+        <button>Join Now</button>
+      </nav>
+    </div>
+    <div class="hero">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtr4oi7XAa_FmUKMZHhw_R77fdgL21_CtxmRahoTm2OQ&s=10" alt="banner" class="banner">
+      <h2>STRONGER EVERY DAY</h2>
+      <p>
+        Transform your body, build your strength, and achieve your fitness goals with world-class equipment, certified trainers, and a motivating community at Gold's Gym.
+      </p>
+      <button>Join Now</button>
+      <button>Explore Programs</button>
+    </div>
+    <div class="about-gym"id="about">
+      <h3>About Us</h3>
+      <p>
+        Gold's Gym is one of the world's most recognized fitness brands, dedicated to helping people of all fitness levels achieve their health and wellness goals. With state-of-the-art strength and cardio equipment, expert personal trainers, group fitness classes, and a motivating environment, Gold's Gym empowers members to become stronger, healthier, and more confident every day.
+      </p>
+      <b>Mission</b>
+      <p>To inspire and support every member in achieving a healthier, stronger lifestyle by providing world-class fitness facilities, expert guidance, and an inclusive community.</p>
+      <i>Vision</i>
+      <p>To be the global leader in fitness by transforming lives through innovation, excellence, and a commitment to helping people reach their full potential.</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkUZkgSJ4PzUyB9eVKg8C-bJSeCg4TWLOEGHa1T1u1iw&s=10" alt="owner" class="owner-image">
+    </div>
+    <div class="programs"id="programs">
+      <div class="cardio">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAsQMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAGBwAFAgMEAQj/xABPEAABAwMCAwMHBgoGCAcBAAABAgMEAAURBiESMUETUWEHFCIycYGxFRZikaHRIyQzNEJSU5KywSZEVHJz4SU1Q1V0gqLwNmSTlLPS4hf/xAAZAQADAQEBAAAAAAAAAAAAAAABAgMABAX/xAAjEQACAgICAQQDAAAAAAAAAAAAAQIRAyESMUETIjIzBEJR/9oADAMBAAIRAxEAPwBSFNE+gWA7cpg6dij4mhtQNFnk4aJucwD9ij4mqES+u8LswhWOuKrDGq217Mct1mRJYSlSw6kYPcc0BJ1fKAHFEbJ64OKRlYtUEhi5rWqMKpE6xJ9eEPca2DWLSj6cRY9hFA2izVGFaHI3hXKNWQ1H0mXE+4V785rermHB7qawNGSo9c70Jsg+gPqrab/blfpn3prE3i3nk7RsSinlwlML4k4xWlRS+jsz9dXj023vpwXUe+qqVH4R2scpLfeFUTHAyQ2stO8jyrVKRwO8I7s1tfIWnbZQrXIOSnO54N6VjLZcWZgGNk9a2ynkseiBxLOyUgb1z22Q8phEaI2Vuq25cqvI8eJYB5xPWmTcT6qBuEGmQtbMrVaUQmvlW+kFfNpg/GvER7hql1+QCW4TCCoqVyOByFWdr09O1C8Jt7WpqLsUtH1l/dRq+yxFtT8eK2lttLKgEp9hrB7Pn9e5zXVbhmQmuZwYURXXah+MI9orR+Rsj9g8NGICbC9n9iquOXOhQo5elPtoR/errs2UaRnFv1vNXOH24pP+bKdKXX1KWSsesc9arONshCfGKsPvnjZP1l/umpVp83YH9kY/dqUvA3qCwKQRRb5OD/pSdt/sE7/8xoVUnA2os8mwHyrPJ/Yo/iNIOGcvT7Gqki2SX1sN8PalTfMkEbfbVU75GISVHs7rIHdlKfuol0wpYvziSoFIjLwcfSTRUpW9OkGxTu+Rv9neD/ztiuV3yNzx+Tu0cjxZP304QamaNI1iSd8j15H5OZCX7QoVyOeSbUafVEBXseV/9afOTUzQ4o3Jnz495L9SNJUtbEbhSMk9vgAd/KhlEWMOMK43eHIKm1YGfDvHxpyeWPULsC1t2iLxJcmpJcWNsIBG3v5fXSWZeW0QEkJCSCT40kqQ8bZtdtzbfEFFxpeduNOQPaR91WVvsd6bZ84iW92XEX+k3hSDW23q+UXmoyQcKO+dye8mnPoi0M21EtUVS0MusjjaJykqGPS8DjuoKroNS42IOdb57aS65b32W+pKDgVWp5+kacvlMfLttiIZeWGyspWEnAUPGlBKbCZK0gbA8qaUaFhk5FtaJEhaxEtKOBa/WdPOmLYdHxYakyJj6JMk78SlZAoP8msdLl89IDGAN6dsXR1tSStzjUVHPPahWjXciqQyDsXwR3A8q8mRmBDeJdTu2oDfmcVUattEeJqaDGiBxCHEqBSFkZNDEuyPxdQ9k+88W0OIWlBcON6ZQFeRJ1Qt5Gzyq7bMhTkltKBlRIwK5JgxJdH0jVzo7/WjXtFCPyGn9Y99KWtTFsQmUEqC0lJbxn3Gk/fGwzc5jKU8CUTFpSkDkAs7U9rOfwLHjSQ1aMagn4/ti/4qrF22c2VUkMrapXlSmEFGUZSaJPJ2MXaf/wAMn+Kh9WyNuZog8ngPyzM2/qw/iqB0IYGmsnUfCP0mFj7RRf2KzQjpj/xKn/Bc/lRz1o2MlZyKZUhOSdqyZZDgrdI/JGpE9WtY1HqYqepJrLzZobmt4qr1PdfkSxS7glIW40kdmk/pKJwB9ZpbNQrPLmzDRItjq3gl8haezIO6e/u50u9KqjJvTSneDgIUgKX6oUR6J8N8D30aaTjM6v1isalPnq0xlvFLqjgqyAMAdACduXKhK0w0t399lpIUymQtA22wCRSZOiuHbCOzIi2y+OB5tIQtQ4wg5wojfB7sk0zNOfiVz83kqQlt9ChFUlzIeGQdwd8gUp7W0ti6di8N21EHNNvS1pjyFqlym+NyGrhYUrjTgHfvwalB+46ciShsqfKDYpF0jtxbc22HEuJUOI4FJzWGnpunLilu4dmS8jjTwKz4V9EXA4nZ67Um/LPIMi8sEpCeFrAx7a65dHnRVM4/JkOG7BZ2SrHOvodkein2UiPJXY3Litcgu9k2zvy3Joza1beFyHGg40EtqKRhvfas1a0CMqbbNmtB/TS1e/41xaiYU5q0bDfsyPGua8zJMi6wpUhfG6ELwcYxQhpO8TrzrVDs58uKBIA5DAp+qFe7YE3AYmOj6R+NWukyU3FojoRVXcvz57++r4mrTSv5+ipR+RWf1n0bZ94zB8aS2rW1L1DcENpKlmYrCQMk705LStLcBtxeyUpKiTyAFI+6THJ+o3X4DqkOvzFLbcG3AM7K+qqR1ZHIroauD3H6qlTsLj/v1z/0k17RsShRK3HKiHyfn/TkvbH4t3/SFD7hCVYoh0EM3+UP/Kn4iplhgaa9HUyM9WV/yo53zyoI06MajYP0F/Cjcc6DKQMH/wAmakP1a9f/ACRryLsk9KwTqoK8rIfVptpDPEEGUjtFAcgM4+2iW83aFZbe7OuL6WWGxuVHdR6Ad5PQUi79qO66ynLVKUtm3pX+BhpPogDkVfrHrSOVDqHLRWaXvEmNc5Eq0RiqU7GUwypfqpUrHpcugHKiewabbZiOyMPJms8Pax3tlpJPrHvB5g9axsrTVtcaWE4GRkYol1M+Iku03uPkxfzWUn6C+R9ysY9tRcubo6I4/SVnVb9DW68PPzpTshBJAAZUBvgHO4NHMKE3b7eiKwVqQ2MArOSfEmhb5QdtimpcNYXGeWkOAnKdwAD4Z2GfZRgh1L0VLqOS0hQqkEkTyybKCcMzD7BSW8sCcXZrHVH86dcv87J8BSX8sX+tGT9E/Gr/AKnK+0EHkaUBb5RJ2/yrXAwqZII3BcV8aArdd50KxPR4jymkOHCik4JFG+ngA0gnlwjJpkhG70d1yT+NQ/7q/hQJ5OsfO8E/rH40b3iZGYlQy882gYXzV3ihbRlguLV+ZmMvwQ0VlTi/OEqwkbkY55oN9DeGBV02nP8A+Ir4mrTSv5+iqy6YM57Gfyitveas9K/n6PZSR+QZ/WPh840nMUc7RV8vYaTtkQla5Exbb5b7NTLfYgcSSRurB54GfrpxSuL5oTeDmYi8fVQVpm1oaiwIakpLkl1KSeoSDlZ+vA91UXknLwWvy5b/ANS5f+xc+6vKPfPIn6yalAB87PZKid6JPJ8rN+e3/q6viKHnTkZ8aIfJ5/r94cP9WUftFAcY2nh/SJn/AA1/CjbrQJZ31IvrXBthC/hRtGWVoHFzpZFMZm7+TNVV7vsHTlqcuFxc4W04SlCT6TijySPGreQOBhbi9kJBUpXQACvnrU9/karv/aOEogtqUmK1nYJz6x8TgHw5UjdIoo2zO73K5aun+eXMlLYJ83jJPoMj+Z7zVhDt/mqEkjGeVbbXCcStuK3FcckL9RKE54qINT6NuqdMOvx5KW57X4RbI5FsDdIV+t1+yuZuU+juShjS5Ard7qiI8lhrDrm3EByR7aspuoG/m4hpZQ48680lDZP6q0qP2JNL6PKZCQeLjJ5JSMk14XXHXw46MJSfRQP0R199NixPkmyWfP7XQ6oEyHdmltw2lDtkHjiHmnxQR06+FGNgTIasrbExOH2shWeozkH3ihHQl0s8aA2IiQleBxqWcqz1yaOGn0O8boWkJeSAynqUpzkn3qP1V0yj7tHLGVwp9lNK/Oz7KXWqLVEu2ruwuSfxVENxSlcRSUHB4Ve0EfZTGfwZYwRyoD1Dci3cZj1qcQ4+khpWEhXCeH/9UMkuMR8OPnkQs7bZblNsEqcxEWY0ZHauOH0RwjmRnnWXntxnqRFiFSdgOFs8j4nqfCmbpG6qiyiq5p4g4nBUs5Ax9EkD66pkwI9uujvmcVxiK8eNjtSFKKT4jbnmthyeppm/J/G9Da2Ua9IoUGEz5byn3goqIOcYHLeq2zSn7zd4tucjwkiO8CHUMBCyEnvHso3lEuS4SUAqUeIAAc9qGtLafmRbz5/sopUpRawQQOe9W43VHLzStMCbpnzx0nqtXxqz0vtPbzV5f9IsMmLLjT0/jQKlxiMrb3557j0zVpo7S0S5y5DLSlR3mGw4hwEqCt8EKGftFKotSs0pJxSQyi4lrSkpxxJUkR1nHftQrpXUmkpjaHlzHINzbZLbaX88AJGM+O5zV5fLhEsmnZEK4uASXGlNpaRupWRzHh40rlSZcazPRWoTLUOSQFrLXpKI5Di6UaYG0M35Kd/3wx+6alLX51XDvb+o1K1MSyuWRjHjRJ5Oyn5ekb7+aqx+8KFlqGCaJfJ5vqB09fNl/wASaBQYtub4r2wEjcpV8KMYQUk+mMAGhO1gpvkYp54UPsomfefS7w9n6NLMrjWjLU6XLjY51vhO9i7IZU0HsE8BI5188XW3zrHNRFubPZLH5NxO6HB3pPWvogSFdjwdmfS7+tVtyskW9xjDnxUvRycjjHqnvB6HxqbVlouti10tqB5pSC29wOt7oV0PgaZ8TUEK8211Dw4HeHgdbO+Ce491Ly7eS26214v6elIlMjcx3lcLg9iuSvfipZdZu2F1Nuv9rVEVyIW3ji8d+fuqVuBellW+xVvOriynWUxFqQ04pKSM7gHA6VtizDIkCO3CeU6rklG5+qmpM0vZbmkT7NM8wU+snhWOJlSuviDV7py3MafjPNS5okKIzskdmD4DnQ9dp9Bf4muwD09ablDUJLzKmWTupBUkrPuB50a/OqDZkFQKpMt1tOUlWOxRj0UDuPU1eqSGYb1wf7BxCGCoJZAKUp55weZ8SKQ6XXJUlQjtLcdfcJS2hO6iTRllnLUdCxw48cuU9hnfdZy7ilbaVBhkj0kN9R4nrQjOmvWx1m4IS4ntk4KSMdqkdd/sNH+lPJ/wLRNv4QpQIUiID6Ke7jPX2ChjyzHN1jJwAA3hIAwAKOPH5kDLnS1BUDjUuXfpCY4cUDIdCG0ceyQTTO1KmNa2bTZI4y5Ga43V+3kKB/JrIsjLrhvhDYbWh1p3oFJPL4UVXyxzn9Tds0pTrMwcTMzPEgjnvjlgV1xjHVHnznJ3ZpthcuN1afjlYagObLSeHtHuYQD3DmfCiCQqOITi5Ub8JnLr4eJU8vOyQOmfhVNc7izYJNsstthLkuSAQgIWlJxnBUfEnJJPT2VbGchpaJKUKcdbBTb0Y9BSjsXN+7p4VS0Tab2ypcas7kZS3zNcurgx2aEgIKjslI7gNhVzaX4OlLFKdSpD0sK4XSP2g/Rz1wdvdWhthxDUcsO/jb5V5uSoqSkfpvkEZ2Gwz1xXKLW1OXwLS4zZoCPQzspw/rb8yeefvoMZRorWdN3m/K+V3X4y3n/TKXVnbuGOg8KpdT/KLTzVolyGnCzuEtckk95xzrpktpaQ6+XJDLaSQ2U7cR6AkGqtREaK5NkkrcX6vEckk+2jQjOH5O+kKldXziT/AGRFeUtBtFZwEpO9FHk6P9IVf8Ov4poVyruoq8nAPy4vl+bq6fSFTKDNiBSbnGcQ2XFAq9EHBO1Ebl1KVJzbXlK5EJ4fvoadRNSz51BGCyclfQchWM27XFoBTchKSCAfQ+2lkrKwaSLO43qZJARbrS6laSM9qoJGPDBNb4d6nvR+w+TFtujmpS08P2UJvzL52pUxLQcbqWWwOKtduud7fS4vzkLIONkgUeJuewyT8rPr4WmUb8yp07UP62nO2u0zFX+3MPRQj0eL8ICo7J2I7yK9Y1DJtcSTIn3BDDbQyVLTkf5nwpT+UPXMzU624pcUYTSuIehwdorvI6DwpWqG5fwq4Go5MdlyC28sw3CSptacp7s9SPdVra7m47cY8ePcXWiVAD8YKRgb4z0oSjKGOBTiWUH1lhJKlDu/7wKOtBWtEl9EhEcsQxsl5zClSV7pwT0T4D66n6aZRZnEZ1/RMuWn5EFbfYTZTPYsPqSl3jJG6QtOCCUgjJGK80DpH5AZ4RAYdnkEuTHF5wOiU9RWmMqZHgiDDe7AMOfgzzKAeacHpXjUjUUQPOpuTa0pSSOJoZpscGkDNljKWkXD8i8h5YahscGOrnWk75W1SFXRrzlKEq4OSTmmFqCfdWdPw5keXwqdAK14pVa2edlOx1LfL7qk75HWqJUrIOSujj015sQtM3PYn1sCm7Bvdtt78u2SS4xHCW/TQrgaZJxwgdeJRzy22pPQlm2h4oKXnG0pUFD1AroDnnjnR5aJV0laSdnXrsLgyXT5mFt5dJQnJWOpSnoTv48qdPVE+O2y1uVqjM31U1D7r0ie2hlovN4DLY9EpyP1vhnvFLfUtwVetROiG44GGz2TZyTsnYq27z0HfTHtGqpDx+Sbqyhy4Op7UsFkBtAV6qFeOMfXjpW+BpW1xrvJnWu34TGGS2klaVvDfhRn9FJ+0juoNWMva99nRaLfK82ZiPKWqW6ylL3EQS20PVbHxPvqo1NfWo8hNjVcGGmCvYlIRjfG+Og6CrJqc4/ccoW/GbYQXHt8KKuufh7BSXv89u43STJYaS20twlCR3d/voylQYxsa9hEeYqRKCmxaYqShWDxJfWP0t6BrrIcvt4DMJoJbKylpCdgBnnVVbpsuLbnoiH1pYeIUpsHajPSVuFtty7vIRl90cLCSO+mi7ROSV6MfmI5+3/6qlXPY3fu+0VKbQtMAeFQBIG1F3k1YDlzuD5UQpiMOED6SwP5UJjJGKMfJhu/e/CMyP8ArNRKLY00PIY0nMdcOEJXk/ZQpOukJ+C52byCrI99EL5/oRcCd9zt9VLDsg682oJISt4A7eNZK7GboJ7nKCY2Iy+JeEgpTuQK7LA061BS4U4Kt8HnVSngh3yT2vCWigczgUFT7jebZqmVJZmHsXVK7IoeQUFs+qACdulFmX9NWvr4q4316MgkQoSykJHJTg5k+/I91By3FOKyo9a6Jq1LfkLWcuLeUpR8STXIOdIyi2Eul4zKpIdfYbdUMKR2gyNvCmvp1LNwkNtOo7NKkniWgYwAM9P50q9KSUF9lpWMlRR9e/xH20zbRcIlkebnXB0MRcKQpRUQdwcYxzOcUWImW8qfa47zrT8+O24g4JU8lOT7M1WL1HaUNvoduUXBQQD26e720rNSQTIucq4RwVxn3lLSpz1k5PJVVSoLgTglAztzo8GDmurGlc9T2d3SsOGm5x1PIHpICskUDz3W7rNyzlUdlsArSN3FZ2SPaSBQ8WS25gHJHPAq1t0yQytpmG0FPrUEsJIBPGduI9+On10PAWrZ33qKxaY0SAXUrc7QGWhvdalnmPAAED2k91Z3K8T5d1hsWtxxkwwGIrbOys8uEDvJ59/XlWpqGm3NSLrJeS92JLccncOvHO/jj1qy0nO+SnU3dSG3pCAUsIcP6Z5KP/fKmA9DFnvG2XEMTZEUzmYyTMl8OER1nnjHrK8PZ31oter5jN9iWS2wx2WSpztQeJhrG3F9M+sSe8CgeZepcRaZKD5xK7cO8bqeIOLyeJah1B3AHtPdRBPvIuVgfnRYZtwlrWy66kc3CMqCVdRtQbbNFILbjdrDeGVMXFxH4wC0mUyvBHtIpXak0YmxLD6ZjcmIs/geij7RWOmoLzS0ulKjFZPEtah6OawvdyevlxSllB4ArgYQOvjWSvsM3XRs0tZ13i4pSpJ83aPG4rw7qIdRXDMlttkBMaMcJCeRUKKdNadRBtYhhwIfW3xOL68RoGv1puFpc4JaVKZySlwDY09omlRs+cUv9pUqo4HO9P1VK2hrZgE7UWeTTaXegORitf8AyUIlWBii7yYLCpd4UpQATFaJJOw/CUjFiMK6SW4mgri8+vgbCzk4z1FLaR5RWLfDjMWuEw8QrjW48g5GPDPOuvVmv7HcdKzLDEW8p153PbcGEAAjv3PKgdarDJjttNxJbbiObzKuNSvaCMYoJ9lWugqvV/03fnW5N0t8l10pBUGlqQgnHPANVzs3RrDBdbsL6j0SuSvc/vVVsQrccAR9Qr2/2bSR/KuyPYrTIcHaN6iQPpROL+VYGwcub8aVMddiR/NmXMYazkIIHSq8gg0z29D6elhIbdvLAHPiYO/jumun/wDnWnmx6cq5Lxv6SQB/DSjpitiSHGHUuNnCkKBB8c5rpuV1l3N3jmPFXDshA2Sj2Cj35vaFaKkOTnCrlnzjdJqruOm9LIaU5Av3EsAns3sHPhkYo7A2ips9zCx5rKwUrHCcnmPvrlvDD8B8o7Ram1jibX+sn7609mwgnhSgkcjW2ROfeYQy+6C2k+iFY9Gq3rZFJcrSK5Dq+IAlRHXc0TaZjl6UlDRJnyPQbwM9mg81Z6bZFDfaKzvISPYP8q2NPrSSUSHEnqUKIyO6pKisk/Be6xksOykRIa8QIA7Jsjk4v9JXvPwqlU4/NMeIynkfRSnxrWG+NsvunhbTsgdVHwq/tLCbPaX7xIA7ZQ4I4P656+6j2DpHF5rLmTHLZGw64pWAsnHqjlnkKcWo7KyryTssrAiqhtoeJJGQoHJ953+uldpJAQ4riPEtaQvi99WesdYOXliNZozijBjpSp8nYurHQnqBRaBFlO9cVtwHWm8tiRjCCfUbHL3mrvSsSPZ4Ll/uZTlKcRWTzWe8ULN8LjxW8TwJ9b7qMrHbheBJkvuhx2Oj8GwOSe4Uz0Kvczoja8RE4ET2syXTxK4eSPCrhvUkK7ueZTkpDa90kmlbAtkqdd3FSklHCSpZPL2V7dZ7YlKbYyAjbPiKWyjQ2fm3Z/2h/erylD8ryv26qlGxaZ2PEnatMa4yrdKeREcKEONpDiQdljxqVKDFgMY6glpSvgajJwTjhbxgd1cidXXThIHYjfGyD99SpWGBy6a3viJjiUSUpA5ADwrhOub/AP2zHsFSpQHMDrS/KO81X1VyzdR3aewWpExwtk4KUnHF7alSsYrCAOQxXvPqalSsKTkcVg6fQqVKz6CuzVnFdERIekstL9RShkd+9SpSLseR38AeujbS/USogAdAKudfq4JMCEjAYajpWlI71Hcn6qlSqLpkfKK5l9ce3PraPCoeiD4ZFVUdRC0pztzqVKHlDfqzuzhbY6BJV76mnrrMhXIqjulJd9fxqVKMuzY+gku814NrUnhSVDJwOZoHeH4UnfOalSlYy7PKlSpQCf/Z" alt="cardio" class="cardio-image">
+        <h4>Cardio</h4>
+        <p>Improve your stamina and heart health with high-energy cardio workouts designed to burn calories and boost endurance.</p>
+        <button>View Details</button>
+      </div>
+      <div class="strong-training">
+        <img src="data:image/jpeg;base64,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" alt="strong training" class="strong-training-image">
+        <h4>Strong Training</h4>
+        <p>Build lean muscle, increase strength, and improve overall fitness with expert-guided weight and resistance training.</p>
+         <button>View Details</button>
+      </div>
+      <div class="yoga">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToMeJdesXE9SScLa3gzuN3xiKfTvq4bIiIA35blM_uAQ&s=10" alt="yoga" class="yoga-image">
+        <h4>Yoga</h4>
+        <p>Enhance flexibility, balance, and mindfulness through guided yoga sessions suitable for every fitness level.</p>
+        <button>View Details</button>
+      </div>
+      <div class="cross-fit">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQobSxgPM5J_dbwUAI9MGckolS7GAKhFC24IgxDZrznpA&s=10" alt="cross fit" class="cross-fit-image">
+        <h4>Cross Fit</h4>
+        <p>Challenge yourself with high-intensity functional workouts that improve strength, endurance, and athletic performance.</p>
+        <button>View Details</button>
+      </div>
+      <div class="zumba">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA-kvp4nPnyM7oFKcfc_6AQP3NRR6oetvJrpRzS-Dqxw&s=10" alt="zumba" class="zumba-image">
+        <h4>Zumba</h4>
+        <p>Enjoy energetic dance workouts that combine fun, music, and cardio to keep you fit and motivated.</p>
+        <button>View Details</button>
+      </div>
+      <div class="personal-training">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnVwwANxBC5BM9o45j1ttEN0mXO6yCtowdimUznaUwmQ&s=10" alt="personal training" class="personal-training-image">
+        <h4>Personal Training</h4>
+        <p>Reach your goals faster with customized workout plans and one-on-one guidance from certified fitness experts.</p>
+        <button>View Details</button>
+      </div>
+    </div>
+    <div class="trainers"id="trainers">
+      <div class="trainer-1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nMPasqsPDVUWDs1SM4SmUGlvHGudeVLJEF9o_FFvLA&s=10" alt="trainer-1" class="trainer-1-image">
+        <h5>John Anderson</h5><br/>
+        <b>10+ Years</b><br/>
+        <p>Strength Training, Bodybuilding & Weight Loss</p>
+        <button>Contact Trainer</button>
+      </div>
+      <div class="trainer-2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaAduAI2qqUhLx8dnStI89zs37qq88e9oJ60NH4KQ-Ng&s=10" alt="trainer-2" class="trainer-2-image">
+        <h5>Sarah Mitchell</h5>
+        <b>8+ Years</b>
+        <p>Yoga, Mobility & Functional Fitness</p>
+        <button>Contact Trainer</button>
+      </div>
+      <div class="trainer-3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrjF56u2F02oQB2cPMIFmBu5aeqSdOs_YTX0zR0rDdrg&s=10" alt="trainer-3" class="trainer-3-image">
+        <h5>Michael Carter</h5>
+        <b>12+ Years</b>
+        <p>CrossFit, HIIT & Athletic Performance</p>
+        <button>Contact Trainer</button>
+      </div>
+      <div class="trainer-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyoPQXz8OMMsSJ1MMyK_szg4PhAqInj8WPSIUnEqDnLg&s" alt="trainer-4" class="trainer-4-image">
+        <h5>Emily Davis</h5>
+        <b>7+ Years</b>
+        <p>Zumba, Cardio & Group Fitness</p>
+        <button>Contact Trainer</button>
+      </div>
+    </div>
+    <div class="membership-plans"id="membership">
+      <div class="basic-plan">
+        <h6>Basic Plan</h6>
+        <i>Price: ₹1,499/month</i>
+        <ul>
+          <li>Access to Gym Equipment</li>
+          <li>Cardio & Strength Training</li>
+          <li>Locker Facility</li>
+          <li>Free Fitness Assessment</li>
+          <li>5 Days/Week Access</li>
+        </ul>
+        <button>Join Now</button>
+      </div>
+      <div class="standard-plan">
+        <h6>Standard Plan</h6>
+        <i>Price: ₹2,499/month</i>
+        <ul type="square">
+          <li>Everything in Basic</li>
+          <li>Unlimited Gym Access</li>
+          <li>Group Fitness Classes (Zumba, Yoga, HIIT)</li>
+          <li>Personalized Workout Plan</li>
+          <li>Monthly Progress Tracking</li>
+        </ul>
+        <button>Join Now</button>
+      </div>
+      <div class="premium-plan">
+        <h6>Premium Plan</h6>
+        <i>Price: ₹3,999/month</i>
+        <ul type="circle">
+          <li>Everything in Standard</li>
+          <li>Personal Trainer Sessions</li>
+          <li>Nutrition & Diet Consultation</li>
+          <li>Priority Class Booking</li>
+          <li>Steam & Shower Access</li>
+          <li>Guest Pass (2 per Month)</li>
+        </ul>
+        <button>Join Now</button>
+      </div>
+    </div>
+    <div class="gallery"id="gallery">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl2BpgmyeeoC9yl0giPJLQCDrrxA9J32jw5UQiXwSlWw&s=10" alt="image-1" class="image-1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2bRl_xxuRcgZaRCrGm1eOZ6u_mwn9BDGf47ZZuUtv-Q&s=10" alt="image-2" class="image-2">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkcHDrLah3JOdYtUhCbAx7FG5tRZ0jPVRKQT7Dezl7mA&s=10" alt="image-3" class="image-3">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkR-nCYG5ESvshnDYVTzhc2LgjaG3JIBCUOGzzd-CH6w&s=10" alt="image-4" class="image-4">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkxnYPatwz-qQASUQFDIPsq0TZ-ewHjiIppWC8ClunNA&s=10" alt="image-5" class="image-5">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqi3CihInivkvvslCNRU96i1fk2wPW6UeoNfPoEecf_g&s=10" alt="image-6" class="image-6">
+    </div>
+    <div class="contact"id="contact">
+      <div class="form">
+        <strong>Contact Us</strong>
+        <form>
+          Enter your Name:<input type="text"name="name"required/><br/>
+          Enter your Email<input type="email"name="email"/><br/>
+          Enter Your Phone Number<input type="number"name="phone Number"required/><br/>
+          Enter your Message:<textarea rows="10"cols="25"></textarea><br/>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="address">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15556.085470574146!2d77.58806366977535!3d12.906347500000022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae151a0db20e2f%3A0x12f7b65eb3c5f1a8!2sGold's%20Gym%20J%20P%20Nagar!5e0!3m2!1sen!2sin!4v1785504924965!5m2!1sen!2sin" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <address>
+          1st Floor, Regent Prime, 48, Whitefield Main Road, Sathya Sai Layout, Whitefield, Bengaluru, Karnataka 560066.
+        </address><br/>
+        <p>Monday – Saturday: 6:00 AM – 10:00 PM</p>
+        <p>Sunday: 8:00 AM – 2:00 PM</p>
+      </div>
+    </div>
+    <footer class="end-of-the-page">
+      Instagram Link:<a href="https://www.instagram.com/_golds_gym_/?hl=en"target="_blank"><button><i class="fa-brands fa-square-instagram"></i>Instagram</button></a><br/>
+      Facebook Link:<a href="https://www.facebook.com/goldsgym"target="_blank"><button><i class="fa-brands fa-facebook"></i>Facebook</button></a><br/>
+      Linkedin Link:<a href="https://www.linkedin.com/company/gold's-gym/" target="_blank"><button><i class="fa-brands fa-linkedin"></i>Linkedin</button></a><br/>
+      Youtube Link: <a href="https://www.youtube.com/@GoldsGymChannel"target="_blank"><button><i class="fa-brands fa-youtube"></i>Youtube</button></a><br/>
+      <h2>Copyright Notice</h2>
+  <p>
+    © 2026 R. Megha Shyam. All Rights Reserved.
+  </p>
+  <p>
+    This website and all of its original content, including the design, layout,
+    code structure, graphics, text, and other materials, were independently
+    developed by R. Megha Shyam.
+  </p>
+  <p>
+    No part of this website may be copied, reproduced, modified, distributed,
+    or used for commercial purposes without prior written permission from
+    R. Megha Shyam.
+  </p>
+  <p>
+    Some images, icons, and external resources used on this website may belong
+    to their respective owners. They are used only for demonstration and
+    website presentation purposes.
+  </p>
+    </footer>
+</body>
+</html>
