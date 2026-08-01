@@ -96,20 +96,11 @@ color:#111;
 
 
 
-/* STOP ANIMATION CLASS */
-
-body.animation-stop .laser{
-
-animation-play-state:paused;
-
-}
 
 
 
 
-
-
-/* TOP NAV BUTTON PANEL */
+/* TOP BUTTON PANEL */
 
 
 .mode-buttons{
@@ -183,12 +174,12 @@ transition:.3s;
 
 
 
-
 .mode-buttons button:hover{
 
 transform:scale(1.1);
 
 }
+
 
 
 
@@ -258,6 +249,8 @@ border:2px solid cyan;
 
 
 
+
+
 /* PAGE CONTENT */
 
 
@@ -302,7 +295,10 @@ animation:floating 5s infinite alternate;
 
 
 
+
+
 @keyframes floating{
+
 
 from{
 
@@ -310,13 +306,16 @@ transform:translateY(0);
 
 }
 
+
 to{
 
 transform:translateY(-10px);
 
 }
 
+
 }
+
 
 
 
@@ -329,6 +328,8 @@ transform:translateY(-10px);
 transform:scale(1.03);
 
 }
+
+
 
 
 
@@ -391,6 +392,8 @@ box-shadow:
 
 
 
+
+
 /* IMAGE */
 
 
@@ -430,10 +433,13 @@ transform:rotate(8deg) scale(1.1);
 
 
 
-/* LASER EFFECT */
 
 
-#laser-container{
+
+/* DIWALI FIREWORKS */
+
+
+#fireworks{
 
 position:fixed;
 
@@ -451,27 +457,25 @@ overflow:hidden;
 
 
 
-.laser{
+.spark{
 
 position:absolute;
 
-height:120%;
+width:7px;
 
-width:5px;
+height:7px;
 
-top:-10%;
+border-radius:50%;
 
-background:var(--primary);
+animation:explode 1.2s forwards;
 
 box-shadow:
 
-0 0 20px var(--primary),
+0 0 10px currentColor,
 
-0 0 60px var(--primary),
+0 0 30px currentColor,
 
-0 0 100px var(--secondary);
-
-animation:laserMove 3s infinite linear;
+0 0 60px currentColor;
 
 }
 
@@ -479,66 +483,41 @@ animation:laserMove 3s infinite linear;
 
 
 
-.laser:nth-child(1){
-
-left:20%;
-
-}
-
-
-
-.laser:nth-child(2){
-
-left:50%;
-
-animation-delay:1s;
-
-}
-
-
-
-.laser:nth-child(3){
-
-left:80%;
-
-}
-
-
-
-
-
-@keyframes laserMove{
+@keyframes explode{
 
 
 0%{
 
-transform:rotate(25deg) translateY(-100%);
+transform:translate(0,0) scale(1);
 
-}
-
-
-50%{
-
-transform:rotate(-25deg) translateY(0);
+opacity:1;
 
 }
 
 
 100%{
 
-transform:rotate(25deg) translateY(100%);
+transform:
+
+translate(var(--x),var(--y))
+
+scale(0);
+
+opacity:0;
 
 }
 
 
 }
+
+
+
+
+
 </style>
 
 </head>
-
-
 <body>
-
 
 
 <div class="mode-buttons">
@@ -559,7 +538,9 @@ transform:rotate(25deg) translateY(100%);
 <button id="hideBtn">🙈 Hide</button>
 
 
-<button id="showBtn" style="display:none">👁 Show</button>
+<button id="showBtn" style="display:none">
+👁 Show
+</button>
 
 
 </div>
@@ -577,10 +558,14 @@ transform:rotate(25deg) translateY(100%);
 <h2>✨ Neon Theme</h2>
 
 
-<button id="randomTheme">🎲 Random</button>
+<button id="randomTheme">
+🎲 Random
+</button>
 
 
-<button id="resetTheme">♻️ Default</button>
+<button id="resetTheme">
+♻️ Default
+</button>
 
 
 </div>
@@ -612,22 +597,11 @@ transform:rotate(25deg) translateY(100%);
 
 
 
-<!-- LASER ANIMATION -->
+<!-- DIWALI FIREWORKS -->
 
 
-<div id="laser-container">
+<div id="fireworks"></div>
 
-
-<div class="laser"></div>
-
-
-<div class="laser"></div>
-
-
-<div class="laser"></div>
-
-
-</div>
 
 
 
@@ -654,17 +628,17 @@ transform:rotate(25deg) translateY(100%);
 
 
 
-
 <div class="html">
 
 
 
-<h1>Part-1 (Only HTML)</h1>
+<h1>
+Part-1 (Only HTML)
+</h1>
 
 
 
 <nav>
-
 
 
 <a href="Mini Project-1.html" target="_blank">
@@ -672,11 +646,9 @@ Mini Project-1
 </a>
 
 
-
 <a href="Mini Project-2.html" target="_blank">
 Mini Project-2
 </a>
-
 
 
 <a href="Mini Project-3.html" target="_blank">
@@ -684,17 +656,14 @@ Mini Project-3
 </a>
 
 
-
 <a href="Mini Project-4.html" target="_blank">
 Mini Project-4
 </a>
 
 
-
 <a href="Mini Project-5.html" target="_blank">
 Mini Project-5
 </a>
-
 
 
 </nav>
@@ -704,8 +673,9 @@ Mini Project-5
 
 
 
-
-<h2>Part-2 (Only HTML)</h2>
+<h2>
+Part-2 (Only HTML)
+</h2>
 
 
 
@@ -714,11 +684,9 @@ Mini Project-5
 <nav>
 
 
-
 <a href="Mini Project-6.html" target="_blank">
 Mini Project-6
 </a>
-
 
 
 <a href="Mini Project-7.html" target="_blank">
@@ -726,11 +694,9 @@ Mini Project-7
 </a>
 
 
-
 <a href="Mini Project-8.html" target="_blank">
 Mini Project-8
 </a>
-
 
 
 <a href="Mini Project-9.html" target="_blank">
@@ -738,17 +704,12 @@ Mini Project-9
 </a>
 
 
-
 <a href="Mini Project-10.html" target="_blank">
 Mini Project-10
 </a>
 
 
-
 </nav>
-
-
-
 
 
 
@@ -768,7 +729,9 @@ Mini Project-10
 <img src="my_image.jpeg">
 
 
-<p>My Image</p>
+<p>
+My Image
+</p>
 
 
 <p>
@@ -798,8 +761,8 @@ HTML + CSS Projects(part-1)
 
 
 
-<nav>
 
+<nav>
 
 
 <a href="Mini project-1 in css.html" target="_blank">
@@ -807,11 +770,9 @@ CSS mini Project-1
 </a>
 
 
-
 <a href="Mini project-2 in css.html" target="_blank">
 CSS mini Project-2
 </a>
-
 
 
 <a href="Mini project-3 in css.html" target="_blank">
@@ -819,17 +780,14 @@ CSS mini Project-3
 </a>
 
 
-
 <a href="Mini project-4 in css .html" target="_blank">
 CSS mini Project-4
 </a>
 
 
-
 <a href="Mini project-5 in css.html" target="_blank">
 CSS mini Project-5
 </a>
-
 
 
 </nav>
@@ -855,11 +813,9 @@ HTML + CSS Projects(part-2)
 <nav>
 
 
-
 <a href="Mini project-6 in css.html" target="_blank">
 CSS mini Project-6
 </a>
-
 
 
 <a href="Mini project-7 in css.html" target="_blank">
@@ -867,11 +823,9 @@ CSS mini Project-7
 </a>
 
 
-
 <a href="Mini project-8 in css .html" target="_blank">
 CSS mini Project-8
 </a>
-
 
 
 <a href="Mini project-9 in css.html" target="_blank">
@@ -879,11 +833,9 @@ CSS mini Project-9
 </a>
 
 
-
 <a href="Mini project-10 in css .html" target="_blank">
 CSS mini Project-10
 </a>
-
 
 
 </nav>
@@ -909,11 +861,9 @@ HTML + CSS Projects(part-3)
 <nav>
 
 
-
 <a href="Mini project-11 in css.html" target="_blank">
 CSS mini Project-11
 </a>
-
 
 
 <a href="Mini project-12 in css .html" target="_blank">
@@ -921,17 +871,14 @@ CSS mini Project-12
 </a>
 
 
-
 <a href="Mini project-13 in css.html" target="_blank">
 CSS mini Project-13
 </a>
 
 
-
 <a href="Mini project-14 in css.html" target="_blank">
 CSS mini Project-14
 </a>
-
 
 
 <a href="Mini project-15 in css.html">
@@ -966,17 +913,20 @@ const resetTheme=document.getElementById("resetTheme");
 
 const pageContent=document.getElementById("pageContent");
 
-const laserContainer=document.getElementById("laser-container");
-
-const partyMusic=document.getElementById("partyMusic");
+const fireworks=document.getElementById("fireworks");
 
 const disco=document.getElementById("disco");
+
+const partyMusic=document.getElementById("partyMusic");
 
 const links=document.querySelectorAll("nav a");
 
 
 
 let playing=false;
+
+let fireworksRunning=true;
+
 
 
 
@@ -1022,7 +972,6 @@ const lightThemes=[
 
 
 
-
 function changeTheme(primary,secondary){
 
 
@@ -1060,7 +1009,7 @@ body.classList.remove("light");
 changeTheme("#00ffff","#ff00ff");
 
 
-cracker(innerWidth/2,innerHeight/2);
+diwaliCracker(innerWidth/2,innerHeight/2);
 
 
 };
@@ -1084,11 +1033,10 @@ body.classList.add("light");
 changeTheme("#008cff","#ff0099");
 
 
-cracker(innerWidth/2,innerHeight/2);
+diwaliCracker(innerWidth/2,innerHeight/2);
 
 
 };
-
 
 
 
@@ -1117,11 +1065,9 @@ darkThemes;
 
 
 
-
 let theme=
 
 themes[Math.floor(Math.random()*themes.length)];
-
 
 
 
@@ -1135,11 +1081,10 @@ theme[1]
 
 
 
-cracker(innerWidth/2,innerHeight/2);
+diwaliCracker(innerWidth/2,innerHeight/2);
 
 
 };
-
 
 
 
@@ -1210,35 +1155,30 @@ themePanel.style.display=="block"
 
 
 
-/* FINAL HIDE SHOW SYSTEM */
+/* HIDE SHOW */
 
 
 hideBtn.onclick=()=>{
 
 
-// hide all content
+// hide everything except navbar
 
 pageContent.style.display="none";
 
 
-// remove laser animation completely
+fireworks.style.display="none";
 
-laserContainer.style.display="none";
-
-
-// remove effects
 
 disco.style.display="none";
 
 
-// hide button
-
 hideBtn.style.display="none";
 
 
-// show button
-
 showBtn.style.display="block";
+
+
+fireworksRunning=false;
 
 
 };
@@ -1253,41 +1193,24 @@ showBtn.style.display="block";
 showBtn.onclick=()=>{
 
 
-// show content again
+// restore page
 
 pageContent.style.display="block";
 
 
-// bring laser back
+fireworks.style.display="block";
 
-laserContainer.style.display="block";
-
-
-// restart laser falling animation
-
-document.querySelectorAll(".laser").forEach(laser=>{
-
-
-laser.style.animation="none";
-
-
-laser.offsetHeight;
-
-
-laser.style.animation="laserMove 3s infinite linear";
-
-
-});
-
-
-
-
-// change buttons
 
 showBtn.style.display="none";
 
 
 hideBtn.style.display="block";
+
+
+fireworksRunning=true;
+
+
+diwaliCracker();
 
 
 };
@@ -1323,7 +1246,6 @@ musicBtn.innerHTML="⏸️ Pause Music";
 
 }
 
-
 catch(error){
 
 
@@ -1341,6 +1263,7 @@ musicBtn.innerHTML="▶️ Play Music";
 
 
 
+
 window.addEventListener("load",()=>{
 
 
@@ -1348,8 +1271,6 @@ startMusic();
 
 
 });
-
-
 
 
 
@@ -1399,81 +1320,117 @@ musicBtn.innerHTML="⏸️ Pause Music";
 
 
 
-/* CRACKER EFFECT */
+/* DIWALI CRACKER EFFECT */
 
 
-function cracker(x,y){
+function diwaliCracker(x,y){
 
 
-disco.style.display="block";
-
-
-
-for(let i=0;i<100;i++){
-
-
-let s=document.createElement("div");
-
-
-s.className="spark";
-
-
-s.style.left=x+"px";
-
-
-s.style.top=y+"px";
+if(!fireworksRunning) return;
 
 
 
-let a=Math.random()*Math.PI*2;
+if(!x){
+
+x=Math.random()*window.innerWidth;
+
+}
 
 
-let d=Math.random()*350;
+if(!y){
 
+y=Math.random()*(window.innerHeight/2);
 
-
-s.style.setProperty(
-"--x",
-Math.cos(a)*d+"px"
-);
-
-
-
-s.style.setProperty(
-"--y",
-Math.sin(a)*d+"px"
-);
+}
 
 
 
 
-s.style.background=
 
-[
+let colors=[
 
 "cyan",
 
-"magenta",
+"gold",
 
-"yellow",
+"orange",
+
+"red",
+
+"pink",
 
 "lime",
 
-"white"
+"white",
 
-][Math.floor(Math.random()*5)];
+"violet"
+
+];
 
 
 
 
-disco.appendChild(s);
+for(let i=0;i<80;i++){
+
+
+
+let spark=document.createElement("div");
+
+
+spark.className="spark";
+
+
+spark.style.left=x+"px";
+
+
+spark.style.top=y+"px";
+
+
+
+let angle=Math.random()*Math.PI*2;
+
+
+let distance=Math.random()*250;
+
+
+
+spark.style.setProperty(
+
+"--x",
+
+Math.cos(angle)*distance+"px"
+
+);
+
+
+
+spark.style.setProperty(
+
+"--y",
+
+Math.sin(angle)*distance+"px"
+
+);
+
+
+
+
+
+spark.style.color=
+
+colors[Math.floor(Math.random()*colors.length)];
+
+
+
+
+fireworks.appendChild(spark);
 
 
 
 setTimeout(()=>{
 
 
-s.remove();
+spark.remove();
 
 
 },1200);
@@ -1483,18 +1440,26 @@ s.remove();
 }
 
 
-
-setTimeout(()=>{
-
-
-disco.style.display="none";
-
-
-},1300);
-
-
-
 }
+
+
+
+
+
+
+
+
+
+/* AUTOMATIC DIWALI FIREWORKS */
+
+
+setInterval(()=>{
+
+
+diwaliCracker();
+
+
+},1500);
 
 
 
@@ -1516,8 +1481,7 @@ link.onclick=e=>{
 e.preventDefault();
 
 
-
-cracker(
+diwaliCracker(
 
 e.clientX,
 
@@ -1544,7 +1508,6 @@ link.href,
 
 
 };
-
 
 
 });
