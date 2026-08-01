@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Platform</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+    .header{
+      border:5px solid lightcoral;
+      color:rgb(27, 177, 177);
+      background-color:lightgoldenrodyellow;
+    }
+    .header button:hover{
+      color:lightgray;
+      background-color:lightgreen;
+      border-radius:125px;
+    }
+    .navbar button:active{
+      color:lightslategray;
+      background-color:lightsteelblue;
+      border-radius:130px;
+    }
+    .navbar{
+      position:sticky;
+      top:0;
+    }
+    .navbar nav{
+      margin:5px;
+      border:5px solid lightskyblue;
+      display:flex;
+      justify-content:space-between;
+      gap:50px;
+    }
+    .hero{
+      margin:5px;
+      border:5px solid lightslategray;
+      color:lightslategrey;
+      background-color:lightsteelblue;
+    }
+    .banner{
+      width:300px;
+      height:300px;
+    }
+    .hero button:focus{
+      color:lightyellow;
+      background-color:lime;
+      border-radius:135px;
+    }
+    .courses{
+      margin:5px;
+      border:5px solid limegreen;
+      display:grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(2, auto);   
+  gap:20px;
+    }
+    .programming{
+      border:5px medium maroon;
+     color:linen;
+      background-color:magenta;
+    }
+    .web-development{
+      border:5px solid mediumaquamarine;
+      color:mediumblue;
+      background-color:mediumorchid;
+    }
+    .data-science{
+      border:5px solid mediumpurple;
+      color:rgb(10, 98, 49);
+      background-color:mediumslateblue;
+    }
+    .ai-and-ml{
+      border:5px solid mediumspringgreen;
+      color:mediumturquoise;
+      background-color:mediumvioletred;
+    }
+    .business{
+      border:5px solid midnightblue;
+      color:mintcream;
+      background-color:rgb(123, 33, 23);
+    }
+    .design{
+      border:5px solid mistyrose;
+      color:moccasin;
+      background-color:rgb(145, 94, 18);
+    }
+    .featured-courses{
+      margin:5px;
+      border:5px solid navy;
+      color:oldlace;
+      background-color:orange;
+      display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, auto);   /* 2 rows */
+  gap: 20px;
+    }
+    .python-programming{
+      border:5px solid orangered;
+      color:orchid;
+      background-color:palegoldenrod;
+    }
+    .featured-courses button:focus{
+      color:palegreen;
+      background-color:paleturquoise;
+      border-radius:140px;
+    }
+    .python-programming-image{
+      width:300px;
+      height:300px;
+    }
+    .full-stack-development-image{
+      width:300px;
+      height:300px;
+    }
+    .full-stack-development{
+      border:5px solid palevioletred;
+      color:papayawhip;
+      background-color:peachpuff;
+    }
+    .java-development{
+      border:5px solid peru;
+      color:pink;
+      background-color:plum;
+    }
+    .java-development-image{
+      width:300px;
+      height:300px;
+    }
+    .data-science{
+      border:5px solid powderblue;
+      color:purple;
+      background-color:rebeccapurple;
+    }
+    .data-science-image{
+      width:300px;
+      height:300px;
+    }
+    .ui-are-ux-design{
+      border:5px solid red;
+      color:rgb(10, 98, 49);
+      background-color:rgb(123, 33, 23);
+    }
+    .ui-are-ux-design-image{
+      width:300px;
+      height:300px;
+    }
+    .cloud-computing{
+      border:5px solid rgb(145, 94, 18);
+      color:rgb(27, 177, 177);
+      background-color:rosybrown;
+    }
+    .cloud-computing-image{
+      width:300px;
+      height:300px;
+    }
+    .instructors{
+      margin:5px;
+      border:5px solid royalblue;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .instructors button:active{
+      color:seagreen;
+      background-color:seashell;
+      border-radius:145px;
+    }
+    .instructor-1{
+      border:5px solid sandybrown;
+      color:saddlebrown;
+      background-color:salmon;
+    }
+    .instructor-1-image{
+      width:300px;
+      height:300px;
+    }
+    .instructor-2{
+      border:5px solid sandybrown;
+      color:seagreen;
+      background-color:seashell;
+    }
+    .instructor-2-image{
+      width:300px;
+      height:300px;
+    }
+    .instructor-3{
+      border:5px solid sienna;
+      color:silver;
+      background-color:skyblue;
+    }
+    .instructor-3-image{
+      width:300px;
+      height:300px;
+    }
+    .reviews{
+      margin:5px;
+      border:5px solid slateblue;
+      color:slategray;
+      background-color:snow;
+      padding:5px;
+       display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: auto;        
+    gap: 20px;
+    padding: 20px;
+    }
+    .review-1{
+      border:5px solid slategrey;
+      color:springgreen;
+      background-color:steelblue;
+      text-align:center;
+    }
+    .review-1-image{
+      width:300px;
+      height:300px;
+    }
+    .review-2{
+      border:5px solid tan;
+      color:teal;
+      background-color:thistle;
+      text-align:center;
+    }
+    .review-2-image{
+      width:300px;
+      height:300px;
+    }
+    .review-3{
+      border:5px solid tomato;
+      color:turquoise;
+      background-color:violet;
+      text-align:center
+    }
+    .review-3-image{
+      width:300px;
+      height:300px;
+    }
+    .learning-statistics{
+      margin:5px;
+      border:5px solid wheat;
+      color:white;
+      background-color:black;
+      display:flex;
+      justify-content:space-between;
+      gap:5px;
+    }
+    .newsletter button:hover{
+      color:red;
+      background-color:black;
+      border-radius:150px;
+    }
+    .end-of-the-page a{
+      position:sticky;
+      top:0;
+    }
+    .end-of-the-page button:hover{
+      color:white;
+      background-color:black;
+      border-radius:155px;
+    }
+    .end-of-the-page{
+      margin:5px solid whitesmoke;
+      color:honeydew;
+      background-color:hotpink;
+      text-align:center;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="header" id="home">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0wfIy6L4hG6HAzE_qc_AcOLMBQ_xImmrCNz3E98uG2Q&s"
+        alt="dhee coding labs logo" class="logo">
+      <h1>Dhee Coding Labs</h1>
+      <button>Login</button>
+      <button>Register</button>
+    </div>
+    <div class="navbar">
+      <nav>
+        <a href="#home"><button><i
+              class="fa-solid fa-house-chimney"></i>Home</button></a>
+        <a href="#courses"><button><i
+              class="fa-solid fa-graduation-cap"></i>Courses</button></a>
+        <a href="#categories"><button><i
+              class="fa-solid fa-layer-group"></i>Categories</button></a>
+        <a href="#instructors"><button><i
+              class="fa-solid fa-person-chalkboard"></i>Instructors</button></a>
+        <a href="#contact"><button><i
+              class="fa-solid fa-phone"></i>Contact</button></a>
+      </nav>
+    </div>
+    <div class="hero">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvzI4nqOkrX7App7f4W_1S4ExuMEN1dTp9MeAF4X-Lkw&s=10"
+        alt="banner" class="banner">
+      <h2>Learn to Code. Build Your Future.</h2>
+      <p>Master programming with hands-on projects, expert mentorship, and
+        industry-ready courses in Python, Java, Web Development, AI, Data
+        Science, and more. Start your coding journey today with Dhee Coding
+        Labs.</p>
+      <button>Start Learning</button>
+    </div>
+    <div class="courses" id="categories">
+      <div class="programming">
+        <p>Build a strong foundation in coding with Python, Java, C, C++,
+          JavaScript, and more. Learn core programming concepts through hands-on
+          projects and real-world applications.</p>
+      </div>
+      <div class="web-development">
+        <p>Create modern, responsive, and dynamic websites using HTML, CSS,
+          JavaScript, React, Node.js, and popular frameworks. Gain practical
+          experience by building full-stack web applications.</p>
+      </div>
+      <div class="data-science">
+        <p>Turn data into actionable insights with Python, SQL, statistics, data
+          visualization, and machine learning fundamentals. Work on real
+          datasets and industry-focused projects.</p>
+      </div>
+      <div class="ai-and-ml">
+        <p>Explore Artificial Intelligence and Machine Learning by learning
+          neural networks, deep learning, computer vision, NLP, and generative
+          AI. Build intelligent applications with modern AI tools and
+          frameworks.</p>
+      </div>
+      <div class="business">
+        <p>Develop essential business and professional skills, including
+          entrepreneurship, digital marketing, project management, business
+          analytics, communication, and leadership to excel in today's
+          competitive world.</p>
+      </div>
+      <div class="design">
+        <p>Master UI/UX design, graphic design, branding, and prototyping using
+          industry-standard tools like Figma and Adobe Creative Suite. Create
+          intuitive and visually engaging digital experiences.</p>
+      </div>
+    </div>
+    <div class="featured-courses" id="courses">
+      <div class="python-programming">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Fs8hwpkwY98fYDSx0KrPrIbdvnq0AdjPPMlnkfaUow&s=10"
+          alt="python" class="python-programming-image">
+        <h3>Python Programming Masterclass</h3>
+        <b>Rahul Kumar</b><br />
+        <i>8 Weeks</i><br />
+        <strong>₹4,999</strong><br />
+        <button>Enroll Now</button>
+      </div>
+      <div class="full-stack-development">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbsLty2AIFrfUhrRFSZsdh4QPt5w6n6bTycltmxbxfHQ&s=10"
+          alt="mern stack" class="full-stack-development-image">
+        <h3>MERN Stack Development</h3>
+        <b>Priya Sharma</b><br />
+        <i>12 Weeks</i><br />
+        <strong>₹9,999</strong><br />
+        <button>Enroll Now</button>
+      </div>
+      <div class="java-development">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7G7AUrXHEyDlAdpP6ChZTff-IqdYWtBCIHs4u0Dawuw&s=10"
+          alt="java development" class="java-development-image">
+        <h3>Java Full Stack Bootcamp</h3>
+        <b>Anil Reddy</b><br />
+        <i>10 Weeks</i><br />
+        <strong>₹7,999</strong><br />
+        <button>Enroll Now</button>
+      </div>
+      <div class="data-science">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiOFd_Nra13oRhOW2_-gv1S25gBtRqqCSgsDy_PZg89w&s=10"
+          alt="data science" class="data-science-image">
+        <h3>Data Science with Python</h3>
+        <b>Sneha Patel</b><br />
+        <i>14 Weeks</i><br />
+        <strong>₹11,999</strong><br />
+        <button>Enroll Now</button>
+      </div>
+      <div class="ui-are-ux-design">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAXiiyjBzErBbu3T4D5nvZlQQ8RfxsWbDANGHGlNMzpg&s=10"
+          alt="UI/UX" class="ui-are-ux-design-image">
+        <h3>UI/UX Design Fundamentals</h3>
+        <b>Kavya Singh</b><br />
+        <i>6 Weeks</i><br />
+        <strong>₹5,499</strong><br />
+        <button>Enroll Now</button>
+      </div>
+      <div class="cloud-computing">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScTPDaOjohxEHvGRIsH97stu3FycFQFbiAc29A5D-k0A&s=10"
+          alt="cloud computing" class="cloud-computing-image">
+        <h3>AWS Cloud Practitioner</h3>
+        <b>Arjun Verma</b><br />
+        <i>8 Weeks</i><br />
+        <strong>₹8,499</strong><br />
+        <button>Enroll Now</button>
+      </div>
+    </div>
+    <div class="instructors" id="instructors">
+      <div class="instructor-1">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT47mG26bzsxyl16ZBA7EB_XnrcUcPfampuODuFjIsmKA&s=10"
+          alt="Java Instructor" class="instructor-1-image">
+        <h4>Sai Charan Mishra</h4>
+        <big>8+ years of experience</big><br />
+        <small>Java Full Stack Developer</small><br />
+        <button>View Profile</button>
+      </div>
+      <div class="instructor-2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQpr-hzV_SJLPsMPAUPKE4ug6melFaYMGgB93NAn_pgg&s=10"
+          alt="Python Instructor" class="instructor-2-image">
+        <h4>Pavan Prakash</h4>
+        <big>5+ years of experience</big><br />
+        <small>Python Full Stack Developer</small><br />
+        <button>View Profile</button>
+      </div>
+      <div class="instructor-3">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Nhny_GPFBD6SInI9HgCFdpswjXmLKQK9CvVHW8E-TA&s=10"
+          alt="mern instructor" class="instructor-3-image">
+        <h4>Ravi Shastry</h4>
+        <big>6+ years of experience</big><br />
+        <small>Mern Stack Developer</small><br />
+        <button>View Profile</button>
+      </div>
+    </div>
+    <div class="reviews">
+      <div class="review-1">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7MUStaMbIu9iVbHNulmyNugQUQYM863XBFIppbC6WGw&s=10"
+          alt="review-1" class="review-1-image">
+        <h5>Arjun R</h5>
+        <pre>(5/5)</pre><br />
+        <p>The Python course was well structured, with practical projects that
+          helped me build confidence. The mentors explained concepts clearly and
+          were always available to answer questions</p>
+      </div>
+      <div class="review-2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0McTRfwmnMDqk8rXo8xUxkv6H7FIoICJSTeo0MW3lRw&s=10"
+          alt="review-2" class="review-2-image">
+        <h5>Priya S</h5>
+        <pre>(5/5)</pre><br />
+        <p>The MERN Stack training covered everything from basics to deployment.
+          The hands-on assignments and mock interviews helped me prepare for job
+          opportunities</p>
+      </div>
+      <div class="review-3">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8mbIavm1kNS8jISZr9hdDk5-80oO248GQIcOb53n0lw&s=10"
+          alt="review-3" class="review-3-image">
+        <h5>Rahul K</h5>
+        <pre>(4.8/5)</pre><br />
+        <p>I joined the Java Full Stack program and found the classes engaging
+          and industry-focused. The real-world projects and placement guidance
+          added a lot of value</p>
+      </div>
+    </div>
+    <div class="learning-statistics">
+      <b>Total Students:1,25,000+ Students Trained</b>
+      <i>Total Courses:4 Industry-Focused Courses(Java Full Stack with Cloud &
+        DevOps, Python with Data Science, Python Full Stack with GenAI, MERN
+        Full Stack with Cloud & DevOps)</i>
+      <u>Total Instructors:80+Expert Mentors</u>
+      <strong>Certificates Issued:Not publicly disclosed</strong>
+    </div>
+    <div class="newsletter">
+      <h6>Subscribe for Latest Updates</h6>
+      <form>
+        <input type="email" placeholder="enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <footer class="end-of-the-page" id="contact">
+      <p>
+        Dhee Coding Labs (DCL) is a leading software training institute
+        dedicated to helping aspiring developers build successful IT careers
+        through industry-focused programs. With expert mentors, hands-on
+        projects, placement assistance, and a practical learning approach, DCL
+        has trained 1,25,000+ students across its branches in technologies such
+        as Python, Java Full Stack, MERN Stack, Cloud Computing, and Data
+        Science.
+      </p>
+      Instagram Link:<a
+        href="https://www.instagram.com/dhee_coding_lab/"><button><i
+            class="fa-brands fa-square-instagram"
+            target="_blank"></i>Instagram</button></a><br />
+      Facebook Link:<a
+        href="https://www.facebook.com/profile.php?id=61576457741164"><button><i
+            class="fa-brands fa-facebook"
+            target="_blank"></i>Facebook</button></a><br />
+      Youtube Link: <a href="https://www.youtube.com/@DheeCodingLab"
+        targrt="_blank"><button><i
+            class="fa-brands fa-youtube"></i>Youtube</button></a><br />
+      Linkedin Link: <a
+        href="https://www.linkedin.com/company/dclgrow/posts/?feedView=all"
+        target="_blank"><button><i
+            class="fa-brands fa-linkedin"></i>Linkedin</button></a><br />
+      Email:info@dheecodinglab.com<br />
+      Working Hours: Monday – Saturday, 9:00 AM – 7:00 PM (Sunday Closed)<br />
+      <address>
+        No. 456, 1st Floor, 7th Main, 7th Cross Road, Above HDFC Bank, BTM 2nd
+        Stage, Bengaluru, Karnataka 560076
+        +91 89040 80070<br />
+        Global Online:+91 90710 10011<br />
+        <a href="https://dheecodinglab.com/?utm_source=chatgpt.com"
+          target="_blank"><button><i class="fa-solid fa-laptop-code"></i>Dhee
+            Coding Labs</button></a><br />
+      </address>
+      <hr>
+      <p>
+        &copy; 2026 R. Megha Shyam. All Rights Reserved.
+      </p>
+      <p>
+        This webpage was independently designed and developed by <strong>R.
+          Megha Shyam</strong>.
+        Unauthorized copying, reproduction, modification, or distribution of
+        this source code,
+        design, or content without prior written permission is prohibited.
+      </p>
+    </footer>
+  </body>
+</html>
