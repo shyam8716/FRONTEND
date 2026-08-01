@@ -27,11 +27,15 @@ box-sizing:border-box;
 }
 
 
+
 body{
 
 font-family:"Segoe UI",Arial,sans-serif;
+
 min-height:100vh;
+
 overflow-x:hidden;
+
 color:var(--text);
 
 background:radial-gradient(circle,#160033,#000);
@@ -49,6 +53,7 @@ animation:pageLoad 1.2s;
 from{
 
 opacity:0;
+
 transform:scale(.95);
 
 }
@@ -56,6 +61,7 @@ transform:scale(.95);
 to{
 
 opacity:1;
+
 transform:scale(1);
 
 }
@@ -67,7 +73,9 @@ transform:scale(1);
 body.light{
 
 --primary:#008cff;
+
 --secondary:#ff0099;
+
 --text:#111;
 
 background:linear-gradient(135deg,#fff,#aaffff);
@@ -80,7 +88,18 @@ body.light .mode-buttons button,
 body.light #themePanel button{
 
 background:white;
+
 color:#111;
+
+}
+
+
+
+/* STOP FALLING LASER WHEN HIDDEN */
+
+body.animation-stop .laser{
+
+animation-play-state:paused;
 
 }
 
@@ -125,7 +144,9 @@ backdrop-filter:blur(20px);
 border:2px solid var(--primary);
 
 box-shadow:
+
 0 0 25px var(--primary),
+
 0 0 60px var(--secondary);
 
 }
@@ -167,6 +188,7 @@ transform:scale(1.1);
 
 
 
+
 /* THEME PANEL */
 
 
@@ -197,7 +219,9 @@ background:rgba(0,0,0,.8);
 border:2px solid cyan;
 
 box-shadow:
+
 0 0 30px cyan,
+
 0 0 80px magenta;
 
 }
@@ -221,6 +245,7 @@ color:white;
 border:2px solid cyan;
 
 }
+
 
 
 
@@ -258,6 +283,7 @@ border:2px solid var(--primary);
 box-shadow:
 
 0 0 25px var(--primary),
+
 0 0 70px var(--secondary);
 
 animation:floating 5s infinite alternate;
@@ -296,6 +322,7 @@ transform:scale(1.03);
 
 
 
+
 /* NAV LINKS */
 
 
@@ -316,9 +343,13 @@ font-weight:bold;
 color:white;
 
 background:linear-gradient(
+
 45deg,
+
 var(--primary),
+
 var(--secondary)
+
 );
 
 box-shadow:0 0 20px var(--primary);
@@ -336,9 +367,11 @@ transform:translateY(-6px) scale(1.08);
 box-shadow:
 
 0 0 50px var(--primary),
+
 0 0 100px var(--secondary);
 
 }
+
 
 
 
@@ -361,6 +394,7 @@ border:4px solid var(--primary);
 box-shadow:
 
 0 0 30px var(--primary),
+
 0 0 70px var(--secondary);
 
 transition:.5s;
@@ -374,6 +408,8 @@ transition:.5s;
 transform:rotate(8deg) scale(1.1);
 
 }
+
+
 
 
 
@@ -411,7 +447,9 @@ background:var(--primary);
 box-shadow:
 
 0 0 20px var(--primary),
+
 0 0 60px var(--primary),
+
 0 0 100px var(--secondary);
 
 animation:laserMove 3s infinite linear;
@@ -427,6 +465,7 @@ left:20%;
 }
 
 
+
 .laser:nth-child(2){
 
 left:50%;
@@ -434,6 +473,7 @@ left:50%;
 animation-delay:1s;
 
 }
+
 
 
 .laser:nth-child(3){
@@ -466,7 +506,9 @@ transform:rotate(25deg) translateY(100%);
 
 }
 </style>
+
 </head>
+
 <body>
 
 
@@ -488,6 +530,8 @@ transform:rotate(25deg) translateY(100%);
 
 
 
+
+
 <div id="themePanel">
 
 <h2>✨ Neon Theme</h2>
@@ -500,6 +544,9 @@ transform:rotate(25deg) translateY(100%);
 
 
 
+
+
+
 <!-- ONLY GANGLEADER MUSIC -->
 
 <audio id="partyMusic" loop autoplay>
@@ -507,6 +554,9 @@ transform:rotate(25deg) translateY(100%);
 <source src="gangleader.mp3" type="audio/mpeg">
 
 </audio>
+
+
+
 
 
 
@@ -523,7 +573,12 @@ transform:rotate(25deg) translateY(100%);
 
 
 
+
+
 <div id="disco"></div>
+
+
+
 
 
 
@@ -531,35 +586,49 @@ transform:rotate(25deg) translateY(100%);
 <div id="pageContent">
 
 
+
+
+
 <div class="html">
+
 
 
 <h1>Part-1 (Only HTML)</h1>
 
 
+
 <nav>
+
 
 <a href="Mini Project-1.html" target="_blank">
 Mini Project-1
 </a>
 
+
 <a href="Mini Project-2.html" target="_blank">
 Mini Project-2
 </a>
+
 
 <a href="Mini Project-3.html" target="_blank">
 Mini Project-3
 </a>
 
+
 <a href="Mini Project-4.html" target="_blank">
 Mini Project-4
 </a>
+
 
 <a href="Mini Project-5.html" target="_blank">
 Mini Project-5
 </a>
 
+
 </nav>
+
+
+
 
 
 
@@ -567,33 +636,45 @@ Mini Project-5
 
 
 
+
 <nav>
+
 
 <a href="Mini Project-6.html" target="_blank">
 Mini Project-6
 </a>
 
+
 <a href="Mini Project-7.html" target="_blank">
 Mini Project-7
 </a>
+
 
 <a href="Mini Project-8.html" target="_blank">
 Mini Project-8
 </a>
 
+
 <a href="Mini Project-9.html" target="_blank">
 Mini Project-9
 </a>
+
 
 <a href="Mini Project-10.html" target="_blank">
 Mini Project-10
 </a>
 
+
 </nav>
 
 
 
+
+
 </div>
+
+
+
 
 
 
@@ -602,15 +683,19 @@ Mini Project-10
 <div class="my-image">
 
 
+
 <img src="my_image.jpeg">
+
 
 
 <p>My Image</p>
 
 
+
 <p>
 Not a project. Used for image and audio testing.
 </p>
+
 
 
 </div>
@@ -619,7 +704,12 @@ Not a project. Used for image and audio testing.
 
 
 
+
+
+
+
 <div class="css">
+
 
 
 <h3>
@@ -628,29 +718,41 @@ HTML + CSS Projects(part-1)
 
 
 
+
+
+
 <nav>
+
 
 <a href="Mini project-1 in css.html" target="_blank">
 CSS mini Project-1
 </a>
 
+
 <a href="Mini project-2 in css.html" target="_blank">
 CSS mini Project-2
 </a>
+
 
 <a href="Mini project-3 in css.html" target="_blank">
 CSS mini Project-3
 </a>
 
+
 <a href="Mini project-4 in css .html" target="_blank">
 CSS mini Project-4
 </a>
+
 
 <a href="Mini project-5 in css.html" target="_blank">
 CSS mini Project-5
 </a>
 
+
 </nav>
+
+
+
 
 
 
@@ -662,29 +764,41 @@ HTML + CSS Projects(part-2)
 
 
 
+
+
+
 <nav>
+
 
 <a href="Mini project-6 in css.html" target="_blank">
 CSS mini Project-6
 </a>
 
+
 <a href="Mini project-7 in css.html" target="_blank">
 CSS mini Project-7
 </a>
+
 
 <a href="Mini project-8 in css .html" target="_blank">
 CSS miini Project-8
 </a>
 
+
 <a href="Mini project-9 in css.html" target="_blank">
 CSS mini Project-9
 </a>
+
 
 <a href="Mini project-10 in css .html" target="_blank">
 CSS mini Project-10
 </a>
 
+
 </nav>
+
+
+
 
 
 
@@ -697,43 +811,60 @@ HTML + CSS Projects(part-3)
 
 
 
+
+
+
 <nav>
+
 
 <a href="Mini project-11 in css.html" target="_blank">
 CSS mini Project-11
 </a>
 
+
 <a href="Mini project-12 in css .html" target="_blank">
 CSS mini Project-12
 </a>
-<a href="Mini project-13 in css.html"target="_blank">CSS mini project-13</a>
-<a href="Mini project-14 in css.html"target="_blank">CSS mini project-14</a>
-<a href="Mini project-15 in css.html">CSS mini project-15</a>
+
+
+<a href="Mini project-13 in css.html" target="_blank">
+CSS mini project-13
+</a>
+
+
+<a href="Mini project-14 in css.html" target="_blank">
+CSS mini project-14
+</a>
+
+
+<a href="Mini project-15 in css.html">
+CSS mini project-15
+</a>
 </nav>
-
-
-
 </div>
-
-
-
 </div>
 <script>
 
+
 const body=document.body;
 
+
 const darkBtn=document.getElementById("darkBtn");
+
 const lightBtn=document.getElementById("lightBtn");
 
 const musicBtn=document.getElementById("musicBtn");
+
 const themeBtn=document.getElementById("themeBtn");
 
 const hideBtn=document.getElementById("hideBtn");
+
 const showBtn=document.getElementById("showBtn");
 
 const themePanel=document.getElementById("themePanel");
 
 const randomTheme=document.getElementById("randomTheme");
+
 const resetTheme=document.getElementById("resetTheme");
 
 const pageContent=document.getElementById("pageContent");
@@ -745,36 +876,55 @@ const disco=document.getElementById("disco");
 const links=document.querySelectorAll("nav a");
 
 
+
 let playing=false;
+
+
 
 
 
 /* THEMES */
 
+
 const darkThemes=[
 
 ["#00ffff","#ff00ff"],
+
 ["#00ff00","#39ff14"],
+
 ["#ff0000","#ff6600"],
+
 ["#8000ff","#00ffff"],
+
 ["#ffff00","#ff0088"]
 
 ];
 
 
+
+
 const lightThemes=[
 
 ["#0066ff","#00ffff"],
+
 ["#ff0099","#ff66cc"],
+
 ["#00aa88","#00ffcc"],
+
 ["#6600ff","#cc99ff"],
+
 ["#ff8800","#ffcc00"]
 
 ];
 
 
 
+
+
+
+
 function changeTheme(primary,secondary){
+
 
 document.documentElement.style.setProperty(
 "--primary",
@@ -782,12 +932,18 @@ primary
 );
 
 
+
 document.documentElement.style.setProperty(
 "--secondary",
 secondary
 );
 
+
 }
+
+
+
+
 
 
 
@@ -797,13 +953,20 @@ secondary
 
 darkBtn.onclick=()=>{
 
+
 body.classList.remove("light");
+
 
 changeTheme("#00ffff","#ff00ff");
 
+
 cracker(innerWidth/2,innerHeight/2);
 
+
 };
+
+
+
 
 
 
@@ -814,13 +977,20 @@ cracker(innerWidth/2,innerHeight/2);
 
 lightBtn.onclick=()=>{
 
+
 body.classList.add("light");
+
 
 changeTheme("#008cff","#ff0099");
 
+
 cracker(innerWidth/2,innerHeight/2);
 
+
 };
+
+
+
 
 
 
@@ -834,16 +1004,24 @@ randomTheme.onclick=()=>{
 
 
 let themes=
+
 body.classList.contains("light")
+
 ?
+
 lightThemes
+
 :
+
 darkThemes;
 
 
 
+
 let theme=
+
 themes[Math.floor(Math.random()*themes.length)];
+
 
 
 
@@ -866,6 +1044,10 @@ innerHeight/2
 
 
 
+
+
+
+
 /* RESET */
 
 
@@ -874,18 +1056,26 @@ resetTheme.onclick=()=>{
 
 if(body.classList.contains("light")){
 
+
 changeTheme("#008cff","#ff0099");
+
 
 }
 
 else{
 
+
 changeTheme("#00ffff","#ff00ff");
+
 
 }
 
 
 };
+
+
+
+
 
 
 
@@ -901,9 +1091,13 @@ themeBtn.onclick=()=>{
 themePanel.style.display=
 
 themePanel.style.display=="block"
+
 ?
+
 "none"
+
 :
+
 "block";
 
 
@@ -914,30 +1108,59 @@ themePanel.style.display=="block"
 
 
 
-/* HIDE SHOW */
+
+
+
+
+/* HIDE SHOW UPDATED */
 
 
 hideBtn.onclick=()=>{
 
+
 pageContent.style.display="none";
+
+
+// STOP LASER FALLING
+
+body.classList.add("animation-stop");
+
+
 
 hideBtn.style.display="none";
 
+
 showBtn.style.display="block";
 
+
 };
+
+
+
+
 
 
 
 showBtn.onclick=()=>{
 
+
 pageContent.style.display="block";
+
+
+// START LASER FALLING AGAIN
+
+body.classList.remove("animation-stop");
+
+
 
 showBtn.style.display="none";
 
+
 hideBtn.style.display="block";
 
+
 };
+
 
 
 
@@ -948,8 +1171,6 @@ hideBtn.style.display="block";
 
 /* MUSIC SYSTEM */
 
-
-/* automatically play gangleader.mp3 */
 
 async function startMusic(){
 
@@ -971,6 +1192,7 @@ musicBtn.innerHTML="⏸️ Pause Music";
 
 }
 
+
 catch(error){
 
 
@@ -990,11 +1212,17 @@ musicBtn.innerHTML="▶️ Play Music";
 
 
 
+
 window.addEventListener("load",()=>{
+
 
 startMusic();
 
+
 });
+
+
+
 
 
 
@@ -1044,6 +1272,8 @@ musicBtn.innerHTML="⏸️ Pause Music";
 
 
 
+
+
 /* CRACKER EFFECT */
 
 
@@ -1064,6 +1294,7 @@ s.className="spark";
 
 
 s.style.left=x+"px";
+
 
 s.style.top=y+"px";
 
@@ -1090,16 +1321,25 @@ Math.sin(a)*d+"px"
 
 
 
+
 s.style.background=
 
+
 [
+
 "cyan",
+
 "magenta",
+
 "yellow",
+
 "lime",
+
 "white"
 
+
 ][Math.floor(Math.random()*5)];
+
 
 
 
@@ -1109,7 +1349,9 @@ disco.appendChild(s);
 
 setTimeout(()=>{
 
+
 s.remove();
+
 
 },1200);
 
@@ -1121,13 +1363,17 @@ s.remove();
 
 setTimeout(()=>{
 
+
 disco.style.display="none";
+
 
 },1300);
 
 
 
 }
+
+
 
 
 
@@ -1149,9 +1395,13 @@ e.preventDefault();
 
 
 cracker(
+
 e.clientX,
+
 e.clientY
+
 );
+
 
 
 
@@ -1159,8 +1409,11 @@ setTimeout(()=>{
 
 
 window.open(
+
 link.href,
+
 "_blank"
+
 );
 
 
@@ -1174,4 +1427,7 @@ link.href,
 
 
 });
+
+
+
 </script>
