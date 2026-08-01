@@ -70,6 +70,7 @@ transform:scale(1);
 
 
 
+
 body.light{
 
 --primary:#008cff;
@@ -95,7 +96,7 @@ color:#111;
 
 
 
-/* STOP FALLING LASER WHEN HIDDEN */
+/* STOP ANIMATION CLASS */
 
 body.animation-stop .laser{
 
@@ -106,7 +107,9 @@ animation-play-state:paused;
 
 
 
-/* TOP BUTTON PANEL */
+
+
+/* TOP NAV BUTTON PANEL */
 
 
 .mode-buttons{
@@ -153,6 +156,7 @@ box-shadow:
 
 
 
+
 .mode-buttons button{
 
 padding:10px 18px;
@@ -179,11 +183,13 @@ transition:.3s;
 
 
 
+
 .mode-buttons button:hover{
 
 transform:scale(1.1);
 
 }
+
 
 
 
@@ -228,6 +234,7 @@ box-shadow:
 
 
 
+
 #themePanel button{
 
 margin:8px;
@@ -250,6 +257,7 @@ border:2px solid cyan;
 
 
 
+
 /* PAGE CONTENT */
 
 
@@ -260,6 +268,7 @@ padding-top:130px;
 transition:1s;
 
 }
+
 
 
 
@@ -292,6 +301,7 @@ animation:floating 5s infinite alternate;
 
 
 
+
 @keyframes floating{
 
 from{
@@ -311,6 +321,7 @@ transform:translateY(-10px);
 
 
 
+
 .html:hover,
 .css:hover,
 .my-image:hover{
@@ -318,6 +329,7 @@ transform:translateY(-10px);
 transform:scale(1.03);
 
 }
+
 
 
 
@@ -360,6 +372,8 @@ transition:.3s;
 
 
 
+
+
 nav a:hover{
 
 transform:translateY(-6px) scale(1.08);
@@ -371,6 +385,7 @@ box-shadow:
 0 0 100px var(--secondary);
 
 }
+
 
 
 
@@ -403,11 +418,13 @@ transition:.5s;
 
 
 
+
 .my-image img:hover{
 
 transform:rotate(8deg) scale(1.1);
 
 }
+
 
 
 
@@ -429,6 +446,8 @@ z-index:500;
 overflow:hidden;
 
 }
+
+
 
 
 
@@ -458,6 +477,8 @@ animation:laserMove 3s infinite linear;
 
 
 
+
+
 .laser:nth-child(1){
 
 left:20%;
@@ -484,7 +505,10 @@ left:80%;
 
 
 
+
+
 @keyframes laserMove{
+
 
 0%{
 
@@ -492,11 +516,13 @@ transform:rotate(25deg) translateY(-100%);
 
 }
 
+
 50%{
 
 transform:rotate(-25deg) translateY(0);
 
 }
+
 
 100%{
 
@@ -504,29 +530,42 @@ transform:rotate(25deg) translateY(100%);
 
 }
 
+
 }
 </style>
 
 </head>
 
+
 <body>
+
 
 
 <div class="mode-buttons">
 
+
 <button id="darkBtn">🌑 Dark</button>
+
 
 <button id="lightBtn">☀️ Light</button>
 
+
 <button id="musicBtn">🎵 Music</button>
+
 
 <button id="themeBtn">🎨 Theme</button>
 
+
 <button id="hideBtn">🙈 Hide</button>
+
 
 <button id="showBtn" style="display:none">👁 Show</button>
 
+
 </div>
+
+
+
 
 
 
@@ -534,11 +573,15 @@ transform:rotate(25deg) translateY(100%);
 
 <div id="themePanel">
 
+
 <h2>✨ Neon Theme</h2>
+
 
 <button id="randomTheme">🎲 Random</button>
 
+
 <button id="resetTheme">♻️ Default</button>
+
 
 </div>
 
@@ -547,11 +590,17 @@ transform:rotate(25deg) translateY(100%);
 
 
 
-<!-- ONLY GANGLEADER MUSIC -->
+
+
+
+<!-- MUSIC -->
+
 
 <audio id="partyMusic" loop autoplay>
 
+
 <source src="gangleader.mp3" type="audio/mpeg">
+
 
 </audio>
 
@@ -561,15 +610,27 @@ transform:rotate(25deg) translateY(100%);
 
 
 
+
+
+<!-- LASER ANIMATION -->
+
+
 <div id="laser-container">
 
-<div class="laser"></div>
 
 <div class="laser"></div>
 
+
 <div class="laser"></div>
+
+
+<div class="laser"></div>
+
 
 </div>
+
+
+
 
 
 
@@ -583,7 +644,12 @@ transform:rotate(25deg) translateY(100%);
 
 
 
+
+
 <div id="pageContent">
+
+
+
 
 
 
@@ -600,9 +666,11 @@ transform:rotate(25deg) translateY(100%);
 <nav>
 
 
+
 <a href="Mini Project-1.html" target="_blank">
 Mini Project-1
 </a>
+
 
 
 <a href="Mini Project-2.html" target="_blank">
@@ -610,9 +678,11 @@ Mini Project-2
 </a>
 
 
+
 <a href="Mini Project-3.html" target="_blank">
 Mini Project-3
 </a>
+
 
 
 <a href="Mini Project-4.html" target="_blank">
@@ -620,12 +690,15 @@ Mini Project-4
 </a>
 
 
+
 <a href="Mini Project-5.html" target="_blank">
 Mini Project-5
 </a>
 
 
+
 </nav>
+
 
 
 
@@ -637,7 +710,9 @@ Mini Project-5
 
 
 
+
 <nav>
+
 
 
 <a href="Mini Project-6.html" target="_blank">
@@ -645,9 +720,11 @@ Mini Project-6
 </a>
 
 
+
 <a href="Mini Project-7.html" target="_blank">
 Mini Project-7
 </a>
+
 
 
 <a href="Mini Project-8.html" target="_blank">
@@ -655,9 +732,11 @@ Mini Project-8
 </a>
 
 
+
 <a href="Mini Project-9.html" target="_blank">
 Mini Project-9
 </a>
+
 
 
 <a href="Mini Project-10.html" target="_blank">
@@ -665,7 +744,9 @@ Mini Project-10
 </a>
 
 
+
 </nav>
+
 
 
 
@@ -680,22 +761,19 @@ Mini Project-10
 
 
 
-<div class="my-image">
 
+<div class="my-image">
 
 
 <img src="my_image.jpeg">
 
 
-
 <p>My Image</p>
-
 
 
 <p>
 Not a project. Used for image and audio testing.
 </p>
-
 
 
 </div>
@@ -720,8 +798,8 @@ HTML + CSS Projects(part-1)
 
 
 
-
 <nav>
+
 
 
 <a href="Mini project-1 in css.html" target="_blank">
@@ -729,9 +807,11 @@ CSS mini Project-1
 </a>
 
 
+
 <a href="Mini project-2 in css.html" target="_blank">
 CSS mini Project-2
 </a>
+
 
 
 <a href="Mini project-3 in css.html" target="_blank">
@@ -739,9 +819,11 @@ CSS mini Project-3
 </a>
 
 
+
 <a href="Mini project-4 in css .html" target="_blank">
 CSS mini Project-4
 </a>
+
 
 
 <a href="Mini project-5 in css.html" target="_blank">
@@ -749,7 +831,10 @@ CSS mini Project-5
 </a>
 
 
+
 </nav>
+
+
 
 
 
@@ -770,9 +855,11 @@ HTML + CSS Projects(part-2)
 <nav>
 
 
+
 <a href="Mini project-6 in css.html" target="_blank">
 CSS mini Project-6
 </a>
+
 
 
 <a href="Mini project-7 in css.html" target="_blank">
@@ -780,9 +867,11 @@ CSS mini Project-7
 </a>
 
 
+
 <a href="Mini project-8 in css .html" target="_blank">
-CSS miini Project-8
+CSS mini Project-8
 </a>
+
 
 
 <a href="Mini project-9 in css.html" target="_blank">
@@ -790,12 +879,15 @@ CSS mini Project-9
 </a>
 
 
+
 <a href="Mini project-10 in css .html" target="_blank">
 CSS mini Project-10
 </a>
 
 
+
 </nav>
+
 
 
 
@@ -817,9 +909,11 @@ HTML + CSS Projects(part-3)
 <nav>
 
 
+
 <a href="Mini project-11 in css.html" target="_blank">
 CSS mini Project-11
 </a>
+
 
 
 <a href="Mini project-12 in css .html" target="_blank">
@@ -827,18 +921,21 @@ CSS mini Project-12
 </a>
 
 
+
 <a href="Mini project-13 in css.html" target="_blank">
-CSS mini project-13
+CSS mini Project-13
 </a>
+
 
 
 <a href="Mini project-14 in css.html" target="_blank">
-CSS mini project-14
+CSS mini Project-14
 </a>
 
 
+
 <a href="Mini project-15 in css.html">
-CSS mini project-15
+CSS mini Project-15
 </a>
 </nav>
 </div>
@@ -868,6 +965,8 @@ const randomTheme=document.getElementById("randomTheme");
 const resetTheme=document.getElementById("resetTheme");
 
 const pageContent=document.getElementById("pageContent");
+
+const laserContainer=document.getElementById("laser-container");
 
 const partyMusic=document.getElementById("partyMusic");
 
@@ -903,6 +1002,7 @@ const darkThemes=[
 
 
 
+
 const lightThemes=[
 
 ["#0066ff","#00ffff"],
@@ -932,7 +1032,6 @@ primary
 );
 
 
-
 document.documentElement.style.setProperty(
 "--secondary",
 secondary
@@ -940,6 +1039,7 @@ secondary
 
 
 }
+
 
 
 
@@ -1026,16 +1126,16 @@ themes[Math.floor(Math.random()*themes.length)];
 
 
 changeTheme(
+
 theme[0],
+
 theme[1]
+
 );
 
 
 
-cracker(
-innerWidth/2,
-innerHeight/2
-);
+cracker(innerWidth/2,innerHeight/2);
 
 
 };
@@ -1081,7 +1181,6 @@ changeTheme("#00ffff","#ff00ff");
 
 
 
-
 /* THEME PANEL */
 
 
@@ -1111,24 +1210,33 @@ themePanel.style.display=="block"
 
 
 
-
-/* HIDE SHOW UPDATED */
+/* FINAL HIDE SHOW SYSTEM */
 
 
 hideBtn.onclick=()=>{
 
 
+// hide all content
+
 pageContent.style.display="none";
 
 
-// STOP LASER FALLING
+// remove laser animation completely
 
-body.classList.add("animation-stop");
+laserContainer.style.display="none";
 
 
+// remove effects
+
+disco.style.display="none";
+
+
+// hide button
 
 hideBtn.style.display="none";
 
+
+// show button
 
 showBtn.style.display="block";
 
@@ -1141,17 +1249,40 @@ showBtn.style.display="block";
 
 
 
+
 showBtn.onclick=()=>{
 
+
+// show content again
 
 pageContent.style.display="block";
 
 
-// START LASER FALLING AGAIN
+// bring laser back
 
-body.classList.remove("animation-stop");
+laserContainer.style.display="block";
 
 
+// restart laser falling animation
+
+document.querySelectorAll(".laser").forEach(laser=>{
+
+
+laser.style.animation="none";
+
+
+laser.offsetHeight;
+
+
+laser.style.animation="laserMove 3s infinite linear";
+
+
+});
+
+
+
+
+// change buttons
 
 showBtn.style.display="none";
 
@@ -1169,7 +1300,7 @@ hideBtn.style.display="block";
 
 
 
-/* MUSIC SYSTEM */
+/* MUSIC */
 
 
 async function startMusic(){
@@ -1196,9 +1327,7 @@ musicBtn.innerHTML="⏸️ Pause Music";
 catch(error){
 
 
-console.log(
-"Browser blocked autoplay"
-);
+console.log("Browser blocked autoplay");
 
 
 musicBtn.innerHTML="▶️ Play Music";
@@ -1208,7 +1337,6 @@ musicBtn.innerHTML="▶️ Play Music";
 
 
 }
-
 
 
 
@@ -1227,9 +1355,6 @@ startMusic();
 
 
 
-
-
-/* MUSIC BUTTON */
 
 
 musicBtn.onclick=()=>{
@@ -1324,7 +1449,6 @@ Math.sin(a)*d+"px"
 
 s.style.background=
 
-
 [
 
 "cyan",
@@ -1336,7 +1460,6 @@ s.style.background=
 "lime",
 
 "white"
-
 
 ][Math.floor(Math.random()*5)];
 
@@ -1404,7 +1527,6 @@ e.clientY
 
 
 
-
 setTimeout(()=>{
 
 
@@ -1415,7 +1537,6 @@ link.href,
 "_blank"
 
 );
-
 
 
 },700);
