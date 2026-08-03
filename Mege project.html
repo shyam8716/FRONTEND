@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Institute Website</title>
+  </head>
+  <body>
+    <section class="header" id="home">
+      <img
+        src="data:image/png;base64,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"
+        alt="harvard university" height="300px" width="300px" class="logo">
+      <h1>Harvard University</h1>
+      <b><q>eritas (Truth)</q></b><br />
+      <button>Login</button>
+      <button>Register</button>
+    </section>
+    <section class="navbar">
+      <nav>
+        <a href="#home">Home</a><br />
+        <a href="#about">About</a><br />
+        <a href="#courses">Courses</a><br />
+        <a href="#departments">Departments</a><br />
+        <a href="#faculty">Faculty</a><br />
+        <a href="#admissions">Admissions</a><br />
+        <a href="#event">Events</a><br />
+        <a href="#placements">Placements</a><br />
+        <a href="#gallery">Gallery</a><br />
+        <a href="#contact">Contact</a>
+      </nav>
+    </section>
+    <section class="hero">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTlrFMCNXDqTP_2gTr8zjMxSohv2eOKBOaCj3Jd6m50w&s+"
+        width="300px" height="300px" alt="banner" class="banner">
+      <h2>Welcome to Harvard University</h2>
+      <p>Discover a world of academic excellence, groundbreaking research, and a
+        vibrant community. Harvard empowers students to explore their passions,
+        challenge their perspectives, and make a meaningful impact around the
+        globe. Inspired by centuries of scholarship, every learner has the
+        opportunity to grow through world-class education and innovation.</p>
+      <button>Apply Now</button><br />
+      <button>Explore Courses</button>
+    </section>
+    <section class="about" id="about">
+      <h3>About Harvard University</h3>
+      <p>
+        Founded in 1636, Harvard University is the oldest institution of higher
+        education in the United States. Located in Cambridge, Massachusetts,
+        Harvard is internationally recognized for its excellence in teaching,
+        research, innovation, and leadership development. The university offers
+        a wide range of undergraduate, graduate, and professional programs
+        across diverse fields, supported by distinguished faculty, world-class
+        libraries, and cutting-edge research facilities.
+      </p>
+      <h4>Vision</h4>
+      <p>
+        To advance knowledge, foster innovation, and educate future leaders who
+        will make meaningful contributions to society through excellence in
+        teaching, learning, and research.
+      </p>
+      <h5>Mission</h5>
+      <p>
+        Harvard University's mission is to educate students to become
+        responsible citizens and leaders, promote academic excellence, encourage
+        critical thinking and creativity, and advance knowledge through
+        groundbreaking research that benefits communities around the world.
+      </p>
+      <ul>
+        <h6>Why Choose Harvard University?</h6>
+        <li><mark>World-Class Education –</mark>Learn from renowned faculty and
+          leading researchers.</li>
+        <li><mark>Global Reputation –</mark>Earn a degree recognized and
+          respected worldwide.</li>
+        <li><mark>Innovative Research –</mark>Access state-of-the-art
+          laboratories and research opportunities.</li>
+        <li><mark>Extensive Library Resources –</mark>Study using one of the
+          world's largest academic library systems.</li>
+        <li><mark>Diverse Community –</mark>Join students and scholars from over
+          150 countries.</li>
+        <li><mark>Leadership Development –</mark>Build skills through academic,
+          extracurricular, and community engagement.</li>
+        <li><mark>Strong Alumni Network –</mark>Connect with a global network of
+          influential alumni across industries.</li>
+        <li><mark>Career Opportunities –</mark>Benefit from internships, career
+          services, and employer connections that support long-term professional
+          success.</li>
+      </ul>
+    </section>
+    <section class="courses" id="courses">
+      <b>Undergraduate Programs</b>
+      <ul type="square">
+        <li>Computer Science</li>
+        <li>Applied Mathematics</li>
+        <li>Biology</li>
+        <li>Biomedical Engineering</li>
+        <li>Chemistry</li>
+        <li>Physics</li>
+        <li>Economics</li>
+        <li>Government (Political Science)</li>
+        <li>Psychology</li>
+        <li>Sociology</li>
+        <li>History</li>
+        <li>English</li>
+        <li>Philosophy</li>
+        <li>Anthropology</li>
+        <li>Anthropology</li>
+        <li>Environmental Science and Public Policy</li>
+        <li>Statistics</li>
+        <li>Linguistics</li>
+        <li>Neuroscience</li>
+        <li>Architecture Studies</li>
+        <li>Art, Film, and Visual Studies</li>
+      </ul>
+      <i>Graduate & Professional Programs</i>
+      <ul type="circle">
+        <li>Master of Business Administration (MBA)</li>
+        <li>Master of Public Administration (MPA)</li>
+        <li>Master of Public Policy (MPP)</li>
+        <li>Master of Laws (LL.M.)</li>
+        <li>Juris Doctor (J.D.)</li>
+        <li>Doctor of Medicine (M.D.)</li>
+        <li>Doctor of Dental Medicine (D.M.D.)</li>
+        <li>Master of Education (Ed.M.)</li>
+        <li>Doctor of Education Leadership (Ed.L.D.)</li>
+        <li>Master in Design Studies (M.Des.)</li>
+        <li>Master of Architecture (M.Arch.)</li>
+        <li>Master of Theological Studies (M.T.S.)</li>
+        <li>Master of Divinity (M.Div.)</li>
+        <li>Master of Public Health (MPH)</li>
+        <li>Ph.D. programs in Arts & Sciences, Engineering, Medicine, Public
+          Health, and many other disciplines.</li>
+      </ul>
+      <strike>uouiuiyeiyiggegf</strike>Popular Fields of Study:
+      <ol>
+        <li>Artificial Intelligence</li>
+        <li>Data Science</li>
+        <li>Computer Science</li>
+        <li>Business Administration</li>
+        <li>Finance</li>
+        <li>Law</li>
+        <li>Medicine</li>
+        <li>Public Health</li>
+        <li>Education</li>
+        <li>Engineering</li>
+        <li>Economics</li>
+        <li>Psychology</li>
+        <li>Biotechnology</li>
+        <li>Environmental Studies</li>
+        <li>International Relations</li>
+      </ol>
+      <strong>Online & Professional Learning</strong>
+      <ol type="a">
+        <li>Online Courses</li>
+        <li>Professional Certificates</li>
+        <li>Executive Education</li>
+        <li>Continuing Education</li>
+        <li>Short-term Professional Programs</li>
+        <li>Leadership & Management Courses</li>
+        <li>Data Science & AI Programs</li>
+        <li>Cybersecurity Courses</li>
+        <li>Digital Transformation Programs</li>
+      </ol>
+    </section>
+    <section class="departments" id="departments">
+      <big>Harvard College (Undergraduate)</big>
+      <ol type="A">
+        <li>Computer Science</li>
+        <li>Applied Mathematics</li>
+        <li>Biology</li>
+        <li>Biomedical Engineering</li>
+        <li>Chemistry</li>
+        <li>Physics</li>
+        <li>Economics</li>
+        <li>Government (Political Science)</li>
+        <li>Psychology</li>
+        <li>Sociology</li>
+        <li>History</li>
+        <li>English</li>
+        <li>Philosophy</li>
+        <li>Anthropology</li>
+        <li>Environmental Science and Public Policy</li>
+        <li>Statistics</li>
+        <li>Linguistics</li>
+        <li>Neuroscience</li>
+        <li>Architecture Studies</li>
+        <li>Art, Film, and Visual Studies</li>
+      </ol>
+      <small>Graduate & Professional Programs</small>
+      <ol type="I">
+        <li>Master of Business Administration (MBA)</li>
+        <li>Master of Public Administration (MPA)</li>
+        <li>Master of Public Policy (MPP)</li>
+        <li>Master of Laws (LL.M.)</li>
+        <li>Juris Doctor (J.D.)</li>
+        <li>Doctor of Medicine (M.D.)</li>
+        <li>Doctor of Dental Medicine (D.M.D.)</li>
+        <li>Master of Education (Ed.M.)</li>
+        <li>Doctor of Education Leadership (Ed.L.D.)</li>
+        <li>Master in Design Studies (M.Des.)</li>
+        <li>Master of Architecture (M.Arch.)</li>
+        <li>Master of Theological Studies (M.T.S.)</li>
+        <li>Master of Divinity (M.Div.)</li>
+        <li>Master of Public Health (MPH)</li>
+        <li>Ph.D. programs in Arts & Sciences, Engineering, Medicine, Public
+          Health, and many other disciplines.</li>
+      </ol>
+      <u>Harvard John A. Paulson School of Engineering and Applied Sciences
+        (SEAS)</u>
+      <ol type="i">
+        <li>Computer Science</li>
+        <li>Applied Mathematics</li>
+        <li>Applied Physics</li>
+        <li>Bioengineering</li>
+        <li>Biomedical Engineering</li>
+        <li>Electrical Engineering</li>
+        <li>Environmental Science and Engineering</li>
+        <li>Materials Science & Mechanical Engineering</li>
+        <li>Data Science</li>
+        <li>Robotics</li>
+        <li>Artificial Intelligence</li>
+      </ol>
+      <ol><li><mark>Harvard Business School (HBS)</mark></li>
+        <ul>
+          <li>Business Administration</li>
+          <li>Accounting & Management</li>
+          <li>Finance</li>
+          <li>Marketing</li>
+          <li>Strategy</li>
+          <li>Entrepreneurial Management</li>
+          <li>Technology & Operations Management</li>
+          <li>Organizational Behavior</li>
+          <li>Business, Government & International Economy</li>
+          <li>Negotiation, Organizations & Markets</li>
+        </ul>
+        <span><li>Harvard Law School (HLS)</li></span>
+        <ul>
+          <li>Constitutional Law</li>
+          <li>Criminal Law</li>
+          <li>Corporate Law</li>
+          <li>International Law</li>
+          <li>Environmental Law</li>
+          <li>Human Rights</li>
+          <li>Intellectual Property</li>
+          <li>Tax Law</li>
+          <li>Health Law</li>
+          <li>Cyberlaw</li>
+        </ul>
+        <tt><li>Harvard Medical School (HMS)</li></tt>
+        <ul>
+          <li>Anatomy</li>
+          <li>Biological Chemistry</li>
+          <li>Cell Biology</li>
+          <li>Genetics</li>
+          <li>Global Health</li>
+          <li>Immunology</li>
+          <li>Microbiology</li>
+          <li>Neurobiology</li>
+          <li>Pathology</li>
+          <li>Pharmacology</li>
+          <li>Systems Biology</li>
+        </ul>
+        <pre><li>Harvard T.H. Chan School of Public Health</li></pre>
+        <ul>
+          <li>Biostatistics</li>
+          <li>Environmental Health</li>
+          <li>Epidemiology</li>
+          <li>Global Health</li>
+          <li>Health Policy & Management</li>
+          <li>Immunology & Infectious Diseases</li>
+          <li>Nutrition</li>
+          <li>Social & Behavioral Sciences</li>
+        </ul>
+      </ol>
+    </section>
+    <table class="faculty" id="faculty" border="5">
+      <tr>
+        <th>Faculty Photi</th>
+        <th>Name</th>
+        <th>Qualification</th>
+        <th>Experience</th>
+        <th>Subject</th>
+      </tr>
+      <tr>
+        <td><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2COg4G5AdhQR3V-NnDmvQGh-FRghltd4alrG9loVFgg&s=10"
+            alt="faculty-1" width="200px" height="200px"></td>
+        <td>David J. Malan</td>
+        <td>A.B., Harvard University</td>
+        <td>Gordon McKay Professor of the Practice of Computer Science; over 20
+          years of teaching</td>
+        <td>Computer Science (CS50)</td>
+      </tr>
+      <tr>
+        <td><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR00COC9r0yXtsinMbMiPPQt2HfMAofU7rDBWQvaD87iA&s=10"
+            alt="faculty-2" width="200px" height="200px"></td>
+        <td>Michael J. Sandel</td>
+        <td>A.B., Brandeis University; D.Phil., University of Oxford</td>
+        <td>Anne T. and Robert M. Bass Professor of Government; internationally
+          known political philosopher</td>
+        <td>Political Philosophy</td>
+      </tr>
+      <tr>
+        <td><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0-0BApqlPDzk-0RFIj7GIG93C8Ql-yZ6xcPhbPiH4w&s=10"
+            alt="faculty-3" width="200px" height="200px"></td>
+        <td>Steven Pinker</td>
+        <td>B.A., McGill University; Ph.D., Harvard University</td>
+        <td>Johnstone Family Professor of Psychology; researcher in cognitive
+          science and language</td>
+        <td>Psychology</td>
+      </tr>
+      <tr>
+        <td><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlBOzSnp9PkTS48HoMDzPimdNuYN_lfHY3fVc9zNSomQ&s=10"
+            alt="faculty-4" width="200px" height="200px"></td>
+        <td>Karen Thornber</td>
+        <td>Ph.D., Princeton University</td>
+        <td>Harry Tuchman Levin Professor in Literature and Professor of East
+          Asian Languages and Civilizations</td>
+        <td>Comparative Literature</td>
+      </tr>
+      <tr>
+        <td><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2ZhqKXBpCN9ijxtfQ3uXhyThRctkr_obIgstcJmeMCw&s=10"
+            alt="faculty-5" width="200px" height="200px"></td>
+        <td>Jennifer L. Hochschild</td>
+        <td>Ph.D., Yale University</td>
+        <td>Henry LaBarre Jayne Professor of Government and Professor of African
+          and African American Studies</td>
+        <td>Government & Public Policy</td>
+      </tr>
+      <tr>
+        <td><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYE2GGp7lFkO_PDzmi5vb5b_XjsGca03zQ8-SZC0o14Q&s=10"
+            alt="faculty-6" width="200px" height="200px"></td>
+        <td>Danielle Allen</td>
+        <td>Ph.D., King's College, University of Cambridge</td>
+        <td>James Bryant Conant University Professor</td>
+        <td>Political Science & Classics</td>
+      </tr>
+    </table>
+    <section class="addmission-peocess" id="admissions">
+      <pre>Eligibility</pre>
+      <ul>
+        <li>Completion of secondary (high) school or equivalent
+          qualification.</li>
+        <li>Applying for your first bachelor's degree (students who already hold
+          a bachelor's degree are not eligible for Harvard College undergraduate
+          admission).</li>
+        <li>Strong academic performance in rigorous coursework.</li>
+        <li>Submission of required standardized test scores (SAT or ACT), where
+          required by the current admissions policy.</li>
+        <li>International and U.S. applicants are considered under the same
+          admissions process</li>
+      </ul>
+      <tt>Admission Steps</tt>
+      <ul>
+        <li>Complete the Common Application.</li>
+        <li>Answer the Harvard College supplemental questions.</li>
+        <li>Pay the application fee (or request a fee waiver if eligible).</li>
+        <li>Submit official school reports, transcripts, and teacher
+          recommendations.</li>
+        <li>Submit SAT/ACT scores if required under the current admissions
+          policy.</li>
+        <li>Track your application through the Harvard Applicant Portal after
+          receiving your confirmation email.</li>
+        <li>Receive your admission decision and, if admitted, complete
+          enrollment and financial aid requirements.</li>
+      </ul>
+      <mark>Required Documents</mark>
+      <ul>
+        <li>Completed Common Application</li>
+        <li>Harvard supplemental questions</li>
+        <li>High school transcript</li>
+        <li>School Report and counselor recommendation</li>
+        <li>Two teacher recommendation letters</li>
+        <li>Personal essay</li>
+        <li>Activities/extracurricular list</li>
+        <li>Midyear School Report (when applicable)</li>
+        <li>SAT or ACT scores (per current admissions policy)</li>
+        <li>Optional AP, IB, A-Level, or other examination results</li>
+        <li>English proficiency documentation if applicable for international
+          applicants.</li>
+      </ul>
+      Admission form Link: <a
+        href="https://college.harvard.edu/admissions/apply"
+        target="_blank">Addmission</a><br />
+      Application Requirements: <a
+        href="https://college.harvard.edu/admissions/apply/application-requirements"
+        target="_blank">Application Requirement</a>
+    </section>
+    <section class="student-registration">
+      <form>
+        Enter Student Name:<input type="text" name="Student Name"
+          required /><br />
+        Enter Father Name:<input type="text" name="Father Name" /><br />
+        Enter Mother Name:<input type="text" name="Mother Name" /><br />
+        Enter Date Of Birth:<input type="datetime-local" required /><br />
+        Enter Your Gender<input type="radio" name="gender" />Male<br />
+        Female<input type="radio" name="gender" /><br />
+        Third Gender<input type="radio" name="gender" /><br />
+        Enter Mobile Number<input type="tel" name="mobile number"
+          required /><br />
+        Enter Your Email<input type="email" name="email" /><br />
+        Enter Your Address<textarea rows="5" cols="50"></textarea><br />
+        Pick your course:<select required>
+          <option value="Please pick your course">Please pick your
+            course</option>
+          <option value="African and African American Studies">African and
+            African American Studies</option>
+          <option value="Anthropology">Anthropology</option>
+          <option value="Applied Mathematics">Applied Mathematics</option>
+          <option value="Archaeology">Archaeology</option>
+          <option value="Art, Film, and Visual Studies">Art, Film, and Visual
+            Studies</option>
+          <option value="Astrophysics">Astrophysics</option>
+          <option value="Bioengineering">Bioengineering</option>
+          <option value="Biology">Biology</option>
+          <option value="Biomedical Engineering">Biomedical Engineering</option>
+          <option value="Chemical and Physical Biology">Chemical and Physical
+            Biology</option>
+          <option value="Chemistry">Chemistry</option>
+          <option value="Chemistry and Physics">Chemistry and Physics</option>
+          <option value="Classics">Classics</option>
+          <option value="Comparative Literature">Comparative Literature</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Earth and Planetary Sciences">Earth and Planetary
+            Sciences</option>
+          <option value="East Asian Studies">East Asian Studies</option>
+          <option value="Economics">Economics</option>
+          <option value="Electrical Engineering">Electrical Engineering</option>
+          <option value="Engineering Sciences">Engineering Sciences</option>
+          <option value="English">English</option>
+          <option value="Environmental Science and Engineering">Environmental
+            Science and Engineering</option>
+          <option value="Environmental Science and Public Policy">Environmental
+            Science and Public Policy</option>
+          <option value="Folklore and Mythology">Folklore and Mythology</option>
+          <option value="Government">Government</option>
+          <option value="History" History></option>
+          <option value="History and Literature">History and Literature</option>
+          <option value="History and Science">History and Science</option>
+          <option value="Human Developmental and Regenerative Biology">Human
+            Developmental and Regenerative Biology</option>
+          <option value="Integrative Biology">Integrative Biology</option>
+          <option value="Linguistics">Linguistics</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Mechanical Engineering">Mechanical Engineering</option>
+          <option value="Molecular and Cellular Biology">Molecular and Cellular
+            Biology</option>
+          <option value="Music">Music</option>
+          <option value="Neuroscience">Neuroscience</option>
+          <option value="Organismic and Evolutionary Biology">Organismic and
+            Evolutionary Biology</option>
+          <option value="Philosophy">Philosophy</option>
+          <option value="Physics">Physics</option>
+          <option value="Psychology">Psychology</option>
+          <option value="Religion">Religion</option>
+          <option value="Romance Languages and Literatures">Romance Languages
+            and Literatures</option>
+          <option value="Slavic Languages and Literatures">Slavic Languages and
+            Literatures</option>
+          <option value="Social Studies">Social Studies</option>
+          <option value="Sociology">Sociology</option>
+          <option value="South Asian Studies">South Asian Studies</option>
+          <option value="Special Concentration (student-designed)">Special
+            Concentration (student-designed)</option>
+          <option value="Statistics">Statistics</option>
+          <option value="Studies of Women, Gender, and Sexuality">Studies of
+            Women, Gender, and Sexuality</option>
+          <option value="Others">Others</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <table class="events" id="event" border="10">
+      <tr>
+        <th>Category</th>
+        <th>Event</th>
+        <th>Expected Time (2026)</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Hackathon</td>
+        <td>Harvard Hackathon 2026</td>
+        <td>April 10–11, 2026</td>
+        <td>University-wide hackathon for students, developers, designers, and
+          entrepreneurs to build innovative projects.</td>
+      </tr>
+      <tr>
+        <td>Hackathon</td>
+        <td>HSIL Hackathon 2026</td>
+        <td>2026 (2-days event)</td>
+        <td>Global AI and healthcare innovation hackathon hosted by Harvard T.H.
+          Chan School of Public Health.</td>
+      </tr>
+      <tr>
+        <td>Workshops</td>
+        <td>AI & Health Innovation Workshops</td>
+        <td>Throughout 2026</td>
+        <td>Hands-on workshops on AI, healthcare innovation, entrepreneurship,
+          and digital health organized alongside the HSIL Hackathon.</td>
+      </tr>
+      <tr>
+        <td>Seminars</td>
+        <td>Harvard AI Research Seminars</td>
+        <td>Throughout 2026</td>
+        <td>Weekly seminars by faculty and invited researchers on artificial
+          intelligence, machine learning, robotics, and computing.</td>
+      </tr>
+      <tr>
+        <td>Seminars</td>
+        <td>Data Science Initiative Seminars</td>
+        <td>Throughout 2026</td>
+        <td>Talks on statistics, data science, AI, computational biology, and
+          analytics.</td>
+      </tr>
+      <tr>
+        <td>Seminars</td>
+        <td>Harvard SEAS Research Seminars</td>
+        <td>Throughout 2026</td>
+        <td>Engineering and Applied Sciences seminars covering computer science,
+          robotics, quantum computing, and bioengineering.</td>
+      </tr>
+      <tr>
+        <td>Coding Competitions</td>
+        <td>Harvard Hackathon Coding Challenges</td>
+        <td>April 2026</td>
+        <td>Competitive programming, AI, cybersecurity, and software engineering
+          tracks during the hackathon.</td>
+      </tr>
+      <tr>
+        <td>Coding Competitions</td>
+        <td>ICPC Harvard Programming Contests</td>
+        <td>Various dates</td>
+        <td>Competitive programming contests hosted by Harvard programming clubs
+          and ACM teams.</td>
+      </tr>
+      <tr>
+        <td>Technical Events</td>
+        <td>Harvard Tech Conference</td>
+        <td>2026</td>
+        <td>Student-led conference featuring industry speakers, startup
+          showcases, AI demonstrations, and networking.</td>
+      </tr>
+      <tr>
+        <td>Technical Events</td>
+        <td>Harvard Computer Society Tech Talks</td>
+        <td>Throughout 2026</td>
+        <td>Talks on software engineering, cloud computing, cybersecurity, and
+          startups.</td>
+      </tr>
+      <tr>
+        <td>Technical Events</td>
+        <td>CS50 Puzzle Day</td>
+        <td>Annual</td>
+        <td>Team programming and puzzle-solving competition open to students and
+          the public.</td>
+      </tr>
+      <tr>
+        <td>Technical Events</td>
+        <td>CS50 Fair</td>
+        <td>End of each semester</td>
+        <td>Exhibition of final CS50 projects including apps, games, AI, and web
+          technologies.</td>
+      </tr>
+      <tr>
+        <td>Entrepreneurship</td>
+        <td>Harvard Innovation Labs Workshops</td>
+        <td>Throughout 2026</td>
+        <td>Startup bootcamps, product development, venture funding, AI, design
+          thinking, and leadership workshops.</td>
+      </tr>
+      <tr>
+        <td>Entrepreneurship</td>
+        <td>President's Innovation Challenge</td>
+        <td>Spring 2026</td>
+        <td>Harvard's flagship startup competition with significant prize
+          funding for student ventures.</td>
+      </tr>
+      <tr>
+        <td>Cultural Events</td>
+        <td>Harvard Arts Festival</td>
+        <td>Spring 2026</td>
+        <td>University-wide celebration of music, dance, theatre, visual arts,
+          and creative performances.</td>
+      </tr>
+      <tr>
+        <td>Cultural Events</td>
+        <td>Yardfest</td>
+        <td>Spring 2026</td>
+        <td>Harvard College's annual outdoor concert and student
+          celebration.</td>
+      </tr>
+      <tr>
+        <td>Cultural Events</td>
+        <td>Harvard Cultural Rhythms</td>
+        <td>Spring 2026</td>
+        <td>International cultural festival featuring performances representing
+          diverse cultures.</td>
+      </tr>
+      <tr>
+        <td>Cultural Events</td>
+        <td>ARTS FIRST Festival</td>
+        <td>Spring 2026</td>
+        <td>Performances, exhibitions, workshops, and public art events across
+          campus.</td>
+      </tr>
+    </table>
+    <section class="placements" id="placements">
+      <h1>Top Recruiting Companies</h1>
+      <ul>
+        <li>McKinsey & Company</li>
+        <li>Bain & Company</li>
+        <li>Boston Consulting Group (BCG)</li>
+        <li>Google</li>
+        <li>Microsoft</li>
+        <li>Amazon</li>
+        <li>Apple</li>
+        <li>Meta</li>
+        <li>NVIDIA</li>
+        <li>Tesla</li>
+        <li>Goldman Sachs</li>
+        <li>Morgan Stanley</li>
+        <li>JPMorgan Chase</li>
+        <li>BlackRock</li>
+        <li>Deloitte</li>
+        <li>EY</li>
+        <li>KPMG</li>
+        <li>PwC</li>
+        <li>Accenture</li>
+        <li>Pfizer</li>
+        <li>Moderna</li>
+      </ul>
+      <h2>Placement Training Services</h2>
+      <ul>
+        <li>One-on-one career coaching</li>
+        <li>Résumé/CV reviews</li>
+        <li>Cover letter assistance</li>
+        <li>Mock interviews</li>
+        <li>Technical interview preparation</li>
+        <li>Career fairs</li>
+        <li>Employer networking sessions</li>
+        <li>Internship search support</li>
+        <li>Job search strategy</li>
+        <li>Salary negotiation guidance</li>
+        <li>LinkedIn profile reviews</li>
+        <li>Alumni mentoring</li>
+      </ul>
+      <h3>Internship Opportunities</h3>
+      <ul>
+        <li>Summer internships</li>
+        <li>Research internships</li>
+        <li>Startup internships</li>
+        <li>Public service internships</li>
+        <li>International internships</li>
+        <li>Healthcare internships</li>
+        <li>Finance internships</li>
+        <li>Consulting internships</li>
+        <li>Software engineering internships</li>
+        <li>Data science and AI internships</li>
+      </ul>
+    </section>
+    <section class="gallery" id="gallery">
+      <h1>Campus Images</h1>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNSQH_b9JXi6BCpwNkYodQtvL_0l3flVHggOsCHiZpNA&s=10"
+        alt="campus-1" height="300px" width="300px" />
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpUCR_Bx-vngDFHKilPfPrHh0tdpMJYdVAkhZLx2I9-g&s=10"
+        alt="campus-2" height="300px" width="300px" />
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4DIAaePMaImnYBLHxQHRQdwodgxcZTppiQACkudH5cA&s=10"
+        alt="lab-1" height="300px" width="300px" /><br />
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjJ-_lghgtzR8z4-tq7Epr7iVzkk4TXyed-_hYsi04-Q&s=10"
+        alt="lab-2" height="300px" width="300px">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnip-Hr0guZf8Alj7L7JeP7TQocgV4S2l1JKMRIGRK1A&s=10"
+        alt="event-1" height="300px" width="300px">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsaZJ_t1SSB6ZLgQVmDsqf9fKW_fjefLxdzDgibC2McQ&s=10"
+        alt="event-2" height="300px" width="300px"><br />
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD0O7-ZooDc1RQXAuQK1dKSKwmqz3HNtt9WpOsdVkTnw&s=10"
+        alt="placement-1" height="300px" width="300px">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3D_jKmOipYOyOTiafTSSZ-Cyu4jPzWqxVq3g8uV3sSA&s=10"
+        alt="placement-2" height="300px" width="300px">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsJ4SP_I8SfSp3XoSTYVqNm8xu3Dp7o15wL9ziT_j3dQ&s=10"
+        alt="placement-3" height="300px" width="300px">
+    </section>
+    <section class="contact" id="contact">
+      <address>
+        Harvard University
+        Massachusetts Hall
+        Cambridge, MA 02138
+        United States
+      </address><br/>
+      Phone Number:+1 617-495-1000 (General inquiries)<br/>
+      Official Website: <a href="https://www.harvard.edu/"target="_blank">Official Website</a><br/>
+      Email:info_center@harvard.edu<br/>
+      <p>Working Hours:Monday to Friday: 6:30 PM – 3:30 AM IST (during U.S. Eastern Daylight Time, roughly March–November)
+        Monday to Friday: 7:30 PM – 4:30 AM IST (during U.S. Eastern Standard Time, roughly November–March)
+      </p><br/>
+      Instagram Link:<a href="https://www.instagram.com/harvard/?hl=en"target="_blank*">Instagram</a><br/>
+      Facebook Link:<a href="https://www.facebook.com/Harvard"target="_blank">Facebook</a><br/>
+      Linkedin Link:<a href="https://www.linkedin.com/school/harvard-university/"target="_blank">Linkedin</a><br/>
+      Youtube Link: <a href="https://www.youtube.com/@harvard"target="_blank">Youtube</a>
+    </section>
+      <footer>
+  <h3>Privacy Policy</h3>
+  <p>
+    This website is created for educational and learning purposes only.
+    Any information submitted through the registration form is used only
+    for demonstration purposes and is not stored, shared, or used for
+    commercial activities. Users should not enter sensitive personal
+    information on this demo website.
+  </p>
+  <h3>Terms &amp; Conditions</h3>
+  <p>
+    By using this website, you agree that it is intended solely for
+    educational and portfolio purposes. The information provided may not
+    represent official Harvard University content. Unauthorized copying,
+    modification, or misuse of this project's original source code is not
+    permitted without the developer's permission.
+  </p>
+  <h3>Copyright</h3>
+  <p>
+    &copy; 2026 R. Megha Shyam. All rights reserved.
+  </p>
+  <p>
+    This website was designed and developed by <strong>R. Megha Shyam</strong>
+    as an educational web development project. Harvard University names,
+    logos, and related content belong to their respective owners and are
+    used here only for educational demonstration purposes.
+  </p>
+  <h3>Developer</h3>
+  <p>
+    <strong>Developer Name:</strong> R. Megha Shyam<br>
+    <strong>Role:</strong> Front-End Web Developer<br>
+    <strong>Project:</strong> Educational Institute Website (HTML Project)<br>
+    <strong>Year:</strong> 2026
+  </p>
+</footer>
+  </body>
+</html>
