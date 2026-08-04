@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <style>
+    .navbar {
+      position:sticky;
+      top:0;
+    }
+    .navbar{
+      color:aqua;
+      background-color:salmon;
+      text-align:center;
+    }
+    .navbar nav a button:hover{
+      color:brown;
+      background-color:indigo;
+      border-radius:100px;
+    }
+    form{
+      color:sandybrown;
+      background-color:black;
+       padding:25px;
+      text-align:center;
+        box-shadow:0 0 15px rgba(0,0,0,0.5);
+    border:2px solid sandybrown;
+    }
+    form button:focus{
+      color:blanchedalmond;
+      background-color:teal;
+      border-radius:120px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+      <nav>
+        <a href="#"><button><i class="fa-solid fa-house"></i>Home</button></a>
+        <a href="About.html"><button><i class="fa-solid fa-circle-info"></i>About</button></a>
+        <a href="Contact.html"><button><i class="fa-solid fa-phone"></i>Contact</button></a>
+      </nav>
+  <form action="Thank you.html"target="_blank">
+    Enter Your First Name:<input type="text"name="First Name"required/><br/>
+    ENter Your Last Name;<input type="text"name="Last Name"required/><br/>
+    Enter your Contact<input type="tel"max-size="10"required/><br/>
+    Enter Your Gender<input type="radio"name="gender"/>Male<br/>
+    Female<input type="radio"name="gender"/><br/>
+    Third Gender<input type="radio"name="gender"/><br/>
+    Enter Your Message<textarea rows="20"cols="50"></textarea><br/>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
