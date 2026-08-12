@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROCERY BILL GENERATOR</title>
+</head>
+<body>
+  <b>MEGA PROJECT-1 IN JAVA SCRIPT</b>
+  <script>
+    let name=prompt("Enter customer name:")
+    let potatos=prompt("Enter the prise of potatos:")
+    
+    let e=parseInt(Number(potatos))
+    let tamatos=prompt("Enter prise of tamatos:")
+     let f=parseInt(Number(tamatos))
+     let dragon_fruit=prompt("Enter the prise of dragon fruit:")
+     let g=parseInt(dragon_fruit)
+     const total=e+f+g
+     document.write("<h1>"+ name+"</h1><br>")
+     document.write("The price of potatos are "+potatos+"<br>")
+       document.write("The price of tamatos are "+tamatos+"<br>")
+         document.write("The price of dragon fruit are "+dragon_fruit+"<br>")
+         let discount=0
+         document.write("The total cost is : "+total+"<br>")      
+     if(total>=1000){
+      confirm("are you sure to take discount")
+       discount=total*10/100;
+      document.write("The person is elgible for discount"+discount+"<br>")
+     }
+     else{
+      alert("no discounts")
+     }
+     var final_amount=total-discount;
+     document.write("The final amount is:"+ final_amount)
+  </script>
+</body>
+</html>
