@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,2062 +9,1924 @@
 
 <title>My Website</title>
 
-
 <style>
 
+/* =========================
+   RESET
+========================= */
 
 *{
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 
+/* =========================
+   DEFAULT RED THEME
+========================= */
 
 :root{
-
---primary:#00ffff;
-
---secondary:#ff00ff;
-
---text:white;
-
+    --primary:#ff0000;
+    --secondary:#8b0000;
+    --text:white;
 }
 
 
-
-
+/* =========================
+   BODY
+========================= */
 
 body{
 
+    font-family:"Segoe UI",Arial,sans-serif;
 
-font-family:"Segoe UI",Arial,sans-serif;
+    min-height:100vh;
 
+    overflow-x:hidden;
 
-min-height:100vh;
+    color:var(--text);
 
+    background:
+    radial-gradient(
+        circle,
+        #330000,
+        #000000
+    );
 
-overflow-x:hidden;
+    transition:.6s;
 
-
-color:var(--text);
-
-
-background:
-
-radial-gradient(circle,#160033,#000);
-
-
-transition:.6s;
-
-
-animation:pageLoad 1s;
-
-
+    animation:pageLoad 1s;
 }
 
 
-
-
+/* =========================
+   PAGE LOAD
+========================= */
 
 @keyframes pageLoad{
 
+    from{
+        opacity:0;
+        transform:scale(.95);
+    }
 
-from{
-
-opacity:0;
-
-transform:scale(.95);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:scale(1);
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
 
 }
 
 
-}
-
-
-
-
+/* =========================
+   LIGHT MODE
+========================= */
 
 body.light{
 
+    --primary:#ff0000;
 
---primary:#008cff;
+    --secondary:#cc0000;
+
+    --text:#111;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #ffcccc
+    );
+}
 
 
---secondary:#ff0099;
+/* Light mode buttons */
 
+body.light .mode-buttons button{
 
---text:#111;
+    background:white;
 
-
-background:
-
-linear-gradient(135deg,#fff,#aaffff);
-
+    color:#111;
 
 }
 
 
-
-
-
-
-body.light .mode-buttons button,
-body.light #themePanel button{
-
-
-background:white;
-
-
-color:#111;
-
-
-}
-
-
-
-
-
-
-
-/* ======================
-NAVBAR
-====================== */
-
+/* =========================
+   TOP CONTROL NAVBAR
+========================= */
 
 .mode-buttons{
 
+    position:fixed;
 
-position:fixed;
+    top:15px;
 
+    left:50%;
 
-top:15px;
+    transform:translateX(-50%);
 
+    display:flex;
 
-left:50%;
+    flex-wrap:wrap;
 
+    justify-content:center;
 
-transform:translateX(-50%);
+    gap:10px;
 
+    width:90%;
 
-display:flex;
+    max-width:900px;
 
+    padding:12px;
 
-flex-wrap:wrap;
+    z-index:9999;
 
+    border-radius:40px;
 
-justify-content:center;
+    background:rgba(0,0,0,.45);
 
+    backdrop-filter:blur(20px);
 
-gap:10px;
+    border:2px solid var(--primary);
 
+    box-shadow:
 
-width:90%;
+    0 0 25px var(--primary),
 
-
-max-width:900px;
-
-
-padding:12px;
-
-
-z-index:9999;
-
-
-border-radius:40px;
-
-
-background:rgba(0,0,0,.45);
-
-
-backdrop-filter:blur(20px);
-
-
-border:2px solid var(--primary);
-
-
-box-shadow:
-
-
-0 0 25px var(--primary),
-
-
-0 0 60px var(--secondary);
-
+    0 0 60px var(--secondary);
 
 }
 
 
-
-
+/* =========================
+   NAVBAR BUTTONS
+========================= */
 
 .mode-buttons button{
 
+    padding:10px 18px;
 
-padding:10px 18px;
+    border-radius:25px;
 
+    cursor:pointer;
 
-border-radius:25px;
+    font-weight:bold;
 
+    background:#050505;
 
-cursor:pointer;
+    color:white;
 
+    border:2px solid var(--primary);
 
-font-weight:bold;
+    box-shadow:
+    0 0 20px var(--primary);
 
-
-background:#050505;
-
-
-color:white;
-
-
-border:2px solid var(--primary);
-
-
-box-shadow:0 0 20px var(--primary);
-
-
-transition:.3s;
-
-
+    transition:.3s;
 }
-
-
 
 
 .mode-buttons button:hover{
 
-
-transform:scale(1.1);
-
+    transform:scale(1.1);
 
 }
 
 
-
-
-
-
-
-
-/* ======================
-THEME PANEL
-====================== */
-
-
-#themePanel{
-
-
-position:fixed;
-
-
-top:120px;
-
-
-left:50%;
-
-
-transform:translateX(-50%);
-
-
-width:280px;
-
-
-padding:20px;
-
-
-border-radius:25px;
-
-
-display:none;
-
-
-z-index:9998;
-
-
-text-align:center;
-
-
-background:rgba(0,0,0,.8);
-
-
-border:2px solid cyan;
-
-
-box-shadow:
-
-
-0 0 30px cyan,
-
-
-0 0 80px magenta;
-
-
-}
-
-
-
-
-#themePanel button{
-
-
-margin:8px;
-
-
-padding:10px 18px;
-
-
-border-radius:20px;
-
-
-cursor:pointer;
-
-
-background:#050505;
-
-
-color:white;
-
-
-border:2px solid cyan;
-
-
-}
-
-
-
-
-
-
-
-
-
-
-/* ======================
-CONTENT BOX
-====================== */
-
+/* =========================
+   MAIN CONTENT
+========================= */
 
 #pageContent{
 
-
-padding-top:130px;
-
+    padding-top:130px;
 
 }
 
 
-
-
+/* =========================
+   CONTENT BOXES
+========================= */
 
 .html,
 .css,
 .my-image,
 .js{
 
+    margin:25px;
 
-margin:25px;
+    padding:25px;
 
+    border-radius:25px;
 
-padding:25px;
+    background:rgba(255,255,255,.08);
 
+    backdrop-filter:blur(20px);
 
-border-radius:25px;
+    border:2px solid var(--primary);
 
+    box-shadow:
 
-background:rgba(255,255,255,.08);
+    0 0 25px var(--primary),
 
+    0 0 70px var(--secondary);
 
-backdrop-filter:blur(20px);
-
-
-border:2px solid var(--primary);
-
-
-box-shadow:
-
-
-0 0 25px var(--primary),
-
-
-0 0 70px var(--secondary);
-
-
-animation:floating 5s infinite alternate;
-
-
+    animation:floating 5s infinite alternate;
 }
 
 
-
-
+/* =========================
+   FLOATING ANIMATION
+========================= */
 
 @keyframes floating{
 
+    from{
+        transform:translateY(0);
+    }
 
-from{
-
-transform:translateY(0);
-
-}
-
-
-to{
-
-transform:translateY(-10px);
+    to{
+        transform:translateY(-10px);
+    }
 
 }
 
 
-}
-
-
-
-
-
-
-
-
-/* ======================
-LINKS
-====================== */
-
+/* =========================
+   LINKS
+========================= */
 
 nav a{
 
+    display:inline-block;
 
-display:inline-block;
+    margin:8px;
 
+    padding:10px 18px;
 
-margin:8px;
+    border-radius:25px;
 
+    text-decoration:none;
 
-padding:10px 18px;
+    font-weight:bold;
 
+    color:white;
 
-border-radius:25px;
+    background:
 
+    linear-gradient(
 
-text-decoration:none;
+        45deg,
 
+        var(--primary),
 
-font-weight:bold;
+        var(--secondary)
 
+    );
 
-color:white;
+    box-shadow:
 
+    0 0 20px var(--primary);
 
-background:
-
-linear-gradient(
-
-45deg,
-
-var(--primary),
-
-var(--secondary)
-
-);
-
-
-box-shadow:0 0 20px var(--primary);
-
-
-transition:.3s;
-
-
+    transition:.3s;
 }
-
-
 
 
 nav a:hover{
 
-
-transform:
-
-translateY(-6px)
-
-scale(1.08);
-
+    transform:
+    translateY(-6px)
+    scale(1.08);
 
 }
 
 
-
-
-
-
-
-
-
-
-/* ======================
-IMAGE
-====================== */
-
+/* =========================
+   IMAGE
+========================= */
 
 .my-image img{
 
+    width:300px;
 
-width:300px;
+    height:300px;
 
+    object-fit:cover;
 
-height:300px;
+    border-radius:25px;
 
+    border:4px solid var(--primary);
 
-object-fit:cover;
+    box-shadow:
 
+    0 0 30px var(--primary),
 
-border-radius:25px;
-
-
-border:4px solid var(--primary);
-
-
-box-shadow:
-
-
-0 0 30px var(--primary),
-
-
-0 0 70px var(--secondary);
-
-
+    0 0 70px var(--secondary);
 }
 
 
+/* =========================
+   MEGA PROJECT LINK
+========================= */
+
+.mega-link{
+
+    display:block;
+
+    width:fit-content;
+
+    margin:20px auto;
+}
 
 
+/* =========================
+   CSS MEGA PROJECTS
+========================= */
+
+.mega-projects{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin:20px auto;
+}
 
 
-
-
-
-/* ======================
-FIREWORK CONTAINER
-====================== */
-
+/* =========================
+   FIREWORK CONTAINER
+========================= */
 
 #fireworks{
 
+    position:fixed;
 
-position:fixed;
+    inset:0;
 
+    pointer-events:none;
 
-inset:0;
+    z-index:500;
 
-
-pointer-events:none;
-
-
-z-index:500;
-
-
-overflow:hidden;
-
-
+    overflow:hidden;
 }
 
 
-
-
-
-
-
-
-/* COMMON EXPLOSION */
-
+/* =========================
+   COMMON EXPLOSION
+========================= */
 
 .blast{
 
+    position:absolute;
 
-position:absolute;
+    width:8px;
 
+    height:8px;
 
-width:8px;
+    border-radius:50%;
 
+    animation:blast 1.2s forwards;
 
-height:8px;
+    box-shadow:
 
+    0 0 10px currentColor,
 
-border-radius:50%;
+    0 0 30px currentColor,
 
-
-animation:blast 1.2s forwards;
-
-
-box-shadow:
-
-
-0 0 10px currentColor,
-
-
-0 0 30px currentColor,
-
-
-0 0 60px currentColor;
-
-
+    0 0 60px currentColor;
 }
 
 
-
-
+/* =========================
+   BLAST ANIMATION
+========================= */
 
 @keyframes blast{
 
+    0%{
 
-0%{
+        transform:
+        translate(0,0)
+        scale(1);
 
-transform:
+        opacity:1;
+    }
 
-translate(0,0)
+    100%{
 
-scale(1);
+        transform:
+        translate(var(--x),var(--y))
+        scale(0);
 
-opacity:1;
-
-
-}
-
-
-100%{
-
-
-transform:
-
-translate(var(--x),var(--y))
-
-scale(0);
-
-
-opacity:0;
-
+        opacity:0;
+    }
 
 }
 
 
-}
-
-
-
-
-
-
-
-
-/* ROCKET */
-
+/* =========================
+   ROCKET
+========================= */
 
 .cracker{
 
+    position:absolute;
 
-position:absolute;
+    bottom:0;
 
+    width:12px;
 
-bottom:0;
+    height:35px;
 
+    background:red;
 
-width:12px;
+    border-radius:50%;
 
+    animation:rocket 1.5s linear;
 
-height:35px;
-
-
-background:red;
-
-
-border-radius:50%;
-
-
-animation:rocket 1.5s linear;
-
-
-box-shadow:
-
-0 0 20px red;
-
-
+    box-shadow:
+    0 0 20px red;
 }
-
 
 
 @keyframes rocket{
 
+    to{
 
-to{
+        transform:
+        translateY(-600px);
 
-
-transform:translateY(-600px);
-
-
-opacity:0;
-
+        opacity:0;
+    }
 
 }
 
 
-}
-
-
-
-
-
-
-
-
-/* FLOWER POT */
-
+/* =========================
+   FLOWER POT
+========================= */
 
 .pot{
 
+    position:absolute;
 
-position:absolute;
+    bottom:0;
 
+    width:30px;
 
-bottom:0;
+    height:20px;
 
+    background:orange;
 
-width:30px;
+    border-radius:50%;
 
+    animation:pot 2s;
 
-height:20px;
-
-
-background:orange;
-
-
-border-radius:50%;
-
-
-animation:pot 2s;
-
-
-box-shadow:0 0 40px gold;
-
-
+    box-shadow:
+    0 0 40px gold;
 }
-
-
 
 
 @keyframes pot{
 
+    50%{
 
-50%{
+        height:300px;
 
-height:300px;
+    }
 
-}
+    100%{
 
+        height:0;
 
-100%{
+        opacity:0;
 
-height:0;
-
-opacity:0;
-
-}
-
+    }
 
 }
 
 
-
-
-
-
-
-/* SARAS */
-
+/* =========================
+   SARAS
+========================= */
 
 .saras{
 
+    position:absolute;
 
-position:absolute;
+    width:15px;
 
+    height:15px;
 
-width:15px;
+    background:red;
 
+    border-radius:50%;
 
-height:15px;
+    animation:saras 1s;
 
-
-background:red;
-
-
-border-radius:50%;
-
-
-animation:saras 1s;
-
-
-box-shadow:
-
-0 0 50px red;
-
-
+    box-shadow:
+    0 0 50px red;
 }
-
 
 
 @keyframes saras{
 
+    100%{
 
-100%{
+        transform:scale(10);
 
-transform:scale(10);
+        opacity:0;
 
-opacity:0;
-
-}
-
+    }
 
 }
 
 
-
-
-
-
-
-/* MARAPETTI */
-
+/* =========================
+   MARAPETTI
+========================= */
 
 .marapetti{
 
+    position:absolute;
 
-position:absolute;
+    width:25px;
 
+    height:25px;
 
-width:25px;
+    background:brown;
 
-
-height:25px;
-
-
-background:brown;
-
-
-animation:marapetti .8s;
-
-
+    animation:marapetti .8s;
 }
-
-
 
 
 @keyframes marapetti{
 
+    100%{
 
-100%{
+        transform:
+        scale(8)
+        rotate(360deg);
 
+        opacity:0;
 
-transform:
-
-scale(8)
-
-rotate(360deg);
-
-
-opacity:0;
-
+    }
 
 }
 
 
-}
-
-
-
-
-
-
-
-/* CHAKKAR */
-
+/* =========================
+   CHAKKAR
+========================= */
 
 .chakkar{
 
+    position:absolute;
 
-position:absolute;
+    width:70px;
 
+    height:70px;
 
-width:70px;
+    border-radius:50%;
 
+    border:5px solid gold;
 
-height:70px;
+    animation:chakkar 2s linear;
 
-
-border-radius:50%;
-
-
-border:5px solid gold;
-
-
-animation:chakkar 2s linear;
-
-
-box-shadow:
-
-0 0 50px yellow;
-
-
+    box-shadow:
+    0 0 50px yellow;
 }
-
-
 
 
 @keyframes chakkar{
 
+    to{
 
-to{
+        transform:rotate(720deg);
 
-
-transform:rotate(720deg);
-
-
-}
-
+    }
 
 }
 
 
-
-
-
-
-
-/* SPARKLER */
-
+/* =========================
+   SPARKLER
+========================= */
 
 .sparkler{
 
+    position:absolute;
 
-position:absolute;
+    width:5px;
 
+    height:5px;
 
-width:5px;
+    background:gold;
 
+    border-radius:50%;
 
-height:5px;
+    animation:sparkler 2s;
 
-
-background:gold;
-
-
-border-radius:50%;
-
-
-animation:sparkler 2s;
-
-
-box-shadow:
-
-0 0 30px yellow;
-
-
+    box-shadow:
+    0 0 30px yellow;
 }
-
-
 
 
 @keyframes sparkler{
 
+    to{
 
-to{
+        transform:
+        translateY(-300px);
+
+        opacity:0;
+
+    }
+
+}
 
 
-transform:translateY(-300px);
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .mode-buttons{
+
+        width:95%;
+
+        padding:8px;
+
+    }
 
 
-opacity:0;
+    .mode-buttons button{
 
+        padding:8px 12px;
+
+        font-size:13px;
+
+    }
+
+
+    .html,
+    .css,
+    .my-image,
+    .js{
+
+        margin:15px;
+
+        padding:18px;
+
+    }
+
+
+    .my-image img{
+
+        width:100%;
+
+        max-width:300px;
+
+        height:auto;
+
+    }
+
+
+    .mega-projects{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
 
 }
 
-
-}
-.mega-link{
-    display:block;
-    width:fit-content;
-    margin:20px auto;
-}
-.mega-projects{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    margin:20px auto;
-}
 </style>
 
 </head>
+
 <body>
 
 
-<!-- TOP CONTROL NAVBAR -->
+<!-- =========================
+     TOP CONTROL NAVBAR
+========================= -->
 
 <div class="mode-buttons">
 
-<button id="darkBtn">
-🌑 Dark
-</button>
+
+    <button id="darkBtn">
+        🌑 Dark
+    </button>
 
 
-<button id="lightBtn">
-☀️ Light
-</button>
+    <button id="lightBtn">
+        ☀️ Light
+    </button>
 
 
-<button id="musicBtn">
-🎵 Music
-</button>
+    <button id="musicBtn">
+        🎵 Music
+    </button>
 
 
-<button id="themeBtn">
-🎨 Theme
-</button>
+    <button id="hideBtn">
+        🙈 Hide
+    </button>
 
 
-<button id="hideBtn">
-🙈 Hide
-</button>
-
-
-<button id="showBtn" style="display:none">
-👁 Show
-</button>
-
-</div>
-
-
-
-
-
-
-
-
-<!-- THEME PANEL -->
-
-
-<div id="themePanel">
-
-
-<h2>
-✨ Neon Theme
-</h2>
-
-
-<button id="randomTheme">
-🎲 Random
-</button>
-
-
-<button id="resetTheme">
-♻️ Default
-</button>
+    <button id="showBtn" style="display:none">
+        👁 Show
+    </button>
 
 
 </div>
 
 
+<!-- =========================
+     MUSIC
+========================= -->
 
+<audio id="partyMusic" loop>
 
-
-
-
-
-
-<!-- MUSIC -->
-
-
-<audio id="partyMusic" loop autoplay>
-
-<source src="gangleader.mp3" type="audio/mpeg">
+    <source
+        src="gangleader.mp3"
+        type="audio/mpeg">
 
 </audio>
 
 
-
-
-
-
-
-
-
-<!-- DIWALI FIREWORK AREA -->
-
+<!-- =========================
+     FIREWORK AREA
+========================= -->
 
 <div id="fireworks"></div>
 
 
-
-
-
-
-
-
-
-<!-- MAIN CONTENT -->
-
+<!-- =========================
+     MAIN CONTENT
+========================= -->
 
 <div id="pageContent">
 
 
+    <!-- =====================
+         HTML PROJECTS
+    ====================== -->
 
+    <div class="html">
 
+        <h1>
+            🪔 Part-1 (Only HTML)
+        </h1>
 
 
+        <nav>
 
-<div class="html">
+            <a
+                href="Mini Project-1.html"
+                target="_blank">
+                Mini Project-1
+            </a>
 
 
+            <a
+                href="Mini Project-2.html"
+                target="_blank">
+                Mini Project-2
+            </a>
 
-<h1>
-🪔 Part-1 (Only HTML)
-</h1>
 
+            <a
+                href="Mini Project-3.html"
+                target="_blank">
+                Mini Project-3
+            </a>
 
 
+            <a
+                href="Mini Project-4.html"
+                target="_blank">
+                Mini Project-4
+            </a>
 
-<nav>
 
+            <a
+                href="Mini Project-5.html"
+                target="_blank">
+                Mini Project-5
+            </a>
 
-<a href="Mini Project-1.html" target="_blank">
-Mini Project-1
-</a>
+        </nav>
 
 
-<a href="Mini Project-2.html" target="_blank">
-Mini Project-2
-</a>
+        <h2>
+            🪔 Part-2 (Only HTML)
+        </h2>
 
 
-<a href="Mini Project-3.html" target="_blank">
-Mini Project-3
-</a>
+        <nav>
 
+            <a
+                href="Mini Project-6.html"
+                target="_blank">
+                Mini Project-6
+            </a>
 
-<a href="Mini Project-4.html" target="_blank">
-Mini Project-4
-</a>
 
+            <a
+                href="Mini Project-7.html"
+                target="_blank">
+                Mini Project-7
+            </a>
 
-<a href="Mini Project-5.html" target="_blank">
-Mini Project-5
-</a>
 
+            <a
+                href="Mini Project-8.html"
+                target="_blank">
+                Mini Project-8
+            </a>
 
-</nav>
 
+            <a
+                href="Mini Project-9.html"
+                target="_blank">
+                Mini Project-9
+            </a>
 
 
+            <a
+                href="Mini Project-10.html"
+                target="_blank">
+                Mini Project-10
+            </a>
 
 
+            <h3>
+                Mega Project (Only HTML)
+            </h3>
 
 
+            <a
+                href="Mege project.html"
+                class="mega-link"
+                target="_blank">
 
+                Mega Project (Only HTML)
 
-<h2>
-🪔 Part-2 (Only HTML)
-</h2>
+            </a>
 
+        </nav>
 
+    </div>
 
 
+    <!-- =====================
+         IMAGE
+    ====================== -->
 
-<nav>
+    <div class="my-image">
 
+        <img
+            src="my_image.jpeg"
+            alt="My Image">
 
-<a href="Mini Project-6.html" target="_blank">
-Mini Project-6
-</a>
 
+        <h3>
+            My Image
+        </h3>
 
-<a href="Mini Project-7.html" target="_blank">
-Mini Project-7
-</a>
 
+        <p>
+            Not a project.
+            Used for image and audio testing.
+        </p>
 
-<a href="Mini Project-8.html" target="_blank">
-Mini Project-8
-</a>
+    </div>
 
 
-<a href="Mini Project-9.html" target="_blank">
-Mini Project-9
-</a>
+    <!-- =====================
+         CSS PROJECTS
+    ====================== -->
 
+    <div class="css">
 
-<a href="Mini Project-10.html" target="_blank">
-Mini Project-10
-</a>
-<h3>Mega Project(Only HTML)</h3>
-<a href="Mege project.html" class="mega-link" target="_blank">
-    Mega Project (Only HTML)
-</a>
-</nav>
-</div>
-<div class="my-image">
-<img src="my_image.jpeg">
-<h3>
-My Image
-</h3>
-<p>
-Not a project. Used for image and audio testing.
-</p>
-</div>
-<div class="css">
-<h2>
-🔥 HTML + CSS Projects
-</h2>
-<nav>
+        <h2>
+            🔥 HTML + CSS Projects
+        </h2>
 
 
+        <nav>
 
-<a href="Mini project-1 in css.html" target="_blank">
-CSS Project-1
-</a>
+            <a
+                href="Mini project-1 in css.html"
+                target="_blank">
+                CSS Project-1
+            </a>
 
 
+            <a
+                href="Mini project-2 in css.html"
+                target="_blank">
+                CSS Project-2
+            </a>
 
-<a href="Mini project-2 in css.html" target="_blank">
-CSS Project-2
-</a>
 
+            <a
+                href="Mini project-3 in css.html"
+                target="_blank">
+                CSS Project-3
+            </a>
 
 
-<a href="Mini project-3 in css.html" target="_blank">
-CSS Project-3
-</a>
+            <a
+                href="Mini project-4 in css .html"
+                target="_blank">
+                CSS Project-4
+            </a>
 
 
+            <a
+                href="Mini project-5 in css.html"
+                target="_blank">
+                CSS Project-5
+            </a>
 
-<a href="Mini project-4 in css .html" target="_blank">
-CSS Project-4
-</a>
+        </nav>
 
 
+        <h3>
+            CSS Projects Part-2
+        </h3>
 
-<a href="Mini project-5 in css.html" target="_blank">
-CSS Project-5
-</a>
 
+        <nav>
 
+            <a
+                href="Mini project-6 in css.html"
+                target="_blank">
+                CSS Project-6
+            </a>
 
-</nav>
 
+            <a
+                href="Mini project-7 in css.html"
+                target="_blank">
+                CSS Project-7
+            </a>
 
 
+            <a
+                href="Mini project-8 in css .html"
+                target="_blank">
+                CSS Project-8
+            </a>
 
 
+            <a
+                href="Mini project-9 in css.html"
+                target="_blank">
+                CSS Project-9
+            </a>
 
 
+            <a
+                href="Mini project-10 in css .html"
+                target="_blank">
+                CSS Project-10
+            </a>
 
+        </nav>
 
-<h3>
-CSS Projects Part-2
-</h3>
 
+        <h3>
+            CSS Projects Part-3
+        </h3>
 
 
+        <nav>
 
+            <a
+                href="Mini project-11 in css.html"
+                target="_blank">
+                CSS Project-11
+            </a>
 
 
+            <a
+                href="Mini project-12 in css .html"
+                target="_blank">
+                CSS Project-12
+            </a>
 
-<nav>
 
+            <a
+                href="Mini project-13 in css.html"
+                target="_blank">
+                CSS Project-13
+            </a>
 
 
-<a href="Mini project-6 in css.html" target="_blank">
-CSS Project-6
-</a>
+            <a
+                href="Mini project-14 in css.html"
+                target="_blank">
+                CSS Project-14
+            </a>
 
 
+            <a
+                href="Mini project-15 in css.html"
+                target="_blank">
+                CSS Project-15
+            </a>
 
-<a href="Mini project-7 in css.html" target="_blank">
-CSS Project-7
-</a>
+        </nav>
 
 
+        <h4>
+            Mega Projects (HTML + CSS)
+        </h4>
 
-<a href="Mini project-8 in css .html" target="_blank">
-CSS Project-8
-</a>
 
+        <nav class="mega-projects">
 
+            <a
+                href="Mega project-1 in css.html"
+                target="_blank">
 
-<a href="Mini project-9 in css.html" target="_blank">
-CSS Project-9
-</a>
+                CSS Mega project-1
 
+            </a>
 
 
-<a href="Mini project-10 in css .html" target="_blank">
-CSS Project-10
-</a>
+            <a
+                href="Mega project-2 in css.html"
+                target="_blank">
 
+                CSS Mega project-2
 
+            </a>
 
-</nav>
+        </nav>
 
+    </div>
 
 
+    <!-- =====================
+         JAVASCRIPT PROJECTS
+    ====================== -->
 
+    <div class="js">
 
+        <h5>
+            HTML + CSS + JAVASCRIPT
+        </h5>
 
 
+        <nav>
 
+            <a
+                href="Mega project-1 in js.html"
+                target="_blank">
 
-<h3>
-CSS Projects Part-3
-</h3>
+                JS Mini project-1
 
+            </a>
 
+        </nav>
 
+    </div>
 
-
-
-
-
-<nav>
-
-
-
-<a href="Mini project-11 in css.html" target="_blank">
-CSS Project-11
-</a>
-
-
-
-<a href="Mini project-12 in css .html" target="_blank">
-CSS Project-12
-</a>
-
-
-
-<a href="Mini project-13 in css.html" target="_blank">
-CSS Project-13
-</a>
-
-
-
-<a href="Mini project-14 in css.html" target="_blank">
-CSS Project-14
-</a>
-
-
-
-<a href="Mini project-15 in css.html" target="_blank">
-CSS Project-15
-</a>
-</nav>
-<h4>Mega projects(HTML+CSS)</h4>
-<nav class="mega-projects">
-    <a href="Mega project-1 in css.html"target="_blank">CSS Mega project-1</a>
-    <a href="Mega project-2 in css.html"target="_blank">CSS Mega project-2</a>
-</nav>
-</div>
-<div class="js">
-    <h5>HTML+CSS+JAVASCRIPT</h5>
-    <nav>
-        <a href="Mega project-1 in js.html">JS Mini project-1</a>
-    </nav>
-</div>
 </div>
 <script>
-const body=document.body;
+
+/* =========================
+   BASIC ELEMENTS
+========================= */
+
+const body = document.body;
+
+const darkBtn =
+document.getElementById("darkBtn");
+
+const lightBtn =
+document.getElementById("lightBtn");
+
+const musicBtn =
+document.getElementById("musicBtn");
+
+const hideBtn =
+document.getElementById("hideBtn");
+
+const showBtn =
+document.getElementById("showBtn");
+
+const pageContent =
+document.getElementById("pageContent");
+
+const fireworks =
+document.getElementById("fireworks");
+
+const partyMusic =
+document.getElementById("partyMusic");
 
 
-const darkBtn=document.getElementById("darkBtn");
-const lightBtn=document.getElementById("lightBtn");
+/* =========================
+   CONTENT SECTIONS
 
-const musicBtn=document.getElementById("musicBtn");
-const themeBtn=document.getElementById("themeBtn");
+   IMPORTANT:
+   These are ALL hidden
+   together when Hide is clicked.
+========================= */
 
-const hideBtn=document.getElementById("hideBtn");
-const showBtn=document.getElementById("showBtn");
+const htmlSection =
+document.querySelector(".html");
 
-const themePanel=document.getElementById("themePanel");
+const imageSection =
+document.querySelector(".my-image");
 
-const randomTheme=document.getElementById("randomTheme");
-const resetTheme=document.getElementById("resetTheme");
+const cssSection =
+document.querySelector(".css");
 
-const pageContent=document.getElementById("pageContent");
-
-const fireworks=document.getElementById("fireworks");
-
-const partyMusic=document.getElementById("partyMusic");
-
-
-const links=document.querySelectorAll("nav a");
+const jsSection =
+document.querySelector(".js");
 
 
-let playing=false;
+/* =========================
+   VARIABLES
+========================= */
 
-let fireworksOn=true;
+let playing = false;
 
-
-
-
-
-/* THEMES */
+let fireworksOn = true;
 
 
-const themes=[
+/* =========================
+   RED THEME
+========================= */
 
-["#00ffff","#ff00ff"],
+/*
+   DARK:
+   Dark red + black
 
-["#00ff00","#39ff14"],
+   LIGHT:
+   Normal red + white
 
-["#ff0000","#ff6600"],
-
-["#ffff00","#ff0099"],
-
-["#8000ff","#00ffff"],
-
-["#ff8800","#ffff00"]
-
-];
+   There are NO random themes.
+*/
 
 
+function setDarkTheme(){
 
+    body.classList.remove("light");
 
+    document.documentElement.style.setProperty(
+        "--primary",
+        "#ff0000"
+    );
 
-function changeTheme(a,b){
-
-document.documentElement.style.setProperty(
-"--primary",a
-);
-
-
-document.documentElement.style.setProperty(
-"--secondary",b
-);
+    document.documentElement.style.setProperty(
+        "--secondary",
+        "#8b0000"
+    );
 
 }
 
 
+/* =========================
+   LIGHT THEME
+========================= */
 
+function setLightTheme(){
 
+    body.classList.add("light");
 
+    document.documentElement.style.setProperty(
+        "--primary",
+        "#ff0000"
+    );
 
+    document.documentElement.style.setProperty(
+        "--secondary",
+        "#cc0000"
+    );
 
-/* DARK */
+}
 
 
-darkBtn.onclick=()=>{
+/* =========================
+   DARK BUTTON
+========================= */
 
-body.classList.remove("light");
+darkBtn.onclick = () => {
 
-changeTheme("#00ffff","#ff00ff");
-
-bigShow();
-
-};
-
-
-
-
-
-
-/* LIGHT */
-
-
-lightBtn.onclick=()=>{
-
-body.classList.add("light");
-
-changeTheme("#008cff","#ff0099");
-
-bigShow();
-
-};
-
-
-
-
-
-
-/* RANDOM THEME */
-
-
-randomTheme.onclick=()=>{
-
-
-let t=themes[
-Math.floor(Math.random()*themes.length)
-];
-
-
-changeTheme(t[0],t[1]);
-
-
-bigShow();
-
-
-};
-
-
-
-
-
-
-resetTheme.onclick=()=>{
-
-
-changeTheme(
-"#00ffff",
-"#ff00ff"
-);
-
-
-};
-
-
-
-
-
-
-/* THEME BUTTON */
-
-
-themeBtn.onclick=()=>{
-
-
-themePanel.style.display=
-
-themePanel.style.display=="block"
-
-?"none"
-
-:"block";
-
-
-};
-
-
-
-
-
-
-
-
-/* HIDE SHOW */
-
-
-const htmlSection = document.querySelector(".html");
-const imageSection = document.querySelector(".my-image");
-const cssSection = document.querySelector(".css");
-const jsSection = document.querySelector(".js");
-
-
-hideBtn.onclick=()=>{
-
-    htmlSection.style.display="none";
-
-    imageSection.style.display="none";
-
-    cssSection.style.display="none";
-
-    jsSection.style.display="none";
-
-    fireworks.style.display="none";
-
-    hideBtn.style.display="none";
-
-    showBtn.style.display="block";
-
-    fireworksOn=false;
-
-};
-
-
-showBtn.onclick=()=>{
-
-    htmlSection.style.display="block";
-
-    imageSection.style.display="block";
-
-    cssSection.style.display="block";
-
-    jsSection.style.display="block";
-
-    fireworks.style.display="block";
-
-    hideBtn.style.display="block";
-
-    showBtn.style.display="none";
-
-    fireworksOn=true;
+    setDarkTheme();
 
     bigShow();
 
 };
 
 
+/* =========================
+   LIGHT BUTTON
+========================= */
+
+lightBtn.onclick = () => {
+
+    setLightTheme();
+
+    bigShow();
+
+};
 
 
+/* =========================
+   HIDE CONTENT
+========================= */
+
+hideBtn.onclick = () => {
+
+    /*
+       Hide EVERY section
+    */
+
+    htmlSection.style.display = "none";
+
+    imageSection.style.display = "none";
+
+    cssSection.style.display = "none";
+
+    jsSection.style.display = "none";
 
 
+    /*
+       Hide fireworks
+    */
+
+    fireworks.style.display = "none";
 
 
+    /*
+       Change buttons
+    */
 
-/* MUSIC */
+    hideBtn.style.display = "none";
 
+    showBtn.style.display = "block";
+
+
+    /*
+       Stop fireworks
+    */
+
+    fireworksOn = false;
+
+};
+
+
+/* =========================
+   SHOW CONTENT
+========================= */
+
+showBtn.onclick = () => {
+
+    /*
+       Show EVERY section
+    */
+
+    htmlSection.style.display = "block";
+
+    imageSection.style.display = "block";
+
+    cssSection.style.display = "block";
+
+    jsSection.style.display = "block";
+
+
+    /*
+       Show fireworks
+    */
+
+    fireworks.style.display = "block";
+
+
+    /*
+       Change buttons
+    */
+
+    hideBtn.style.display = "block";
+
+    showBtn.style.display = "none";
+
+
+    /*
+       Start fireworks again
+    */
+
+    fireworksOn = true;
+
+    bigShow();
+
+};
+
+
+/* =========================
+   MUSIC
+========================= */
 
 async function startMusic(){
 
+    try{
 
-try{
+        partyMusic.volume = 0.35;
 
+        await partyMusic.play();
 
-partyMusic.volume=.35;
+        playing = true;
 
+        musicBtn.innerHTML =
+        "⏸ Pause Music";
 
-await partyMusic.play();
+    }
 
+    catch(error){
 
-playing=true;
+        /*
+           Browser may block
+           automatic audio.
+        */
 
+        playing = false;
 
-musicBtn.innerHTML="⏸ Pause Music";
+        musicBtn.innerHTML =
+        "▶ Play Music";
 
-
-}
-
-catch(e){
-
-
-musicBtn.innerHTML="▶ Play Music";
-
-
-}
-
-
-}
-
-
-
-window.onload=startMusic;
-
-
-
-
-
-
-musicBtn.onclick=()=>{
-
-
-if(playing){
-
-
-partyMusic.pause();
-
-
-playing=false;
-
-
-musicBtn.innerHTML="▶ Resume Music";
-
+    }
 
 }
 
-else{
+
+/* =========================
+   START MUSIC ON PAGE LOAD
+========================= */
+
+window.addEventListener(
+    "load",
+    startMusic
+);
 
 
-partyMusic.play();
+/* =========================
+   MUSIC BUTTON
+========================= */
 
+musicBtn.onclick = async () => {
 
-playing=true;
+    if(playing){
 
+        partyMusic.pause();
 
-musicBtn.innerHTML="⏸ Pause Music";
+        playing = false;
 
+        musicBtn.innerHTML =
+        "▶ Resume Music";
 
-}
+    }
 
+    else{
+
+        try{
+
+            await partyMusic.play();
+
+            playing = true;
+
+            musicBtn.innerHTML =
+            "⏸ Pause Music";
+
+        }
+
+        catch(error){
+
+            playing = false;
+
+            musicBtn.innerHTML =
+            "▶ Play Music";
+
+        }
+
+    }
 
 };
 
 
+/* =========================
+   FIREWORK ENGINE
+========================= */
+
+function explode(
+    x,
+    y,
+    type = "normal"
+){
+
+    /*
+       Do nothing if fireworks
+       are turned off.
+    */
+
+    if(!fireworksOn){
+
+        return;
+
+    }
 
 
+    const colors = [
+
+        "red",
+
+        "gold",
+
+        "orange",
+
+        "pink",
+
+        "white",
+
+        "yellow",
+
+        "#ff3333",
+
+        "#ff6666"
+
+    ];
 
 
+    const amount = 100;
 
 
+    for(
+        let i = 0;
+        i < amount;
+        i++
+    ){
 
-/* FIREWORK ENGINE */
-
-
-function explode(x,y,type="normal"){
-
-
-if(!fireworksOn)return;
-
-
-let colors=[
-
-"red",
-"gold",
-"cyan",
-"orange",
-"pink",
-"lime",
-"white",
-"violet"
-
-];
+        const s =
+        document.createElement("div");
 
 
-
-let amount=100;
-
+        s.className = "blast";
 
 
-for(let i=0;i<amount;i++){
+        s.style.left =
+        x + "px";
 
 
-let s=document.createElement("div");
+        s.style.top =
+        y + "px";
 
 
-s.className="blast";
+        /*
+           Random explosion angle
+        */
+
+        const angle =
+        Math.random() *
+        Math.PI *
+        2;
 
 
-s.style.left=x+"px";
+        /*
+           Random explosion distance
+        */
+
+        const distance =
+        Math.random() * 300;
 
 
-s.style.top=y+"px";
+        /*
+           X movement
+        */
+
+        s.style.setProperty(
+
+            "--x",
+
+            Math.cos(angle) *
+            distance +
+            "px"
+
+        );
 
 
+        /*
+           Y movement
+        */
 
-let angle=Math.random()*Math.PI*2;
+        s.style.setProperty(
 
+            "--y",
 
-let distance=Math.random()*300;
+            Math.sin(angle) *
+            distance +
+            "px"
 
-
-
-s.style.setProperty(
-"--x",
-Math.cos(angle)*distance+"px"
-);
-
-
-
-s.style.setProperty(
-"--y",
-Math.sin(angle)*distance+"px"
-);
+        );
 
 
+        /*
+           Random red-compatible
+           firework color
+        */
 
-s.style.color=
-colors[
-Math.floor(Math.random()*colors.length)
-];
+        s.style.color =
+        colors[
+            Math.floor(
+                Math.random() *
+                colors.length
+            )
+        ];
 
 
-
-fireworks.appendChild(s);
-
+        fireworks.appendChild(s);
 
 
-setTimeout(()=>{
+        /*
+           Remove particle
+           after animation
+        */
 
-s.remove();
+        setTimeout(() => {
 
-},1200);
+            s.remove();
 
+        }, 1200);
+
+    }
 
 }
 
 
-
-}
-
-
-
-
-
-
-
-
-
-/* ROCKET */
-
+/* =========================
+   ROCKET
+========================= */
 
 function rocket(){
 
+    if(!fireworksOn){
 
-let r=document.createElement("div");
+        return;
 
-
-r.className="cracker";
-
-
-r.style.left=Math.random()*innerWidth+"px";
+    }
 
 
-fireworks.appendChild(r);
+    const r =
+    document.createElement("div");
 
 
-
-setTimeout(()=>{
-
-
-explode(
-parseFloat(r.style.left),
-innerHeight-600
-);
+    r.className = "cracker";
 
 
-r.remove();
+    r.style.left =
+    Math.random() *
+    innerWidth +
+    "px";
 
 
-},1000);
+    fireworks.appendChild(r);
 
+
+    setTimeout(() => {
+
+        if(!fireworksOn){
+
+            r.remove();
+
+            return;
+
+        }
+
+
+        explode(
+
+            parseFloat(
+                r.style.left
+            ),
+
+            innerHeight - 600
+
+        );
+
+
+        r.remove();
+
+    }, 1000);
 
 }
 
 
-
-
-
-
-
-
-
-/* FLOWER POT */
-
+/* =========================
+   FLOWER POT
+========================= */
 
 function flowerPot(){
 
+    if(!fireworksOn){
 
-let p=document.createElement("div");
+        return;
 
-
-p.className="pot";
-
-
-p.style.left=Math.random()*innerWidth+"px";
+    }
 
 
-fireworks.appendChild(p);
+    const p =
+    document.createElement("div");
 
 
-
-setTimeout(()=>{
-
-explode(
-parseFloat(p.style.left),
-innerHeight-200
-);
+    p.className = "pot";
 
 
-p.remove();
+    p.style.left =
+    Math.random() *
+    innerWidth +
+    "px";
 
 
-},1000);
+    fireworks.appendChild(p);
 
+
+    setTimeout(() => {
+
+        if(!fireworksOn){
+
+            p.remove();
+
+            return;
+
+        }
+
+
+        explode(
+
+            parseFloat(
+                p.style.left
+            ),
+
+            innerHeight - 200
+
+        );
+
+
+        p.remove();
+
+    }, 1000);
 
 }
 
 
-
-
-
-
-
-
-
-/* SARAS */
-
+/* =========================
+   SARAS
+========================= */
 
 function saras(){
 
+    if(!fireworksOn){
 
-explode(
+        return;
 
-Math.random()*innerWidth,
+    }
 
-Math.random()*innerHeight/2
 
-);
+    explode(
 
+        Math.random() *
+        innerWidth,
+
+        Math.random() *
+        innerHeight /
+        2
+
+    );
 
 }
 
 
-
-
-
-
-
-
-
-/* MARAPETTI */
-
+/* =========================
+   MARAPETTI
+========================= */
 
 function marapetti(){
 
+    if(!fireworksOn){
 
-explode(
+        return;
 
-Math.random()*innerWidth,
+    }
 
-Math.random()*innerHeight/2
 
-);
+    explode(
 
+        Math.random() *
+        innerWidth,
+
+        Math.random() *
+        innerHeight /
+        2
+
+    );
 
 }
 
 
-
-
-
-
-
-
-
-/* CHAKKAR */
-
+/* =========================
+   CHAKKAR
+========================= */
 
 function chakkar(){
 
+    if(!fireworksOn){
 
-explode(
+        return;
 
-Math.random()*innerWidth,
+    }
 
-Math.random()*innerHeight/2
 
-);
+    explode(
 
+        Math.random() *
+        innerWidth,
+
+        Math.random() *
+        innerHeight /
+        2
+
+    );
 
 }
 
 
-
-
-
-
-
-
-
-
-/* BIG DIWALI SHOW */
-
+/* =========================
+   BIG FIREWORK SHOW
+========================= */
 
 function bigShow(){
 
+    if(!fireworksOn){
 
-let x=Math.random()*innerWidth;
+        return;
 
-let y=Math.random()*innerHeight/2;
-
-
-explode(x,y);
+    }
 
 
-setTimeout(rocket,300);
+    const x =
+    Math.random() *
+    innerWidth;
 
 
-setTimeout(flowerPot,600);
+    const y =
+    Math.random() *
+    innerHeight /
+    2;
 
 
-setTimeout(saras,900);
+    /*
+       Main explosion
+    */
+
+    explode(x, y);
 
 
-setTimeout(marapetti,1200);
+    /*
+       Rocket
+    */
+
+    setTimeout(
+        rocket,
+        300
+    );
 
 
-setTimeout(chakkar,1500);
+    /*
+       Flower pot
+    */
 
+    setTimeout(
+        flowerPot,
+        600
+    );
+
+
+    /*
+       Saras
+    */
+
+    setTimeout(
+        saras,
+        900
+    );
+
+
+    /*
+       Marapetti
+    */
+
+    setTimeout(
+        marapetti,
+        1200
+    );
+
+
+    /*
+       Chakkar
+    */
+
+    setTimeout(
+        chakkar,
+        1500
+    );
 
 }
 
 
+/* =========================
+   AUTO FIREWORKS
+========================= */
+
+setInterval(() => {
+
+    if(fireworksOn){
+
+        bigShow();
+
+    }
+
+}, 2000);
 
 
+/* =========================
+   PROJECT LINKS
+========================= */
 
-
-
-
-
-
-/* AUTO DIWALI NIGHT */
-
-
-setInterval(()=>{
-
-
-if(fireworksOn){
-
-
-bigShow();
-
-
-}
-
-
-},2000);
-
-
-
-
-
-
-
-
-
-/* PROJECT CLICK */
-
-
-links.forEach(link=>{
-
-
-link.onclick=e=>{
-
-
-e.preventDefault();
-
-
-
-explode(
-e.clientX,
-e.clientY
+const links =
+document.querySelectorAll(
+    "nav a"
 );
 
 
+links.forEach(link => {
 
-setTimeout(()=>{
+    link.addEventListener(
+        "click",
+        function(e){
+
+            /*
+               Stop normal link
+               temporarily.
+            */
+
+            e.preventDefault();
 
 
-window.open(
-link.href,
-"_blank"
-);
-},700);
-};
+            /*
+               Firework at click
+               position.
+            */
+
+            explode(
+
+                e.clientX,
+
+                e.clientY
+
+            );
+
+
+            /*
+               Open project after
+               small animation.
+            */
+
+            setTimeout(() => {
+
+                window.open(
+                    link.href,
+                    "_blank"
+                );
+
+            }, 700);
+
+        }
+    );
+
 });
+
+setDarkTheme();
+
 </script>
+
 </body>
+
 </html>
