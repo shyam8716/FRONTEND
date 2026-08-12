@@ -1569,50 +1569,52 @@ themePanel.style.display=="block"
 /* HIDE SHOW */
 
 
+const htmlSection = document.querySelector(".html");
+const imageSection = document.querySelector(".my-image");
+const cssSection = document.querySelector(".css");
+const jsSection = document.querySelector(".js");
+
+
 hideBtn.onclick=()=>{
 
+    htmlSection.style.display="none";
 
-pageContent.style.display="none";
+    imageSection.style.display="none";
 
+    cssSection.style.display="none";
 
-fireworks.style.display="none";
+    jsSection.style.display="none";
 
+    fireworks.style.display="none";
 
-hideBtn.style.display="none";
+    hideBtn.style.display="none";
 
+    showBtn.style.display="block";
 
-showBtn.style.display="block";
-
-
-fireworksOn=false;
-
+    fireworksOn=false;
 
 };
 
 
-
-
-
 showBtn.onclick=()=>{
 
+    htmlSection.style.display="block";
 
-pageContent.style.display="block";
+    imageSection.style.display="block";
 
+    cssSection.style.display="block";
 
-fireworks.style.display="block";
+    jsSection.style.display="block";
 
+    fireworks.style.display="block";
 
-hideBtn.style.display="block";
+    hideBtn.style.display="block";
 
+    showBtn.style.display="none";
 
-showBtn.style.display="none";
+    fireworksOn=true;
 
-
-fireworksOn=true;
-
-
-bigShow();
-
+    bigShow();
 
 };
 
