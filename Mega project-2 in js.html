@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Ticket Eligibility Checker</title>
+</head>
+<body>
+  <i>MEGA PROJECT-2 IN JAVA SCRIPT</i>
+  <script>
+    var customer_name=prompt("Enter customer name")
+    let age=prompt("Enter your age :")
+    let h=parseInt(Number(age))
+    const number_of_tickets=prompt("How many tickets do you want? :")
+    let i=parseInt(Number(number_of_tickets))
+    const ticket_price=1003.00
+    let j=parseInt(Number(ticket_price))
+    document.write("The  ticket price is :"+j+"<br>")
+    let total_ticket_cost=i*j
+    let discount=0
+    if(h<13){
+      document.write("Child category","<br/>")
+      alert("Don't watch this movie it will toxic your mind")
+    }
+    else if(h>=13 && h<=17){
+      document.write("Teenage category","<br>")
+      confirm("Are you willing to take discount?")
+      discount=total_ticket_cost*20/100
+      document.write("If you are a school student congrutalations you got 20% discount!!")
+    }
+    else if(h>=18){
+      document.write("Adult category","<br>")
+      confirm("Are you really want to watch this movie")
+      confirm("Are you willing to take discount?")
+      discount=total_ticket_cost*10/100
+      document.write("If you are a college student congratulations you got 10% discount!!")
+    }
+    else{
+      document.write("no movie to watch")
+    }
+    document.write("The customer name is : " +customer_name+"<br>")
+    document.write("Age is : " +h+"<br>")
+    document.write("No of seats :" +i+"<br>")
+    document.write("The total ticket cost is : "+total_ticket_cost+"<br>")
+    let final=total_ticket_cost-discount
+    document.write("The final amount is :"+final)
+  </script>
+</body>
+</html>
