@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Result & Grade Evaluation System</title>
+</head>
+<body>
+  <big>MINI PROJECT-5 IN JAVA SCRIPT</big><br/>
+  <script>
+    var student_name=prompt("Enter student name :")
+    let roll_number=prompt("Enter roll number :")
+    let q=parseInt(Number(roll_number))
+    let java=prompt("Enter java marks:")
+    const r=parseInt(Number(java))
+    let jdbc=prompt("Enter jdbc marks:")
+    const s=parseInt(Number(jdbc))
+    let servlet=prompt("Enter servlet marks")
+    const t=parseInt(Number(servlet))
+    let html=prompt("Enter html marks:")
+    const u=parseInt(Number(html))
+    let css=prompt("Enter css marks")
+    const v=parseInt(Number(css))
+    let js=prompt("Enter js marks:")
+    const w=parseInt(Number(js))
+    let react=prompt("Enter react marks")
+    const x=parseInt(Number(react))
+    let total=r+s+t+u+v+w+x
+    let average=total/7
+    let percentage=(total/700)*100
+    if(total>=630){
+      document.write("A+ grade and passed at distinction")
+    }
+    else if(total>=560){
+      document.write("A grade and passed at first class")
+    }
+    else if(total>=490){
+       document.write("B grade and passed at college level")
+    }
+    else if(total>=350){
+      document.write("C grade and passed at section level")
+    }
+    else{
+      document.write("D grade and fail")
+    }
+    document.write("The student name is : ",student_name,"<br>")
+    document.write("Roll number is: ",q,"<br>")
+    document.write("Java Marks: ",r,"<br>")
+    document.write("jdbc marks: ",s,"<br>")
+    document.write("servlet marks : ",t,"<br>")
+    document.write("html marks : ",u,"<br>")
+    document.write("css marks : ",v,"<br>")
+    document.write("js marks : ",w,"<br>")
+    document.write("React marks : ",x,"<br>")
+    document.write("Total marks are: ",total,"<br>")
+    document.write("Average marks are: ",average,"<br>")
+    document.write( "percentage is : ",percentage,"<br>")
+  </script>
+</body>
+</html>
