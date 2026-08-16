@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Room Booking & Bill Calculator</title>
+</head>
+<body>
+  <strike>Movie Ticket Eligibility Checker</strike><br>Hotel Room Booking & Bill Calculator<br/>
+  <script>
+    var customer_name=prompt("Enter customer name :")
+    var customer_age=prompt("The customer age is :")
+    let number_of_nights=prompt("How many do want to stay in hotel :")
+    let k=parseInt(Number(number_of_nights))
+    document.write("Number of nights : "+k,"<br>")
+    const room_type=prompt("please enter the type of the room :")
+    document.write("The type of the room is: "+room_type+"<br>")
+    const number_of_rooms=prompt("Please enter how many rooms:")
+    const l=parseInt(Number(number_of_rooms))
+    let each_room_cost=7437
+    let room_cost=each_room_cost*l
+    document.write("The room cost is :"+room_cost,"<br>")
+    let total_booking_cost=room_cost*k
+    if(each_room_cost<=2479){
+      document.write("You can choose standard rooms","<br>")
+    }
+    else if(each_room_cost<=3718.5){
+       document.write("You can choose deluxe rooms","<br>")
+    }
+    else if(each_room_cost>3418.5){
+       document.write("You can choose premium rooms","<br>")
+    }
+    else{
+      document.write("No rooms avaliable","<br>")
+    }
+    let discount=0
+    if(total_booking_cost>=10000){
+      confirm("Are you willing to take discount")
+      discount = total_booking_cost * 0.15
+      document.write("Congratulations you got 15% discount!!"+"<br>")
+    }
+    else if(total_booking_cost>=5){
+      confirm("Are you willing to take discount")
+      discount=total_booking_cost * 0.10
+      document.write("congratulations you got 10% discount!!"+"<br>")
+    }
+    else{
+      document.write("no discount"+"<br>"+"<br>")
+    }
+    document.write("The name of the customer is :"+customer_name,"<br>")
+    document.write("The customer age is : "+customer_age,"<br>")
+    document.write("The number of rooms : "+l,"<br>")
+    document.write("Number of nights : "+k,"<br>")
+    document.write("The total cost is : "+total_booking_cost,"<br>")
+    let final=total_booking_cost-discount
+    document.write("The final amount is: "+final)
+  </script>
+</body>
+</html>
