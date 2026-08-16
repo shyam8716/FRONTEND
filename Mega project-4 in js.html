@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Account Deposit & Withdrawal System</title>
+</head>
+<body>
+  <strong>MINI PROJECT-4 IN JAVA SCRIPT</strong><br/>
+  <script>
+    var customer_name=prompt("Enter customer name:")
+    document.write("The customer name is : ",customer_name)
+    const account_number=prompt("Enter account number : ")
+    var m=parseInt(Number(account_number))
+    document.write("The account number is: ",m,"<br>")
+    let intial_amount_balance=prompt("Enter intial amount : ")
+    var n=parseInt(intial_amount_balance)
+    document.write("The intial amount is : ",n,"<br>")
+    let deposit_amount=prompt("Enter deposit amount")
+    confirm("Are you really want to deposit the respected amount")
+    var o=parseInt(deposit_amount)
+    let deposited_amount=parseInt(Number(n+o))
+    document.write("Amount deposited successfully",deposit_amount,"<br>")
+    let withdraw_amount=prompt("Enter how much do you want to withdraw")
+    var p=parseInt(withdraw_amount)
+    let  withdrawed_amount=0
+    if(p<=500){
+       withdrawed_amount=deposited_amount-p
+    document.write("Amount withdrawed successfully",withdrawed_amount,"<br>")
+    }
+    else{
+      alert("you are out of minimum balance")
+    }
+  </script>
+</body>
+</html>
