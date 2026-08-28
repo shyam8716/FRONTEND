@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courier Parcel Tracking & Delivery Management System</title>
+</head>
+<body>
+  MINI PROJECT-1 IN JAVA SCRIPT<br>
+  <script>
+    function customer_details(customer_name,phone_number,develivery_address,email){
+      customer_name=prompt("Enter customer name :")
+      phone_number=prompt("Enter your phone number :")
+      let e=parseInt(Number(phone_number))
+      develivery_address=prompt("Enter your develivery address :")
+      email=prompt("Enter your email id :")
+      document.write("The customer name is : ",customer_name,"<br>")
+       document.write("The phone number is ; ",e,"<br>")
+       document.write("The develivery address is : ",develivery_address,"<br>")
+       document.write("The email id : ",email) 
+    }
+    var parcel_type=prompt("Enter parcel type :")
+    let weight=prompt("Enter parcel welght:")
+    let f=parseInt(Number(weight))
+    var number_of_parcels=prompt("Enter number of parcels:")
+    let g=parseInt(Number(number_of_parcels))
+    let tracking="RMS"+Math.floor(Math.random()*1000)
+    document.write("The parcel type is : ",parcel_type,"<br>")
+    document.write("The weight of the parcel is : ",f,"<br>")
+    document.write("The tracking id : ",tracking,"<br>")
+    let final_amount=f*g
+    document.write("The final_amount is : ",final_amount,"<br>")
+    let current_date= new Date()
+    current_date.getDate()
+    document.write("The current date is : ",current_date,"<br>")
+    document.write("The product can be develered with in 2 days","<br>")
+    let develivery_charges=0
+    if(f>10 &&g>50){
+      develivery_charges+=10
+      document.write("The develivery charge is : ",develivery_charges,"<br>")
+    }
+    else{
+      document.write("No develivery charge",develivery_charges,"<br>")
+    }
+    final_amount = final_amount + develivery_charges
+    document.write("Final amount including delivery charges : ",final_amount,"<br>")
+    let paid = parseFloat(prompt("Enter the amount paid:"))
+if(paid >= final_amount){
+    let change = paid - final_amount
+    document.write("Change to return : ", change)
+}
+else{
+    let remaining = final_amount - paid
+    document.write("Remaining amount to pay : ", remaining)
+}
+    switch(true){
+      case parcel_type=="Electronics":
+        confirm("Are you willing to take discount!")
+        document.write("Congratulations you got 8% discount","<br>")
+        break
+        case parcel_type=="Textiles & Garments":
+        confirm("Are you willing to take discount!")
+        document.write("Congratulations you got 10% discount","<br>")
+        break
+        case parcel_type=="Automotive Parts":
+          confirm("Are you willing to take discount!")
+        document.write("Congratulations you got 12% discount","<br>")
+        break
+        case parcel_type=="Fresh Fruits":
+          confirm("Are you willing to take discount!")
+        document.write("Congratulations you got 5% discount","<br>")
+        break
+        case parcel_type=="Machinery":
+          confirm("Are you willing to take discount!")
+        document.write("Congratulations you got 15% discount","<br>")
+        break
+        case parcel_type=="Furniture":
+          confirm("Are you willing to take discount!")
+        document.write("Congratulations you got 7% discount","<br>")
+        break
+        case parcel_type=="Pharmaceuticals":
+          confirm("Are you willing to take discount!")
+        document.write("Congratulations you got 10% discount","<br>")
+        break
+        case parcel_type=="Steel Products":
+          confirm("Are you willing to take discount!")
+        document.write("Congratulations you got 18% discount","<br>")
+        break
+        case parcel_type=="Consumer Goods":
+          confirm("Are you willing to take discount!")
+        document.write("Congratulations you got 9% discount","<br>")
+        break
+        case parcel_type=="Chemicals":
+          confirm("Are you willing to take discount!")
+        document.write("Congratulations you got 6% discount","<br>")
+        break
+        default:
+          alert("No discounts avaliable right now")
+    }
+    customer_details()
+  </script>
+</body>
+</html>
