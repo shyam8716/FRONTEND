@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Pharmacy Prescription & Medicine Billing System</title>
+</head>
+<body>
+  MINI PROJECT-2 IN JAVA SCRIPT<br/>
+  <script>
+    const patient_details=(patient_name,patient_id,doctor_name,prescription_number)=>{
+      patient_name=prompt("Enter name of the patient:")
+      document.write("The patient name is : ",patient_name,"<br>")
+      patient_id=prompt("Enter patient id : ",patient_id,"<br>")
+      doctor_name=prompt("Enter doctor name:")
+      let h=parseInt(Number(patient_id))
+      document.write("The patient id : ",h,"<br>")
+      prescription_number=Math.floor(Math.random()*1000)
+      document.write("The prescription number is : ",prescription_number,"<br>")
+      document.write("The doctor name is : ",doctor_name)
+    }
+    var medicine_name=prompt("Enter medicine name :")
+    document.write("The medicine name is : ",medicine_name,"<br>")
+    let price=prompt("Enter the price of the medicine :")
+    let i=parseInt(Number(price))
+    document.write("The price of the medicine is : ",i,"<br>")
+    const quantity=prompt("Enter the quantity of the medicine :")
+    const j=parseInt(quantity)
+    document.write("The medicine quantity is : ",j,"<br>")
+    const medicine_cost=i*j
+    const l=parseInt(medicine_cost)
+    document.write("The cost of the medicine is : ",l,"<br>")
+    const medicines=["Dolo 650","Calpol 500","Crocin 500","Combiflam","Allegra 120","Cetirizine","Digene","Gelusil","Pan-D","Volini"]
+    document.write("The multiple medicines are : ",medicines,"<br>")
+    const total_bill=medicine_cost
+    document.write("The total bill is : ",total_bill,"<br>")
+    let discount=0
+    let medical_discount=prompt("You have aryoga sri card")
+    switch(true){
+      case medical_discount=="yes":
+        confirm("Are you willing to take discount")
+      discount=total_bill*50/100
+      document.write("Congratulations you got 50% discount in total bill!",medical_discount,"<br>")
+      break
+      default:
+        document.write("No discount avaliable","<br>",medical_discount)
+    }
+    let tax=medicine_cost*18/100
+    document.write("GST (18%) is : ", tax, "<br>");
+    let final_bill=total_bill+tax-discount
+    document.write("The final payable bill is : ",final_bill,"<br>")
+    let paid = prompt("Enter the amount paid by the patient:")
+    let k=parseInt(paid)
+    if(k>=final_bill){
+    let m=k-final_bill
+    document.write("Change to return: ",m,"<br>")
+}
+else{
+    let remaining=final_bill-k
+    document.write("Remaining amount to pay: ",remaining,"<br>")
+}
+let purchase_date= new Date()
+purchase_date.getDate()
+document.write("The medicine purchased date is : ",purchase_date,"<br>")
+    patient_details()
+  </script>
+</body>
+</html>
