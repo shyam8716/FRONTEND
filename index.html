@@ -11,9 +11,9 @@
 
 <style>
 
-/* =========================
+/* =========================================================
    RESET
-========================= */
+========================================================= */
 
 *{
     margin:0;
@@ -22,24 +22,44 @@
 }
 
 
-/* =========================
-   DEFAULT RED THEME
-========================= */
+/* =========================================================
+   ROBOTIC COLOR SYSTEM
+========================================================= */
 
 :root{
-    --primary:#ff0000;
-    --secondary:#8b0000;
-    --text:white;
+
+    --primary:#00f6ff;
+
+    --secondary:#0066ff;
+
+    --text:#eaffff;
+
+    --dark:#02070d;
+
+    --panel:rgba(2,18,30,.88);
+
+    --panel2:rgba(0,35,55,.65);
+
 }
 
 
-/* =========================
+/* =========================================================
    BODY
-========================= */
+========================================================= */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
 
 body{
 
-    font-family:"Segoe UI",Arial,sans-serif;
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
     min-height:100vh;
 
@@ -48,72 +68,187 @@ body{
     color:var(--text);
 
     background:
-    radial-gradient(
-        circle,
-        #330000,
-        #000000
-    );
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0,246,255,.20),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(0,80,255,.18),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #000308,
+            #00131f,
+            #00050a
+        );
 
     transition:.6s;
 
     animation:pageLoad 1s;
+
+    position:relative;
+
 }
 
 
-/* =========================
+/* =========================================================
+   ROBOT GRID
+========================================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-2;
+
+    pointer-events:none;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0,246,255,.07) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,246,255,.07) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+}
+
+
+/* =========================================================
+   DIGITAL SCANLINES
+========================================================= */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:9998;
+
+    background:
+
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 4px,
+            rgba(0,246,255,.018) 5px
+        );
+
+}
+
+
+/* =========================================================
    PAGE LOAD
-========================= */
+========================================================= */
 
 @keyframes pageLoad{
 
     from{
+
         opacity:0;
-        transform:scale(.95);
+
+        transform:
+            scale(.95);
+
+        filter:
+            blur(12px);
+
     }
 
     to{
+
         opacity:1;
-        transform:scale(1);
+
+        transform:
+            scale(1);
+
+        filter:
+            blur(0);
+
     }
 
 }
 
 
-/* =========================
+/* =========================================================
    LIGHT MODE
-========================= */
+========================================================= */
 
 body.light{
 
-    --primary:#ff0000;
+    --primary:#006eff;
 
-    --secondary:#cc0000;
+    --secondary:#00aaff;
 
-    --text:#111;
+    --text:#07151d;
 
     background:
-    linear-gradient(
-        135deg,
-        #ffffff,
-        #ffcccc
-    );
+
+        radial-gradient(
+            circle at 50% 0%,
+            #ffffff,
+            #c8f6ff 45%,
+            #82ddff
+        );
+
 }
 
 
-/* Light mode buttons */
+body.light .mode-buttons{
+
+    background:
+        rgba(255,255,255,.75);
+
+}
+
 
 body.light .mode-buttons button{
 
-    background:white;
+    background:
+        rgba(255,255,255,.9);
 
-    color:#111;
+    color:#07151d;
 
 }
 
 
-/* =========================
+body.light .html,
+body.light .css,
+body.light .my-image,
+body.light .js{
+
+    background:
+        rgba(255,255,255,.55);
+
+}
+
+
+/* =========================================================
    TOP CONTROL NAVBAR
-========================= */
+========================================================= */
 
 .mode-buttons{
 
@@ -123,7 +258,8 @@ body.light .mode-buttons button{
 
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 
     display:flex;
 
@@ -133,200 +269,612 @@ body.light .mode-buttons button{
 
     gap:10px;
 
-    width:90%;
+    width:92%;
 
-    max-width:900px;
+    max-width:950px;
 
-    padding:12px;
+    padding:14px;
 
     z-index:9999;
 
-    border-radius:40px;
+    border-radius:8px;
 
-    background:rgba(0,0,0,.45);
+    background:
 
-    backdrop-filter:blur(20px);
+        linear-gradient(
+            135deg,
+            rgba(0,24,38,.95),
+            rgba(0,5,12,.92)
+        );
 
-    border:2px solid var(--primary);
+    backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid var(--primary);
 
     box-shadow:
 
-    0 0 25px var(--primary),
+        0 0 12px
+        var(--primary),
 
-    0 0 60px var(--secondary);
+        0 0 35px
+        rgba(0,100,255,.35),
+
+        inset 0 0 20px
+        rgba(0,246,255,.08);
 
 }
 
 
-/* =========================
-   NAVBAR BUTTONS
-========================= */
+/* =========================================================
+   SYSTEM LABEL
+========================================================= */
+
+.mode-buttons::before{
+
+    content:
+        "SYSTEM CONTROL // ONLINE";
+
+    position:absolute;
+
+    top:-10px;
+
+    left:25px;
+
+    padding:
+        2px 10px;
+
+    background:
+        #02070d;
+
+    color:
+        var(--primary);
+
+    font-family:
+        monospace;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .mode-buttons button{
 
-    padding:10px 18px;
+    position:relative;
 
-    border-radius:25px;
+    overflow:hidden;
+
+    padding:
+        10px 18px;
+
+    border-radius:
+        5px;
 
     cursor:pointer;
 
     font-weight:bold;
 
-    background:#050505;
+    letter-spacing:
+        .5px;
 
-    color:white;
+    background:
 
-    border:2px solid var(--primary);
+        linear-gradient(
+            180deg,
+            #09202d,
+            #02070b
+        );
+
+    color:
+        var(--primary);
+
+    border:
+        1px solid var(--primary);
 
     box-shadow:
-    0 0 20px var(--primary);
 
-    transition:.3s;
+        0 0 10px
+        rgba(0,246,255,.4),
+
+        inset 0 0 10px
+        rgba(0,246,255,.08);
+
+    transition:
+        .3s;
+
+}
+
+
+/* Button scanning light */
+
+.mode-buttons button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,246,255,.4),
+            transparent
+        );
+
+    transition:.5s;
+
+}
+
+
+.mode-buttons button:hover::before{
+
+    left:120%;
+
 }
 
 
 .mode-buttons button:hover{
 
-    transform:scale(1.1);
+    transform:
+        translateY(-5px)
+        scale(1.07);
+
+    color:#ffffff;
+
+    background:
+
+        rgba(0,246,255,.15);
+
+    box-shadow:
+
+        0 0 12px
+        var(--primary),
+
+        0 0 30px
+        var(--primary),
+
+        0 0 55px
+        var(--secondary);
+
+    animation:
+        buttonGlow .8s infinite alternate;
 
 }
 
 
-/* =========================
+.mode-buttons button:active{
+
+    transform:
+        scale(.92);
+
+}
+
+
+@keyframes buttonGlow{
+
+    from{
+
+        box-shadow:
+            0 0 10px
+            var(--primary);
+
+    }
+
+    to{
+
+        box-shadow:
+
+            0 0 20px
+            var(--primary),
+
+            0 0 45px
+            var(--secondary);
+
+    }
+
+}
+
+
+/* =========================================================
    MAIN CONTENT
-========================= */
+========================================================= */
 
 #pageContent{
 
-    padding-top:130px;
+    padding-top:
+        140px;
+
+    position:relative;
 
 }
 
 
-/* =========================
-   CONTENT BOXES
-========================= */
+/* =========================================================
+   ROBOTIC CONTENT PANELS
+========================================================= */
 
 .html,
 .css,
 .my-image,
 .js{
 
-    margin:25px;
+    position:relative;
 
-    padding:25px;
+    margin:
+        30px 25px;
 
-    border-radius:25px;
+    padding:
+        28px;
 
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(20px);
-
-    border:2px solid var(--primary);
-
-    box-shadow:
-
-    0 0 25px var(--primary),
-
-    0 0 70px var(--secondary);
-
-    animation:floating 5s infinite alternate;
-}
-
-
-/* =========================
-   FLOATING ANIMATION
-========================= */
-
-@keyframes floating{
-
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(-10px);
-    }
-
-}
-
-
-/* =========================
-   LINKS
-========================= */
-
-nav a{
-
-    display:inline-block;
-
-    margin:8px;
-
-    padding:10px 18px;
-
-    border-radius:25px;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    color:white;
+    border-radius:
+        8px;
 
     background:
 
-    linear-gradient(
+        linear-gradient(
+            135deg,
+            rgba(0,45,65,.72),
+            rgba(0,10,18,.90)
+        );
 
-        45deg,
+    backdrop-filter:
+        blur(18px);
 
-        var(--primary),
-
-        var(--secondary)
-
-    );
+    border:
+        1px solid
+        var(--primary);
 
     box-shadow:
 
-    0 0 20px var(--primary);
+        0 0 15px
+        rgba(0,246,255,.45),
 
-    transition:.3s;
+        0 0 50px
+        rgba(0,100,255,.18),
+
+        inset 0 0 30px
+        rgba(0,246,255,.05);
+
+    overflow:hidden;
+
+    animation:
+        roboticFloat 5s infinite alternate;
+
+}
+
+
+/* =========================================================
+   MOVING PANEL LINE
+========================================================= */
+
+.html::before,
+.css::before,
+.my-image::before,
+.js::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:2px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--primary),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px
+        var(--primary);
+
+    animation:
+        scanPanel 3s linear infinite;
+
+}
+
+
+@keyframes scanPanel{
+
+    from{
+
+        left:-100%;
+
+    }
+
+    to{
+
+        left:100%;
+
+    }
+
+}
+
+
+@keyframes roboticFloat{
+
+    from{
+
+        transform:
+            translateY(0);
+
+    }
+
+    to{
+
+        transform:
+            translateY(-6px);
+
+    }
+
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5{
+
+    color:
+        var(--primary);
+
+    text-shadow:
+
+        0 0 6px
+        var(--primary),
+
+        0 0 18px
+        rgba(0,246,255,.5);
+
+    letter-spacing:
+        1px;
+
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+nav a{
+
+    position:relative;
+
+    display:inline-block;
+
+    margin:
+        8px;
+
+    padding:
+        11px 19px;
+
+    border-radius:
+        4px;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        bold;
+
+    color:
+        #dfffff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #004459,
+            #00121c
+        );
+
+    border:
+        1px solid
+        var(--primary);
+
+    box-shadow:
+
+        0 0 8px
+        rgba(0,246,255,.4),
+
+        inset 0 0 10px
+        rgba(0,246,255,.08);
+
+    transition:
+        .3s;
+
+}
+
+
+/* Link bottom scanner */
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:2px;
+
+    background:
+        var(--primary);
+
+    box-shadow:
+        0 0 10px
+        var(--primary);
+
+    transition:
+        .3s;
+
+}
+
+
+nav a:hover::after{
+
+    width:100%;
+
 }
 
 
 nav a:hover{
 
     transform:
-    translateY(-6px)
-    scale(1.08);
+        translateY(-6px)
+        scale(1.07);
 
-}
+    color:#ffffff;
 
+    background:
 
-/* =========================
-   IMAGE
-========================= */
-
-.my-image img{
-
-    width:300px;
-
-    height:300px;
-
-    object-fit:cover;
-
-    border-radius:25px;
-
-    border:4px solid var(--primary);
+        linear-gradient(
+            135deg,
+            #00718c,
+            #002b3d
+        );
 
     box-shadow:
 
-    0 0 30px var(--primary),
+        0 0 15px
+        var(--primary),
 
-    0 0 70px var(--secondary);
+        0 0 35px
+        rgba(0,246,255,.5),
+
+        inset 0 0 15px
+        rgba(0,246,255,.12);
+
+    filter:
+        brightness(1.2);
+
 }
 
 
-/* =========================
-   MEGA PROJECT LINK
-========================= */
+nav a:active{
+
+    transform:
+        scale(.92);
+
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.my-image{
+
+    text-align:
+        center;
+
+}
+
+
+.my-image img{
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        8px;
+
+    border:
+        3px solid
+        var(--primary);
+
+    padding:
+        5px;
+
+    background:
+        #020b12;
+
+    box-shadow:
+
+        0 0 18px
+        var(--primary),
+
+        0 0 50px
+        rgba(0,246,255,.4);
+
+    transition:
+        .5s;
+
+}
+
+
+.my-image img:hover{
+
+    transform:
+        scale(1.07)
+        rotate(1deg);
+
+    border-color:
+        var(--secondary);
+
+    box-shadow:
+
+        0 0 20px
+        var(--primary),
+
+        0 0 50px
+        var(--primary),
+
+        0 0 90px
+        var(--secondary);
+
+    filter:
+        brightness(1.25)
+        contrast(1.1);
+
+}
+
+
+/* =========================================================
+   MEGA PROJECT
+========================================================= */
 
 .mega-link{
 
@@ -334,29 +882,31 @@ nav a:hover{
 
     width:fit-content;
 
-    margin:20px auto;
+    margin:
+        20px auto;
+
 }
 
-
-/* =========================
-   CSS MEGA PROJECTS
-========================= */
 
 .mega-projects{
 
     display:flex;
 
-    justify-content:space-between;
+    justify-content:
+        space-between;
 
-    gap:20px;
+    gap:
+        20px;
 
-    margin:20px auto;
+    margin:
+        20px auto;
+
 }
 
 
-/* =========================
-   FIREWORK CONTAINER
-========================= */
+/* =========================================================
+   FIREWORK AREA
+========================================================= */
 
 #fireworks{
 
@@ -369,65 +919,70 @@ nav a:hover{
     z-index:500;
 
     overflow:hidden;
+
 }
 
 
-/* =========================
-   COMMON EXPLOSION
-========================= */
+/* =========================================================
+   FIREWORK BLAST
+========================================================= */
 
 .blast{
 
     position:absolute;
 
-    width:8px;
+    width:6px;
 
-    height:8px;
+    height:6px;
 
-    border-radius:50%;
+    border-radius:
+        2px;
 
-    animation:blast 1.2s forwards;
+    animation:
+        blast 1.2s forwards;
 
     box-shadow:
 
-    0 0 10px currentColor,
+        0 0 10px
+        currentColor,
 
-    0 0 30px currentColor,
+        0 0 25px
+        currentColor,
 
-    0 0 60px currentColor;
+        0 0 55px
+        currentColor;
+
 }
 
-
-/* =========================
-   BLAST ANIMATION
-========================= */
 
 @keyframes blast{
 
     0%{
 
         transform:
-        translate(0,0)
-        scale(1);
+            translate(0,0)
+            scale(1);
 
         opacity:1;
+
     }
 
     100%{
 
         transform:
-        translate(var(--x),var(--y))
-        scale(0);
+            translate(var(--x),var(--y))
+            scale(0);
 
         opacity:0;
+
     }
 
 }
 
 
-/* =========================
+/* =========================================================
    ROCKET
-========================= */
+========================================================= */
 
 .cracker{
 
@@ -435,18 +990,32 @@ nav a:hover{
 
     bottom:0;
 
-    width:12px;
+    width:8px;
 
     height:35px;
 
-    background:red;
+    background:
 
-    border-radius:50%;
+        linear-gradient(
+            #ffffff,
+            var(--primary),
+            var(--secondary)
+        );
 
-    animation:rocket 1.5s linear;
+    border-radius:
+        2px;
+
+    animation:
+        rocket 1.5s linear;
 
     box-shadow:
-    0 0 20px red;
+
+        0 0 15px
+        var(--primary),
+
+        0 0 30px
+        var(--secondary);
+
 }
 
 
@@ -455,17 +1024,18 @@ nav a:hover{
     to{
 
         transform:
-        translateY(-600px);
+            translateY(-600px);
 
         opacity:0;
+
     }
 
 }
 
 
-/* =========================
+/* =========================================================
    FLOWER POT
-========================= */
+========================================================= */
 
 .pot{
 
@@ -477,14 +1047,25 @@ nav a:hover{
 
     height:20px;
 
-    background:orange;
+    background:
 
-    border-radius:50%;
+        linear-gradient(
+            90deg,
+            #00506a,
+            var(--primary),
+            #00506a
+        );
 
-    animation:pot 2s;
+    border-radius:
+        3px;
+
+    animation:
+        pot 2s;
 
     box-shadow:
-    0 0 40px gold;
+        0 0 40px
+        var(--primary);
+
 }
 
 
@@ -507,9 +1088,9 @@ nav a:hover{
 }
 
 
-/* =========================
+/* =========================================================
    SARAS
-========================= */
+========================================================= */
 
 .saras{
 
@@ -519,14 +1100,19 @@ nav a:hover{
 
     height:15px;
 
-    background:red;
+    background:
+        var(--primary);
 
-    border-radius:50%;
+    border-radius:
+        2px;
 
-    animation:saras 1s;
+    animation:
+        saras 1s;
 
     box-shadow:
-    0 0 50px red;
+        0 0 50px
+        var(--primary);
+
 }
 
 
@@ -534,7 +1120,8 @@ nav a:hover{
 
     100%{
 
-        transform:scale(10);
+        transform:
+            scale(10);
 
         opacity:0;
 
@@ -543,9 +1130,9 @@ nav a:hover{
 }
 
 
-/* =========================
+/* =========================================================
    MARAPETTI
-========================= */
+========================================================= */
 
 .marapetti{
 
@@ -555,9 +1142,20 @@ nav a:hover{
 
     height:25px;
 
-    background:brown;
+    background:
+        var(--secondary);
 
-    animation:marapetti .8s;
+    border:
+        2px solid
+        var(--primary);
+
+    animation:
+        marapetti .8s;
+
+    box-shadow:
+        0 0 30px
+        var(--primary);
+
 }
 
 
@@ -566,8 +1164,8 @@ nav a:hover{
     100%{
 
         transform:
-        scale(8)
-        rotate(360deg);
+            scale(8)
+            rotate(360deg);
 
         opacity:0;
 
@@ -576,9 +1174,9 @@ nav a:hover{
 }
 
 
-/* =========================
+/* =========================================================
    CHAKKAR
-========================= */
+========================================================= */
 
 .chakkar{
 
@@ -590,12 +1188,21 @@ nav a:hover{
 
     border-radius:50%;
 
-    border:5px solid gold;
+    border:
+        4px solid
+        var(--primary);
 
-    animation:chakkar 2s linear;
+    animation:
+        chakkar 2s linear;
 
     box-shadow:
-    0 0 50px yellow;
+
+        0 0 25px
+        var(--primary),
+
+        0 0 55px
+        var(--secondary);
+
 }
 
 
@@ -603,16 +1210,17 @@ nav a:hover{
 
     to{
 
-        transform:rotate(720deg);
+        transform:
+            rotate(720deg);
 
     }
 
 }
 
 
-/* =========================
+/* =========================================================
    SPARKLER
-========================= */
+========================================================= */
 
 .sparkler{
 
@@ -622,14 +1230,23 @@ nav a:hover{
 
     height:5px;
 
-    background:gold;
+    background:
+        #ffffff;
 
-    border-radius:50%;
+    border-radius:
+        2px;
 
-    animation:sparkler 2s;
+    animation:
+        sparkler 2s;
 
     box-shadow:
-    0 0 30px yellow;
+
+        0 0 20px
+        var(--primary),
+
+        0 0 35px
+        var(--primary);
+
 }
 
 
@@ -638,7 +1255,7 @@ nav a:hover{
     to{
 
         transform:
-        translateY(-300px);
+            translateY(-300px);
 
         opacity:0;
 
@@ -647,26 +1264,99 @@ nav a:hover{
 }
 
 
-/* =========================
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+
+    width:
+        9px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:
+        #02070d;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:
+
+        linear-gradient(
+            var(--primary),
+            var(--secondary)
+        );
+
+    border-radius:
+        3px;
+
+    box-shadow:
+        0 0 12px
+        var(--primary);
+
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection{
+
+    background:
+        var(--primary);
+
+    color:
+        #001018;
+
+}
+
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:600px){
 
     .mode-buttons{
 
-        width:95%;
+        width:
+            95%;
 
-        padding:8px;
+        padding:
+            8px;
+
+    }
+
+
+    .mode-buttons::before{
+
+        display:none;
 
     }
 
 
     .mode-buttons button{
 
-        padding:8px 12px;
+        padding:
+            8px 12px;
 
-        font-size:13px;
+        font-size:
+            13px;
+
+    }
+
+
+    #pageContent{
+
+        padding-top:
+            150px;
 
     }
 
@@ -676,201 +1366,55 @@ nav a:hover{
     .my-image,
     .js{
 
-        margin:15px;
+        margin:
+            15px;
 
-        padding:18px;
+        padding:
+            18px;
 
     }
 
 
     .my-image img{
 
-        width:100%;
+        width:
+            100%;
 
-        max-width:300px;
+        max-width:
+            300px;
 
-        height:auto;
+        height:
+            auto;
 
     }
 
 
     .mega-projects{
 
-        flex-direction:column;
+        flex-direction:
+            column;
 
-        align-items:center;
-
-    }
-
-}
-.mode-buttons button{
-    position:relative;
-    overflow:hidden;
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        background .3s ease,
-        color .3s ease;
-}
-
-/* Button hover */
-
-.mode-buttons button:hover{
-
-    transform:
-        translateY(-5px)
-        scale(1.08);
-
-    box-shadow:
-        0 0 15px var(--primary),
-        0 0 30px var(--primary),
-        0 0 50px var(--secondary);
-
-    animation:
-        buttonGlow .8s infinite alternate;
-}
-
-
-/* Button click */
-
-.mode-buttons button:active{
-
-    transform:
-        scale(.92);
-
-}
-
-
-/* Button glowing keyframe */
-
-@keyframes buttonGlow{
-
-    from{
-
-        box-shadow:
-            0 0 10px var(--primary),
-            0 0 20px var(--secondary);
+        align-items:
+            center;
 
     }
 
-    to{
 
-        box-shadow:
-            0 0 25px var(--primary),
-            0 0 50px var(--secondary),
-            0 0 70px var(--primary);
+    nav a{
+
+        width:
+            100%;
+
+        text-align:
+            center;
+
+        margin:
+            6px 0;
 
     }
 
 }
 
-
-/* =========================
-   IMAGE HOVER EFFECT
-========================= */
-
-.my-image img{
-
-    transition:
-        transform .5s ease,
-        box-shadow .5s ease,
-        border-color .5s ease;
-
-}
-
-
-/* Image hover */
-
-.my-image img:hover{
-
-    transform:
-        scale(1.08)
-        rotate(2deg);
-
-    border-color:
-        var(--secondary);
-
-    box-shadow:
-
-        0 0 20px var(--primary),
-
-        0 0 40px var(--primary),
-
-        0 0 70px var(--secondary),
-
-        0 0 100px var(--primary);
-
-    animation:
-        imageGlow 1.2s infinite alternate;
-
-}
-
-
-/* Image glowing keyframe */
-
-@keyframes imageGlow{
-
-    from{
-
-        filter:
-            brightness(1);
-
-    }
-
-    to{
-
-        filter:
-            brightness(1.2);
-
-    }
-
-}
-
-
-/* =========================
-   PROJECT LINK HOVER
-========================= */
-
-nav a{
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        filter .3s ease;
-
-}
-
-
-/* Project link hover */
-
-nav a:hover{
-
-    transform:
-        translateY(-6px)
-        scale(1.08);
-
-    box-shadow:
-
-        0 0 15px var(--primary),
-
-        0 0 30px var(--primary),
-
-        0 0 50px var(--secondary);
-
-    filter:
-        brightness(1.2);
-
-}
-
-
-/* Project link click */
-
-nav a:active{
-
-    transform:
-        scale(.92);
-
-}
 </style>
 
 </head>
@@ -884,31 +1428,25 @@ nav a:active{
 
 <div class="mode-buttons">
 
-
     <button id="darkBtn">
         🌑 Dark
     </button>
-
 
     <button id="lightBtn">
         ☀️ Light
     </button>
 
-
     <button id="musicBtn">
         🎵 Music
     </button>
-
 
     <button id="hideBtn">
         🙈 Hide
     </button>
 
-
     <button id="showBtn" style="display:none">
         👁 Show
     </button>
-
 
 </div>
 
@@ -938,8 +1476,6 @@ nav a:active{
 ========================= -->
 
 <div id="pageContent">
-
-
     <!-- =====================
          HTML PROJECTS
     ====================== -->
@@ -950,7 +1486,6 @@ nav a:active{
             🪔 Part-1 (Only HTML)
         </h1>
 
-
         <nav>
 
             <a
@@ -959,13 +1494,11 @@ nav a:active{
                 Mini Project-1
             </a>
 
-
             <a
                 href="Mini Project-2.html"
                 target="_blank">
                 Mini Project-2
             </a>
-
 
             <a
                 href="Mini Project-3.html"
@@ -973,13 +1506,11 @@ nav a:active{
                 Mini Project-3
             </a>
 
-
             <a
                 href="Mini Project-4.html"
                 target="_blank">
                 Mini Project-4
             </a>
-
 
             <a
                 href="Mini Project-5.html"
@@ -994,7 +1525,6 @@ nav a:active{
             🪔 Part-2 (Only HTML)
         </h2>
 
-
         <nav>
 
             <a
@@ -1003,13 +1533,11 @@ nav a:active{
                 Mini Project-6
             </a>
 
-
             <a
                 href="Mini Project-7.html"
                 target="_blank">
                 Mini Project-7
             </a>
-
 
             <a
                 href="Mini Project-8.html"
@@ -1017,13 +1545,11 @@ nav a:active{
                 Mini Project-8
             </a>
 
-
             <a
                 href="Mini Project-9.html"
                 target="_blank">
                 Mini Project-9
             </a>
-
 
             <a
                 href="Mini Project-10.html"
@@ -1035,7 +1561,6 @@ nav a:active{
             <h3>
                 Mega Project (Only HTML)
             </h3>
-
 
             <a
                 href="Mege project.html"
@@ -1061,11 +1586,9 @@ nav a:active{
             src="my_image.jpeg"
             alt="My Image">
 
-
         <h3>
             My Image
         </h3>
-
 
         <p>
             Not a project.
@@ -1094,13 +1617,11 @@ nav a:active{
                 CSS Project-1
             </a>
 
-
             <a
                 href="Mini project-2 in css.html"
                 target="_blank">
                 CSS Project-2
             </a>
-
 
             <a
                 href="Mini project-3 in css.html"
@@ -1108,13 +1629,11 @@ nav a:active{
                 CSS Project-3
             </a>
 
-
             <a
                 href="Mini project-4 in css .html"
                 target="_blank">
                 CSS Project-4
             </a>
-
 
             <a
                 href="Mini project-5 in css.html"
@@ -1138,13 +1657,11 @@ nav a:active{
                 CSS Project-6
             </a>
 
-
             <a
                 href="Mini project-7 in css.html"
                 target="_blank">
                 CSS Project-7
             </a>
-
 
             <a
                 href="Mini project-8 in css .html"
@@ -1152,13 +1669,11 @@ nav a:active{
                 CSS Project-8
             </a>
 
-
             <a
                 href="Mini project-9 in css.html"
                 target="_blank">
                 CSS Project-9
             </a>
-
 
             <a
                 href="Mini project-10 in css .html"
@@ -1182,13 +1697,11 @@ nav a:active{
                 CSS Project-11
             </a>
 
-
             <a
                 href="Mini project-12 in css .html"
                 target="_blank">
                 CSS Project-12
             </a>
-
 
             <a
                 href="Mini project-13 in css.html"
@@ -1196,13 +1709,11 @@ nav a:active{
                 CSS Project-13
             </a>
 
-
             <a
                 href="Mini project-14 in css.html"
                 target="_blank">
                 CSS Project-14
             </a>
-
 
             <a
                 href="Mini project-15 in css.html"
@@ -1247,106 +1758,145 @@ nav a:active{
     ====================== -->
 
     <div class="js">
+
         <h5>
             HTML + CSS + JAVASCRIPT(PART-1)
         </h5>
+
+
         <nav>
+
             <a
                 href="Mega project-1 in js.html"
                 target="_blank">
                 JS Mini project-1
             </a>
-            <a href="Mega project-2 in js.html"target="_blank">JS Mini project-2</a>
-            <a href="Mega project-3 in js.html"target="_blak">JS Mini project-3</a>
-            <a href="Mega project-4 in js.html"target="_blak">JS Mini projec-4</a>
-            <a href="Mega project-5 in js.html"target="_blak">JS Mini projec-5</a>
-        </nav><br/>
-        <b>HTML + CSS + JAVASCRIPT(PART-2)</b>
+
+            <a
+                href="Mega project-2 in js.html"
+                target="_blank">
+                JS Mini project-2
+            </a>
+
+            <a
+                href="Mega project-3 in js.html"
+                target="_blak">
+                JS Mini project-3
+            </a>
+
+            <a
+                href="Mega project-4 in js.html"
+                target="_blak">
+                JS Mini projec-4
+            </a>
+
+            <a
+                href="Mega project-5 in js.html"
+                target="_blak">
+                JS Mini projec-5
+            </a>
+
+        </nav>
+
+
+        <br/>
+
+
+        <b>
+            HTML + CSS + JAVASCRIPT(PART-2)
+        </b>
+
+
         <nav>
-            <a href="Mini project-6 in js.html"target="_blank">JS Mini project-6</a>
-            <a href="Mini project-7 in js.html"target="_blank">JS Mini project-7</a>
+
+            <a
+                href="Mini project-6 in js.html"
+                target="_blank">
+                JS Mini project-6
+            </a>
+
+            <a
+                href="Mini project-7 in js.html"
+                target="_blank">
+                JS Mini project-7
+            </a>
+
         </nav>
 
     </div>
 
+
 </div>
+
+
+<!-- =====================================================
+     PART 2 ENDS HERE
+     
+     PART 3 WILL CONTAIN YOUR COMPLETE JAVASCRIPT.
+===================================================== -->
 <script>
 
-/* =========================
+/* =========================================================
    BASIC ELEMENTS
-========================= */
+========================================================= */
 
-const body = document.body;
+const body =
+    document.body;
 
 const darkBtn =
-document.getElementById("darkBtn");
+    document.getElementById("darkBtn");
 
 const lightBtn =
-document.getElementById("lightBtn");
+    document.getElementById("lightBtn");
 
 const musicBtn =
-document.getElementById("musicBtn");
+    document.getElementById("musicBtn");
 
 const hideBtn =
-document.getElementById("hideBtn");
+    document.getElementById("hideBtn");
 
 const showBtn =
-document.getElementById("showBtn");
+    document.getElementById("showBtn");
 
 const pageContent =
-document.getElementById("pageContent");
+    document.getElementById("pageContent");
 
 const fireworks =
-document.getElementById("fireworks");
+    document.getElementById("fireworks");
 
 const partyMusic =
-document.getElementById("partyMusic");
+    document.getElementById("partyMusic");
 
 
-/* =========================
+/* =========================================================
    CONTENT SECTIONS
-
-   IMPORTANT:
-   These are ALL hidden
-   together when Hide is clicked.
-========================= */
+========================================================= */
 
 const htmlSection =
-document.querySelector(".html");
+    document.querySelector(".html");
 
 const imageSection =
-document.querySelector(".my-image");
+    document.querySelector(".my-image");
 
 const cssSection =
-document.querySelector(".css");
+    document.querySelector(".css");
 
 const jsSection =
-document.querySelector(".js");
+    document.querySelector(".js");
 
 
-/* =========================
+/* =========================================================
    VARIABLES
-========================= */
+========================================================= */
 
 let playing = false;
 
 let fireworksOn = true;
 
 
-/* =========================
-   RED THEME
-========================= */
-
-/*
-   DARK:
-   Dark red + black
-
-   LIGHT:
-   Normal red + white
-
-   There are NO random themes.
-*/
-
+/* =========================================================
+   DARK ROBOTIC THEME
+========================================================= */
 
 function setDarkTheme(){
 
@@ -1354,20 +1904,20 @@ function setDarkTheme(){
 
     document.documentElement.style.setProperty(
         "--primary",
-        "#ff0000"
+        "#00f6ff"
     );
 
     document.documentElement.style.setProperty(
         "--secondary",
-        "#8b0000"
+        "#0066ff"
     );
 
 }
 
 
-/* =========================
-   LIGHT THEME
-========================= */
+/* =========================================================
+   LIGHT ROBOTIC THEME
+========================================================= */
 
 function setLightTheme(){
 
@@ -1375,20 +1925,20 @@ function setLightTheme(){
 
     document.documentElement.style.setProperty(
         "--primary",
-        "#ff0000"
+        "#006eff"
     );
 
     document.documentElement.style.setProperty(
         "--secondary",
-        "#cc0000"
+        "#00aaff"
     );
 
 }
 
 
-/* =========================
+/* =========================================================
    DARK BUTTON
-========================= */
+========================================================= */
 
 darkBtn.onclick = () => {
 
@@ -1399,9 +1949,9 @@ darkBtn.onclick = () => {
 };
 
 
-/* =========================
+/* =========================================================
    LIGHT BUTTON
-========================= */
+========================================================= */
 
 lightBtn.onclick = () => {
 
@@ -1412,39 +1962,46 @@ lightBtn.onclick = () => {
 };
 
 
-/* =========================
+/* =========================================================
    HIDE CONTENT
-========================= */
+========================================================= */
 
 hideBtn.onclick = () => {
 
     /*
-       Hide EVERY section
+       Hide every section
     */
 
-    htmlSection.style.display = "none";
+    htmlSection.style.display =
+        "none";
 
-    imageSection.style.display = "none";
+    imageSection.style.display =
+        "none";
 
-    cssSection.style.display = "none";
+    cssSection.style.display =
+        "none";
 
-    jsSection.style.display = "none";
+    jsSection.style.display =
+        "none";
 
 
     /*
        Hide fireworks
     */
 
-    fireworks.style.display = "none";
+    fireworks.style.display =
+        "none";
 
 
     /*
        Change buttons
     */
 
-    hideBtn.style.display = "none";
+    hideBtn.style.display =
+        "none";
 
-    showBtn.style.display = "block";
+    showBtn.style.display =
+        "block";
 
 
     /*
@@ -1456,43 +2013,50 @@ hideBtn.onclick = () => {
 };
 
 
-/* =========================
+/* =========================================================
    SHOW CONTENT
-========================= */
+========================================================= */
 
 showBtn.onclick = () => {
 
     /*
-       Show EVERY section
+       Show every section
     */
 
-    htmlSection.style.display = "block";
+    htmlSection.style.display =
+        "block";
 
-    imageSection.style.display = "block";
+    imageSection.style.display =
+        "block";
 
-    cssSection.style.display = "block";
+    cssSection.style.display =
+        "block";
 
-    jsSection.style.display = "block";
+    jsSection.style.display =
+        "block";
 
 
     /*
        Show fireworks
     */
 
-    fireworks.style.display = "block";
+    fireworks.style.display =
+        "block";
 
 
     /*
        Change buttons
     */
 
-    hideBtn.style.display = "block";
+    hideBtn.style.display =
+        "block";
 
-    showBtn.style.display = "none";
+    showBtn.style.display =
+        "none";
 
 
     /*
-       Start fireworks again
+       Start fireworks
     */
 
     fireworksOn = true;
@@ -1502,22 +2066,23 @@ showBtn.onclick = () => {
 };
 
 
-/* =========================
+/* =========================================================
    MUSIC
-========================= */
+========================================================= */
 
 async function startMusic(){
 
     try{
 
-        partyMusic.volume = 0.35;
+        partyMusic.volume =
+            0.35;
 
         await partyMusic.play();
 
         playing = true;
 
         musicBtn.innerHTML =
-        "⏸ Pause Music";
+            "⏸ Pause Music";
 
     }
 
@@ -1531,16 +2096,16 @@ async function startMusic(){
         playing = false;
 
         musicBtn.innerHTML =
-        "▶ Play Music";
+            "▶ Play Music";
 
     }
 
 }
 
 
-/* =========================
+/* =========================================================
    START MUSIC ON PAGE LOAD
-========================= */
+========================================================= */
 
 window.addEventListener(
     "load",
@@ -1548,9 +2113,9 @@ window.addEventListener(
 );
 
 
-/* =========================
+/* =========================================================
    MUSIC BUTTON
-========================= */
+========================================================= */
 
 musicBtn.onclick = async () => {
 
@@ -1561,7 +2126,7 @@ musicBtn.onclick = async () => {
         playing = false;
 
         musicBtn.innerHTML =
-        "▶ Resume Music";
+            "▶ Resume Music";
 
     }
 
@@ -1574,7 +2139,7 @@ musicBtn.onclick = async () => {
             playing = true;
 
             musicBtn.innerHTML =
-            "⏸ Pause Music";
+                "⏸ Pause Music";
 
         }
 
@@ -1583,7 +2148,7 @@ musicBtn.onclick = async () => {
             playing = false;
 
             musicBtn.innerHTML =
-            "▶ Play Music";
+                "▶ Play Music";
 
         }
 
@@ -1592,9 +2157,9 @@ musicBtn.onclick = async () => {
 };
 
 
-/* =========================
+/* =========================================================
    FIREWORK ENGINE
-========================= */
+========================================================= */
 
 function explode(
     x,
@@ -1603,8 +2168,8 @@ function explode(
 ){
 
     /*
-       Do nothing if fireworks
-       are turned off.
+       Do nothing when
+       fireworks are off.
     */
 
     if(!fireworksOn){
@@ -1616,21 +2181,21 @@ function explode(
 
     const colors = [
 
-        "red",
+        "#00f6ff",
 
-        "gold",
+        "#0066ff",
 
-        "orange",
+        "#00ffff",
 
-        "pink",
+        "#ffffff",
 
-        "white",
+        "#66ccff",
 
-        "yellow",
+        "#0088ff",
 
-        "#ff3333",
+        "#33ffff",
 
-        "#ff6666"
+        "#99eeff"
 
     ];
 
@@ -1645,18 +2210,21 @@ function explode(
     ){
 
         const s =
-        document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
 
-        s.className = "blast";
+        s.className =
+            "blast";
 
 
         s.style.left =
-        x + "px";
+            x + "px";
 
 
         s.style.top =
-        y + "px";
+            y + "px";
 
 
         /*
@@ -1664,9 +2232,9 @@ function explode(
         */
 
         const angle =
-        Math.random() *
-        Math.PI *
-        2;
+            Math.random() *
+            Math.PI *
+            2;
 
 
         /*
@@ -1674,7 +2242,8 @@ function explode(
         */
 
         const distance =
-        Math.random() * 300;
+            Math.random() *
+            300;
 
 
         /*
@@ -1708,17 +2277,17 @@ function explode(
 
 
         /*
-           Random red-compatible
+           Robotic blue/cyan
            firework color
         */
 
         s.style.color =
-        colors[
-            Math.floor(
-                Math.random() *
-                colors.length
-            )
-        ];
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
 
 
         fireworks.appendChild(s);
@@ -1740,9 +2309,9 @@ function explode(
 }
 
 
-/* =========================
+/* =========================================================
    ROCKET
-========================= */
+========================================================= */
 
 function rocket(){
 
@@ -1754,16 +2323,19 @@ function rocket(){
 
 
     const r =
-    document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
-    r.className = "cracker";
+    r.className =
+        "cracker";
 
 
     r.style.left =
-    Math.random() *
-    innerWidth +
-    "px";
+        Math.random() *
+        innerWidth +
+        "px";
 
 
     fireworks.appendChild(r);
@@ -1798,9 +2370,9 @@ function rocket(){
 }
 
 
-/* =========================
+/* =========================================================
    FLOWER POT
-========================= */
+========================================================= */
 
 function flowerPot(){
 
@@ -1812,16 +2384,19 @@ function flowerPot(){
 
 
     const p =
-    document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
-    p.className = "pot";
+    p.className =
+        "pot";
 
 
     p.style.left =
-    Math.random() *
-    innerWidth +
-    "px";
+        Math.random() *
+        innerWidth +
+        "px";
 
 
     fireworks.appendChild(p);
@@ -1856,9 +2431,9 @@ function flowerPot(){
 }
 
 
-/* =========================
+/* =========================================================
    SARAS
-========================= */
+========================================================= */
 
 function saras(){
 
@@ -1883,9 +2458,9 @@ function saras(){
 }
 
 
-/* =========================
+/* =========================================================
    MARAPETTI
-========================= */
+========================================================= */
 
 function marapetti(){
 
@@ -1910,9 +2485,9 @@ function marapetti(){
 }
 
 
-/* =========================
+/* =========================================================
    CHAKKAR
-========================= */
+========================================================= */
 
 function chakkar(){
 
@@ -1937,9 +2512,9 @@ function chakkar(){
 }
 
 
-/* =========================
+/* =========================================================
    BIG FIREWORK SHOW
-========================= */
+========================================================= */
 
 function bigShow(){
 
@@ -1951,21 +2526,24 @@ function bigShow(){
 
 
     const x =
-    Math.random() *
-    innerWidth;
+        Math.random() *
+        innerWidth;
 
 
     const y =
-    Math.random() *
-    innerHeight /
-    2;
+        Math.random() *
+        innerHeight /
+        2;
 
 
     /*
        Main explosion
     */
 
-    explode(x, y);
+    explode(
+        x,
+        y
+    );
 
 
     /*
@@ -2020,9 +2598,9 @@ function bigShow(){
 }
 
 
-/* =========================
+/* =========================================================
    AUTO FIREWORKS
-========================= */
+========================================================= */
 
 setInterval(() => {
 
@@ -2035,14 +2613,14 @@ setInterval(() => {
 }, 2000);
 
 
-/* =========================
+/* =========================================================
    PROJECT LINKS
-========================= */
+========================================================= */
 
 const links =
-document.querySelectorAll(
-    "nav a"
-);
+    document.querySelectorAll(
+        "nav a"
+    );
 
 
 links.forEach(link => {
@@ -2092,9 +2670,15 @@ links.forEach(link => {
 
 });
 
+
+/* =========================================================
+   INITIAL ROBOTIC THEME
+========================================================= */
+
 setDarkTheme();
 
 </script>
+
 
 </body>
 
