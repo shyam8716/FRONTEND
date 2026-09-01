@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Service Center Job Card & Maintenance Billing System</title>
+</head>
+<body>
+  MINI PROJECT-3 IN JAVASCRIPT<br/>
+  <script>
+    const vehicle_and_customer_details=(customer_name,contact_number,vehicle_number,vehicle_type)=>{
+      customer_name=prompt("Enter customer name:")
+      document.write("The customer name is : ",customer_name,"<br>")
+      contact_number=prompt("Enter your contact number:")
+      let n=parseInt(contact_number)
+      document.write("The contact number is : ",n,"<br>")
+      vehicle_number=prompt("Enter your vehicle number:")
+      document.write("The vehicle number is : ",vehicle_number,"<br>")
+      vehicle_type=prompt("Enter vehicle type:")
+      document.write("The vehicle type is : ",vehicle_type,"<br>")
+    }
+    var service_date=new Date()
+    document.write("The service date of vehicle is : ",service_date.getDate(),"<br>")
+    let job_card_number="JOB"+Math.floor(Math.random()*100)
+    document.write("The unique service number is : ",job_card_number,"<br>")
+    for(let i=0;i<=10;i++){
+      let service = prompt("Enter service " + i + ":");
+      document.write("Complete vehicle inspection and routine maintenance to ensure smooth, safe, and reliable performance : ",service,"<br>")
+    }
+    const services=["Engine Oil Change","Brake Inspection & Adjustment","Chain Cleaning & Lubrication","Battery Check","Tyre Inspection & Air Pressure Check","Engine Oil & Filter Change","Brake Inspection","Wheel Alignment & Balancing","Battery Check","Battery Check"]
+    document.write(" The serves for both bike and car are : ",services,"<br>")
+    const indivisual_service_cost=[500,300,250,150,100,1500,500,1000,300,800]
+    document.write("The cost for each service is : ",indivisual_service_cost,"<br>")
+    let total_cost=5400
+    document.write("The total cost is : ",total_cost,"<br>")
+    let offer=prompt("Enter which offer do you want")
+    switch(true){
+      case offer=="welcome offer":
+        confirm("Are you willing to take discount")
+        total_cost = total_cost - (total_cost * 10 / 100);
+        document.write("Congratulations you got 10% discount!",offer)
+        break
+        case offer=="safety care offer":
+          document.write(" Free brake & tyre inspection",offer)
+          break
+          case offer=="oil care offer":
+            confirm("Are you willing to take discount")
+            total_cost=total_cost-(total_cost*10/100)
+            document.write("congratultions you got 10% discount!",offer)
+            break
+            case offer=="battery care offer":
+              confirm("Are you willing to take discount")
+              total_cost=total_cost-(total_cost*15/100)
+              document.write("congratulations you got 15% discount!",offer)
+              break
+              case offer=="complete care offer":
+                confirm("Are you willing to take discount")
+                total_cost=total_cost-(total_cost*20/100)
+                document.write("congratulations you got 20% discount!",offer)
+                break
+        default:
+          document.write("No offers right now avaliable")
+    }
+    let tax=total_cost*18/100
+    document.write("The tax  is : ",tax)
+    let final_service_bill=tax+total_cost
+    document.write("The final service bill is ; ",final_service_bill,"<br>")
+    let paid = parseFloat(prompt("Enter the amount paid by the customer:"))
+if(paid >= final_service_bill){
+    let change = paid - final_service_bill
+    document.write("Change to return : ",change,"<br>")
+}
+else{
+    let remaining = final_service_bill - paid
+    document.write("Remaining amount to pay : ",remaining,"<br>")
+}
+    vehicle_and_customer_details()
+  </script>
+</body>
+</html>
