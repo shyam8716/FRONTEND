@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Production Shooting Schedule & Budget Management Systemt</title>
+</head>
+<body>
+  MINI PROJECT-9 IN JAVASCRIPT<br/>
+  <script>
+    const film_details=(film_name,producer_name,director_name,production_id)=>{
+      film_name=prompt("Enter  fovorite film name :")
+      document.write("Your fovorite film name is : ",film_name,"<br>")
+      producer_name=prompt("Enter producer name :")
+      document.write("The movie producer name is : ",producer_name,"<br>")
+      director_name=prompt("Enter director name :")
+      document.write("The movie director name is : ",director_name,"<br>")
+      production_id=prompt("Enter production id :")
+      document.write("The movie production id is : ",production_id,"<br>")
+    }
+    var shooting_shedule="Shoot"+Math.floor(Math.random()*100)
+    document.write("The sheduled shooting id is : ",shooting_shedule,"<br>")
+    let shooting_days=prompt("Enter the number of shooting days :")
+    let n=parseInt(shooting_days)
+    document.write("The number of shooting days are : ",n,"<br>")
+    const shooting_locations=["Ladakh","Hampi","Alleppey","Rann of Kutch","Spiti Valley","Varanasi Ghats","Munnar","Jaisalmer Fort","Pangong Lake","Andaman Islands"]
+    document.write("The different shooting locations are : ",shooting_locations,"<br>")
+    const suitable_location=prompt("Enter the suitable location for shooting :")
+    if(shooting_locations.includes(suitable_location))
+    {
+      document.write("Yes it is there in the list ",suitable_location,"<br>")
+    }
+    else
+    {
+      document.write("The entered locations is not there in the list ",suitable_location,"<br>")
+    }
+      let equipment=prompt("Enter equipment cost:")
+      let o=parseInt(equipment)
+      document.write("The equipment cost is : ",o,"<br>")
+      let transportation=prompt("Enter transportation cost : ")
+      let p=parseInt(transportation)
+      document.write("The transportation cost is : ",p,"<br>")
+      let food=prompt("Enter food cost:")
+      let q=parseInt(food)
+      document.write("The food cost is : ",q,"<br>")
+      let accomodation=prompt("Enter accomodation cost:")
+      let r=parseInt(accomodation)
+      document.write("The accomodation cost is : ",r,"<br>")
+      let crew_equipment=prompt("Enter crew equipment cost:")
+      let s=parseInt(crew_equipment)
+      document.write("The cre equipment cost is : ",s,"<br>")
+    let total_expenditure=o+p+q+r+s
+    let t=parseInt(total_expenditure)
+    document.write("The total expenditure is : ",t,"<br>")
+    let collection=prompt("Enter the box office collection:")
+    switch(true){
+      case collection=="All-Time Blockbuster":
+        document.write("The movie got All-Time Blockbuster hit in first 3 days ",collection,"<br>")
+        break
+        case collection=="Blockbuster":
+          document.write("The movie got blockbuster hit in first 2 days ",collection,"<br>")
+          break
+          case collection=="super hit":
+            document.write("The movie got super hit in last 7 days ",collection,"<br>")
+            break
+          case collection=="hit":
+            document.write("The movie got hit in last 10 days ",collection,"<br>")
+            break
+            case collection=="average":
+              document.write("The move got average in last 15 days ",collection,"<br>")
+              break
+              default:
+                alert("The movie was flap better luck next time!")
+    }
+    let tax=prompt("Enter tax percentage:")
+    let u=parseInt(tax)
+    tax = t * u / 100;
+    document.write("The tax amount is : ",tax,"<br>")
+    let final_budget=t+tax
+    let v=parseInt(final_budget)
+    document.write("The final income budget is : ",v,"<br>")
+    const releasing_date=new Date()
+    document.write("The movie releasing date is : ",releasing_date.getDate(),"<br>")
+    film_details()
+  </script>
+</body>
+</html>
