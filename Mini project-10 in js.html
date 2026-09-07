@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Railway Reservation, Passenger & Ticket Management System</title>
+</head>
+<body>
+  MINI PROJECT-10 IN JAVA SCRIPT<br/>
+  <script>
+    var passenger_name=prompt("Enter passenger name:")
+    let train_name=prompt("Enter train name:")
+    let train_number=prompt("Enter train number:")
+    let w=parseInt(train_number)
+    const sourse_station=prompt("Enter sourse station :")
+    const destination_station=prompt("Enter destination station:")
+    const passenger_age=prompt("Enter passenger age:")
+    let x=parseInt(passenger_age)
+    let travel_class=prompt("Enter the your booked train class:")
+    let ticket_price=0
+    var number_of_passengers=prompt("Enter the number of pasengers")
+    let y=parseInt(number_of_passengers)
+    let pnr_number="PNR"+Math.floor(Math.random()*1000000000)
+    document.write("The passenger name is : ",passenger_name,"<br>")
+    document.write("The train name is : ",train_name,"<br>")
+    document.write("The train number is : ",w,"<br>")
+    document.write("The sourse station is : ",sourse_station,"<br>")
+    document.write("The destination station is : ",destination_station,"<br>")
+    document.write("The passenger age is :",x,"<br>")
+    document.write("The number of passengers are : ",y,"<br>")
+    document.write("The pnr number is : ",pnr_number,"<br>")
+    switch(true){
+      case (travel_class=="general"):
+        ticket_price=160
+        document.write("You booked ",travel_class,"class","<br>")
+        document.write("The ticket price is : ",ticket_price,"<br>")
+        break
+        case(travel_class=="sleeper"):
+        document.write("You booked ",travel_class," class","<br>")
+        ticket_price=335
+        document.write("The ticket price is : ",ticket_price,"<br>")
+        break
+        case(travel_class=="3AC"):
+        document.write("You booked ",travel_class," class","<br>")
+        ticket_price=890
+        document.write("The ticket price is : ",ticket_price,"<br>")
+        break
+        case(travel_class=="2AC"):
+        document.write("You booked ",travel_class," class","<br>")
+        ticket_price=1255
+        document.write("The ticket price is :",ticket_price,"<br>")
+        break
+        case(travel_class=="1AC"):
+        document.write("You booked ",travel_class," class","<br>")
+        ticket_price=2070
+        document.write("The ticket price is : ",ticket_price,"<br>")
+        break
+        default:
+          alert("Invalid ticket so please buy valid ticket!")
+    }
+    let total_fare = ticket_price * y
+let discount = 0
+
+if(x >= 60){
+    discount = total_fare * 40 / 100
+    document.write("Senior citizen concession: 40%<br>")
+}
+else if(x < 12){
+    discount = total_fare * 50 / 100
+    document.write("Child concession: 50%<br>")
+}
+else if(y >= 4){
+    discount = total_fare * 10 / 100
+    document.write("Group booking discount: 10%<br>")
+}
+else{
+    document.write("No concession or discount available<br>")
+}
+
+let final_fare = total_fare - discount
+
+document.write("Total fare is : ",total_fare,"<br>")
+document.write("Concession/Discount is : ",discount,"<br>")
+document.write("Final payable fare is : ",final_fare,"<br>")
+  </script>
+</body>
+</html>
