@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>counter App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    .increment :hover{
+     color:pink; 
+    }
+    .increment{
+      background-color:green;
+    }
+    .decrement :hover{
+      color:darkred;
+    }
+    .decrement{
+      color:purple;
+    }
+    .reset :hover{
+      color:violet
+    }
+    .reset{
+      color:orange
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <form class="counter_app">
+    <h1 id="countdown">Count:0</h1>
+  <button type="submit" onclick=""class="increment"><i class="fa-solid fa-circle-plus">Increment</i></button>
+  <button type="submit" onclick=""id="decrement"><i class="fa-solid fa-circle-minus">Decrement</i></button>
+  <button type="reset" onclick="" class="reset"><i class="fa-solid fa-arrow-rotate-left">Reset</i></button>
+  </form>
+  </center>
+  <script>
+    let count_display=document.getElementById("countdown")
+    let counter=document.getElementsByClassName("counter_app")[0]
+    let increment_btn=document.getElementsByClassName("increment")[0]
+    let decrement_btn=document.getElementById("decrement")
+    let reset_btn=document.getElementsByClassName("reset")[0]
+    let Count=0
+    increment_btn.addEventListener('click',function(e){
+      e.preventDefault()
+      Count++
+      count_display.textContent="Count :"+Count
+    })
+    decrement_btn.addEventListener('click',function(e){
+      e.preventDefault()
+      Count--
+      if(Count<0){
+        alert("you are entering negative values!")
+      }
+      else{
+        count_display.textContent="Count :"+Count
+      }
+    })
+    reset_btn.addEventListener('click',function(e){
+      e.preventDefault()
+      Count=0
+      count_display.textContent="Count :"+Count
+    })
+  </script>
+</body>
+</html>
