@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    .submit{
+      background-color:white;
+      color:lightblue;
+    }
+  </style>
+</head>
+<body>
+  <form class="list">
+    <input type="text"id="taking_list">
+    <button type="submit" class="submit" onclick=""><i class="fa-solid fa-square-plus">+</i></button>
+    <ul id="tasks"></ul>
+  </form>
+  <script>
+    let input=document.getElementById("taking_list")
+    let form_input=document.getElementsByClassName("list")[0]
+    let add_button=document.getElementsByClassName("submit")[0]
+    let taskking=document.getElementById("tasks")
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+add_button.addEventListener("click", function(e) {
+  e.preventDefault();
+  const task = input.value;
+  tasks.push(task);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  showTasks();
+  input.value = "";
+});
+function showTasks() {
+  taskking.innerHTML = "";
+  tasks.forEach(function(task, index) {
+    let li = document.createElement("li");
+    li.textContent = `${index + 1}. ${task}`;
+    taskking.appendChild(li);
+  });
+}
+showTasks();
+  </script>
+</body>
+</html>
