@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changer</title>
+</head>
+<body>
+  <form>
+    <center>
+       <button id="submit">Change color</button>
+    </center>
+
+  </form>
+  <script>
+    const buttons=document.getElementById("submit")
+    const colors = [
+  "#0048BA", "#B0BF1A", "#7CB9E8", "#B284BE", "#00308F", "#F0F8FF",
+  "#EFDECD", "#E52B50", "#FFBF00", "#9966CC", "#A4C639", "#CD9575",
+  "#915C83", "#FAEBD7", "#8DB600", "#FBCEB1", "#00FFFF", "#7FFFD4",
+  "#D0FF14", "#4B5320", "#4B6F44", "#B2BEB5", "#FDEE00", "#568203",
+  "#007FFF",
+
+  "#89CFF0", "#F4C2C2", "#FFE135", "#848482", "#F5F5DC", "#3D2B1F",
+  "#FE6F5E", "#000000", "#FFEBCD", "#FF6700", "#318CE7", "#ACE5EE",
+  "#660000", "#0000FF", "#6699CC", "#0D98BA", "#8A2BE2", "#DE5D83",
+  "#E3DAC9", "#006A4E", "#CB4154", "#66FF00", "#FF7034", "#FF007F",
+  "#FFAA1D", "#CD7F32", "#A52A2A", "#FFC1CC", "#800020", "#CC5500",
+  "#E97451", "#8A3324", "#BD33A4", "#702963",
+
+  "#5F9EA0", "#C19A6B", "#FFEF00", "#FF0800", "#E4717A", "#00BFFF",
+  "#C41E3A", "#960018", "#FFA6C9", "#56A0D2", "#ED9121", "#ACE1AF",
+  "#DE3163", "#007BA7", "#F7E7CE", "#36454F", "#7FFF00", "#954535",
+  "#D2691E", "#D2691E", "#E34234", "#E4D00A", "#9FA91F", "#7F1734",
+  "#0F4C81", "#0047AB", "#6F4E37", "#B9D9EB", "#B87333", "#FF7F50",
+  "#F88379", "#6495ED", "#FFF8DC", "#DC143C", "#00FFFF",
+
+  "#FFFF31", "#00008B", "#654321", "#008B8B", "#A9A9A9", "#006400",
+  "#310062", "#8B008B", "#FF8C00", "#9932CC", "#8B0000", "#E9967A",
+  "#8FBC8F", "#483D8B", "#00CED1", "#9400D3", "#1560BD", "#EDC9AF",
+  "#696969", "#1E90FF", "#967117",
+
+  "#C2B280", "#614051", "#F0EAD6", "#50C878", "#046307", "#B48395",
+  "#AB4B52", "#00FF40",
+
+  "#801818", "#4F7942", "#6C541E", "#B22222", "#E25822", "#FC8EAC",
+  "#EEDC82", "#228B22", "#A67B5B", "#0072BB", "#86608E", "#F64A8A",
+  "#FF00FF",
+
+  "#DCDCDC", "#E49B0F", "#F8F8FF", "#B06500", "#6082B6", "#FFD700",
+  "#996515", "#DAA520", "#676767", "#7CFC00", "#808080", "#465945",
+  "#008000", "#1164B4", "#ADFF2F", "#A99A86", "#2A3439",
+
+  "#3FFF00", "#DA9100", "#DF73FF", "#F0FFF0", "#355E3B",
+
+  "#99FFFF", "#ED2939", "#B2EC5D", "#138808", "#CD5C5C", "#E3A857",
+  "#4B0082", "#FF4F00", "#5A4FCF", "#FFFFF0",
+
+  "#00A86B", "#F8DE7E", "#D73B3E", "#343434", "#F4CA16",
+
+  "#4CBB17", "#F0E68C", "#6B4423",
+
+  "#E6E6FA", "#CCCCFF", "#C4C3D0", "#FBAED2", "#7CFC00", "#FFF700",
+  "#FFFACD", "#E3FF00", "#ADD8E6", "#B5651D", "#E0FFFF", "#D3D3D3",
+  "#90EE90", "#FED8B1", "#FFB6C1", "#FFCCCB", "#FFA07A", "#20B2AA",
+  "#FFFFE0", "#C8A2C8", "#00FF00", "#32CD32", "#FAF0E6", "#674C47",
+
+  "#FF00FF", "#C04000", "#FBEC5D", "#0BDA51", "#800000", "#E0B0FF",
+  "#73C2FB", "#0000CD", "#BA55D3", "#9370DB", "#3CB371", "#7B68EE",
+  "#00FA9A", "#48D1CC", "#C71585", "#FEBAAD", "#191970", "#3EB489",
+  "#98FF98", "#FFE4E1", "#FFE4B5", "#8A9A5B", "#997A8D", "#C54B8C",
+  "#FFDB58",
+
+  "#FADA5E", "#000080", "#4666FF", "#39FF14", "#FF6700", "#FF6EC7",
+  "#FFF700", "#D7837F", "#727472", "#0C090A",
+
+  "#CC7722", "#808000", "#6B8E23", "#B5B35C", "#353839", "#FF1B8D",
+  "#FFA500", "#FF4500", "#DA70D6",
+
+  "#1CA9C9", "#006600", "#AFEEEE", "#987654", "#98FB98", "#FADADD",
+  "#FF9999", "#AFEEEE", "#CC99FF", "#FFEFD5", "#FFE5B4", "#FFDAB9",
+  "#D1E231", "#CCCCFF", "#1C39BB", "#00A693", "#D99058", "#F77FBE",
+  "#DF00FF", "#01796F", "#FFC0CB", "#D8B2D1", "#FF9966", "#DDA0DD",
+  "#B0E0E6", "#003153", "#9C7C9E",
+
+  "#436B95", "#E8CCD7",
+
+  "#E30B5C", "#D68A59", "#826644", "#FF0000", "#FF5349", "#C71585",
+  "#A45A52", "#C9FFA2", "#96DED1", "#FF007F", "#B76E79", "#FF66CC",
+  "#65000B", "#4169E1", "#7851A9", "#E0115F", "#80461B", "#B7410E",
+
+  "#F4C430", "#BCB88A", "#FA8072", "#C2B280", "#786D5F", "#F4A460",
+  "#0F52BA", "#FF2400", "#FFD800", "#2E8B57", "#9FE2BF", "#FFF5EE",
+  "#704214", "#009E60", "#C0C0C0", "#87CEEB", "#6A5ACD", "#708090",
+  "#FFFAFA", "#00FF7F", "#4682B4", "#E4D96F", "#FC5A8D", "#FFDA03",
+  "#FD5E53",
+
+  "#D2B48C", "#F28500", "#483C32", "#008080", "#D0F0C0", "#E2725B",
+  "#D8BFD8", "#FF6347", "#FFC87C", "#40E0D0",
+
+  "#120A8F", "#635147", "#5B92E5", "#E1AD21",
+
+  "#F3E5AB", "#C5B358", "#E34234", "#009B7D", "#8F00FF", "#40826D",
+
+  "#F5DEB3", "#FFFFFF", "#A2ADD0", "#FF43A4", "#722F37", "#C9A0DC",
+
+  "#738678",
+
+  "#0F4D92", "#FFFF00", "#9ACD32", "#FFAE42", "#FFF000",
+
+  "#0014A8", "#39A78E"
+];
+    buttons.addEventListener("click",function(e){
+      e.preventDefault()
+      const random=colors[Math.floor(Math.random()*colors.length)]
+      document.body.style.backgroundColor=random
+    })
+  </script>
+</body>
+</html>
