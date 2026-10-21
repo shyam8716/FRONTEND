@@ -2,6 +2,168 @@
   <head>
     <title>Mini project-12 in js.html</title>
   </head>
+  <style>
+    
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 70px;
+}
+
+.to-do {
+    background-color: #111111;
+    padding: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 0 0 10px #ffffff, 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.to-do span {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff;
+    margin-bottom: 25px;
+}
+
+.tasks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task {
+    background-color: #1a1a1a;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    transition: 0.3s;
+}
+
+.task::placeholder {
+    color: #888888;
+}
+
+.task:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.adding {
+    background-color: #b026ff;
+    color: #ffffff;
+    border: 2px solid #b026ff;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(176, 38, 255, 0.6);
+    transition: 0.3s;
+}
+
+.adding:hover {
+    background-color: #8a00cc;
+    border-color: #d580ff;
+    box-shadow: 0 0 15px #b026ff, 0 0 30px rgba(176, 38, 255, 0.7);
+    transform: scale(1.05);
+}
+
+.adding:active {
+    transform: scale(0.95);
+}
+
+.lists {
+    width: fit-content;
+    max-width: 80%;
+    margin: 35px auto;
+    padding-left: 35px;
+    text-align: left;
+}
+
+.lists li {
+    background-color: #151515;
+    color: #ff00ff;
+    border: 1px solid #ff00ff;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin: 15px 0;
+    font-size: 18px;
+    cursor: pointer;
+    text-shadow: 0 0 8px #ff00ff;
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+    transition: 0.3s;
+}
+
+.lists li:hover {
+    background-color: #ff00ff;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 0 0 12px #ff00ff, 0 0 25px rgba(255, 0, 255, 0.7);
+    transform: translateX(5px);
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 40px 10px 10px;
+    }
+
+    .to-do {
+        padding: 20px 12px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .to-do span {
+        font-size: 26px;
+    }
+    .tasks {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .task {
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .adding {
+        width: 100%;
+    }
+    .lists {
+        max-width: 95%;
+    }
+    .lists li {
+        overflow-wrap: anywhere;
+    }
+}
+.lists li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+.lists li::after {
+    content: "🗑";
+    color: #ff8c00;
+    font-size: 22px;
+    margin-left: 15px;
+    text-shadow: 0 0 5px #ff8c00, 0 0 15px #ff8c00;
+    filter: drop-shadow(0 0 5px #ff4500);
+    transition: 0.3s;
+}
+.lists li:hover::after {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00, 0 0 25px #ff8c00;
+    transform: scale(1.2);
+}
+  </style>
   <body>
     <center>
       <div class="to-do">
@@ -19,15 +181,15 @@
       let taskinput=document.getElementsByClassName("task")[0]
       let taskvalue=taskinput.value.trim()
       if(taskvalue===""){
-        alert("Enter the task first!")
+        return alert("Enter the task first!")
       }
       let li=document.createElement("li")
       li.textContent=taskvalue
       document.getElementsByClassName("lists")[0].appendChild(li)
-    }
-    taskinput.value=""
+      taskinput.value=""
     li.onclick=function(){
       this.remove()
+    }
     }
   </script>
 </html>
