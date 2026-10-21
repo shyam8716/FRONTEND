@@ -23,7 +23,7 @@
       }
       let li=document.createElement("li")
       li.textContent=taskvalue
-      let remove=document.getElementsByClassName("lists")[0].appendchild(li)
+      document.getElementsByClassName("lists")[0].appendChild(li)
     }
     taskinput.value=""
     li.onclick=function(){
