@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+.calculator {
+    width: 320px;
+    padding: 20px;
+    background: #1e293b;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+    animation: calculatorEntry 0.8s ease;
+}
+#display {
+    width: 100%;
+    height: 75px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: #0f172a;
+    color: #38f9d7;
+    font-size: 30px;
+    text-align: right;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.btn {
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    background: #334155;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: buttonEntry 0.6s ease backwards;
+}
+.btn:nth-child(1),
+.btn:nth-child(3),
+.btn:nth-child(7),
+.btn:nth-child(11),
+.btn:nth-child(15) {
+    background: #2563eb;
+    color: white;
+}
+.btn:nth-child(2) {
+    background: #ef4444;
+    color: white;
+}
+.btn:last-child {
+    background: gold !important;
+    color: red !important;
+    font-size: 26px;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+.btn:hover {
+    background: #06b6d4;
+    color: white;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(6, 182, 212, 0.4);
+}
+.btn:active {
+    transform: scale(0.90);
+}
+@keyframes calculatorEntry {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@keyframes buttonEntry {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display"readonly/>
+    <div class="buttons">
+      <button type="button" class="btn" onclick="addtask('%')">%</button>
+       <button type="button" class="btn" onclick="clear1()">CE</button>
+       <button type="button"class="btn"onclick="addtask('/')">/</button>
+       <button type="button"class="btn"onclick="addtask('7')">7</button>
+       <button type="button"class="btn"onclick="addtask('8')">8</button>
+       <button type="button"class="btn"onclick="addtask('9')">9</button>
+       <button type="button" class="btn" onclick="addtask('*')">x</button>
+       <button type="button"class="btn"onclick="addtask('4')">4</button>
+       <button type="button"class="btn"onclick="addtask('5')">5</button>
+       <button type="button"class="btn"onclick="addtask('6')">6</button>
+       <button type="button"class="btn"onclick="addtask('-')">-</button>
+       <button type="button"class="btn"onclick="addtask('1')">1</button>
+       <button type="button"class="btn"onclick="addtask('2')">2</button>
+       <button type="button"class="btn"onclick="addtask('3')">3</button>
+       <button type="button"class="btn"onclick="addtask('+')">+</button>
+       <button type="button"class="btn"onclick="addtask('0')">0</button>
+       <button type="button"class="btn"onclick="addtask('00')">00</button>
+       <button type="button" class="btn" onclick="addtask('.')">.</button>
+       <button type="button" class="btn"onclick="calculated()" style="color:red;background-color: gold;">=</button>
+    </div>
+  </div>
+</body>
+<script>
+  let display=document.getElementById("display")
+  function addtask(value){
+    display.value+=value
+  }
+  function calculated(){
+  try {
+        if (display.value === "") {
+            alert("Please enter the value!");
+            return;
+        }
+        display.value = eval(display.value);
+    }
+    catch (err) {
+        alert("Invalid expression!");
+        display.value = "";
+    }
+  }
+  function clear1(){
+    display.value=""
+  }
+</script>
+</html>
