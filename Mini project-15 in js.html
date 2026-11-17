@@ -39,8 +39,9 @@
   <script>
     let a = document.getElementById("Button");
 let b = document.getElementsByClassName("heading")[0];
+let c=prompt("Enter your heading")
 a.addEventListener("click", function (e) {
   e.preventDefault();
-  b.textContent = "Welcome to javascript";
+  b.textContent = c;
 });
   </script>
