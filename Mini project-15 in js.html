@@ -1,47 +1,28 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Heading generator</title>
-    <meta charset="UTF-8" />
-    <style>
-      * {
-        color:white;
-        background-color:black;
-      }
-      button {
-        color: purple;
-        background-color: cyan;
-        border-radius: 30px;
-        padding: 10px 25px;
-        cursor: pointer;
-      }
-
-      button:hover {
-        color: red;
-        background-color: darkgreen;
-      }
-
-      .heading {
-        color: aqua;
-        background-color: aliceblue;
-      }
-    </style>
-  </head>
-  <body>
-    <center>
-      <button type="button" id="Button" onclick="">Submit</button><br />
-      <h1
-        style="color: aqua; background-color: aliceblue; display: inline-block"
-        class="heading"
-      ></h1>
-    </center>
-  </body>
-  <script>
-    let a = document.getElementById("Button");
-let b = document.getElementsByClassName("heading")[0];
-let c=prompt("Enter your heading")
-a.addEventListener("click", function (e) {
-  e.preventDefault();
-  b.textContent = c;
-});
-  </script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse of a string</title>
+</head>
+<body>
+  <input type="text" placeholder="Enter the text" id="inputs" />
+    <button type="submit" onclick="reversing_a_string()">Submit</button><br />
+    <b class="result"></b>
+</body>
+<script>
+  function reversing_a_string(){
+  let input = document.getElementById("inputs").value;
+  let result = document.getElementsByClassName("result")[0];
+  let reverse = "";
+  for (let e = input.length - 1; e >= 0; e--) {
+    reverse += input[e];
+  }
+  if (input === "") {
+    alert("Please enter the value first");
+  } else {
+    result.textContent = "The reversed string is : " + reverse;
+  }
+};
+</script>
+</html>
